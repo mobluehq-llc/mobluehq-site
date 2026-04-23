@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Investors — MOBLUEHQ</title>
+<meta name="description" content="We are not raising. We are listening. What should MOBLUEHQ know about what you are offering?" />
+<link rel="canonical" href="https://mobluehq.com/investors" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://mobluehq.com/investors" />
+<meta property="og:title" content="Investors — MOBLUEHQ" />
+<meta property="og:description" content="We are not raising. We are listening." />
+<meta property="og:image" content="https://mobluehq.com/assets/earth_hero.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></a>
+  <ul class="nav-links">
+    <li><a href="/about">About</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/investors" class="active">Investors</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="content">
+    <div class="section-label">Investors</div>
+    <div class="section-label-line"></div>
+    <div class="investors-elegant">
+      <div>
+        <h1 class="investors-headline">We are not raising.<br>We are listening.</h1>
+        <div class="investors-headline-line"></div>
+      </div>
+      <form class="investor-form-elegant" onsubmit="event.preventDefault(); evaluateMessage();">
+        <label class="form-question" for="senderMsg">What should MOBLUEHQ know about what you are offering?</label>
+        <textarea class="form-textarea" id="senderMsg" placeholder="" required></textarea>
+        <button class="submit-btn" id="submitBtn" type="submit">Submit</button>
+        <div class="eval-panel" id="evalPanel"><div id="evalContent"></div></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></div>
+  <div>© 2026 MOBLUEHQ LLC · Delaware</div>
+</footer>
+
+<script>
+function escapeHtml(str) {
+  if (typeof str !== 'string') return '';
+  return str.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+}
+
+async function evaluateMessage() {
+  const msg = document.getElementById('senderMsg').value.trim();
+  const btn = document.getElementById('submitBtn');
+  const panel = document.getElementById('evalPanel');
+  const content = document.getElementById('evalContent');
+
+  if (!msg || msg.length < 20) {
+    panel.classList.add('show');
+    content.innerHTML = `<div class="eval-result logged">Message too short. Provide more context.</div>`;
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Submitting';
+  panel.classList.add('show');
+  content.innerHTML = `<div style="text-align:center;color:var(--text-muted);">Evaluating</div>`;
+
+  try {
+    const response = await fetch('/api/triage', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: msg })
+    });
+
+    const evaluation = await response.json();
+
+    if (!response.ok && !evaluation.route) {
+      throw new Error(evaluation.error || 'Triage failed');
+    }
+
+    let resultClass, resultText;
+    if (evaluation.route === 'forward') {
+      resultClass = ''; resultText = 'Received. Forwarded.';
+    } else if (evaluation.route === 'review') {
+      resultClass = ''; resultText = 'Received. Held for review.';
+    } else {
+      resultClass = 'logged'; resultText = 'Received. Thank you.';
+    }
+
+    content.innerHTML = `<div class="eval-result ${resultClass}">${resultText}</div>`;
+  } catch (err) {
+    console.error('Triage error:', err);
+    content.innerHTML = `<div class="eval-result logged">Received. Thank you.</div>`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Submit';
+  }
+}
+</script>
+
+</body>
+</html>

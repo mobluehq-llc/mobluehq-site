@@ -1,0 +1,114 @@
+{
+  "lastReviewed": "2026-04-22",
+  "reviewCadenceDays": 30,
+  "products": [
+    {
+      "id": "bluecheck",
+      "name": "blueCheck",
+      "color": "#5EAEFF",
+      "description": "Verification engine.",
+      "tagline": "Consensus is trust.",
+      "status": "active",
+      "icon": "circle-rings"
+    },
+    {
+      "id": "thisscam",
+      "name": "thisScam",
+      "color": "#E84E5C",
+      "description": "Consumer protection.",
+      "tagline": "Scam and fraud review.",
+      "status": "dev",
+      "icon": "shield-check"
+    },
+    {
+      "id": "isthisemailok",
+      "name": "isThisEmailOK",
+      "color": "#B556CC",
+      "description": "Communication review.",
+      "tagline": "Risk before you send.",
+      "status": "dev",
+      "icon": "envelope"
+    },
+    {
+      "id": "whatdoesmyleasesay",
+      "name": "whatDoesMyLeaseSay",
+      "color": "#56AFA5",
+      "description": "Lease reading aid.",
+      "tagline": "Plain-English extraction.",
+      "status": "dev",
+      "icon": "document"
+    },
+    {
+      "id": "lindagrid",
+      "name": "lindaGrid",
+      "color": "#C9A14A",
+      "description": "Operating system.",
+      "tagline": "Routes and learns.",
+      "status": "dev",
+      "icon": "grid"
+    },
+    {
+      "id": "truthlayer",
+      "name": "truthLayer",
+      "color": "#4AA3DF",
+      "description": "Developer middleware.",
+      "tagline": "Trust metadata layer.",
+      "status": "dev",
+      "icon": "layers"
+    },
+    {
+      "id": "guardrail",
+      "name": "guardRail",
+      "color": "#4D9C3F",
+      "description": "Safety layer.",
+      "tagline": "Gating for risky outputs.",
+      "status": "dev",
+      "icon": "anchor"
+    },
+    {
+      "id": "nightbrief",
+      "name": "nightBrief",
+      "color": "#5060B0",
+      "description": "Executive briefing.",
+      "tagline": "Signal. Rank. Act.",
+      "status": "dev",
+      "icon": "bars-moon"
+    },
+    {
+      "id": "faustindex",
+      "name": "faustIndex",
+      "color": "#D4D8E0",
+      "description": "Model performance index.",
+      "tagline": "Benchmark intelligence.",
+      "status": "dev",
+      "icon": "chart"
+    },
+    {
+      "id": "classified-1",
+      "name": "Classified",
+      "color": "#6B7585",
+      "description": "Undisclosed system.",
+      "tagline": "In development.",
+      "status": "classified",
+      "icon": "lock"
+    },
+    {
+      "id": "classified-2",
+      "name": "Classified",
+      "color": "#6B7585",
+      "description": "Undisclosed system.",
+      "tagline": "In development.",
+      "status": "classified",
+      "icon": "lock"
+    },
+    {
+      "id": "classified-3",
+      "name": "Classified",
+      "color": "#6B7585",
+      "description": "Undisclosed system.",
+      "tagline": "In development.",
+      "status": "classified",
+      "icon": "lock"
+    }
+  ]
+}
