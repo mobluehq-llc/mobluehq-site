@@ -1,4 +1,4 @@
-/* MOBLUEHQ — shared styles for all pages */
+/* MOBLUEHQ — shared styles for all pages — v3 (PNG logo icons) */
 :root {
   --bg: #05080F;
   --bg-soft: #0A0F1C;
@@ -40,10 +40,19 @@ nav {
 .nav-links a:hover { color: var(--hq); }
 .nav-links a.active { color: var(--hq); border-bottom-color: var(--hq); }
 
-/* Home / hero page */
+/* Home / hero — full-bleed Earth+Moon */
 .hero { height: 100vh; width: 100vw; position: relative; overflow: hidden; background: var(--bg); }
-.hero-img { position: absolute; inset: 0; background-image: url('earth_hero.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,8,15,0.5) 0%, rgba(5,8,15,0) 30%, rgba(5,8,15,0) 60%, rgba(5,8,15,0.85) 100%), linear-gradient(90deg, rgba(5,8,15,0.65) 0%, rgba(5,8,15,0.15) 50%, rgba(5,8,15,0.35) 100%); }
+.hero-img {
+  position: absolute; inset: 0;
+  background-image: url('earth_hero.jpg');
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5,8,15,0.55) 0%, rgba(5,8,15,0) 30%, rgba(5,8,15,0) 60%, rgba(5,8,15,0.9) 100%),
+    linear-gradient(90deg, rgba(5,8,15,0.7) 0%, rgba(5,8,15,0.15) 50%, rgba(5,8,15,0.4) 100%);
+}
 .hero-content { position: absolute; bottom: 12vh; left: 56px; z-index: 10; animation: fadeUp 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both; }
 .wordmark { font-family: 'Geist', sans-serif; font-weight: 800; font-size: clamp(44px, 6vw, 92px); letter-spacing: -0.03em; line-height: 0.95; margin-bottom: 22px; }
 .wordmark .moblue { color: var(--moblue); }
@@ -57,16 +66,52 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
 .section-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--hq); font-weight: 500; margin-bottom: 12px; }
 .section-label-line { width: 64px; height: 2px; background: var(--hq); margin-bottom: 80px; }
 
-/* About page — elegant minimal */
-.about-elegant { display: grid; grid-template-columns: 320px 1fr; gap: 80px; align-items: center; max-width: 980px; margin: 0 auto; }
-.about-portrait-large { width: 320px; height: 400px; overflow: hidden; background: var(--bg-soft); border: 1px solid var(--divider); }
-.about-portrait-large img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%) contrast(1.05); }
-.about-text { display: flex; flex-direction: column; gap: 24px; }
-.about-text p { font-family: 'JetBrains Mono', monospace; font-size: 16px; line-height: 1.85; color: var(--text-secondary); max-width: 460px; }
-.about-coda { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--text-primary) !important; padding-top: 12px; border-top: 1px solid var(--divider); margin-top: 8px; }
+/* About page — two-column, portrait left, full name */
+.about-twocolumn {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 64px;
+  align-items: start;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.about-portrait {
+  width: 220px; height: 280px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  border: 1px solid var(--divider);
+  border-radius: 4px;
+}
+.about-portrait img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(15%) contrast(1.05);
+}
+.about-text-block {
+  display: flex; flex-direction: column; gap: 24px;
+  padding-top: 4px;
+}
+.about-name {
+  font-family: 'Geist', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.about-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--hq);
+  margin-bottom: 18px;
+}
+.about-bio { font-family: 'JetBrains Mono', monospace; font-size: 15px; line-height: 1.85; color: var(--text-secondary); max-width: 540px; }
+.about-coda { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--text-primary); padding-top: 14px; border-top: 1px solid var(--divider); margin-top: 8px; max-width: 540px; }
 
-/* Portfolio page */
-.portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 24px; }
+/* Portfolio page — Apple-app-icon style with PNG logos */
+.portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; flex-wrap: wrap; gap: 24px; }
 .portfolio-legend { display: flex; gap: 32px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
 .legend-item { display: flex; align-items: center; gap: 10px; }
 .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
@@ -74,62 +119,197 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
 .legend-dot.dev { background: var(--status-dev); }
 .legend-dot.classified { background: var(--status-classified); }
 
-.brand-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.brand-cell { background: var(--bg-soft); border: 1px solid var(--divider); padding: 24px 22px; border-radius: 2px; min-height: 156px; display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.25s ease, transform 0.25s ease; position: relative; }
-.brand-cell:hover { border-color: var(--divider-bright); transform: translateY(-2px); }
-.brand-cell-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 18px; }
-.brand-name { font-family: 'Geist', sans-serif; font-weight: 600; font-size: 17px; letter-spacing: -0.01em; line-height: 1.2; }
-.brand-icon { width: 28px; height: 28px; flex-shrink: 0; opacity: 0.85; }
-.brand-desc { font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.55; color: var(--text-secondary); }
-.brand-desc .line-1 { display: block; }
-.brand-desc .line-2 { display: block; color: var(--text-muted); margin-top: 4px; }
-.brand-status-dot { position: absolute; bottom: 22px; right: 22px; width: 7px; height: 7px; border-radius: 50%; }
-.brand-status-dot.active { background: var(--status-active); }
-.brand-status-dot.dev { background: var(--status-dev); }
-.brand-status-dot.classified { background: var(--status-classified); }
-.brand-cell.classified .brand-name { color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; }
-.brand-cell.classified .brand-desc { color: var(--text-faint); }
-.portfolio-loading { grid-column: 1 / -1; padding: 60px; text-align: center; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
-.portfolio-meta { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--divider); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-faint); text-align: right; }
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 32px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  cursor: default;
+}
+.portfolio-icon-tile {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 22%;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 12px 32px -8px rgba(0,0,0,0.45),
+    0 4px 12px -2px rgba(0,0,0,0.25);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+  background: var(--bg-soft);
+}
+.portfolio-card:hover .portfolio-icon-tile {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 18px 40px -8px rgba(0,0,0,0.55),
+    0 6px 16px -2px rgba(0,0,0,0.32);
+}
+.portfolio-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.portfolio-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 4px;
+}
+.portfolio-card-name {
+  font-family: 'Geist', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: -0.005em;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+.portfolio-card-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+.portfolio-card-status {
+  width: 6px; height: 6px; border-radius: 50%;
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.portfolio-card-status.active { background: var(--status-active); box-shadow: 0 0 6px var(--status-active); }
+.portfolio-card-status.dev { background: var(--status-dev); }
+.portfolio-card-status.classified { background: var(--status-classified); }
 
-/* Investors page — single question */
-.investors-elegant { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
-.investors-headline { font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: clamp(32px, 4.5vw, 52px); letter-spacing: -0.01em; line-height: 1.15; color: var(--text-primary); text-transform: uppercase; }
-.investors-headline-line { width: 64px; height: 2px; background: var(--hq); }
-.investor-form-elegant { display: flex; flex-direction: column; gap: 18px; }
-.form-question { font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 4px; }
-.form-textarea { width: 100%; background: transparent; border: 1px solid var(--divider); color: var(--text-primary); font-family: 'JetBrains Mono', monospace; font-size: 14px; padding: 22px 22px; border-radius: 2px; transition: border-color 0.2s ease; line-height: 1.6; min-height: 200px; resize: vertical; }
-.form-textarea::placeholder { color: var(--text-muted); }
-.form-textarea:focus { outline: none; border-color: var(--hq); }
-.submit-btn { background: transparent; color: var(--hq); border: 1px solid var(--hq); padding: 16px 36px; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.2s ease; border-radius: 2px; align-self: flex-start; }
-.submit-btn:hover:not(:disabled) { background: var(--hq); color: var(--bg); }
-.submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-.eval-panel { margin-top: 18px; padding: 20px; background: var(--bg-elev); border: 1px solid var(--divider-bright); border-radius: 2px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-secondary); line-height: 1.7; display: none; }
+.portfolio-loading { grid-column: 1 / -1; padding: 60px; text-align: center; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+.portfolio-meta { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--divider); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-faint); text-align: right; }
+
+/* Investors page — asymmetric, small left headline + bottom-right form */
+.investors-asymmetric {
+  position: relative;
+  min-height: 60vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 48px 80px;
+  align-items: start;
+}
+.investors-asymmetric .investors-headline-block { grid-column: 1; grid-row: 1; }
+.investors-asymmetric .investors-spacer { grid-column: 2; grid-row: 1; }
+.investors-asymmetric .investor-form-wrap {
+  grid-column: 2; grid-row: 2;
+  align-self: end;
+  max-width: 480px; width: 100%;
+  justify-self: end;
+}
+.investors-headline-small {
+  font-family: 'Geist', sans-serif;
+  font-weight: 600;
+  font-size: clamp(22px, 2.4vw, 30px);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+.investors-headline-small .accent { color: var(--hq); }
+.investors-headline-line-small { width: 40px; height: 2px; background: var(--hq); margin-bottom: 24px; }
+.investors-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 380px;
+}
+
+.investor-form-compact { display: flex; flex-direction: column; gap: 14px; }
+.form-question-compact {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+.form-textarea-compact {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--divider);
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  padding: 16px 18px;
+  border-radius: 3px;
+  transition: border-color 0.2s ease;
+  line-height: 1.6;
+  min-height: 140px;
+  resize: vertical;
+}
+.form-textarea-compact::placeholder { color: var(--text-muted); }
+.form-textarea-compact:focus { outline: none; border-color: var(--hq); }
+.submit-btn-compact {
+  background: transparent; color: var(--hq); border: 1px solid var(--hq);
+  padding: 12px 28px;
+  font-family: 'JetBrains Mono', monospace; font-weight: 500;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  cursor: pointer; transition: all 0.2s ease; border-radius: 3px;
+  align-self: flex-start;
+}
+.submit-btn-compact:hover:not(:disabled) { background: var(--hq); color: var(--bg); }
+.submit-btn-compact:disabled { opacity: 0.4; cursor: not-allowed; }
+.eval-panel { margin-top: 14px; padding: 16px; background: var(--bg-elev); border: 1px solid var(--divider-bright); border-radius: 3px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-secondary); line-height: 1.7; display: none; }
 .eval-panel.show { display: block; animation: slideIn 0.4s ease; }
 @keyframes slideIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
-.eval-result { margin-top: 14px; padding: 12px 14px; border: 1px solid var(--hq); color: var(--hq); border-radius: 2px; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; }
+.eval-result { margin-top: 12px; padding: 10px 12px; border: 1px solid var(--hq); color: var(--hq); border-radius: 2px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; }
 .eval-result.logged { border-color: var(--text-muted); color: var(--text-muted); }
 
-/* Footer — minimal, no contact info */
+/* Footer */
 footer { padding: 36px 56px 32px; border-top: 1px solid var(--divider); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; }
 footer .footer-mark { font-family: 'Geist', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: -0.01em; }
 footer .footer-mark .moblue { color: var(--moblue); }
 footer .footer-mark .hq { color: var(--hq); }
 
 /* Responsive */
+@media (max-width: 1100px) {
+  .portfolio-grid { grid-template-columns: repeat(5, 1fr); }
+}
 @media (max-width: 968px) {
   nav { padding: 18px 24px; }
   .nav-links { gap: 20px; font-size: 11px; }
   .hero-content { left: 24px; bottom: 8vh; }
   section.content { padding: 100px 24px 80px; }
-  .about-elegant { grid-template-columns: 1fr; gap: 40px; max-width: 460px; }
-  .about-portrait-large { width: 100%; height: 360px; }
-  .brand-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .about-twocolumn { grid-template-columns: 1fr; gap: 32px; max-width: 460px; }
+  .about-portrait { width: 200px; height: 250px; }
+
+  .portfolio-grid { grid-template-columns: repeat(4, 1fr); gap: 28px 22px; }
+
+  .investors-asymmetric { grid-template-columns: 1fr; gap: 32px; }
+  .investors-asymmetric .investors-headline-block,
+  .investors-asymmetric .investor-form-wrap { grid-column: 1; }
+  .investors-asymmetric .investor-form-wrap { grid-row: auto; align-self: stretch; justify-self: stretch; max-width: none; }
+  .investors-asymmetric .investors-spacer { display: none; }
+
   footer { padding: 28px 24px; }
 }
 @media (max-width: 540px) {
-  .brand-grid { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: repeat(3, 1fr); gap: 22px 14px; }
+  .portfolio-card-name { font-size: 12px; }
+  .portfolio-card-tag { font-size: 8px; }
   .portfolio-header { flex-direction: column; align-items: flex-start; }
-  .portfolio-legend { gap: 20px; font-size: 10px; }
+  .portfolio-legend { gap: 18px; font-size: 10px; flex-wrap: wrap; }
   .nav-links { gap: 14px; }
+  .about-name { font-size: 24px; }
 }
