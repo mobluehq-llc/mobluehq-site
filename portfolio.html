@@ -141,7 +141,7 @@ async function loadPortfolio() {
 
     root.innerHTML = '';
     if (active.length) root.appendChild(buildSection('Active', active));
-    if (dev.length) root.appendChild(buildSection('In development', dev));
+    if (dev.length) root.appendChild(buildSection('In Development', dev));
 
     if (metaEl && data.lastReviewed) {
       metaEl.textContent = 'Portfolio last reviewed ' + data.lastReviewed;
