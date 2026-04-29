@@ -61,9 +61,12 @@ function logoSources(logoPath) {
 }
 
 function buildTile(p) {
-  const tile = document.createElement('article');
+  const card = document.createElement('article');
+  card.className = 'portfolio-card';
+  card.setAttribute('data-brand', p.id);
+
+  const tile = document.createElement('div');
   tile.className = 'portfolio-tile';
-  tile.setAttribute('data-brand', p.id);
 
   const logoWrap = document.createElement('div');
   logoWrap.className = 'portfolio-tile-logo-wrap';
@@ -83,14 +86,15 @@ function buildTile(p) {
   };
 
   logoWrap.appendChild(img);
+  tile.appendChild(logoWrap);
 
-  const body = document.createElement('div');
-  body.className = 'portfolio-tile-body';
+  const meta = document.createElement('div');
+  meta.className = 'portfolio-card-meta';
 
   const nameRow = document.createElement('div');
-  nameRow.className = 'portfolio-tile-name-row';
+  nameRow.className = 'portfolio-card-name-row';
   const nameEl = document.createElement('span');
-  nameEl.className = 'portfolio-tile-name';
+  nameEl.className = 'portfolio-card-name';
   nameEl.textContent = p.name;
   const badge = document.createElement('span');
   badge.className = 'portfolio-tile-badge portfolio-tile-badge--' + p.status;
@@ -100,27 +104,27 @@ function buildTile(p) {
   nameRow.appendChild(badge);
 
   const desc = document.createElement('p');
-  desc.className = 'portfolio-tile-desc';
+  desc.className = 'portfolio-card-desc';
   desc.textContent = p.description;
 
-  body.appendChild(nameRow);
-  body.appendChild(desc);
+  meta.appendChild(nameRow);
+  meta.appendChild(desc);
 
-  tile.appendChild(logoWrap);
-  tile.appendChild(body);
-  return tile;
+  card.appendChild(tile);
+  card.appendChild(meta);
+  return card;
 }
 
 function buildSection(title, products) {
   const block = document.createElement('div');
-  block.className = 'portfolio-section-block';
+  block.className = 'portfolio-section portfolio-section-block';
 
   const h = document.createElement('h2');
   h.className = 'portfolio-section-title';
   h.textContent = title;
 
   const grid = document.createElement('div');
-  grid.className = 'portfolio-grid portfolio-grid--tiles';
+  grid.className = 'portfolio-grid';
   products.forEach(p => grid.appendChild(buildTile(p)));
 
   block.appendChild(h);
@@ -141,7 +145,7 @@ async function loadPortfolio() {
 
     root.innerHTML = '';
     if (active.length) root.appendChild(buildSection('Active', active));
-    if (dev.length) root.appendChild(buildSection('In development', dev));
+    if (dev.length) root.appendChild(buildSection('In Development', dev));
 
     if (metaEl && data.lastReviewed) {
       metaEl.textContent = 'Portfolio last reviewed ' + data.lastReviewed;

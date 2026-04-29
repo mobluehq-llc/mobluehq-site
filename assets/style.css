@@ -64,6 +64,9 @@ nav {
 
 /* Standard page content */
 section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; max-width: 1440px; margin: 0 auto; display: flex; flex-direction: column; }
+.content--investors { max-width: 760px; margin-left: auto; margin-right: auto; }
+.section-label-line--about,
+.section-label-line--investors { margin-bottom: 48px; }
 .section-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--hq); font-weight: 500; margin-bottom: 12px; }
 .section-label-line { width: 64px; height: 2px; background: var(--hq); margin-bottom: 80px; }
 
@@ -111,11 +114,13 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
 .about-bio { font-family: 'JetBrains Mono', monospace; font-size: 15px; line-height: 1.85; color: var(--text-secondary); max-width: 540px; }
 .about-coda { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--text-primary); padding-top: 14px; border-top: 1px solid var(--divider); margin-top: 8px; max-width: 540px; }
 
-/* Portfolio page — tiled grid, SVG marks */
+/* Portfolio page — tiled grid, SVG marks (logo in tile; copy below) */
 .content--portfolio { max-width: 1280px; }
 .section-label-line--portfolio { margin-bottom: 48px; }
 
+.portfolio-section,
 .portfolio-section-block { margin-bottom: 56px; }
+.portfolio-section:last-of-type,
 .portfolio-section-block:last-of-type { margin-bottom: 0; }
 .portfolio-section-title {
   font-family: 'Geist', sans-serif;
@@ -128,12 +133,21 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
   border-bottom: 1px solid var(--divider);
 }
 
-.portfolio-grid--tiles {
+.portfolio-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
+  gap: 28px 24px;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: start;
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  min-width: 0;
 }
 
 .portfolio-tile {
@@ -142,15 +156,17 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
   padding: 24px;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  max-width: 100%;
   border: 1px solid var(--divider);
   transition:
     transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
     box-shadow 0.28s ease,
     border-color 0.28s ease;
 }
-.portfolio-tile:hover {
+.portfolio-card:hover .portfolio-tile {
   transform: translateY(-4px);
   box-shadow:
     0 16px 40px -12px rgba(0, 0, 0, 0.55),
@@ -160,31 +176,37 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
 }
 
 .portfolio-tile-logo-wrap {
-  flex: 1;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 120px;
-  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
 }
 .portfolio-tile-logo {
-  max-height: 120px;
-  max-width: 85%;
-  width: auto;
-  height: auto;
+  width: 60%;
+  height: 60%;
+  max-width: 140px;
+  max-height: 140px;
   object-fit: contain;
   display: block;
 }
 
-.portfolio-tile-body { display: flex; flex-direction: column; gap: 10px; }
-.portfolio-tile-name-row {
+.portfolio-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  padding: 0 4px;
+}
+.portfolio-card-name-row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 10px 12px;
 }
-.portfolio-tile-name {
+.portfolio-card-name {
   font-family: 'Geist', sans-serif;
   font-weight: 600;
   font-size: 15px;
@@ -211,7 +233,7 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
   border-color: rgba(184, 192, 204, 0.25);
 }
 
-.portfolio-tile-desc {
+.portfolio-card-desc {
   font-family: 'Geist', sans-serif;
   font-weight: 400;
   font-size: 13px;
@@ -398,7 +420,7 @@ footer .footer-mark .hq { color: var(--hq); }
 
 /* Responsive */
 @media (max-width: 1199px) {
-  .portfolio-grid--tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .portfolio-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 968px) {
   nav { padding: 18px 24px; }
@@ -420,13 +442,12 @@ footer .footer-mark .hq { color: var(--hq); }
   footer { padding: 28px 24px; }
 }
 @media (max-width: 899px) {
-  .portfolio-grid--tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; }
 }
 @media (max-width: 599px) {
-  .portfolio-grid--tiles { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: 1fr; }
   .portfolio-tile { padding: 20px; }
-  .portfolio-tile-logo-wrap { min-height: 100px; }
-  .portfolio-tile-logo { max-height: 100px; }
+  .portfolio-tile-logo { max-width: 120px; max-height: 120px; }
   .nav-links { gap: 14px; }
   .about-name { font-size: 24px; }
 }
