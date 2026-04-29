@@ -1,9 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-  <g stroke="#4D9FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- speech bubble -->
-    <path d="M48 56 H152 A12 12 0 0 1 164 68 V112 A12 12 0 0 1 152 124 H88 L64 148 L68 124 H56 A12 12 0 0 1 44 112 V68 A12 12 0 0 1 56 56 Z"/>
-    <!-- graduation cap -->
-    <path d="M100 140 L52 118 L100 96 L148 118 Z"/>
-    <path d="M64 118 V134 C64 142 136 142 136 134 V118"/>
+  <!-- L? — vector strokes only (no webfont) -->
+  <g stroke="#4D9FFF" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- L -->
+    <path d="M 48 48 V 152 H 106"/>
+    <!-- ? hook -->
+    <path d="M 126 48 H 156 Q 178 48 178 74 Q 178 96 148 108"/>
+    <!-- ? stem -->
+    <path d="M 148 124 V 134"/>
+    <!-- dot (stroked plus, no fill) -->
+    <path d="M 148 148 V 156 M 144 152 H 152"/>
   </g>
 </svg>
