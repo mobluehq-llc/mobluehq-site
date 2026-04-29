@@ -1,13 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
   <g stroke="#4D9FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- anvil -->
-    <path d="M52 118 L148 118 L138 132 L62 132 Z M70 132 L70 152 L130 152 L130 132"/>
-    <path d="M85 118 L85 108 L115 108 L115 118"/>
-    <!-- circuit -->
-    <circle cx="44" cy="64" r="6"/>
-    <circle cx="100" cy="44" r="6"/>
-    <circle cx="156" cy="64" r="6"/>
-    <path d="M50 64 H88 M112 64 H150 M100 50 V96 M100 96 L100 108"/>
-    <path d="M88 64 L100 78 L112 64"/>
+    <!-- Horn (left extension from face) -->
+    <path d="M 34 114 L 50 108 L 58 108 L 58 102 H 72"/>
+    <!-- Strike deck -->
+    <path d="M 58 102 H 142 L 156 108"/>
+    <!-- Step down to waist -->
+    <path d="M 58 102 L 52 126 L 52 142 H 148 L 148 126 L 142 102"/>
+    <!-- Heavy base -->
+    <path d="M 52 142 L 46 168 H 154 L 148 142"/>
+    <!-- Hammer raised -->
+    <path d="M 164 34 L 132 86"/>
+    <!-- Hammer head block -->
+    <path d="M 122 78 L 152 66 L 158 80 L 128 92 Z"/>
+    <!-- Sparks -->
+    <path d="M 100 94 L 90 82"/>
+    <path d="M 100 94 L 110 86"/>
+    <path d="M 100 94 L 94 104"/>
+    <path d="M 100 94 L 106 100"/>
   </g>
 </svg>
