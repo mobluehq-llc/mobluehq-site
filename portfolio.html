@@ -59,7 +59,7 @@
 
 <script>
 /** Bust immutable year-long /assets/* cache when CSS or logos change (see vercel.json). */
-var MOBLUE_ASSET_V = '11';
+var MOBLUE_ASSET_V = '12';
 
 function escapeHtml(str) {
   if (typeof str !== 'string') return '';
@@ -78,15 +78,6 @@ function logoSources(logoPath) {
   return { svg: svg, png: png };
 }
 
-function imgPathIsSvg(imgEl) {
-  try {
-    var u = new URL(imgEl.currentSrc || imgEl.src, location.href);
-    return u.pathname.toLowerCase().endsWith('.svg');
-  } catch (e) {
-    return /\.svg(\?|#|$)/i.test(String(imgEl.getAttribute('src') || ''));
-  }
-}
-
 function buildTile(p) {
   const card = document.createElement('article');
   card.className = 'portfolio-card';
@@ -101,16 +92,19 @@ function buildTile(p) {
   img.className = 'portfolio-tile-logo';
   img.alt = escapeHtml(p.name);
   img.loading = 'lazy';
-  const sources = logoSources(p.logo);
-  img.src = cacheBustAssetUrl(sources.svg);
-  img.onerror = function onLogoErr() {
-    if (imgPathIsSvg(this)) {
-      this.src = cacheBustAssetUrl(sources.png);
-      return;
-    }
-    this.onerror = null;
-    this.style.opacity = '0.35';
-  };
+    const sources = logoSources(p.logo);
+    var preferPng = /\.png$/i.test(p.logo);
+    var triedFallback = false;
+    img.src = cacheBustAssetUrl(preferPng ? sources.png : sources.svg);
+    img.onerror = function onLogoErr() {
+      if (!triedFallback) {
+        triedFallback = true;
+        this.src = cacheBustAssetUrl(preferPng ? sources.svg : sources.png);
+        return;
+      }
+      this.onerror = null;
+      this.style.opacity = '0.35';
+    };
 
   logoWrap.appendChild(img);
   tile.appendChild(logoWrap);
