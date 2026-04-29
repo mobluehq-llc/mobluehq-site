@@ -1,10 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
   <g stroke="#4D9FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="100" cy="52" r="10"/>
-    <circle cx="52" cy="120" r="10"/>
-    <circle cx="148" cy="120" r="10"/>
-    <circle cx="100" cy="156" r="10"/>
-    <path d="M100 62 L100 86 M100 86 L56 112 M100 86 L144 112 M56 128 L100 146 M144 128 L100 146"/>
-    <path d="M62 120 H88 M112 120 H138"/>
+    <!-- Headboard + circuit pattern -->
+    <path d="M 44 92 V 142"/>
+    <path d="M 44 92 H 56"/>
+    <path d="M 50 104 H 56"/>
+    <path d="M 50 118 H 56"/>
+    <path d="M 50 132 H 56"/>
+    <!-- Mattress -->
+    <path d="M 44 142 H 156"/>
+    <path d="M 156 92 V 142"/>
+    <!-- Foot -->
+    <path d="M 44 152 H 156"/>
+    <path d="M 44 142 V 152"/>
+    <path d="M 156 142 V 152"/>
+    <!-- Pillow -->
+    <path d="M 56 136 Q 72 128 92 136"/>
+    <!-- Mesh network above bed -->
+    <circle cx="72" cy="56" r="5"/>
+    <circle cx="100" cy="44" r="5"/>
+    <circle cx="128" cy="56" r="5"/>
+    <circle cx="86" cy="72" r="5"/>
+    <circle cx="114" cy="72" r="5"/>
+    <path d="M 72 56 L 100 44 L 128 56"/>
+    <path d="M 72 56 L 86 72"/>
+    <path d="M 128 56 L 114 72"/>
+    <path d="M 100 44 L 86 72 L 114 72"/>
   </g>
 </svg>
