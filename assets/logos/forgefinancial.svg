@@ -1,14 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-  <!-- Dollar sign — spine + S (~60% of viewBox height) -->
-  <g stroke="#4D9FFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- S shape first, then vertical on top -->
-    <path d="
+  <!-- Bold currency $ — stroke 16 + spine 17; vertical painted after S -->
+  <g stroke="#4D9FFF" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="16" d="
       M 108 50
       C 130 50 142 62 142 80
       C 142 96 126 102 100 108
       C 74 114 58 126 58 144
       C 58 162 76 174 100 174
       C 122 174 138 162 142 144"/>
-    <path d="M 100 42 V 158"/>
+    <path stroke-width="17" d="M 100 34 V 188"/>
   </g>
 </svg>

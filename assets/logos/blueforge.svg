@@ -1,13 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-  <!-- Claw hammer — diagonal (~60% height); stroke only -->
-  <g stroke="#4D9FFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"
-     transform="translate(100 100) rotate(-50)">
-    <!-- Handle into head -->
-    <path d="M 0 58 L 0 -42"/>
-    <!-- Striking face + shaft outline -->
-    <path d="M -12 -58 H 22 V -42 H -12 Z"/>
-    <!-- Claw -->
-    <path d="M 22 -58 L 36 -74"/>
-    <path d="M 22 -44 L 36 -30"/>
+  <!-- Smith sledge: dominant wide head + thick handle; slight rest tilt (head down-right) -->
+  <g stroke="#4D9FFF" stroke-linecap="round" stroke-linejoin="round"
+     transform="rotate(7 100 120)">
+    <rect x="30" y="28" width="140" height="48" rx="7"
+          stroke-width="10"/>
+    <rect x="73" y="76" width="54" height="96" rx="9"
+          stroke-width="12"/>
   </g>
 </svg>
