@@ -17,7 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="preload" href="/assets/style.css?v=5" as="style" />
+<link rel="stylesheet" href="/assets/style.css?v=5">
 </head>
 <body>
 
@@ -49,15 +50,33 @@
 </footer>
 
 <script>
+/** Bust immutable year-long /assets/* cache when CSS or logos change (see vercel.json). */
+var MOBLUE_ASSET_V = '5';
+
 function escapeHtml(str) {
   if (typeof str !== 'string') return '';
   return str.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 }
 
+function cacheBustAssetUrl(url) {
+  if (!url || typeof url !== 'string') return '';
+  var sep = url.indexOf('?') >= 0 ? '&' : '?';
+  return url + sep + 'v=' + MOBLUE_ASSET_V;
+}
+
 function logoSources(logoPath) {
-  const svg = logoPath.endsWith('.svg') ? logoPath : logoPath.replace(/\.png$/i, '.svg');
-  const png = svg.replace(/\.svg$/i, '.png');
-  return { svg, png };
+  var svg = logoPath.endsWith('.svg') ? logoPath : logoPath.replace(/\.png$/i, '.svg');
+  var png = svg.replace(/\.svg$/i, '.png');
+  return { svg: svg, png: png };
+}
+
+function imgPathIsSvg(imgEl) {
+  try {
+    var u = new URL(imgEl.currentSrc || imgEl.src, location.href);
+    return u.pathname.toLowerCase().endsWith('.svg');
+  } catch (e) {
+    return /\.svg(\?|#|$)/i.test(String(imgEl.getAttribute('src') || ''));
+  }
 }
 
 function buildTile(p) {
@@ -75,10 +94,10 @@ function buildTile(p) {
   img.alt = escapeHtml(p.name);
   img.loading = 'lazy';
   const sources = logoSources(p.logo);
-  img.src = sources.svg;
+  img.src = cacheBustAssetUrl(sources.svg);
   img.onerror = function onLogoErr() {
-    if (this.src.endsWith('.svg')) {
-      this.src = sources.png;
+    if (imgPathIsSvg(this)) {
+      this.src = cacheBustAssetUrl(sources.png);
       return;
     }
     this.onerror = null;
