@@ -1,21 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-  <!-- Classic anvil silhouette — horn left, face, waist, feet; ~60% viewBox height -->
-  <g stroke="#4D9FFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
-    <path d="
-      M 30 100
-      L 46 88
-      H 70
-      V 76
-      H 130
-      V 88
-      H 154
-      L 158 96
-      V 126
-      L 146 156
-      H 54
-      L 42 126
-      V 100
-      L 30 100
-      Z"/>
+  <!-- Claw hammer — diagonal (~60% height); stroke only -->
+  <g stroke="#4D9FFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"
+     transform="translate(100 100) rotate(-50)">
+    <!-- Handle into head -->
+    <path d="M 0 58 L 0 -42"/>
+    <!-- Striking face + shaft outline -->
+    <path d="M -12 -58 H 22 V -42 H -12 Z"/>
+    <!-- Claw -->
+    <path d="M 22 -58 L 36 -74"/>
+    <path d="M 22 -44 L 36 -30"/>
   </g>
 </svg>

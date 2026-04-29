@@ -1,12 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-  <g stroke="#4D9FFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Vertical spine of $ -->
-    <path d="M 100 34 V 96"/>
-    <!-- Upper bowl -->
-    <path d="M 100 38 C 118 38 126 48 126 58 C 126 68 114 72 100 76"/>
-    <!-- Lower bowl -->
-    <path d="M 100 76 C 86 80 74 86 74 98 C 74 110 86 118 100 118 C 114 118 126 110 126 98"/>
-    <!-- Ascending trend below -->
-    <path d="M 38 162 L 68 138 L 96 152 L 124 124 L 162 102"/>
+  <!-- Dollar sign — spine + S (~60% of viewBox height) -->
+  <g stroke="#4D9FFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- S shape first, then vertical on top -->
+    <path d="
+      M 108 50
+      C 130 50 142 62 142 80
+      C 142 96 126 102 100 108
+      C 74 114 58 126 58 144
+      C 58 162 76 174 100 174
+      C 122 174 138 162 142 144"/>
+    <path d="M 100 42 V 158"/>
   </g>
 </svg>
