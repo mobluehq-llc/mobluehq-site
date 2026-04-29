@@ -1,16 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-  <g stroke="#4D9FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Mentor anvil (large) -->
-    <path d="M 26 118 L 46 110 H 88 L 96 118"/>
-    <path d="M 46 110 L 38 138 L 38 152 H 88 L 88 138 L 88 110"/>
-    <path d="M 38 152 L 32 172 H 92 L 88 152"/>
-    <!-- Apprentice anvil (small) -->
-    <path d="M 120 128 L 132 122 H 170 L 176 128"/>
-    <path d="M 132 122 L 128 144 L 128 156 H 170 L 170 144 L 170 122"/>
-    <path d="M 128 156 L 124 172 H 174 L 170 156"/>
-    <!-- Mortarboard (learning) -->
-    <path d="M 54 68 L 76 56 L 98 68 L 76 80 Z"/>
-    <path d="M 76 56 V 44"/>
-    <path d="M 82 60 L 88 52"/>
+  <g stroke="#4D9FFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Toy laptop: screen (outline only) -->
+    <rect x="52" y="54" width="96" height="68" rx="5" fill="none"/>
+    <!-- Sparkle “fun” on screen -->
+    <path d="M 100 76 V 96 M 88 86 H 112 M 92 80 L 108 92 M 108 80 L 92 92"/>
+    <!-- Keyboard base -->
+    <path d="M 42 130 H 158 L 150 162 H 50 Z"/>
+    <!-- Hinge -->
+    <path d="M 52 122 H 148"/>
   </g>
 </svg>

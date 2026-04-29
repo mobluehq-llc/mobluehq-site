@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-  <g stroke="#4D9FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Horn (left extension from face) -->
-    <path d="M 34 114 L 50 108 L 58 108 L 58 102 H 72"/>
-    <!-- Strike deck -->
-    <path d="M 58 102 H 142 L 156 108"/>
-    <!-- Step down to waist -->
-    <path d="M 58 102 L 52 126 L 52 142 H 148 L 148 126 L 142 102"/>
-    <!-- Heavy base -->
-    <path d="M 52 142 L 46 168 H 154 L 148 142"/>
-    <!-- Hammer raised -->
-    <path d="M 164 34 L 132 86"/>
-    <!-- Hammer head block -->
-    <path d="M 122 78 L 152 66 L 158 80 L 128 92 Z"/>
-    <!-- Sparks -->
-    <path d="M 100 94 L 90 82"/>
-    <path d="M 100 94 L 110 86"/>
-    <path d="M 100 94 L 94 104"/>
-    <path d="M 100 94 L 106 100"/>
+  <!-- Classic anvil silhouette — horn left, face, waist, feet; ~60% viewBox height -->
+  <g stroke="#4D9FFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="
+      M 30 100
+      L 46 88
+      H 70
+      V 76
+      H 130
+      V 88
+      H 154
+      L 158 96
+      V 126
+      L 146 156
+      H 54
+      L 42 126
+      V 100
+      L 30 100
+      Z"/>
   </g>
 </svg>
