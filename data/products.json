@@ -58,30 +58,30 @@
       "status": "dev"
     },
     {
-      "id": "forgelegal",
-      "name": "forgeLegal",
-      "description": "Legal-vertical forge variant.",
-      "logo": "/assets/logos/forgelegal.svg",
+      "id": "bluelegal",
+      "name": "blueLegal",
+      "description": "Legal-vertical Blue product.",
+      "logo": "/assets/logos/bluelegal.svg",
       "status": "dev"
     },
     {
-      "id": "forgemedical",
-      "name": "forgeMedical",
-      "description": "Medical-vertical forge variant.",
-      "logo": "/assets/logos/forgemedical.svg",
+      "id": "bluemedical",
+      "name": "blueMedical",
+      "description": "Medical-vertical Blue product.",
+      "logo": "/assets/logos/bluemedical.svg",
       "status": "dev"
     },
     {
-      "id": "forgefinancial",
-      "name": "forgeFinancial",
-      "description": "Financial-vertical forge variant.",
-      "logo": "/assets/logos/forgefinancial.svg",
+      "id": "bluefinancial",
+      "name": "blueFinancial",
+      "description": "Financial-vertical Blue product.",
+      "logo": "/assets/logos/bluefinancial.svg",
       "status": "dev"
     },
     {
       "id": "forgejunior",
       "name": "forgeJunior",
-      "description": "Junior-developer-focused forge variant (spec stage).",
+      "description": "Engineering platform for junior builders.",
       "logo": "/assets/logos/forgejunior.svg",
       "status": "dev"
     },
