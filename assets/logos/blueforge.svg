@@ -1,10 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-  <!-- Smith sledge: dominant wide head + thick handle; slight rest tilt (head down-right) -->
-  <g stroke="#4D9FFF" stroke-linecap="round" stroke-linejoin="round"
-     transform="rotate(7 100 120)">
-    <rect x="30" y="28" width="140" height="48" rx="7"
-          stroke-width="10"/>
-    <rect x="73" y="76" width="54" height="96" rx="9"
-          stroke-width="12"/>
+  <!-- Blacksmith hammer: head upper-right, handle to lower-left (~40°); stroke-only -->
+  <g stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+     transform="rotate(-40 116 78)">
+    <!-- Head: flat back (left), tapered top/bottom, rounded striking face (right) -->
+    <path d="
+      M 100 46
+      L 168 42
+      Q 180 50 184 76
+      Q 180 102 168 108
+      L 100 104
+      Z"/>
+    <!-- Handle upper rail — diagonal toward grip -->
+    <path d="
+      M 100 72
+      Q 58 118 44 148
+      Q 38 162 34 174"/>
+    <!-- Handle lower rail — slight flare at grip -->
+    <path d="
+      M 100 88
+      Q 66 124 54 154
+      Q 52 168 62 182"/>
   </g>
 </svg>
