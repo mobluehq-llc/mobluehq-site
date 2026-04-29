@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /api/
 
-Sitemap: https://mobluehq.com/sitemap.xml
+Sitemap: https://www.mobluehq.com/sitemap.xml
