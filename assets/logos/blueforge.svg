@@ -1,8 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-  <rect x="68" y="48" width="64" height="20" rx="3" fill="#4D9FFF" opacity="0.15" stroke="#4D9FFF" stroke-width="3"/>
-  <path d="M100 68 L100 100" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round"/>
-  <path d="M64 120 L100 100 L136 120 L136 148 L64 148 Z" stroke="#4D9FFF" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M52 132 H148" stroke="#4D9FFF" stroke-width="4"/>
-  <circle cx="130" cy="42" r="4" fill="#4D9FFF"/>
-  <path d="M130 46 V62 M118 54 H142" stroke="#4D9FFF" stroke-width="3"/>
+  <g stroke="#4D9FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- anvil -->
+    <path d="M52 118 L148 118 L138 132 L62 132 Z M70 132 L70 152 L130 152 L130 132"/>
+    <path d="M85 118 L85 108 L115 108 L115 118"/>
+    <!-- circuit -->
+    <circle cx="44" cy="64" r="6"/>
+    <circle cx="100" cy="44" r="6"/>
+    <circle cx="156" cy="64" r="6"/>
+    <path d="M50 64 H88 M112 64 H150 M100 50 V96 M100 96 L100 108"/>
+    <path d="M88 64 L100 78 L112 64"/>
+  </g>
 </svg>
