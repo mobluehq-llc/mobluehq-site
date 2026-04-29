@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Portfolio — MOBLUEHQ</title>
-<meta name="description" content="The MOBLUEHQ product portfolio: verification engines, distributed compute, consumer protection, and more." />
+<meta name="description" content="The MOBLUEHQ product portfolio: verification-first tooling, education support, consumer protection, and more." />
 <link rel="canonical" href="https://mobluehq.com/portfolio" />
 <meta name="robots" content="index, follow" />
 
@@ -31,19 +31,11 @@
 </nav>
 
 <main>
-  <section class="content">
+  <section class="content content--portfolio">
     <div class="section-label">Portfolio</div>
-    <div class="section-label-line"></div>
+    <div class="section-label-line section-label-line--portfolio"></div>
 
-    <div class="portfolio-header">
-      <div></div>
-      <div class="portfolio-legend">
-        <div class="legend-item"><span class="legend-dot active"></span>Active</div>
-        <div class="legend-item"><span class="legend-dot dev"></span>In Development</div>
-      </div>
-    </div>
-
-    <div class="portfolio-grid" id="brandGrid">
+    <div id="portfolioRoot">
       <div class="portfolio-loading">Loading portfolio</div>
     </div>
 
@@ -57,47 +49,107 @@
 </footer>
 
 <script>
+function escapeHtml(str) {
+  if (typeof str !== 'string') return '';
+  return str.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+}
+
+function logoSources(logoPath) {
+  const svg = logoPath.endsWith('.svg') ? logoPath : logoPath.replace(/\.png$/i, '.svg');
+  const png = svg.replace(/\.svg$/i, '.png');
+  return { svg, png };
+}
+
+function buildTile(p) {
+  const tile = document.createElement('article');
+  tile.className = 'portfolio-tile';
+  tile.setAttribute('data-brand', p.id);
+
+  const logoWrap = document.createElement('div');
+  logoWrap.className = 'portfolio-tile-logo-wrap';
+  const img = document.createElement('img');
+  img.className = 'portfolio-tile-logo';
+  img.alt = escapeHtml(p.name);
+  img.loading = 'lazy';
+  const sources = logoSources(p.logo);
+  img.src = sources.svg;
+  img.onerror = function onLogoErr() {
+    if (this.src.endsWith('.svg')) {
+      this.src = sources.png;
+      return;
+    }
+    this.onerror = null;
+    this.style.opacity = '0.35';
+  };
+
+  logoWrap.appendChild(img);
+
+  const body = document.createElement('div');
+  body.className = 'portfolio-tile-body';
+
+  const nameRow = document.createElement('div');
+  nameRow.className = 'portfolio-tile-name-row';
+  const nameEl = document.createElement('span');
+  nameEl.className = 'portfolio-tile-name';
+  nameEl.textContent = p.name;
+  const badge = document.createElement('span');
+  badge.className = 'portfolio-tile-badge portfolio-tile-badge--' + p.status;
+  badge.textContent = p.status === 'active' ? 'Active' : 'In development';
+
+  nameRow.appendChild(nameEl);
+  nameRow.appendChild(badge);
+
+  const desc = document.createElement('p');
+  desc.className = 'portfolio-tile-desc';
+  desc.textContent = p.description;
+
+  body.appendChild(nameRow);
+  body.appendChild(desc);
+
+  tile.appendChild(logoWrap);
+  tile.appendChild(body);
+  return tile;
+}
+
+function buildSection(title, products) {
+  const block = document.createElement('div');
+  block.className = 'portfolio-section-block';
+
+  const h = document.createElement('h2');
+  h.className = 'portfolio-section-title';
+  h.textContent = title;
+
+  const grid = document.createElement('div');
+  grid.className = 'portfolio-grid portfolio-grid--tiles';
+  products.forEach(p => grid.appendChild(buildTile(p)));
+
+  block.appendChild(h);
+  block.appendChild(grid);
+  return block;
+}
+
 async function loadPortfolio() {
-  const grid = document.getElementById('brandGrid');
+  const root = document.getElementById('portfolioRoot');
   const metaEl = document.getElementById('portfolioMeta');
   try {
     const response = await fetch('/data/products.json', { cache: 'no-cache' });
     if (!response.ok) throw new Error('Failed to load products.json');
     const data = await response.json();
 
-    grid.innerHTML = '';
-    data.products.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'portfolio-card';
-      card.setAttribute('data-brand', p.id);
+    const active = data.products.filter(p => p.status === 'active');
+    const dev = data.products.filter(p => p.status === 'dev');
 
-      card.innerHTML = `
-        <div class="portfolio-icon-tile">
-          <img class="portfolio-icon-img" src="${escapeHtml(p.logo)}" alt="${escapeHtml(p.name)}" loading="lazy" />
-        </div>
-        <div class="portfolio-card-meta">
-          <div class="portfolio-card-name">
-            ${escapeHtml(p.name)}
-            <span class="portfolio-card-status ${escapeHtml(p.status)}"></span>
-          </div>
-          <div class="portfolio-card-tag">${escapeHtml(p.description)}</div>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
+    root.innerHTML = '';
+    if (active.length) root.appendChild(buildSection('Active', active));
+    if (dev.length) root.appendChild(buildSection('In development', dev));
 
     if (metaEl && data.lastReviewed) {
-      metaEl.textContent = `Portfolio last reviewed ${data.lastReviewed}`;
+      metaEl.textContent = 'Portfolio last reviewed ' + data.lastReviewed;
     }
   } catch (err) {
     console.error('Portfolio load failed:', err);
-    grid.innerHTML = '<div class="portfolio-loading">Portfolio temporarily unavailable</div>';
+    root.innerHTML = '<div class="portfolio-loading">Portfolio temporarily unavailable</div>';
   }
-}
-
-function escapeHtml(str) {
-  if (typeof str !== 'string') return '';
-  return str.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 }
 
 loadPortfolio();
