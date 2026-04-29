@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+  <!-- v2: Ascending bar chart  revenue / performance -->
+  <g stroke="#4D9FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Baseline -->
+    <path d="M 52 156 H 148"/>
+    <!-- Bars -->
+    <path d="M 60 156 V 132 H 76 V 156"/>
+    <path d="M 88 156 V 116 H 104 V 156"/>
+    <path d="M 116 156 V 96 H 132 V 156"/>
+    <path d="M 144 156 V 76 H 160 V 156"/>
+  </g>
+</svg>

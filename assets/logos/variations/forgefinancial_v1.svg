@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+  <!-- v1: Currency $ — S curve then vertical (portfolio cadence) -->
+  <g stroke="#4D9FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="
+      M 108 50
+      C 130 50 142 62 142 80
+      C 142 96 126 102 100 108
+      C 74 114 58 126 58 144
+      C 58 162 76 174 100 174
+      C 122 174 138 162 142 144"/>
+    <path d="M 100 42 V 158"/>
+  </g>
+</svg>

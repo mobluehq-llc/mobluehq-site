@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+  <!-- v2: Hammer resting on anvil  composition like forgelegal scales + base -->
+  <g stroke="#4D9FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Anvil -->
+    <path d="M 64 142 H 136 L 130 154 H 70 Z"/>
+    <path d="M 82 154 V 164 H 118 V 154"/>
+    <!-- Hammer head + handle -->
+    <path d="M 108 56 L 132 44 L 138 54 L 114 66 Z"/>
+    <path d="M 114 66 L 88 108"/>
+    <!-- Head rests on face -->
+    <path d="M 88 108 L 100 118"/>
+    <path d="M 92 118 H 128"/>
+  </g>
+</svg>

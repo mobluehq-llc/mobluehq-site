@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+  <!-- v3: Uptrend line + nodes  sparkline / equity curve -->
+  <g stroke="#4D9FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 48 132 L 72 116 L 98 124 L 124 88 L 152 68"/>
+    <circle cx="48" cy="132" r="4" fill="none"/>
+    <circle cx="72" cy="116" r="4" fill="none"/>
+    <circle cx="98" cy="124" r="4" fill="none"/>
+    <circle cx="124" cy="88" r="4" fill="none"/>
+    <circle cx="152" cy="68" r="4" fill="none"/>
+  </g>
+</svg>
