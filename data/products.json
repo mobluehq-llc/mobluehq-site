@@ -2,129 +2,115 @@
   "lastReviewed": "April 2026",
   "products": [
     {
-      "id": "blue",
-      "name": "Blue",
-      "description": "verification engine",
-      "logo": "/assets/logos/blue.png",
+      "id": "blueforge",
+      "name": "blueForge",
+      "description": "Desktop AI IDE; verification-first — runs the test, not just the model",
+      "logo": "/assets/logos/blueforge.svg",
       "status": "active"
     },
     {
-      "id": "slumbernet",
-      "name": "slumberNet",
-      "description": "distributed compute mesh",
-      "logo": "/assets/logos/slumbernet.png",
-      "status": "dev"
-    },
-    {
-      "id": "bluesbedroom",
-      "name": "bluesBedroom",
-      "description": "chicago music intelligence",
-      "logo": "/assets/logos/bluesbedroom.png",
-      "status": "dev"
-    },
-    {
-      "id": "lindagrid",
-      "name": "lindaGrid",
-      "description": "intelligence operating system",
-      "logo": "/assets/logos/lindagrid.png",
-      "status": "dev"
-    },
-    {
-      "id": "faustindex",
-      "name": "faustIndex",
-      "description": "ai reliability standard",
-      "logo": "/assets/logos/faustindex.png",
-      "status": "dev"
+      "id": "linda",
+      "name": "Linda",
+      "description": "Counselor support tooling for higher education",
+      "logo": "/assets/logos/linda.svg",
+      "status": "active"
     },
     {
       "id": "isthisascam",
       "name": "isThisAScam",
-      "description": "scam detection",
-      "logo": "/assets/logos/isthisascam.png",
+      "description": "Scam detection",
+      "logo": "/assets/logos/isthisascam.svg",
       "status": "active"
     },
     {
       "id": "whatdoesmyleasesay",
       "name": "whatDoesMyLeaseSay",
-      "description": "lease intelligence",
-      "logo": "/assets/logos/whatdoesmyleasesay.png",
+      "description": "Lease intelligence",
+      "logo": "/assets/logos/whatdoesmyleasesay.svg",
       "status": "active"
     },
     {
       "id": "fixmyemail",
       "name": "fixMyEmail",
-      "description": "email composition aid",
-      "logo": "/assets/logos/fixmyemail.png",
+      "description": "Email composition aid",
+      "logo": "/assets/logos/fixmyemail.svg",
       "status": "active"
-    },
-    {
-      "id": "pricemystartup",
-      "name": "priceMyStartup",
-      "description": "multi-model valuation",
-      "logo": "/assets/logos/pricemystartup.png",
-      "status": "dev"
-    },
-    {
-      "id": "healmyteam",
-      "name": "healMyTeam",
-      "description": "team dynamics diagnostic",
-      "logo": "/assets/logos/healmyteam.png",
-      "status": "dev"
     },
     {
       "id": "reviewmycontract",
       "name": "reviewMyContract",
-      "description": "contract review",
-      "logo": "/assets/logos/reviewmycontract.png",
+      "description": "Contract review",
+      "logo": "/assets/logos/reviewmycontract.svg",
+      "status": "active"
+    },
+    {
+      "id": "slumbernet",
+      "name": "slumberNet",
+      "description": "Distributed verification mesh substrate",
+      "logo": "/assets/logos/slumbernet.svg",
       "status": "dev"
     },
     {
-      "id": "reviewmyresume",
-      "name": "reviewMyResume",
-      "description": "resume review",
-      "logo": "/assets/logos/reviewmyresume.png",
+      "id": "blueglued",
+      "name": "blueGlued",
+      "description": "Consumer device intelligence mesh",
+      "logo": "/assets/logos/blueglued.svg",
       "status": "dev"
     },
     {
-      "id": "asklinda",
-      "name": "AskLinda",
-      "description": "conversational gateway",
-      "logo": "/assets/logos/asklinda.png",
+      "id": "faustfoundation",
+      "name": "Faust Foundation",
+      "description": "Public benefit foundation in formation; counsel engagement Q3 2026",
+      "logo": "/assets/logos/faustfoundation.svg",
+      "status": "dev"
+    },
+    {
+      "id": "forgelegal",
+      "name": "forgeLegal",
+      "description": "Legal-vertical forge variant",
+      "logo": "/assets/logos/forgelegal.svg",
+      "status": "dev"
+    },
+    {
+      "id": "forgemedical",
+      "name": "forgeMedical",
+      "description": "Medical-vertical forge variant",
+      "logo": "/assets/logos/forgemedical.svg",
+      "status": "dev"
+    },
+    {
+      "id": "forgefinancial",
+      "name": "forgeFinancial",
+      "description": "Financial-vertical forge variant",
+      "logo": "/assets/logos/forgefinancial.svg",
+      "status": "dev"
+    },
+    {
+      "id": "forgejunior",
+      "name": "forgeJunior",
+      "description": "Junior-developer-focused forge variant (spec stage)",
+      "logo": "/assets/logos/forgejunior.svg",
+      "status": "dev"
+    },
+    {
+      "id": "faustindex",
+      "name": "faustIndex",
+      "description": "AI reliability standard",
+      "logo": "/assets/logos/faustindex.svg",
       "status": "dev"
     },
     {
       "id": "truthlayer",
       "name": "truthLayer",
-      "description": "developer middleware",
-      "logo": "/assets/logos/truthlayer.png",
+      "description": "Developer middleware",
+      "logo": "/assets/logos/truthlayer.svg",
       "status": "dev"
     },
     {
       "id": "guardrail",
       "name": "guardRail",
-      "description": "ai safety layer",
-      "logo": "/assets/logos/guardrail.png",
-      "status": "dev"
-    },
-    {
-      "id": "foundernightly",
-      "name": "founderNightly",
-      "description": "overnight founder brief",
-      "logo": "/assets/logos/foundernightly.png",
-      "status": "dev"
-    },
-    {
-      "id": "nightbrief",
-      "name": "nightBrief",
-      "description": "executive briefing",
-      "logo": "/assets/logos/nightbrief.png",
-      "status": "dev"
-    },
-    {
-      "id": "roastmyidea",
-      "name": "roastMyIdea",
-      "description": "honest idea feedback",
-      "logo": "/assets/logos/roastmyidea.png",
+      "description": "AI safety layer",
+      "logo": "/assets/logos/guardrail.svg",
       "status": "dev"
     }
   ]

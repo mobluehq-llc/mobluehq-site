@@ -1,6 +1,7 @@
-# MOBLUEHQ.com — Production Build (v2)
+# MOBLUEHQ.com — Production Build (v4)
 
-Built against the locked design package, April 22, 2026.
+Portfolio refresh April 2026: reconciled `products.json`, SVG marks under `assets/logos/`, tiled portfolio UI.
+Originally locked design package, April 22, 2026.
 Deployment target: Vercel.
 
 ---
@@ -16,6 +17,8 @@ mobluehq-site/
 │   ├── triage.js           # Serverless function: AI-evaluates investor submissions
 │   └── refresh.js          # Cron handler: monthly indexing + portfolio freshness check
 ├── assets/
+│   ├── style.css           # Shared styles (portfolio tiles, about, investors)
+│   ├── logos/*.svg         # Portfolio marks (PNG fallbacks optional)
 │   ├── earth_hero.jpg      # Homepage hero photo (ChatGPT-generated, owned by MOBLUEHQ)
 │   └── adam_faust.jpg      # Founder portrait
 ├── robots.txt              # Allow all crawlers
