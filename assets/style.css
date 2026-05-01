@@ -1,4 +1,4 @@
-/* MOBLUEHQ — shared styles for all pages — v5 (bump HTML ?v= when changing) */
+/* MOBLUEHQ — shared styles for all pages — v6 (bump HTML ?v= when changing) */
 :root {
   --bg: #05080F;
   --bg-soft: #0A0F1C;
@@ -13,6 +13,8 @@
   --divider: #1A2032;
   --divider-bright: #2A3245;
   --status-active: #4D9FFF;
+  --status-active-mvp: #34D399;
+  --status-near-mvp: #FBBF24;
   --status-dev: #B8C0CC;
   --status-classified: #6B7585;
 }
@@ -234,6 +236,16 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
   border-color: rgba(77, 159, 255, 0.45);
   box-shadow: 0 0 12px rgba(77, 159, 255, 0.15);
 }
+.portfolio-tile-badge--active_mvp {
+  color: var(--status-active-mvp);
+  border-color: rgba(52, 211, 153, 0.45);
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.12);
+}
+.portfolio-tile-badge--near_mvp {
+  color: var(--status-near-mvp);
+  border-color: rgba(251, 191, 36, 0.45);
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.1);
+}
 .portfolio-tile-badge--dev {
   color: var(--status-dev);
   border-color: rgba(184, 192, 204, 0.25);
@@ -246,6 +258,23 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
   line-height: 1.5;
   color: var(--text-secondary);
   margin: 0;
+}
+.portfolio-card-blockers {
+  font-family: 'Geist', sans-serif;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-muted);
+  margin: 0;
+}
+.portfolio-section-empty {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--text-faint);
+  max-width: 520px;
+  margin: 0;
+  padding-bottom: 8px;
 }
 
 .portfolio-loading {
@@ -420,9 +449,45 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
 
 /* Footer */
 footer { padding: 36px 56px 32px; border-top: 1px solid var(--divider); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; }
+.footer-start { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+footer .footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+footer .footer-links a:hover { color: var(--hq); }
 footer .footer-mark { font-family: 'Geist', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: -0.01em; }
 footer .footer-mark .moblue { color: var(--moblue); }
 footer .footer-mark .hq { color: var(--hq); }
+
+.content--investors h2,
+.content--research h2 {
+  font-family: 'Geist', sans-serif;
+  font-weight: 600;
+  font-size: clamp(18px, 1.5vw, 22px);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-top: 36px;
+  margin-bottom: 14px;
+}
+.content--investors h2:first-of-type,
+.content--research h2:first-of-type { margin-top: 0; }
+.content--research { max-width: 760px; margin-left: auto; margin-right: auto; }
+.research-lead {
+  font-family: 'Geist', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+}
+.content--research p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+.content--research p:last-child { margin-bottom: 0; }
 
 /* Responsive */
 @media (max-width: 1199px) {
