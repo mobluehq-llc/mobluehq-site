@@ -4,20 +4,20 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Portfolio — MOBLUEHQ</title>
-<meta name="description" content="MOBLUEHQ portfolio: blueForge, Linda, slumberNet, blueGlued, and AI verification products in active development." />
+<meta name="description" content="MOBLUEHQ portfolio: Active MVP, Near MVP, and in-development products — verification infrastructure and AI tools with explicit launch status." />
 <link rel="canonical" href="https://www.mobluehq.com/portfolio" />
 <meta name="robots" content="index, follow" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mobluehq.com/portfolio" />
 <meta property="og:title" content="Portfolio — MOBLUEHQ" />
-<meta property="og:description" content="blueForge, Linda, slumberNet, blueGlued, and AI verification products in active development." />
+<meta property="og:description" content="Portfolio by truth-tier status: Active MVP, Near MVP, and in development — with explicit blockers where applicable." />
 <meta property="og:image" content="https://www.mobluehq.com/assets/og-image.png" />
 <meta property="og:image:width" content="1600" />
 <meta property="og:image:height" content="2200" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Portfolio — MOBLUEHQ" />
-<meta name="twitter:description" content="blueForge, Linda, slumberNet, blueGlued, and AI verification products in active development." />
+<meta name="twitter:description" content="Portfolio by truth-tier status: Active MVP, Near MVP, and in development." />
 <meta name="twitter:image" content="https://www.mobluehq.com/assets/og-image.png" />
 
 <link rel="icon" type="image/png" href="/assets/favicon.png" sizes="48x48" />
@@ -25,8 +25,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" href="/assets/style.css?v=6" as="style" />
-<link rel="stylesheet" href="/assets/style.css?v=6">
+<link rel="preload" href="/assets/style.css?v=7" as="style" />
+<link rel="stylesheet" href="/assets/style.css?v=7">
 </head>
 <body>
 
@@ -53,7 +53,10 @@
 </main>
 
 <footer>
-  <div class="footer-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></div>
+  <div class="footer-start">
+    <div class="footer-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></div>
+    <nav class="footer-links" aria-label="Research"><a href="/faust-index">Research → faustIndex</a></nav>
+  </div>
   <div>© 2026 MOBLUEHQ LLC · Delaware</div>
 </footer>
 
@@ -119,7 +122,14 @@ function buildTile(p) {
   nameEl.textContent = p.name;
   const badge = document.createElement('span');
   badge.className = 'portfolio-tile-badge portfolio-tile-badge--' + p.status;
-  badge.textContent = p.status === 'active' ? 'Active' : 'In development';
+  badge.textContent =
+    p.status === 'active_mvp'
+      ? 'Active MVP'
+      : p.status === 'near_mvp'
+        ? 'Near MVP'
+        : p.status === 'dev'
+          ? 'In Development'
+          : p.status;
 
   nameRow.appendChild(nameEl);
   nameRow.appendChild(badge);
@@ -131,10 +141,24 @@ function buildTile(p) {
   meta.appendChild(nameRow);
   meta.appendChild(desc);
 
+  if (
+    (p.status === 'near_mvp' || p.status === 'dev') &&
+    Array.isArray(p.blockers) &&
+    p.blockers.length
+  ) {
+    const blockersEl = document.createElement('p');
+    blockersEl.className = 'portfolio-card-blockers';
+    blockersEl.textContent = 'Blocked on: ' + p.blockers.join(', ');
+    meta.appendChild(blockersEl);
+  }
+
   card.appendChild(tile);
   card.appendChild(meta);
   return card;
 }
+
+var PORTFOLIO_EMPTY_SECTION =
+  'Nothing here yet — by design. We launch with planned media events on real domains, not soft soft-launches on subdomains.';
 
 function buildSection(title, products) {
   const block = document.createElement('div');
@@ -144,11 +168,19 @@ function buildSection(title, products) {
   h.className = 'portfolio-section-title';
   h.textContent = title;
 
+  block.appendChild(h);
+
+  if (!products.length) {
+    const empty = document.createElement('p');
+    empty.className = 'portfolio-section-empty';
+    empty.textContent = PORTFOLIO_EMPTY_SECTION;
+    block.appendChild(empty);
+    return block;
+  }
+
   const grid = document.createElement('div');
   grid.className = 'portfolio-grid';
   products.forEach(p => grid.appendChild(buildTile(p)));
-
-  block.appendChild(h);
   block.appendChild(grid);
   return block;
 }
@@ -161,12 +193,14 @@ async function loadPortfolio() {
     if (!response.ok) throw new Error('Failed to load products.json');
     const data = await response.json();
 
-    const active = data.products.filter(p => p.status === 'active');
+    const active_mvp = data.products.filter(p => p.status === 'active_mvp');
+    const near_mvp = data.products.filter(p => p.status === 'near_mvp');
     const dev = data.products.filter(p => p.status === 'dev');
 
     root.innerHTML = '';
-    if (active.length) root.appendChild(buildSection('Active', active));
-    if (dev.length) root.appendChild(buildSection('In Development', dev));
+    root.appendChild(buildSection('Active MVP', active_mvp));
+    root.appendChild(buildSection('Near MVP', near_mvp));
+    root.appendChild(buildSection('In Development', dev));
 
     if (metaEl && data.lastReviewed) {
       metaEl.textContent = 'Portfolio last reviewed ' + data.lastReviewed;

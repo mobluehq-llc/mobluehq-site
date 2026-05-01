@@ -2,102 +2,116 @@
   "lastReviewed": "April 2026",
   "products": [
     {
-      "id": "blueforge",
-      "name": "blueForge",
-      "description": "Desktop AI development environment — verification-first; the coding tool that runs the test, not just the model.",
-      "logo": "/assets/logos/blueforge.png",
-      "status": "active"
-    },
-    {
-      "id": "linda",
-      "name": "Linda",
-      "description": "askLinda.",
-      "logo": "/assets/logos/linda.svg",
-      "status": "active"
-    },
-    {
       "id": "isthisascam",
       "name": "isThisAScam",
-      "description": "Scam detection.",
+      "description": "Multi-AI scam detection — paste a suspicious message, get red/yellow/green plus reasoning.",
       "logo": "/assets/logos/isthisascam.svg",
-      "status": "active"
-    },
-    {
-      "id": "whatdoesmyleasesay",
-      "name": "whatDoesMyLeaseSay",
-      "description": "Lease intelligence.",
-      "logo": "/assets/logos/whatdoesmyleasesay.svg",
-      "status": "active"
+      "status": "near_mvp",
+      "blockers": ["public deployment", "domain decision"]
     },
     {
       "id": "fixmyemail",
       "name": "fixMyEmail",
-      "description": "Email composition aid.",
+      "description": "Rewrite difficult emails — clarity, tone, professionalism.",
       "logo": "/assets/logos/fixmyemail.svg",
-      "status": "active"
+      "status": "near_mvp",
+      "blockers": ["public deployment", "domain decision"]
+    },
+    {
+      "id": "whatdoesmyleasesay",
+      "name": "whatDoesMyLeaseSay",
+      "description": "Plain-English lease summary, red flags, and questions to ask the landlord. Reading aid, not legal advice.",
+      "logo": "/assets/logos/whatdoesmyleasesay.svg",
+      "status": "near_mvp",
+      "blockers": ["counsel UPL review", "public deployment"]
+    },
+    {
+      "id": "asklinda",
+      "name": "askLinda",
+      "description": "One question, three frontier AI models in parallel — see consensus and divergence.",
+      "logo": "/assets/logos/linda.svg",
+      "status": "near_mvp",
+      "blockers": ["product strategy decision", "planned launch event"]
+    },
+    {
+      "id": "blueforge",
+      "name": "blueForge",
+      "description": "Desktop AI development environment — verification-first, agents-as-default-action.",
+      "logo": "/assets/logos/blueforge.png",
+      "status": "dev",
+      "blockers": ["headless executor V1", "GUI render fix"]
     },
     {
       "id": "reviewmycontract",
       "name": "reviewMyContract",
-      "description": "Contract review.",
+      "description": "Contract review for freelancers and small businesses.",
       "logo": "/assets/logos/reviewmycontract.svg",
-      "status": "active"
+      "status": "dev",
+      "blockers": ["build not started"]
+    },
+    {
+      "id": "linda",
+      "name": "Linda v1 (blueFinancial vertical)",
+      "description": "End-user terminal for verticalized AI workflows. First vertical: blueFinancial RIA operations.",
+      "logo": "/assets/logos/linda.svg",
+      "status": "dev",
+      "blockers": ["forge headless V1", "compliance Apprentice pack"]
     },
     {
       "id": "slumbernet",
       "name": "slumberNet",
-      "description": "Distributed verification mesh substrate.",
+      "description": "Distributed inference substrate — local LLM mesh across owned machines.",
       "logo": "/assets/logos/slumbernet.svg",
-      "status": "dev"
+      "status": "dev",
+      "blockers": ["substrate brand rename", "shoal node bootstrap"]
     },
     {
       "id": "blueglued",
       "name": "blueGlued",
-      "description": "Consumer device intelligence mesh.",
+      "description": "Mesh-witnessed multi-perspective media for consumer devices. IP filed; product build downstream.",
       "logo": "/assets/logos/blueglued.svg",
-      "status": "dev"
+      "status": "dev",
+      "blockers": ["substrate maturity", "L1 device cost curve"]
     },
     {
       "id": "bluelegal",
       "name": "blueLegal",
-      "description": "Legal-vertical Blue product.",
+      "description": "Legal-vertical Linda terminal. After blueFinancial dogfood validates the pattern.",
       "logo": "/assets/logos/bluelegal.svg",
-      "status": "dev"
+      "status": "dev",
+      "blockers": ["blueFinancial dogfood completion"]
     },
     {
       "id": "bluemedical",
       "name": "blueMedical",
-      "description": "Medical-vertical Blue product.",
+      "description": "Medical-vertical Linda terminal. After blueFinancial dogfood validates the pattern.",
       "logo": "/assets/logos/bluemedical.svg",
-      "status": "dev"
+      "status": "dev",
+      "blockers": ["blueFinancial dogfood completion"]
     },
     {
       "id": "bluefinancial",
       "name": "blueFinancial",
-      "description": "Financial-vertical Blue product.",
+      "description": "Financial-vertical Linda terminal. RIA operations. First vertical, dogfooded by Deep Blue Financial.",
       "logo": "/assets/logos/bluefinancial.svg",
-      "status": "dev"
+      "status": "dev",
+      "blockers": ["Linda v1 phase 1 ship"]
     },
     {
       "id": "forgejunior",
       "name": "forgeJunior",
-      "description": "Engineering platform for junior builders.",
+      "description": "blueForge for junior engineers — guard rails, smaller surface, learning loops.",
       "logo": "/assets/logos/forgejunior.svg",
-      "status": "dev"
-    },
-    {
-      "id": "faustindex",
-      "name": "faustIndex",
-      "description": "AI reliability standard.",
-      "logo": "/assets/logos/faustindex.svg",
-      "status": "dev"
+      "status": "dev",
+      "blockers": ["blueForge headless V1"]
     },
     {
       "id": "truthlayer",
       "name": "truthLayer",
-      "description": "Developer middleware for verified AI outputs.",
+      "description": "Developer middleware for verified AI outputs. API for integrating verification into any LLM workflow.",
       "logo": "/assets/logos/truthlayer.svg",
-      "status": "dev"
+      "status": "dev",
+      "blockers": ["substrate maturity"]
     }
   ]
 }
