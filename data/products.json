@@ -1,21 +1,27 @@
 {
-  "lastReviewed": "April 2026",
+  "lastReviewed": "May 2026",
   "products": [
     {
       "id": "isthisascam",
       "name": "isThisAScam",
-      "description": "Multi-AI scam detection — paste a suspicious message, get red/yellow/green plus reasoning.",
+      "description": "Multi-AI scam detection \u2014 paste a suspicious message, get red/yellow/green plus reasoning.",
       "logo": "/assets/logos/isthisascam.svg",
       "status": "near_mvp",
-      "blockers": ["public deployment", "domain decision"]
+      "blockers": [
+        "public deployment",
+        "domain decision"
+      ]
     },
     {
       "id": "fixmyemail",
       "name": "fixMyEmail",
-      "description": "Rewrite difficult emails — clarity, tone, professionalism.",
+      "description": "Rewrite difficult emails \u2014 clarity, tone, professionalism.",
       "logo": "/assets/logos/fixmyemail.svg",
       "status": "near_mvp",
-      "blockers": ["public deployment", "domain decision"]
+      "blockers": [
+        "public deployment",
+        "domain decision"
+      ]
     },
     {
       "id": "whatdoesmyleasesay",
@@ -23,23 +29,32 @@
       "description": "Plain-English lease summary, red flags, and questions to ask the landlord. Reading aid, not legal advice.",
       "logo": "/assets/logos/whatdoesmyleasesay.svg",
       "status": "near_mvp",
-      "blockers": ["counsel UPL review", "public deployment"]
+      "blockers": [
+        "counsel UPL review",
+        "public deployment"
+      ]
     },
     {
       "id": "asklinda",
       "name": "askLinda",
-      "description": "One question, three frontier AI models in parallel — see consensus and divergence.",
+      "description": "One question, three frontier AI models in parallel \u2014 see consensus and divergence.",
       "logo": "/assets/logos/linda.svg",
       "status": "near_mvp",
-      "blockers": ["product strategy decision", "planned launch event"]
+      "blockers": [
+        "product strategy decision",
+        "planned launch event"
+      ]
     },
     {
       "id": "blueforge",
       "name": "blueForge",
-      "description": "Desktop AI development environment — verification-first, agents-as-default-action.",
+      "description": "Desktop AI development environment \u2014 verification-first, agents-as-default-action.",
       "logo": "/assets/logos/blueforge.png",
-      "status": "dev",
-      "blockers": ["headless executor V1", "GUI render fix"]
+      "status": "near_mvp",
+      "blockers": [
+        "headless executor V1.2 (local tools)",
+        "GUI render fix"
+      ]
     },
     {
       "id": "reviewmycontract",
@@ -47,31 +62,42 @@
       "description": "Contract review for freelancers and small businesses.",
       "logo": "/assets/logos/reviewmycontract.svg",
       "status": "dev",
-      "blockers": ["build not started"]
+      "blockers": [
+        "build not started"
+      ]
     },
     {
       "id": "linda",
       "name": "Linda v1 (blueFinancial vertical)",
       "description": "End-user terminal for verticalized AI workflows. First vertical: blueFinancial RIA operations.",
       "logo": "/assets/logos/linda.svg",
-      "status": "dev",
-      "blockers": ["forge headless V1", "compliance Apprentice pack"]
+      "status": "near_mvp",
+      "blockers": [
+        "forge headless V1.2",
+        "compliance Apprentice pack v0"
+      ]
     },
     {
       "id": "slumbernet",
       "name": "slumberNet",
-      "description": "Distributed inference substrate — local LLM mesh across owned machines.",
+      "description": "Distributed inference substrate \u2014 local LLM mesh across owned machines.",
       "logo": "/assets/logos/slumbernet.svg",
-      "status": "dev",
-      "blockers": ["substrate brand rename", "shoal node bootstrap"]
+      "status": "near_mvp",
+      "blockers": [
+        "trench dual-3090 anchor (~2026-05-10)",
+        "shoal node bootstrap"
+      ]
     },
     {
       "id": "blueglued",
       "name": "blueGlued",
       "description": "Mesh-witnessed multi-perspective media for consumer devices. IP filed; product build downstream.",
       "logo": "/assets/logos/blueglued.svg",
-      "status": "dev",
-      "blockers": ["substrate maturity", "L1 device cost curve"]
+      "status": "near_mvp",
+      "blockers": [
+        "v0 sprint #2 receipt-signing",
+        "phone-client TestFlight"
+      ]
     },
     {
       "id": "bluelegal",
@@ -79,7 +105,9 @@
       "description": "Legal-vertical Linda terminal. After blueFinancial dogfood validates the pattern.",
       "logo": "/assets/logos/bluelegal.svg",
       "status": "dev",
-      "blockers": ["blueFinancial dogfood completion"]
+      "blockers": [
+        "blueFinancial dogfood completion"
+      ]
     },
     {
       "id": "bluemedical",
@@ -87,7 +115,9 @@
       "description": "Medical-vertical Linda terminal. After blueFinancial dogfood validates the pattern.",
       "logo": "/assets/logos/bluemedical.svg",
       "status": "dev",
-      "blockers": ["blueFinancial dogfood completion"]
+      "blockers": [
+        "blueFinancial dogfood completion"
+      ]
     },
     {
       "id": "bluefinancial",
@@ -95,15 +125,19 @@
       "description": "Financial-vertical Linda terminal. RIA operations. First vertical, dogfooded by Deep Blue Financial.",
       "logo": "/assets/logos/bluefinancial.svg",
       "status": "dev",
-      "blockers": ["Linda v1 phase 1 ship"]
+      "blockers": [
+        "Linda v1 phase 1 ship"
+      ]
     },
     {
       "id": "forgejunior",
       "name": "forgeJunior",
-      "description": "blueForge for junior engineers — guard rails, smaller surface, learning loops.",
+      "description": "blueForge for junior engineers \u2014 guard rails, smaller surface, learning loops.",
       "logo": "/assets/logos/forgejunior.svg",
       "status": "dev",
-      "blockers": ["blueForge headless V1"]
+      "blockers": [
+        "blueForge headless V1"
+      ]
     },
     {
       "id": "truthlayer",
@@ -111,7 +145,9 @@
       "description": "Developer middleware for verified AI outputs. API for integrating verification into any LLM workflow.",
       "logo": "/assets/logos/truthlayer.svg",
       "status": "dev",
-      "blockers": ["substrate maturity"]
+      "blockers": [
+        "substrate maturity"
+      ]
     }
   ]
 }
