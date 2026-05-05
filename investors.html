@@ -40,9 +40,19 @@
 
 <main>
   <section class="content content--investors">
-    <h2>Investor inquiries</h2>
-    <p>MOBLUEHQ is a privately held AI infrastructure company. We are not actively raising at this time, but welcome thoughtful introductions.</p>
-    <p>For investor inquiries, partnership exploration, or other relevant outreach, please email <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a>.</p>
+    <div class="section-label">Investors</div>
+    <div class="section-label-line section-label-line--investors"></div>
+    <div class="investors-elegant">
+      <div>
+        <h1 class="investors-headline">We are not raising.<br>We are listening.</h1>
+        <div class="investors-headline-line"></div>
+      </div>
+      <form class="investor-form-elegant" action="mailto:blue@mobluehq.com" method="post" enctype="text/plain">
+        <label class="form-question" for="senderMsg">What should MOBLUEHQ know about what you are offering?</label>
+        <textarea class="form-textarea" id="senderMsg" name="message" placeholder="" required></textarea>
+        <button class="submit-btn" type="submit">Submit</button>
+      </form>
+    </div>
   </section>
 </main>
 

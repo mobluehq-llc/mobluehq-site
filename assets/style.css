@@ -195,10 +195,8 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
   background: transparent;
 }
 
-/* blueForge reference PNG: alpha preserved; tint raster art to brand blue (matches line-art icons). Cache-bust img URL still matches src*="blueforge.png" */
-.portfolio-tile-logo[src*="blueforge.png"] {
-  filter: brightness(0) saturate(100%) invert(64%) sepia(54%) saturate(2400%) hue-rotate(195deg) brightness(101%) contrast(101%);
-}
+/* blueForge: thin-blue-line SVG (canonical hammer) — no special tinting needed.
+   Style is consistent with other portfolio SVG marks (#4D9FFF stroke). */
 
 .portfolio-card-meta {
   display: flex;

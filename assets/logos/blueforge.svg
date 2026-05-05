@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <title>blueForge</title>
+  <path d="M88 42 L168 50 L180 62 L180 78 L168 90 L88 82 Z"/>
+  <path d="M168 50 L168 90"/>
+  <path d="M88 42 L88 82"/>
+  <path d="M88 62 L40 168"/>
+  <path d="M88 62 L48 172"/>
+  <path d="M40 168 Q36 178 44 180 Q52 182 48 172"/>
+</svg>
