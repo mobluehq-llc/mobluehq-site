@@ -328,8 +328,8 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
 }
 .form-textarea {
   width: 100%;
-  background: var(--portfolio-tile-bg);
-  border: 1px solid var(--divider);
+  background: #11203A;
+  border: 1px solid #2A3B58;
   color: var(--text-primary);
   font-family: 'JetBrains Mono', monospace;
   font-size: 14px;
@@ -341,6 +341,10 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
   resize: vertical;
 }
 .form-textarea::placeholder { color: var(--text-muted); }
+.form-textarea:hover {
+  background: #16294A;
+  border-color: #3A4D70;
+}
 .form-textarea:focus {
   outline: none;
   border-color: rgba(77, 159, 255, 0.45);
@@ -520,3 +524,14 @@ footer .footer-mark .hq { color: var(--hq); }
   .nav-links { gap: 14px; }
   .about-name { font-size: 24px; }
 }
+
+.form-note {
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  min-height: 18px;
+  margin-top: 4px;
+}
+.form-note--warn { color: #FBBF24; }
+.form-note--ok { color: #4D9FFF; }
