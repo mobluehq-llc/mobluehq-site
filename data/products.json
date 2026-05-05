@@ -49,7 +49,7 @@
       "id": "blueforge",
       "name": "blueForge",
       "description": "Desktop AI development environment \u2014 verification-first, agents-as-default-action.",
-      "logo": "/assets/logos/blueforge.png",
+      "logo": "/assets/logos/blueforge.svg",
       "status": "near_mvp",
       "blockers": [
         "headless executor V1.2 (local tools)",
