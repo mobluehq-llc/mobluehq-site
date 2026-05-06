@@ -2,48 +2,91 @@
   "lastReviewed": "May 2026",
   "products": [
     {
+      "id": "bluewatch",
+      "name": "blueWatch",
+      "description": "When your detectors disagree, that's the alert that matters. SOC alert verification \u2014 surfaces the disagreement signal between SIEM, SOAR, and EDR tools where real attacks hide. Buyer: CISO / Director of SOC.",
+      "logo": "/assets/logos/bluewatch.png",
+      "status": "near_mvp",
+      "blockers": [
+        "pilot 1 design partner",
+        "Blue 1.0 substrate (live)"
+      ]
+    },
+    {
+      "id": "bluescreen",
+      "name": "blueScreen",
+      "description": "Sanctions screening that closes its own justifications. Generates regulator-ready disposition rationale on every match, drains the false-positive queue. Buyer: Director of Sanctions Compliance / OFAC Officer.",
+      "logo": "/assets/logos/bluescreen.png",
+      "status": "near_mvp",
+      "blockers": [
+        "pilot 1 design partner",
+        "Blue 1.0 substrate (live)"
+      ]
+    },
+    {
+      "id": "blueguard",
+      "name": "blueGuard",
+      "description": "Show your work to the regulator, not just your decision. AML evidence packets \u2014 every SAR decision comes with the panel deliberation OCC examiners want. Buyer: Chief AML Officer / Head of Financial Crime Compliance.",
+      "logo": "/assets/logos/blueguard.png",
+      "status": "near_mvp",
+      "blockers": [
+        "pilot 1 design partner",
+        "Blue 1.0 substrate (live)"
+      ]
+    },
+    {
+      "id": "blueclaims",
+      "name": "blueClaims",
+      "description": "Faster claim closure, defensible claim files. Commercial insurance adjudication acceleration with audit trails that survive litigation. Buyer: Chief Claims Officer / VP Commercial Lines Claims.",
+      "logo": "/assets/logos/blueclaims.png",
+      "status": "near_mvp",
+      "blockers": [
+        "pilot 1 design partner",
+        "Blue 1.0 substrate (live)"
+      ]
+    },
+    {
+      "id": "bluechart",
+      "name": "blueChart",
+      "description": "Better appeals. Better audit trail. No autonomous denials. Health-plan utilization management decision support that strengthens human review instead of replacing it. Buyer: Chief Medical Officer / VP Clinical Operations.",
+      "logo": "/assets/logos/bluechart.png",
+      "status": "near_mvp",
+      "blockers": [
+        "pilot 1 design partner",
+        "Blue 1.0 substrate (live)"
+      ]
+    },
+    {
       "id": "isthisascam",
       "name": "isThisAScam",
       "description": "Multi-AI scam detection \u2014 paste a suspicious message, get red/yellow/green plus reasoning.",
       "logo": "/assets/logos/isthisascam.svg",
-      "status": "near_mvp",
-      "blockers": [
-        "public deployment",
-        "domain decision"
-      ]
+      "status": "concept",
+      "blockers": []
     },
     {
       "id": "fixmyemail",
       "name": "fixMyEmail",
       "description": "Rewrite difficult emails \u2014 clarity, tone, professionalism.",
       "logo": "/assets/logos/fixmyemail.svg",
-      "status": "near_mvp",
-      "blockers": [
-        "public deployment",
-        "domain decision"
-      ]
+      "status": "concept",
+      "blockers": []
     },
     {
       "id": "whatdoesmyleasesay",
       "name": "whatDoesMyLeaseSay",
       "description": "Plain-English lease summary, red flags, and questions to ask the landlord. Reading aid, not legal advice.",
       "logo": "/assets/logos/whatdoesmyleasesay.svg",
-      "status": "near_mvp",
-      "blockers": [
-        "counsel UPL review",
-        "public deployment"
-      ]
+      "status": "concept",
+      "blockers": []
     },
     {
       "id": "asklinda",
       "name": "askLinda",
       "description": "One question, three frontier AI models in parallel \u2014 see consensus and divergence.",
       "logo": "/assets/logos/linda.svg",
-      "status": "near_mvp",
-      "blockers": [
-        "product strategy decision",
-        "planned launch event"
-      ]
+      "status": "concept",
+      "blockers": []
     },
     {
       "id": "blueforge",

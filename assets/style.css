@@ -248,6 +248,20 @@ section.content { min-height: calc(100vh - 200px); padding: 140px 56px 100px; ma
   color: var(--status-dev);
   border-color: rgba(184, 192, 204, 0.25);
 }
+.portfolio-tile-badge--concept {
+  color: var(--text-muted);
+  border-color: rgba(184, 192, 204, 0.18);
+  opacity: 0.85;
+}
+.portfolio-section-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin: -8px 0 24px;
+  font-style: italic;
+}
 
 .portfolio-card-desc {
   font-family: 'Geist', sans-serif;

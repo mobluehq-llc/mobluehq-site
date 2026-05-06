@@ -126,7 +126,9 @@ function buildTile(p) {
         ? 'Near MVP'
         : p.status === 'dev'
           ? 'In Development'
-          : p.status;
+          : p.status === 'concept'
+            ? 'Concept'
+            : p.status;
 
   nameRow.appendChild(nameEl);
   nameRow.appendChild(badge);
@@ -157,7 +159,7 @@ function buildTile(p) {
 var PORTFOLIO_EMPTY_SECTION =
   'Nothing here yet — by design. We launch with planned media events on real domains, not soft soft-launches on subdomains.';
 
-function buildSection(title, products) {
+function buildSection(title, products, subtitle) {
   const block = document.createElement('div');
   block.className = 'portfolio-section portfolio-section-block';
 
@@ -166,6 +168,13 @@ function buildSection(title, products) {
   h.textContent = title;
 
   block.appendChild(h);
+
+  if (subtitle) {
+    const sub = document.createElement('p');
+    sub.className = 'portfolio-section-subtitle';
+    sub.textContent = subtitle;
+    block.appendChild(sub);
+  }
 
   if (!products.length) {
     const empty = document.createElement('p');
@@ -193,11 +202,13 @@ async function loadPortfolio() {
     const active_mvp = data.products.filter(p => p.status === 'active_mvp');
     const near_mvp = data.products.filter(p => p.status === 'near_mvp');
     const dev = data.products.filter(p => p.status === 'dev');
+    const concepts = data.products.filter(p => p.status === 'concept');
 
     root.innerHTML = '';
     root.appendChild(buildSection('Active MVP', active_mvp));
     root.appendChild(buildSection('Near MVP', near_mvp));
     root.appendChild(buildSection('In Development', dev));
+    root.appendChild(buildSection('Concepts', concepts, 'Internal infrastructure stress-tests. Whether they ship as standalone consumer products is undecided.'));
 
     if (metaEl && data.lastReviewed) {
       metaEl.textContent = 'Portfolio last reviewed ' + data.lastReviewed;
