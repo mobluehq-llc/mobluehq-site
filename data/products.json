@@ -147,30 +147,24 @@
       "name": "blueLegal",
       "description": "Legal-vertical Linda terminal. After blueFinancial dogfood validates the pattern.",
       "logo": "/assets/logos/bluelegal.svg",
-      "status": "dev",
-      "blockers": [
-        "blueFinancial dogfood completion"
-      ]
+      "status": "concept",
+      "blockers": []
     },
     {
       "id": "bluemedical",
       "name": "blueMedical",
       "description": "Medical-vertical Linda terminal. After blueFinancial dogfood validates the pattern.",
       "logo": "/assets/logos/bluemedical.svg",
-      "status": "dev",
-      "blockers": [
-        "blueFinancial dogfood completion"
-      ]
+      "status": "concept",
+      "blockers": []
     },
     {
       "id": "bluefinancial",
       "name": "blueFinancial",
       "description": "Financial-vertical Linda terminal. RIA operations. First vertical, dogfooded by Deep Blue Financial.",
       "logo": "/assets/logos/bluefinancial.svg",
-      "status": "dev",
-      "blockers": [
-        "Linda v1 phase 1 ship"
-      ]
+      "status": "concept",
+      "blockers": []
     },
     {
       "id": "forgejunior",
