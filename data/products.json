@@ -38,42 +38,48 @@
       "name": "blueProof",
       "logo": "/assets/logos/blueproof.svg",
       "status": "dev",
-      "description": "Prove what your model is. Turns a trained decision model into evidence regulators can read \u2014 built for filings, validations, and examinations. Buyer: chief actuaries and model risk leaders."
+      "description": "Prove what your model is. Turns a trained decision model into evidence regulators can read \u2014 built for filings, validations, and examinations. Buyer: chief actuaries and model risk leaders.",
+      "patent_pending": true
     },
     {
       "id": "blueclaims",
       "name": "blueClaims",
       "logo": "/assets/logos/blueclaims.svg",
       "status": "concept",
-      "description": "Faster claim closure, defensible claim files \u2014 insurance adjudication with audit trails that survive litigation."
+      "description": "Faster claim closure, defensible claim files \u2014 insurance adjudication with audit trails that survive litigation.",
+      "patent_pending": true
     },
     {
       "id": "bluecredit",
       "name": "blueCredit",
       "logo": "/assets/logos/bluecredit.svg",
       "status": "concept",
-      "description": "Lending models with examination-ready evidence, end to end."
+      "description": "Lending models with examination-ready evidence, end to end.",
+      "patent_pending": true
     },
     {
       "id": "bluewatch",
       "name": "blueWatch",
       "logo": "/assets/logos/bluewatch.svg",
       "status": "concept",
-      "description": "When your detectors disagree, that is the alert that matters \u2014 SOC alert verification across SIEM, SOAR, and EDR."
+      "description": "When your detectors disagree, that is the alert that matters \u2014 SOC alert verification across SIEM, SOAR, and EDR.",
+      "patent_pending": true
     },
     {
       "id": "bluescreen",
       "name": "blueScreen",
       "logo": "/assets/logos/bluescreen.svg",
       "status": "concept",
-      "description": "Sanctions screening that justifies its own dispositions and drains the false-positive queue."
+      "description": "Sanctions screening that justifies its own dispositions and drains the false-positive queue.",
+      "patent_pending": true
     },
     {
       "id": "blueguard",
       "name": "blueGuard",
       "logo": "/assets/logos/blueguard.svg",
       "status": "concept",
-      "description": "AML evidence packets \u2014 every decision arrives with the deliberation examiners want to see."
+      "description": "AML evidence packets \u2014 every decision arrives with the deliberation examiners want to see.",
+      "patent_pending": true
     }
   ]
 }
