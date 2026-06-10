@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <title>blueProof</title>
+  <circle cx="100" cy="84" r="40"/>
+  <path d="M146.0 84.0L154.0 84.0"/>
+  <path d="M139.8 107.0L146.8 111.0"/>
+  <path d="M123.0 123.8L127.0 130.8"/>
+  <path d="M100.0 130.0L100.0 138.0"/>
+  <path d="M77.0 123.8L73.0 130.8"/>
+  <path d="M60.2 107.0L53.2 111.0"/>
+  <path d="M54.0 84.0L46.0 84.0"/>
+  <path d="M60.2 61.0L53.2 57.0"/>
+  <path d="M77.0 44.2L73.0 37.2"/>
+  <path d="M100.0 38.0L100.0 30.0"/>
+  <path d="M123.0 44.2L127.0 37.2"/>
+  <path d="M139.8 61.0L146.8 57.0"/>
+  <path d="M84 84l12 12 22-26"/>
+  <path d="M86 122l-10 38 16-8"/>
+  <path d="M114 122l10 38-16-8"/>
+</svg>

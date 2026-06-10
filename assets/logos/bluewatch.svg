@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <title>blueWatch</title>
+  <circle cx="100" cy="100" r="64"/>
+  <circle cx="100" cy="100" r="32"/>
+  <path d="M100 100l44-40"/>
+  <circle cx="80" cy="118" r="3.5"/>
+  <circle cx="124" cy="120" r="3.5"/>
+</svg>

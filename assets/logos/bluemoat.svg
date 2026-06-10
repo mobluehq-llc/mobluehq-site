@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <title>blueMoat</title>
+  <circle cx="100" cy="100" r="72"/>
+  <path d="M64 134V86h12V72h14v14h20V72h14v14h12v48z"/>
+  <path d="M92 134v-18a8 8 0 0 1 16 0v18"/>
+</svg>

@@ -4,70 +4,70 @@
     {
       "id": "bluemoat",
       "name": "blueMoat",
-      "logo": "/assets/logos/bluemoat.png",
+      "logo": "/assets/logos/bluemoat.svg",
       "status": "active_mvp",
       "description": "Prior-art screening you can defend. Paste a disclosure and get a screened landscape where every finding carries a validated source quote, an independent second opinion, and a tamper-evident receipt. Built for founders, IP counsel, and diligence teams who need answers that hold up."
     },
     {
       "id": "bluecheck",
       "name": "blueCheck",
-      "logo": "/assets/logos/bluecheck.png",
+      "logo": "/assets/logos/bluecheck.svg",
       "status": "dev",
       "description": "Receipts for AI work. A developer kit that wraps any AI call and returns the answer with its evidence \u2014 what was checked, what confirmed it, and a signed receipt for the audit trail. Buyer: engineering and compliance leaders shipping AI features."
     },
     {
       "id": "bluechart",
       "name": "blueChart",
-      "logo": "/assets/logos/bluechart.png",
+      "logo": "/assets/logos/bluechart.svg",
       "status": "dev",
       "description": "Better appeals. Better audit trail. No autonomous denials. Health-plan utilization management decision support that strengthens human review instead of replacing it \u2014 every determination ships with its evidence. Buyer: Chief Medical Officer / VP Clinical Operations."
     },
     {
       "id": "bluesentinal",
       "name": "blueSentinal",
-      "logo": "/assets/logos/bluesentinal.png",
+      "logo": "/assets/logos/bluesentinal.svg",
       "status": "dev",
       "description": "Catches AI at its most dangerous moment: confidently wrong. Monitoring that flags unanimous, high-confidence answers and holds action until they are independently confirmed. Buyer: teams running AI inside decisions that matter."
     },
     {
       "id": "blueproof",
       "name": "blueProof",
-      "logo": "/assets/logos/blueproof.png",
+      "logo": "/assets/logos/blueproof.svg",
       "status": "dev",
       "description": "Prove what your model is. Turns a trained decision model into a regulator-readable twin with a signed certificate of equivalence \u2014 evidence built for filings, validations, and examinations. Buyer: chief actuaries and model risk leaders."
     },
     {
       "id": "blueclaims",
       "name": "blueClaims",
-      "logo": "/assets/logos/blueclaims.png",
+      "logo": "/assets/logos/blueclaims.svg",
       "status": "concept",
       "description": "Faster claim closure, defensible claim files \u2014 insurance adjudication with audit trails that survive litigation."
     },
     {
       "id": "bluecredit",
       "name": "blueCredit",
-      "logo": "/assets/logos/bluecredit.png",
+      "logo": "/assets/logos/bluecredit.svg",
       "status": "concept",
       "description": "Lending models with examination-ready evidence, end to end."
     },
     {
       "id": "bluewatch",
       "name": "blueWatch",
-      "logo": "/assets/logos/bluewatch.png",
+      "logo": "/assets/logos/bluewatch.svg",
       "status": "concept",
       "description": "When your detectors disagree, that is the alert that matters \u2014 SOC alert verification across SIEM, SOAR, and EDR."
     },
     {
       "id": "bluescreen",
       "name": "blueScreen",
-      "logo": "/assets/logos/bluescreen.png",
+      "logo": "/assets/logos/bluescreen.svg",
       "status": "concept",
       "description": "Sanctions screening that justifies its own dispositions and drains the false-positive queue."
     },
     {
       "id": "blueguard",
       "name": "blueGuard",
-      "logo": "/assets/logos/blueguard.png",
+      "logo": "/assets/logos/blueguard.svg",
       "status": "concept",
       "description": "AML evidence packets \u2014 every decision arrives with the deliberation examiners want to see."
     }
