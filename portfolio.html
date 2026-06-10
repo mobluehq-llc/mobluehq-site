@@ -59,7 +59,7 @@
 
 <script>
 /** Bust immutable year-long /assets/* cache when CSS or logos change (see vercel.json). */
-var MOBLUE_ASSET_V = '14';
+var MOBLUE_ASSET_V = '15';
 
 function escapeHtml(str) {
   if (typeof str !== 'string') return '';
@@ -200,15 +200,13 @@ async function loadPortfolio() {
     const data = await response.json();
 
     const active_mvp = data.products.filter(p => p.status === 'active_mvp');
-    const near_mvp = data.products.filter(p => p.status === 'near_mvp');
     const dev = data.products.filter(p => p.status === 'dev');
     const concepts = data.products.filter(p => p.status === 'concept');
 
     root.innerHTML = '';
     root.appendChild(buildSection('Active MVP', active_mvp));
-    root.appendChild(buildSection('Near MVP', near_mvp));
     root.appendChild(buildSection('In Development', dev));
-    root.appendChild(buildSection('Concepts', concepts, 'Internal infrastructure stress-tests. Whether they ship as standalone consumer products is undecided.'));
+    root.appendChild(buildSection('Concepts', concepts, 'The wider pipeline — sequenced deliberately behind the active wedge.'));
 
     if (metaEl && data.lastReviewed) {
       metaEl.textContent = 'Portfolio last reviewed ' + data.lastReviewed;
