@@ -134,6 +134,13 @@ function buildTile(p) {
 
   nameRow.appendChild(nameEl);
   nameRow.appendChild(badge);
+  if (p.patent_pending) {
+    const pp = document.createElement('span');
+    pp.className = 'portfolio-tile-badge';
+    pp.style.cssText = 'margin-left:6px;opacity:0.75';
+    pp.textContent = 'Patent pending';
+    nameRow.appendChild(pp);
+  }
 
   const desc = document.createElement('p');
   desc.className = 'portfolio-card-desc';
