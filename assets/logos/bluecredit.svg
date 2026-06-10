@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <title>blueCredit</title>
+  <path d="M44 132a56 56 0 0 1 112 0"/>
+  <path d="M100 132l28-40"/>
+  <circle cx="100" cy="132" r="5"/>
+  <path d="M56 106l10 7"/>
+  <path d="M100 78v12"/>
+  <path d="M144 106l-10 7"/>
+</svg>

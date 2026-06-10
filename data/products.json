@@ -1,190 +1,75 @@
 {
-  "lastReviewed": "May 2026",
+  "lastReviewed": "June 2026",
   "products": [
     {
-      "id": "bluewatch",
-      "name": "blueWatch",
-      "description": "When your detectors disagree, that's the alert that matters. SOC alert verification \u2014 surfaces the disagreement signal between SIEM, SOAR, and EDR tools where real attacks hide. Buyer: CISO / Director of SOC.",
-      "logo": "/assets/logos/bluewatch.png",
-      "status": "near_mvp",
-      "blockers": [
-        "pilot 1 design partner",
-        "Blue 1.0 substrate (live)"
-      ]
+      "id": "bluemoat",
+      "name": "blueMoat",
+      "logo": "/assets/logos/bluemoat.svg",
+      "status": "active_mvp",
+      "description": "Prior-art screening you can defend. Paste a disclosure and get a screened landscape where every finding carries a validated source quote, an independent second opinion, and a tamper-evident receipt. Built for founders, IP counsel, and diligence teams who need answers that hold up."
     },
     {
-      "id": "bluescreen",
-      "name": "blueScreen",
-      "description": "Sanctions screening that closes its own justifications. Generates regulator-ready disposition rationale on every match, drains the false-positive queue. Buyer: Director of Sanctions Compliance / OFAC Officer.",
-      "logo": "/assets/logos/bluescreen.png",
-      "status": "near_mvp",
-      "blockers": [
-        "pilot 1 design partner",
-        "Blue 1.0 substrate (live)"
-      ]
-    },
-    {
-      "id": "blueguard",
-      "name": "blueGuard",
-      "description": "Show your work to the regulator, not just your decision. AML evidence packets \u2014 every SAR decision comes with the panel deliberation OCC examiners want. Buyer: Chief AML Officer / Head of Financial Crime Compliance.",
-      "logo": "/assets/logos/blueguard.png",
-      "status": "near_mvp",
-      "blockers": [
-        "pilot 1 design partner",
-        "Blue 1.0 substrate (live)"
-      ]
-    },
-    {
-      "id": "blueclaims",
-      "name": "blueClaims",
-      "description": "Faster claim closure, defensible claim files. Commercial insurance adjudication acceleration with audit trails that survive litigation. Buyer: Chief Claims Officer / VP Commercial Lines Claims.",
-      "logo": "/assets/logos/blueclaims.png",
-      "status": "near_mvp",
-      "blockers": [
-        "pilot 1 design partner",
-        "Blue 1.0 substrate (live)"
-      ]
+      "id": "bluecheck",
+      "name": "blueCheck",
+      "logo": "/assets/logos/bluecheck.svg",
+      "status": "dev",
+      "description": "Receipts for AI work. A developer kit that wraps any AI call and returns the answer with its evidence \u2014 what was checked, what confirmed it, and a signed receipt for the audit trail. Buyer: engineering and compliance leaders shipping AI features."
     },
     {
       "id": "bluechart",
       "name": "blueChart",
-      "description": "Better appeals. Better audit trail. No autonomous denials. Health-plan utilization management decision support that strengthens human review instead of replacing it. Buyer: Chief Medical Officer / VP Clinical Operations.",
-      "logo": "/assets/logos/bluechart.png",
-      "status": "near_mvp",
-      "blockers": [
-        "pilot 1 design partner",
-        "Blue 1.0 substrate (live)"
-      ]
-    },
-    {
-      "id": "isthisascam",
-      "name": "isThisAScam",
-      "description": "Multi-AI scam detection \u2014 paste a suspicious message, get red/yellow/green plus reasoning.",
-      "logo": "/assets/logos/isthisascam.svg",
-      "status": "concept",
-      "blockers": []
-    },
-    {
-      "id": "fixmyemail",
-      "name": "fixMyEmail",
-      "description": "Rewrite difficult emails \u2014 clarity, tone, professionalism.",
-      "logo": "/assets/logos/fixmyemail.svg",
-      "status": "concept",
-      "blockers": []
-    },
-    {
-      "id": "whatdoesmyleasesay",
-      "name": "whatDoesMyLeaseSay",
-      "description": "Plain-English lease summary, red flags, and questions to ask the landlord. Reading aid, not legal advice.",
-      "logo": "/assets/logos/whatdoesmyleasesay.svg",
-      "status": "concept",
-      "blockers": []
-    },
-    {
-      "id": "asklinda",
-      "name": "askLinda",
-      "description": "One question, three frontier AI models in parallel \u2014 see consensus and divergence.",
-      "logo": "/assets/logos/linda.svg",
-      "status": "concept",
-      "blockers": []
-    },
-    {
-      "id": "blueforge",
-      "name": "blueForge",
-      "description": "Desktop AI development environment \u2014 verification-first, agents-as-default-action.",
-      "logo": "/assets/logos/blueforge.png",
-      "status": "near_mvp",
-      "blockers": [
-        "headless executor V1.2 (local tools)",
-        "GUI render fix"
-      ]
-    },
-    {
-      "id": "reviewmycontract",
-      "name": "reviewMyContract",
-      "description": "Contract review for freelancers and small businesses.",
-      "logo": "/assets/logos/reviewmycontract.svg",
+      "logo": "/assets/logos/bluechart.svg",
       "status": "dev",
-      "blockers": [
-        "build not started"
-      ]
+      "description": "Better appeals. Better audit trail. No autonomous denials. Health-plan utilization management decision support that strengthens human review instead of replacing it \u2014 every determination ships with its evidence. Buyer: Chief Medical Officer / VP Clinical Operations."
     },
     {
-      "id": "linda",
-      "name": "Linda v1 (blueFinancial vertical)",
-      "description": "End-user terminal for verticalized AI workflows. First vertical: blueFinancial RIA operations.",
-      "logo": "/assets/logos/linda.svg",
-      "status": "near_mvp",
-      "blockers": [
-        "forge headless V1.2",
-        "compliance Apprentice pack v0"
-      ]
-    },
-    {
-      "id": "slumbernet",
-      "name": "slumberNet",
-      "description": "Distributed inference substrate \u2014 local LLM mesh across owned machines.",
-      "logo": "/assets/logos/slumbernet.svg",
-      "status": "near_mvp",
-      "blockers": [
-        "trench dual-3090 anchor (~2026-05-10)",
-        "shoal node bootstrap"
-      ]
-    },
-    {
-      "id": "blueglued",
-      "name": "blueGlued",
-      "description": "Mesh-witnessed multi-perspective media for consumer devices. IP filed; product build downstream.",
-      "logo": "/assets/logos/blueglued.svg",
-      "status": "near_mvp",
-      "blockers": [
-        "v0 sprint #2 receipt-signing",
-        "phone-client TestFlight"
-      ]
-    },
-    {
-      "id": "bluelegal",
-      "name": "blueLegal",
-      "description": "Legal-vertical Linda terminal. After blueFinancial dogfood validates the pattern.",
-      "logo": "/assets/logos/bluelegal.svg",
-      "status": "concept",
-      "blockers": []
-    },
-    {
-      "id": "bluemedical",
-      "name": "blueMedical",
-      "description": "Medical-vertical Linda terminal. After blueFinancial dogfood validates the pattern.",
-      "logo": "/assets/logos/bluemedical.svg",
-      "status": "concept",
-      "blockers": []
-    },
-    {
-      "id": "bluefinancial",
-      "name": "blueFinancial",
-      "description": "Financial-vertical Linda terminal. RIA operations. First vertical, dogfooded by Deep Blue Financial.",
-      "logo": "/assets/logos/bluefinancial.svg",
-      "status": "concept",
-      "blockers": []
-    },
-    {
-      "id": "forgejunior",
-      "name": "forgeJunior",
-      "description": "blueForge for junior engineers \u2014 guard rails, smaller surface, learning loops.",
-      "logo": "/assets/logos/forgejunior.svg",
+      "id": "bluesentinal",
+      "name": "blueSentinal",
+      "logo": "/assets/logos/bluesentinal.svg",
       "status": "dev",
-      "blockers": [
-        "blueForge headless V1"
-      ]
+      "description": "Catches AI at its most dangerous moment: confidently wrong. Monitoring that flags unanimous, high-confidence answers and holds action until they are independently confirmed. Buyer: teams running AI inside decisions that matter."
     },
     {
-      "id": "truthlayer",
-      "name": "truthLayer",
-      "description": "Developer middleware for verified AI outputs. API for integrating verification into any LLM workflow.",
-      "logo": "/assets/logos/truthlayer.svg",
+      "id": "blueproof",
+      "name": "blueProof",
+      "logo": "/assets/logos/blueproof.svg",
       "status": "dev",
-      "blockers": [
-        "substrate maturity"
-      ]
+      "description": "Prove what your model is. Turns a trained decision model into a regulator-readable twin with a signed certificate of equivalence \u2014 evidence built for filings, validations, and examinations. Buyer: chief actuaries and model risk leaders."
+    },
+    {
+      "id": "blueclaims",
+      "name": "blueClaims",
+      "logo": "/assets/logos/blueclaims.svg",
+      "status": "concept",
+      "description": "Faster claim closure, defensible claim files \u2014 insurance adjudication with audit trails that survive litigation."
+    },
+    {
+      "id": "bluecredit",
+      "name": "blueCredit",
+      "logo": "/assets/logos/bluecredit.svg",
+      "status": "concept",
+      "description": "Lending models with examination-ready evidence, end to end."
+    },
+    {
+      "id": "bluewatch",
+      "name": "blueWatch",
+      "logo": "/assets/logos/bluewatch.svg",
+      "status": "concept",
+      "description": "When your detectors disagree, that is the alert that matters \u2014 SOC alert verification across SIEM, SOAR, and EDR."
+    },
+    {
+      "id": "bluescreen",
+      "name": "blueScreen",
+      "logo": "/assets/logos/bluescreen.svg",
+      "status": "concept",
+      "description": "Sanctions screening that justifies its own dispositions and drains the false-positive queue."
+    },
+    {
+      "id": "blueguard",
+      "name": "blueGuard",
+      "logo": "/assets/logos/blueguard.svg",
+      "status": "concept",
+      "description": "AML evidence packets \u2014 every decision arrives with the deliberation examiners want to see."
     }
   ]
 }

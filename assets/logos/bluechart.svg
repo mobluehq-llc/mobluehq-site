@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <title>blueChart</title>
+  <rect x="56" y="46" width="88" height="116" rx="8"/>
+  <path d="M84 46v-10h32v10"/>
+  <path d="M68 110h18l8-22 12 40 8-18h18"/>
+</svg>

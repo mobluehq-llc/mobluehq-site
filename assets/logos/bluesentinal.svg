@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <title>blueSentinal</title>
+  <path d="M100 34l52 18v42c0 34-22 56-52 72-30-16-52-38-52-72V52z"/>
+  <path d="M100 72v34"/>
+  <circle cx="100" cy="124" r="3.5"/>
+</svg>
