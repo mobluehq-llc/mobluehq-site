@@ -67,13 +67,21 @@
             note.className = 'form-note form-note--warn';
             return;
           }
-          var subject = 'Investor inquiry — MOBLUEHQ';
-          var url = 'mailto:blue@mobluehq.com'
-            + '?subject=' + encodeURIComponent(subject)
-            + '&body=' + encodeURIComponent(msg);
-          window.location.href = url;
-          note.textContent = 'Opening your email client. If nothing happens, send to blue@mobluehq.com directly.';
-          note.className = 'form-note form-note--ok';
+          note.textContent = 'Sending…';
+          note.className = 'form-note';
+          fetch('https://formsubmit.co/ajax/blue@mobluehq.com', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({ message: msg, _subject: 'Investor inquiry — MOBLUEHQ' })
+          }).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+          .then(function(){
+            ta.value = '';
+            note.textContent = 'Received. Thank you — we read everything.';
+            note.className = 'form-note form-note--ok';
+          }).catch(function(){
+            note.textContent = 'Could not send — please email blue@mobluehq.com directly.';
+            note.className = 'form-note form-note--warn';
+          });
         });
       })();
       </script>
