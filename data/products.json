@@ -14,7 +14,9 @@
       "name": "blueCheck",
       "logo": "/assets/logos/bluecheck.svg",
       "status": "dev",
-      "description": "Receipts for AI work. A developer kit that wraps any AI call and returns the answer with its evidence \u2014 what was checked, what confirmed it, and a signed receipt for the audit trail. Buyer: engineering and compliance leaders shipping AI features.",
+      "description": "Receipts for AI work. A developer kit that wraps any AI call and returns the answer with a signed record for the audit trail. ",
+      "redacted_tail": true,
+      "description_after": " Buyer: engineering and compliance leaders shipping AI features.",
       "patent_pending": true
     },
     {
@@ -30,7 +32,9 @@
       "name": "blueSentinal",
       "logo": "/assets/logos/bluesentinal.svg",
       "status": "dev",
-      "description": "Catches AI at its most dangerous moment: confidently wrong. Reliability monitoring that keeps a confident consensus from becoming action until it has earned independent confirmation. Buyer: teams running AI inside decisions that matter.",
+      "description": "Catches AI at its most dangerous moment: confidently wrong. ",
+      "redacted_tail": true,
+      "description_after": " Buyer: teams running AI inside decisions that matter.",
       "patent_pending": true
     },
     {
@@ -54,7 +58,7 @@
       "name": "blueRelay",
       "logo": "/assets/logos/bluerelay.svg",
       "status": "concept",
-      "description": "Your AI behind your liability boundary \u2014 a managed gateway where every call returns with the proof your auditors will ask for.",
+      "redacted": true,
       "patent_pending": true
     },
     {
@@ -70,7 +74,7 @@
       "name": "blueLens",
       "logo": "/assets/logos/bluelens.svg",
       "status": "concept",
-      "description": "One pane for AI oversight across every framework your regulators care about \u2014 model risk, healthcare quality, privacy, and security in a single view.",
+      "redacted": true,
       "patent_pending": true
     },
     {
@@ -94,7 +98,7 @@
       "name": "blueWatch",
       "logo": "/assets/logos/bluewatch.svg",
       "status": "concept",
-      "description": "When your detectors disagree, that is the alert that matters \u2014 SOC alert verification across SIEM, SOAR, and EDR.",
+      "redacted": true,
       "patent_pending": true
     },
     {

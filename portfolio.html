@@ -152,11 +152,23 @@ function buildTile(p) {
 
   const desc = document.createElement('p');
   desc.className = 'portfolio-card-desc';
+  var BLUR_PLACEHOLDER =
+    'Details intentionally withheld for now. More about this concept will be published here at a later date.';
+  var BLUR_CSS = 'filter:blur(5px);user-select:none;pointer-events:none';
   if (p.redacted) {
-    desc.textContent =
-      'Details intentionally withheld for now. More about this concept will be published here at a later date.';
-    desc.style.cssText = 'filter:blur(5px);user-select:none;pointer-events:none';
+    desc.textContent = BLUR_PLACEHOLDER;
+    desc.style.cssText = BLUR_CSS;
     desc.setAttribute('aria-hidden', 'true');
+  } else if (p.redacted_tail) {
+    desc.appendChild(document.createTextNode(p.description || ''));
+    const blurSpan = document.createElement('span');
+    blurSpan.textContent = 'Details withheld here until this ships.';
+    blurSpan.style.cssText = BLUR_CSS;
+    blurSpan.setAttribute('aria-hidden', 'true');
+    desc.appendChild(blurSpan);
+    if (p.description_after) {
+      desc.appendChild(document.createTextNode(p.description_after));
+    }
   } else {
     desc.textContent = p.description;
   }
