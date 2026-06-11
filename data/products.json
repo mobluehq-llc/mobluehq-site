@@ -24,7 +24,7 @@
       "name": "blueChart",
       "logo": "/assets/logos/bluechart.svg",
       "status": "dev",
-      "description": "Better appeals. Better audit trail. No autonomous denials. Health-plan utilization management decision support that strengthens human review instead of replacing it \u2014 every determination ships with its evidence. Buyer: Chief Medical Officer / VP Clinical Operations.",
+      "description": "Better appeals. Better audit trail. No autonomous denials. Health-plan utilization management decision support that strengthens human review instead of replacing it — every determination ships with its evidence. Buyer: Chief Medical Officer / VP Clinical Operations.",
       "patent_pending": true
     },
     {
@@ -42,7 +42,7 @@
       "name": "blueProof",
       "logo": "/assets/logos/blueproof.svg",
       "status": "dev",
-      "description": "Prove what your model is. Turns a trained decision model into evidence regulators can read \u2014 built for filings, validations, and examinations. Buyer: chief actuaries and model risk leaders.",
+      "description": "Prove what your model is. Turns a trained decision model into evidence regulators can read — built for filings, validations, and examinations. Buyer: chief actuaries and model risk leaders.",
       "patent_pending": true
     },
     {
@@ -50,7 +50,7 @@
       "name": "blueClaims",
       "logo": "/assets/logos/blueclaims.svg",
       "status": "concept",
-      "description": "Faster claim closure, defensible claim files \u2014 insurance adjudication with audit trails that survive litigation.",
+      "description": "Faster claim closure, defensible claim files — insurance adjudication with audit trails that survive litigation.",
       "patent_pending": true
     },
     {
@@ -58,8 +58,9 @@
       "name": "blueRelay",
       "logo": "/assets/logos/bluerelay.svg",
       "status": "concept",
-      "redacted": true,
-      "patent_pending": true
+      "patent_pending": true,
+      "description": "Verified AI infrastructure for regulated enterprises. ",
+      "redacted_tail": true
     },
     {
       "id": "bluecredit",
@@ -74,39 +75,43 @@
       "name": "blueLens",
       "logo": "/assets/logos/bluelens.svg",
       "status": "concept",
-      "redacted": true,
-      "patent_pending": true
+      "patent_pending": true,
+      "description": "AI compliance oversight for regulated industries. ",
+      "redacted_tail": true
     },
     {
       "id": "blueassay",
       "name": "blueAssay",
       "logo": "/assets/logos/blueassay.svg",
       "status": "concept",
-      "redacted": true,
-      "patent_pending": true
+      "patent_pending": true,
+      "description": "Quality verification for advanced manufacturing. ",
+      "redacted_tail": true
     },
     {
       "id": "blueledger",
       "name": "blueLedger",
       "logo": "/assets/logos/blueledger.svg",
       "status": "concept",
-      "redacted": true,
-      "patent_pending": true
+      "patent_pending": true,
+      "description": "Verifiable computation for clinical research. ",
+      "redacted_tail": true
     },
     {
       "id": "bluewatch",
       "name": "blueWatch",
       "logo": "/assets/logos/bluewatch.svg",
       "status": "concept",
-      "redacted": true,
-      "patent_pending": true
+      "patent_pending": true,
+      "description": "Verification for security operations teams. ",
+      "redacted_tail": true
     },
     {
       "id": "bluedocket",
       "name": "blueDocket",
       "logo": "/assets/logos/bluedocket.svg",
       "status": "concept",
-      "description": "Continuous prior-art watch for patent practices \u2014 the screening your team does by hand, running around the clock on every active matter.",
+      "description": "Continuous prior-art watch for patent practices — the screening your team does by hand, running around the clock on every active matter.",
       "patent_pending": true
     },
     {
@@ -122,7 +127,7 @@
       "name": "blueGuard",
       "logo": "/assets/logos/blueguard.svg",
       "status": "concept",
-      "description": "AML evidence packets \u2014 every decision arrives with the deliberation examiners want to see.",
+      "description": "AML evidence packets — every decision arrives with the deliberation examiners want to see.",
       "patent_pending": true
     },
     {
@@ -130,8 +135,9 @@
       "name": "blueChorus",
       "logo": "/assets/logos/bluechorus.svg",
       "status": "concept",
-      "redacted": true,
-      "patent_pending": true
+      "patent_pending": true,
+      "description": "Collaboration infrastructure for regulated institutions. ",
+      "redacted_tail": true
     },
     {
       "id": "bluenorth",
