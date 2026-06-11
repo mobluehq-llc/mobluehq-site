@@ -1,1 +1,7 @@
-²ø1šYì
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<title>blueLens</title>
+<rect x="40" y="40" width="80" height="80" rx="8"/>
+<path d="M40 67h80M40 94h80M67 40v80M94 40v80"/>
+<circle cx="118" cy="118" r="30"/>
+<path d="M140 140l24 24"/>
+</svg>
