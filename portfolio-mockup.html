@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Portfolio — MOBLUEHQ</title>
+<title>[MOCKUP] Portfolio — MOBLUEHQ</title>
 <meta name="description" content="MOBLUEHQ portfolio: verification infrastructure for regulated work — one engine behind an active MVP, products in development, and a pipeline." />
 <link rel="canonical" href="https://www.mobluehq.com/portfolio" />
 <meta name="robots" content="index, follow" />
@@ -61,7 +61,7 @@
 
 <script>
 /** Bust immutable year-long /assets/* cache when CSS or logos change (see vercel.json). */
-var MOBLUE_ASSET_V = '19';
+var MOBLUE_ASSET_V = '18';
 
 function escapeHtml(str) {
   if (typeof str !== 'string') return '';
@@ -231,7 +231,7 @@ async function loadPortfolio() {
   const root = document.getElementById('portfolioRoot');
   const metaEl = document.getElementById('portfolioMeta');
   try {
-    const response = await fetch('/data/products.json', { cache: 'no-cache' });
+    const response = await fetch('/data/products-mockup.json', { cache: 'no-cache' });
     if (!response.ok) throw new Error('Failed to load products.json');
     const data = await response.json();
 
