@@ -50,6 +50,14 @@
       "patent_pending": true
     },
     {
+      "id": "bluerelay",
+      "name": "blueRelay",
+      "logo": "/assets/logos/bluerelay.svg",
+      "status": "concept",
+      "description": "Your AI behind your liability boundary \u2014 a managed gateway where every call returns with the proof your auditors will ask for.",
+      "patent_pending": true
+    },
+    {
       "id": "bluecredit",
       "name": "blueCredit",
       "logo": "/assets/logos/bluecredit.svg",
@@ -58,11 +66,43 @@
       "patent_pending": true
     },
     {
+      "id": "bluelens",
+      "name": "blueLens",
+      "logo": "/assets/logos/bluelens.svg",
+      "status": "concept",
+      "description": "One pane for AI oversight across every framework your regulators care about \u2014 model risk, healthcare quality, privacy, and security in a single view.",
+      "patent_pending": true
+    },
+    {
+      "id": "blueassay",
+      "name": "blueAssay",
+      "logo": "/assets/logos/blueassay.svg",
+      "status": "concept",
+      "redacted": true,
+      "patent_pending": true
+    },
+    {
+      "id": "blueledger",
+      "name": "blueLedger",
+      "logo": "/assets/logos/blueledger.svg",
+      "status": "concept",
+      "redacted": true,
+      "patent_pending": true
+    },
+    {
       "id": "bluewatch",
       "name": "blueWatch",
       "logo": "/assets/logos/bluewatch.svg",
       "status": "concept",
       "description": "When your detectors disagree, that is the alert that matters \u2014 SOC alert verification across SIEM, SOAR, and EDR.",
+      "patent_pending": true
+    },
+    {
+      "id": "bluedocket",
+      "name": "blueDocket",
+      "logo": "/assets/logos/bluedocket.svg",
+      "status": "concept",
+      "description": "Continuous prior-art watch for patent practices \u2014 the screening your team does by hand, running around the clock on every active matter.",
       "patent_pending": true
     },
     {
@@ -80,6 +120,23 @@
       "status": "concept",
       "description": "AML evidence packets \u2014 every decision arrives with the deliberation examiners want to see.",
       "patent_pending": true
+    },
+    {
+      "id": "bluechorus",
+      "name": "blueChorus",
+      "logo": "/assets/logos/bluechorus.svg",
+      "status": "concept",
+      "redacted": true,
+      "patent_pending": true
+    },
+    {
+      "id": "bluenorth",
+      "name": "blueNorth",
+      "logo": "/assets/logos/bluenorth.svg",
+      "status": "concept",
+      "redacted": true,
+      "patent_pending": false,
+      "badges_redacted": true
     }
   ]
 }

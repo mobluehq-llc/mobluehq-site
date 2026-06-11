@@ -61,7 +61,7 @@
 
 <script>
 /** Bust immutable year-long /assets/* cache when CSS or logos change (see vercel.json). */
-var MOBLUE_ASSET_V = '15';
+var MOBLUE_ASSET_V = '16';
 
 function escapeHtml(str) {
   if (typeof str !== 'string') return '';
@@ -140,11 +140,26 @@ function buildTile(p) {
     pp.style.cssText = 'margin-left:6px;opacity:0.75';
     pp.textContent = 'Patent pending';
     nameRow.appendChild(pp);
+  } else if (p.badges_redacted) {
+    const pp = document.createElement('span');
+    pp.className = 'portfolio-tile-badge';
+    pp.style.cssText =
+      'margin-left:6px;opacity:0.75;filter:blur(4px);user-select:none;pointer-events:none';
+    pp.setAttribute('aria-hidden', 'true');
+    pp.textContent = 'Undisclosed';
+    nameRow.appendChild(pp);
   }
 
   const desc = document.createElement('p');
   desc.className = 'portfolio-card-desc';
-  desc.textContent = p.description;
+  if (p.redacted) {
+    desc.textContent =
+      'Details intentionally withheld for now. More about this concept will be published here at a later date.';
+    desc.style.cssText = 'filter:blur(5px);user-select:none;pointer-events:none';
+    desc.setAttribute('aria-hidden', 'true');
+  } else {
+    desc.textContent = p.description;
+  }
 
   meta.appendChild(nameRow);
   meta.appendChild(desc);
