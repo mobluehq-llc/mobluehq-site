@@ -46,7 +46,7 @@ d.text((x0 + w1, y_wm), hq, font=wm_f, fill=ACCENT)
 
 # tagline
 tag_f = font(40, False)
-tag = "AI you can audit."
+tag = "AI\u2026 Verified."
 d.text((center_x(tag, tag_f), 330), tag, font=tag_f, fill=WHITE)
 
 # sub-tagline
@@ -61,5 +61,5 @@ bb = d.textbbox((0, 0), dom, font=pill_f); dw = bb[2] - bb[0]
 px = (W - dw) // 2
 d.text((px, 540), dom, font=pill_f, fill=ACCENT)
 
-img.save("assets/og-image.png", "PNG")
-print("WROTE assets/og-image.png", img.size)
+img.save("assets/og-card.png", "PNG")
+print("WROTE assets/og-card.png", img.size)
