@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<title>blueFleet</title>
+<rect x="36" y="36" width="44" height="36" rx="4"/>
+<rect x="120" y="36" width="44" height="36" rx="4"/>
+<rect x="36" y="128" width="44" height="36" rx="4"/>
+<rect x="120" y="128" width="44" height="36" rx="4"/>
+<circle cx="100" cy="100" r="10"/>
+<path d="M80 54h28M80 146h28M58 72v46M142 72v46"/>
+</svg>
