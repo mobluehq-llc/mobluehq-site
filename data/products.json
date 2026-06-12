@@ -4,7 +4,7 @@
     {
       "id": "blue",
       "name": "Blue",
-      "logo": "/assets/logos/blue.png",
+      "logo": "/assets/logos/blue.svg",
       "status": "active_mvp",
       "description": "The verification substrate every MOBLUEHQ product runs on. A private inference mesh that returns sealed, signed results - the scheduler never sees your data, and every answer carries a receipt anyone can verify. ",
       "redacted_tail": true,
