@@ -13,21 +13,19 @@
    "id": "bluecheck",
    "name": "blueCheck",
    "logo": "/assets/logos/bluecheck.svg",
-   "status": "dev",
+   "status": "demo",
    "description": "Verification engine running: signed receipts, offline verification, council with judge-and-doer separation. Private demo available on request. ",
    "redacted_tail": true,
    "description_after": " Buyer: engineering and compliance leaders shipping AI features.",
-   "patent_pending": true,
-   "stage_label": "PRIVATE DEMO"
+   "patent_pending": true
   },
   {
    "id": "bluechart",
    "name": "blueChart",
    "logo": "/assets/logos/bluechart.svg",
-   "status": "dev",
-   "description": "Evidence packs for utilization review - criteria cited, sources quoted verbatim, dissent shown, every pack signed and offline-verifiable. No autonomous denials, by architecture. Private demo available on request: blue@mobluehq.com. ",
-   "patent_pending": true,
-   "stage_label": "PRIVATE DEMO"
+   "status": "demo",
+   "description": "Evidence packs for utilization review - criteria cited, sources quoted verbatim, dissent shown, every pack signed and offline-verifiable. No autonomous denials, by architecture. Private demo available on request. ",
+   "patent_pending": true
   },
   {
    "id": "bluesentinal",

@@ -71,7 +71,7 @@
           }
           note.textContent = 'Sending…';
           note.className = 'form-note';
-          fetch('https://formsubmit.co/ajax/blue@mobluehq.com', {
+          fetch('https://formsubmit.co/ajax/' + ['bl','ue','@','moblue','hq','.com'].join(''), {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify({ message: msg, _subject: 'Investor inquiry — MOBLUEHQ' })
@@ -91,7 +91,7 @@
   </section>
 </main>
 
-<footer>  <div>© 2026 MOBLUEHQ LLC · Delaware</div>
+<footer>  <div>© 2026 MOBLUEHQ LLC · Delaware · <a href="/contact">Contact</a></div>
 </footer>
 
 </body>

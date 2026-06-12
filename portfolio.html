@@ -56,6 +56,7 @@
 
 <footer>
   <div class="footer-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></div>
+  <div class="footer-links"><a href="/contact">Contact</a></div>
   <div>© 2026 MOBLUEHQ LLC · Delaware</div>
 </footer>
 
@@ -124,13 +125,15 @@ function buildTile(p) {
   badge.textContent =
     p.status === 'active_mvp'
       ? 'Active MVP'
-      : p.status === 'near_mvp'
-        ? 'Near MVP'
-        : p.status === 'dev'
-          ? 'In Development'
-          : p.status === 'concept'
-            ? 'Concept'
-            : p.status;
+      : p.status === 'demo'
+        ? 'Demo Available'
+        : p.status === 'near_mvp'
+          ? 'Near MVP'
+          : p.status === 'dev'
+            ? 'In Development'
+            : p.status === 'concept'
+              ? 'Concept'
+              : p.status;
 
   nameRow.appendChild(nameEl);
   nameRow.appendChild(badge);
@@ -244,12 +247,17 @@ async function loadPortfolio() {
     const data = await response.json();
 
     const active_mvp = data.products.filter(p => p.status === 'active_mvp');
+    const demo = data.products.filter(p => p.status === 'demo');
     const dev = data.products.filter(p => p.status === 'dev');
     const concepts = data.products.filter(p => p.status === 'concept');
     const local_ai = data.products.filter(p => p.status === 'local');
 
     root.innerHTML = '';
     root.appendChild(buildSection('Active MVP', active_mvp));
+    if (demo.length) {
+      root.appendChild(buildSection('Demo Available', demo,
+        'Working software, shown privately. Use the contact link below to request a session.'));
+    }
     root.appendChild(buildSection('In Development', dev));
     root.appendChild(buildSection('Local AI', local_ai,
       'Built for the machine you just bought - new Macs and AI-class laptops run real models on-device. These apps use that power so your data never has to leave.'));

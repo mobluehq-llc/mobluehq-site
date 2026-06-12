@@ -549,3 +549,9 @@ footer .footer-mark .hq { color: var(--hq); }
 }
 .form-note--warn { color: #FBBF24; }
 .form-note--ok { color: #4D9FFF; }
+
+.portfolio-tile-badge--demo {
+  color: #4d9fff;
+  border-color: rgba(77, 159, 255, 0.55);
+  box-shadow: 0 0 10px rgba(77, 159, 255, 0.18);
+}
