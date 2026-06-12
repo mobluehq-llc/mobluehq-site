@@ -61,7 +61,7 @@
 
 <script>
 /** Bust immutable year-long /assets/* cache when CSS or logos change (see vercel.json). */
-var MOBLUE_ASSET_V = '19';
+var MOBLUE_ASSET_V = '20';
 
 function escapeHtml(str) {
   if (typeof str !== 'string') return '';
@@ -134,6 +134,14 @@ function buildTile(p) {
 
   nameRow.appendChild(nameEl);
   nameRow.appendChild(badge);
+  if (p.stage_label) {
+    const st = document.createElement('span');
+    st.className = 'portfolio-tile-badge';
+    st.style.cssText =
+      'margin-left:6px;color:#4D9FFF;border:1px solid rgba(77,159,255,0.45);border-radius:4px;padding:1px 6px;font-size:10px;letter-spacing:0.06em';
+    st.textContent = p.stage_label;
+    nameRow.appendChild(st);
+  }
   if (p.patent_pending) {
     const pp = document.createElement('span');
     pp.className = 'portfolio-tile-badge';
