@@ -32,7 +32,7 @@
       "name": "blueGlu",
       "logo": "/assets/logos/blueglued.svg",
       "status": "demo",
-      "description": "The Blue chatbot for everyone. Works offline on your own device; when you're online it draws on the whole mesh, and every answer can show where it came from. ",
+      "description": "The Blue chatbot for everyone. Works offline on your own device; online it draws on the whole mesh, shows where each answer came from, and flags when the AI is confidently wrong \u2014 the thing most chatbots will never tell you. ",
       "redacted_tail": true,
       "description_after": " Private demo available on request. Buyer: anyone who wants AI that works anywhere and shows its work.",
       "patent_pending": true
@@ -153,7 +153,7 @@
       "name": "blueClaims",
       "logo": "/assets/logos/blueclaims.svg",
       "status": "concept",
-      "description": "Faster claim closure, defensible claim files \u2014 insurance adjudication with audit trails that survive litigation.",
+      "description": "Faster claim closure with claim files that hold up. Multi-perspective evidence that resists tampering, every determination scored element-by-element and receipted for audit. ",
       "patent_pending": true
     },
     {
