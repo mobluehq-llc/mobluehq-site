@@ -32,7 +32,7 @@
       "name": "blueGlu",
       "logo": "/assets/logos/blueglued.svg",
       "status": "demo",
-      "description": "The Blue chatbot for everyone. Works offline on your own device; online it draws on the whole mesh, shows where each answer came from, and flags when the AI is confidently wrong \u2014 the thing most chatbots will never tell you. ",
+      "description": "The Blue chatbot for everyone. Works offline on your own device; online it draws on the whole mesh, shows where each answer came from, and tells you when it is unsure - showing the disagreement instead of guessing. ",
       "redacted_tail": true,
       "description_after": " Private demo available on request. Buyer: anyone who wants AI that works anywhere and shows its work.",
       "patent_pending": true
@@ -62,7 +62,7 @@
       "name": "blueSentinal",
       "logo": "/assets/logos/bluesentinal.svg",
       "status": "dev",
-      "description": "Catches AI at its most dangerous moment: confidently wrong. ",
+      "description": "The escalation gate for AI decisions. When independent models disagree - or agree too easily - it routes the case to a human instead of letting the system guess. ",
       "redacted_tail": true,
       "description_after": " Buyer: teams running AI inside decisions that matter.",
       "patent_pending": true
