@@ -132,7 +132,7 @@ function buildTile(p) {
           : p.status === 'dev'
             ? 'In Development'
             : p.status === 'concept'
-              ? 'Concept'
+              ? 'Platform-Ready'
               : p.status;
 
   nameRow.appendChild(nameEl);
@@ -161,6 +161,13 @@ function buildTile(p) {
     nameRow.appendChild(pp);
   }
 
+  if (p.on_device) {
+    const odb = document.createElement('span');
+    odb.className = 'portfolio-tile-badge';
+    odb.style.cssText = 'margin-left:6px;color:#3DD68C;border:1px solid rgba(61,214,140,0.45);border-radius:4px;padding:1px 6px;font-size:10px;letter-spacing:0.06em';
+    odb.textContent = 'On-device';
+    nameRow.appendChild(odb);
+  }
   const desc = document.createElement('p');
   desc.className = 'portfolio-card-desc';
   var BLUR_PLACEHOLDER =
@@ -249,19 +256,19 @@ async function loadPortfolio() {
     const active_mvp = data.products.filter(p => p.status === 'active_mvp');
     const demo = data.products.filter(p => p.status === 'demo');
     const dev = data.products.filter(p => p.status === 'dev');
-    const concepts = data.products.filter(p => p.status === 'concept');
-    const local_ai = data.products.filter(p => p.status === 'local');
+    const ready = data.products.filter(p => p.status === 'concept');
 
     root.innerHTML = '';
-    root.appendChild(buildSection('Active MVP', active_mvp));
+    root.appendChild(buildSection('Active MVP', active_mvp,
+      'Working software you can use or demo today.'));
     if (demo.length) {
       root.appendChild(buildSection('Demo Available', demo,
         'Working software, shown privately. Use the contact link below to request a session.'));
     }
-    root.appendChild(buildSection('In Development', dev));
-    root.appendChild(buildSection('Local AI', local_ai,
-      'Built for the machine you just bought - new Macs and AI-class laptops run real models on-device. These apps use that power so your data never has to leave.'));
-    root.appendChild(buildSection('Concepts', concepts));
+    root.appendChild(buildSection('In Development', dev,
+      'Product-specific build underway on the shared engine.'));
+    root.appendChild(buildSection('Platform-Ready', ready,
+      'Not speculative. Each is the proven engine - verification council, signed receipts, on-device runtime, PII and egress controls - pointed at a new domain. The infrastructure is built; what remains is the vertical pack: criteria, data, UI, and validation.'));
 
     if (metaEl && data.lastReviewed) {
       metaEl.textContent = 'Portfolio last reviewed ' + data.lastReviewed;
