@@ -27,11 +27,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=7">
+<link rel="stylesheet" href="/assets/style.css?v=8">
 </head>
 <body>
 
-<nav>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav aria-label="Primary">
   <a href="/" class="nav-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></a>
   <ul class="nav-links">
     <li><a href="/about" class="active">About</a></li>
@@ -40,9 +42,9 @@
   </ul>
 </nav>
 
-<main>
+<main id="main-content">
   <section class="content content--about">
-    <div class="section-label">About</div>
+    <h1 class="section-label">About</h1>
     <div class="section-label-line section-label-line--about"></div>
 
     <div class="about-twocolumn">
@@ -51,7 +53,7 @@
       </div>
       <div class="about-text-block">
         <div>
-          <h1 class="about-name">Adam Faust</h1>
+          <h2 class="about-name">Adam Faust</h2>
           <div class="about-role">Founder</div>
         </div>
         <p class="about-bio">Adam has built MOBLUEHQ on independence, low overhead, and intense research.</p>

@@ -1,0 +1,11 @@
+{
+  "name": "mobluehq-site",
+  "private": true,
+  "scripts": {
+    "a11y": "node scripts/a11y-scan.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/cli": "^4.10.1",
+    "http-server": "^14.1.1"
+  }
+}
