@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trust &amp; Security — MOBLUEHQ</title>
+<meta name="description" content="MOBLUEHQ trust center: privacy posture, subprocessors, security contact, vulnerability disclosure, and data handling." />
+<link rel="canonical" href="https://www.mobluehq.com/trust" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mobluehq.com/trust" />
+<meta property="og:title" content="Trust &amp; Security — MOBLUEHQ" />
+<meta property="og:description" content="Privacy posture, subprocessors, security contact, and vulnerability disclosure for MOBLUEHQ." />
+<meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
+
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=8">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav aria-label="Primary">
+  <a href="/" class="nav-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></a>
+  <ul class="nav-links">
+    <li><a href="/about">About</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/investors">Investors</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <section class="content content--trust">
+    <p class="section-label">Trust</p>
+    <div class="section-label-line"></div>
+
+    <h1 class="page-title">Trust &amp; Security</h1>
+    <p class="page-lead">MOBLUEHQ builds verification infrastructure for regulated work. This page summarizes how we handle data, who helps us run the service, and how to reach us about security.</p>
+
+    <div class="docs-prose">
+      <h2>Privacy posture</h2>
+      <p>We collect only what we need to operate the site, respond to inquiries, and (when you use our products) deliver verification services. We do not sell personal information. Product traffic is designed so inference workloads can run without the scheduler seeing your underlying content — that architectural separation is central to the Blue substrate described in our portfolio.</p>
+      <p>See our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a> for full details.</p>
+
+      <h2>Data handling</h2>
+      <ul>
+        <li><strong>Website &amp; forms:</strong> Contact and investor messages are transmitted to our inbox provider and stored only as long as needed to respond.</li>
+        <li><strong>Product data:</strong> Verification inputs and outputs are processed to deliver signed receipts. Retention periods vary by plan and are documented in product agreements.</li>
+        <li><strong>Logs:</strong> Operational logs (errors, latency, abuse signals) are kept for a limited period and access is restricted to personnel who need them.</li>
+        <li><strong>Encryption:</strong> Data in transit uses TLS. Data at rest uses provider-managed encryption on our cloud infrastructure.</li>
+        <li><strong>Deletion:</strong> You may request deletion of account-linked data by contacting us. Some records may be retained where required by law or for legitimate security purposes.</li>
+      </ul>
+
+      <h2 id="subprocessors">Subprocessors</h2>
+      <p>We use vetted third parties to host and operate MOBLUEHQ. This list is updated when vendors change.</p>
+      <div class="trust-table-wrap">
+        <table class="trust-table">
+          <caption class="sr-only">MOBLUEHQ subprocessor list</caption>
+          <thead>
+            <tr>
+              <th scope="col">Vendor</th>
+              <th scope="col">Purpose</th>
+              <th scope="col">Region</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vercel</td>
+              <td>Website hosting &amp; serverless functions</td>
+              <td>US / global edge</td>
+              <td><span class="trust-status trust-status--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>FormSubmit</td>
+              <td>Contact &amp; inquiry form delivery</td>
+              <td>US</td>
+              <td><span class="trust-status trust-status--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Stripe</td>
+              <td>Payment processing &amp; billing</td>
+              <td>US</td>
+              <td><span class="trust-status trust-status--planned">Planned</span></td>
+            </tr>
+            <tr>
+              <td>Resend</td>
+              <td>Transactional email</td>
+              <td>US</td>
+              <td><span class="trust-status trust-status--planned">Planned</span></td>
+            </tr>
+            <tr>
+              <td>Plain</td>
+              <td>Customer support inbox</td>
+              <td>US</td>
+              <td><span class="trust-status trust-status--planned">Planned</span></td>
+            </tr>
+            <tr>
+              <td>WorkOS</td>
+              <td>SSO &amp; workforce identity</td>
+              <td>US</td>
+              <td><span class="trust-status trust-status--planned">Planned</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Security contact</h2>
+      <p>Report suspected vulnerabilities or security incidents to <a href="mailto:security@mobluehq.com">security@mobluehq.com</a>. We aim to acknowledge reports within two business days.</p>
+      <p>Machine-readable contact details: <a href="/.well-known/security.txt">/.well-known/security.txt</a></p>
+
+      <h2 id="vulnerability-disclosure">Vulnerability disclosure</h2>
+      <p>We welcome good-faith reports from security researchers. Please:</p>
+      <ol>
+        <li>Email <a href="mailto:security@mobluehq.com">security@mobluehq.com</a> with a description, reproduction steps, and impact assessment.</li>
+        <li>Give us reasonable time to investigate and remediate before public disclosure (typically 90 days).</li>
+        <li>Do not access, modify, or exfiltrate data belonging to other users.</li>
+        <li>Do not perform denial-of-service testing against production systems.</li>
+      </ol>
+      <p>We do not currently offer a paid bug bounty. We will credit researchers who request it and whose reports lead to a fix.</p>
+
+      <h2>System status</h2>
+      <p>Service availability and incident history: <a href="https://status.mobluehq.com" rel="noopener noreferrer">status.mobluehq.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></div>
+  <div class="footer-links">
+    <a href="/contact">Contact</a>
+    <a href="/trust" aria-current="page">Trust</a>
+    <a href="/pricing">Pricing</a>
+      <a href="/terms">Terms</a>
+    <a href="/privacy">Privacy</a>
+  </div>
+  <div>© 2026 MOBLUEHQ LLC · Delaware</div>
+</footer>
+
+</body>
+</html>

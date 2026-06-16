@@ -1,0 +1,7 @@
+Contact: mailto:security@mobluehq.com
+Expires: 2027-06-15T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://www.mobluehq.com/.well-known/security.txt
+Policy: https://www.mobluehq.com/trust#vulnerability-disclosure
+Acknowledgments: https://www.mobluehq.com/trust#vulnerability-disclosure
+Hiring: https://www.mobluehq.com/contact

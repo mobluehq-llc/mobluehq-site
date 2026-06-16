@@ -28,11 +28,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" href="/assets/style.css?v=7" as="style" />
-<link rel="stylesheet" href="/assets/style.css?v=7">
+<link rel="stylesheet" href="/assets/style.css?v=8">
 </head>
 <body>
 
-<nav>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav aria-label="Primary">
   <a href="/" class="nav-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></a>
   <ul class="nav-links">
     <li><a href="/about">About</a></li>
@@ -41,13 +43,13 @@
   </ul>
 </nav>
 
-<main>
+<main id="main-content">
   <section class="content content--portfolio">
-    <div class="section-label">Portfolio</div>
+    <h1 class="section-label">Portfolio</h1>
     <div class="section-label-line section-label-line--portfolio"></div>
 
     <div id="portfolioRoot">
-      <div class="portfolio-loading">Loading portfolio</div>
+      <div class="portfolio-loading" role="status" aria-live="polite">Loading portfolio</div>
     </div>
 
     <div class="portfolio-meta" id="portfolioMeta"></div>
