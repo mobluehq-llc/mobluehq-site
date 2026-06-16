@@ -36,7 +36,9 @@
     <div class="section-label-line"></div>
 
     <form class="investor-form-elegant" id="contactForm" novalidate>
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="text" name="_honey" id="leadHoney" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <input type="hidden" name="segment" id="leadSegment" value="" />
+      <input type="hidden" name="plan_interest" id="leadPlan" value="" />
       <label class="form-question" for="senderName">Name</label>
       <textarea class="form-textarea" id="senderName" name="name" rows="1" required autocomplete="off" spellcheck="false"></textarea>
       <label class="form-question" for="senderEmail">Email</label>
@@ -60,22 +62,48 @@
   <div>© 2026 MOBLUEHQ LLC · Delaware</div>
 </footer>
 
+<script src="/assets/endpoints.js"></script>
 <script>
 (function () {
+  var params = new URLSearchParams(window.location.search);
+  var segment = params.get('segment');
+  var plan = params.get('plan');
+  if (segment === 'self_serve' || segment === 'enterprise') {
+    document.getElementById('leadSegment').value = segment;
+  }
+  if (plan) {
+    document.getElementById('leadPlan').value = plan;
+  }
+
   var form = document.getElementById('contactForm');
   var note = document.getElementById('formNote');
+  var leadUrl = (window.MOBLUEHQ_ENDPOINTS && window.MOBLUEHQ_ENDPOINTS.LEAD_INGEST_URL) || '';
+
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
     var name = document.getElementById('senderName').value.trim();
     var email = document.getElementById('senderEmail').value.trim();
     var msg = document.getElementById('senderMsg').value.trim();
     if (!name || !email || !msg) { note.textContent = 'Please fill in all fields.'; return; }
+    if (!leadUrl) { note.textContent = 'Could not send — please try again.'; return; }
     note.textContent = 'Sending…';
     try {
-      var r = await fetch('https://formsubmit.co/ajax/' + ['bl','ue','@','moblue','hq','.com'].join(''), {
+      var payload = {
+        id: (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()),
+        name: name,
+        email: email,
+        message: msg,
+        _honey: document.getElementById('leadHoney').value
+      };
+      var segmentVal = document.getElementById('leadSegment').value;
+      var planVal = document.getElementById('leadPlan').value;
+      if (segmentVal) payload.segment = segmentVal;
+      if (planVal) payload.plan_interest = planVal;
+
+      var r = await fetch(leadUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ name: name, email: email, message: msg, _subject: 'MOBLUEHQ contact form' })
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'Idempotency-Key': payload.id },
+        body: JSON.stringify(payload)
       });
       if (r.ok) { note.textContent = 'Sent. You will hear back soon.'; form.reset(); }
       else { note.textContent = 'Could not send — please try again.'; }
