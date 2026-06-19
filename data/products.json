@@ -1,5 +1,5 @@
 {
-  "lastReviewed": "June 2026",
+  "lastReviewed": "June 19, 2026",
   "products": [
     {
       "id": "blue",
@@ -8,7 +8,7 @@
       "status": "active_mvp",
       "description": "The verification substrate every MOBLUEHQ product runs on. A private inference mesh that returns sealed, signed results - the scheduler never sees your data, and every answer carries a receipt anyone can verify. ",
       "redacted_tail": true,
-      "description_after": " The rail underneath the portfolio: build once, every product rides it.",
+      "description_after": " The rail underneath the portfolio. For everyone building AI into decisions that carry consequences - the layer that makes those answers provable, not just plausible.",
       "patent_pending": true
     },
     {
@@ -16,7 +16,7 @@
       "name": "blueMoat",
       "logo": "/assets/logos/bluemoat.svg",
       "status": "active_mvp",
-      "description": "Prior-art screening you can defend. Paste a disclosure and get a screened landscape where every finding carries a validated source quote, an independent second opinion, and a tamper-evident receipt. Now running its judging on the Blue substrate. Built for founders, IP counsel, and diligence teams who need answers that hold up.",
+      "description": "Prior-art screening you can defend. Paste a disclosure and get a screened landscape where every finding carries a validated source quote, an independent second opinion, and a tamper-evident receipt. Now running its judging on the Blue substrate. For founders, IP counsel, and diligence teams - because a prior-art opinion is only worth something if it survives challenge.",
       "patent_pending": true
     },
     {
@@ -24,7 +24,7 @@
       "name": "blueChart",
       "logo": "/assets/logos/bluechart.svg",
       "status": "active_mvp",
-      "description": "Evidence packs for utilization review - criteria cited, sources quoted verbatim, dissent shown, every pack signed and offline-verifiable. No autonomous denials, by architecture. Private demo available on request. ",
+      "description": "Evidence packs for utilization review - criteria cited, sources quoted verbatim, dissent shown, every pack signed and offline-verifiable. No autonomous denials, by architecture. Private demo available on request. For health plans and utilization-review teams - speed on medical review without the liability of an unexplained denial.",
       "patent_pending": true
     },
     {
@@ -34,7 +34,7 @@
       "status": "demo",
       "description": "The Blue chatbot for everyone. Works offline on your own device; online it draws on the whole mesh, shows where each answer came from, and tells you when it is unsure - showing the disagreement instead of guessing. ",
       "redacted_tail": true,
-      "description_after": " Private demo available on request. Buyer: anyone who wants AI that works anywhere and shows its work.",
+      "description_after": " Private demo available on request. For anyone who wants capable AI that works anywhere and shows its work - proof that verifiable AI belongs in everyday hands, not just the data center.",
       "patent_pending": true,
       "on_device": true
     },
@@ -42,12 +42,13 @@
       "id": "slumbernet",
       "name": "slumberNet",
       "logo": "/assets/logos/slumbernet.svg",
-      "status": "demo",
+      "status": "active_mvp",
       "description": "Donate your computer's idle time to the mesh. Install it, and when you're away your machine quietly helps run verified AI work - then gets out of the way the instant you return. ",
       "redacted_tail": true,
-      "description_after": " Private demo available on request. Buyer: anyone with a capable machine and idle hours.",
+      "description_after": " Private demo available on request. For anyone with a capable machine and idle hours - the supply side that lets verifiable AI scale without hyperscaler lock-in.",
       "patent_pending": true,
-      "on_device": true
+      "on_device": true,
+      "stage_label": "Shipped - API + app, verified over the internet"
     },
     {
       "id": "bluecheck",
@@ -56,17 +57,17 @@
       "status": "active_mvp",
       "description": "Verification engine running: signed receipts, offline verification, council with judge-and-doer separation. Private demo available on request. ",
       "redacted_tail": true,
-      "description_after": " Buyer: engineering and compliance leaders shipping AI features.",
+      "description_after": " Private demo available on request. For engineering and compliance leaders shipping AI features - so 'the model said so' becomes something you can prove.",
       "patent_pending": true
     },
     {
-      "id": "bluesentinal",
-      "name": "blueSentinal",
-      "logo": "/assets/logos/bluesentinal.svg",
+      "id": "bluesentinel",
+      "name": "blueSentinel",
+      "logo": "/assets/logos/bluesentinel.svg",
       "status": "demo",
       "description": "The escalation gate for AI decisions. When independent models disagree - or agree too easily - it routes the case to a human instead of letting the system guess. ",
       "redacted_tail": true,
-      "description_after": " Buyer: teams running AI inside decisions that matter.",
+      "description_after": " For teams running AI inside decisions that matter - because the most dangerous answers are the confident, wrong ones.",
       "patent_pending": true
     },
     {
@@ -74,7 +75,7 @@
       "name": "blueProof",
       "logo": "/assets/logos/blueproof.svg",
       "status": "dev",
-      "description": "Prove what your model is. Turns a trained decision model into evidence regulators can read — built for filings, validations, and examinations. Buyer: chief actuaries and model risk leaders.",
+      "description": "Prove what your model is. Turns a trained decision model into evidence regulators can read — built for filings, validations, and examinations. For chief actuaries and model-risk leaders - turning a model into evidence a regulator can read.",
       "patent_pending": true
     },
     {
@@ -86,7 +87,50 @@
       "redacted_tail": true,
       "patent_pending": true,
       "stage_label": "IN DEVELOPMENT",
-      "on_device": true
+      "on_device": true,
+      "description_after": " For anyone relying on AI they didn't build - an independent second check on the tools already in their workflow."
+    },
+    {
+      "id": "blueatlas",
+      "name": "blueAtlas",
+      "logo": "/assets/logos/blueatlas.svg",
+      "status": "concept",
+      "patent_pending": true,
+      "on_device": true,
+      "description": "Rent verified expertise, not raw compute - ask a hard question and get an answer drawn from private expert sources, a hospital's records or a firm's case files, without anyone handing over their data.",
+      "redacted_tail": true,
+      "description_after": " For whole industries whose best answers are locked inside data nobody will share - a way to pool expertise without pooling secrets."
+    },
+    {
+      "id": "blueprivacy",
+      "name": "bluePrivacy",
+      "logo": "/assets/logos/blueprivacy.svg",
+      "status": "concept",
+      "patent_pending": true,
+      "on_device": true,
+      "description": "An extraction-control gate for sensitive nodes - so a private knowledge source can answer useful questions without giving away what it knows.",
+      "redacted_tail": true,
+      "description_after": " For anyone exposing private data to AI - the guardrail that lets a node be useful without becoming a leak."
+    },
+    {
+      "id": "blueprobe",
+      "name": "blueProbe",
+      "logo": "/assets/logos/blueprobe.svg",
+      "status": "concept",
+      "patent_pending": true,
+      "description": "The trust layer for a network of AI nodes - so the provenance attached to a result actually means something.",
+      "redacted_tail": true,
+      "description_after": " For any marketplace or mesh of AI experts - the attestation that turns 'trust me' into a checkable claim."
+    },
+    {
+      "id": "bluememory",
+      "name": "blueMemory",
+      "logo": "/assets/logos/bluememory.svg",
+      "status": "concept",
+      "on_device": true,
+      "description": "Receipt-backed institutional memory - a tamper-evident record of what your organization knew and decided.",
+      "redacted_tail": true,
+      "description_after": " For regulated organizations that must prove what they knew - and prove what they erased - memory you can hand to an examiner."
     },
     {
       "id": "blueveil",
@@ -96,7 +140,8 @@
       "description": "Keeps your private information private. ",
       "redacted_tail": true,
       "patent_pending": false,
-      "on_device": true
+      "on_device": true,
+      "description_after": " For people handling sensitive information - privacy that holds because the data never leaves the device."
     },
     {
       "id": "bluevault",
@@ -106,7 +151,8 @@
       "description": "Everything you know, found in seconds - nothing uploaded. ",
       "redacted_tail": true,
       "patent_pending": true,
-      "on_device": true
+      "on_device": true,
+      "description_after": " For knowledge workers buried in their own files - instant recall with nothing uploaded."
     },
     {
       "id": "bluescope",
@@ -116,7 +162,8 @@
       "description": "Meeting notes for work the cloud is not allowed to hear. ",
       "redacted_tail": true,
       "patent_pending": true,
-      "on_device": true
+      "on_device": true,
+      "description_after": " For teams whose conversations can't touch the cloud - meeting intelligence that stays in the room."
     },
     {
       "id": "bluetwin",
@@ -126,7 +173,8 @@
       "description": "An AI that is actually yours. ",
       "redacted_tail": true,
       "patent_pending": false,
-      "on_device": true
+      "on_device": true,
+      "description_after": " For individuals who want AI that's genuinely theirs - owned, not rented."
     },
     {
       "id": "bluehand",
@@ -136,7 +184,8 @@
       "description": "Real work, done on your machine. ",
       "redacted_tail": true,
       "patent_pending": false,
-      "on_device": true
+      "on_device": true,
+      "description_after": " For professionals who need real work done privately - capability that stays on their own machine."
     },
     {
       "id": "bluemuse",
@@ -146,7 +195,8 @@
       "description": "Your style. Your studio. Offline. ",
       "redacted_tail": true,
       "patent_pending": false,
-      "on_device": true
+      "on_device": true,
+      "description_after": " For creators who want their style kept their own - a studio that runs entirely offline."
     },
     {
       "id": "blueanvil",
@@ -156,14 +206,15 @@
       "description": "AI for code that can never leave the building. ",
       "redacted_tail": true,
       "patent_pending": true,
-      "on_device": true
+      "on_device": true,
+      "description_after": " For engineering orgs with code that can never leave the building - AI assistance that stays inside the walls."
     },
     {
       "id": "blueclaims",
       "name": "blueClaims",
       "logo": "/assets/logos/blueclaims.svg",
       "status": "concept",
-      "description": "Faster claim closure with claim files that hold up. Multi-perspective evidence that resists tampering, every determination scored element-by-element and receipted for audit. ",
+      "description": "Faster claim closure with claim files that hold up. Multi-perspective evidence that resists tampering, every determination scored element-by-element and receipted for audit. For claims organizations - faster closure with files built to hold up under audit.",
       "patent_pending": true
     },
     {
@@ -173,14 +224,15 @@
       "status": "concept",
       "patent_pending": true,
       "description": "Verified AI infrastructure for regulated enterprises. ",
-      "redacted_tail": true
+      "redacted_tail": true,
+      "description_after": " For regulated enterprises - verified AI infrastructure that meets them where their rules already are."
     },
     {
       "id": "bluecredit",
       "name": "blueCredit",
       "logo": "/assets/logos/bluecredit.svg",
       "status": "concept",
-      "description": "Lending models with examination-ready evidence, end to end.",
+      "description": "Lending models with examination-ready evidence, end to end. For lenders - credit models that arrive examination-ready, end to end.",
       "patent_pending": true
     },
     {
@@ -190,7 +242,7 @@
       "status": "concept",
       "description": "Turn your organization's idle computers into a private verification region. Central policy, your hardware, your data - heavy AI work runs overnight on machines you already own. ",
       "redacted_tail": true,
-      "description_after": " Buyer: IT and operations leaders with fleets of underused machines.",
+      "description_after": " For IT and operations leaders with idle hardware - a private AI region built from machines they already own.",
       "patent_pending": true
     },
     {
@@ -200,7 +252,8 @@
       "status": "concept",
       "patent_pending": true,
       "description": "AI compliance oversight for regulated industries. ",
-      "redacted_tail": true
+      "redacted_tail": true,
+      "description_after": " For compliance officers in regulated industries - oversight of AI that regulators will actually accept."
     },
     {
       "id": "blueassay",
@@ -209,7 +262,8 @@
       "status": "concept",
       "patent_pending": true,
       "description": "Quality verification for advanced manufacturing. ",
-      "redacted_tail": true
+      "redacted_tail": true,
+      "description_after": " For advanced manufacturers - quality verification that can prove its own results."
     },
     {
       "id": "blueledger",
@@ -218,7 +272,8 @@
       "status": "concept",
       "patent_pending": true,
       "description": "Verifiable computation for clinical research. ",
-      "redacted_tail": true
+      "redacted_tail": true,
+      "description_after": " For clinical research teams - computation that's verifiable from end to end."
     },
     {
       "id": "bluewatch",
@@ -227,14 +282,15 @@
       "status": "concept",
       "patent_pending": true,
       "description": "Verification for security operations teams. ",
-      "redacted_tail": true
+      "redacted_tail": true,
+      "description_after": " For security operations teams - verification that cuts through the alert noise."
     },
     {
       "id": "bluedocket",
       "name": "blueDocket",
       "logo": "/assets/logos/bluedocket.svg",
       "status": "concept",
-      "description": "Continuous prior-art watch for patent practices — the screening your team does by hand, running around the clock on every active matter.",
+      "description": "Continuous prior-art watch for patent practices — the screening your team does by hand, running around the clock on every active matter. For patent practices - around-the-clock prior-art watch on every live matter.",
       "patent_pending": true
     },
     {
@@ -242,7 +298,7 @@
       "name": "blueScreen",
       "logo": "/assets/logos/bluescreen.svg",
       "status": "concept",
-      "description": "Sanctions screening that justifies its own dispositions and drains the false-positive queue.",
+      "description": "Sanctions screening that justifies its own dispositions and drains the false-positive queue. For sanctions and compliance teams - screening that justifies its own calls and shrinks the false-positive queue.",
       "patent_pending": true
     },
     {
@@ -250,7 +306,7 @@
       "name": "blueGuard",
       "logo": "/assets/logos/blueguard.svg",
       "status": "concept",
-      "description": "AML evidence packets — every decision arrives with the deliberation examiners want to see.",
+      "description": "AML evidence packets — every decision arrives with the deliberation examiners want to see. For AML investigators - evidence packets carrying the deliberation examiners expect to see.",
       "patent_pending": true
     },
     {
@@ -260,7 +316,8 @@
       "status": "concept",
       "patent_pending": true,
       "description": "Collaboration infrastructure for regulated institutions. ",
-      "redacted_tail": true
+      "redacted_tail": true,
+      "description_after": " For regulated institutions - collaboration infrastructure built for their constraints."
     },
     {
       "id": "bluenorth",

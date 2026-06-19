@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<title>blueProbe</title>
+<circle cx="100" cy="100" r="34"/>
+<path d="M84 100l12 12 22-26"/>
+<path d="M100 28v16M100 156v16M28 100h16M156 100h16"/>
+<path d="M52 52l11 11M148 52l-11 11M52 148l11-11M148 148l-11-11"/>
+</svg>

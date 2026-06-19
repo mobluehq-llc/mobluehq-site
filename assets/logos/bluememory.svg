@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<title>blueMemory</title>
+<ellipse cx="100" cy="54" rx="52" ry="18"/>
+<path d="M48 54v42c0 10 23 18 52 18s52-8 52-18V54"/>
+<path d="M48 96v42c0 10 23 18 52 18s52-8 52-18V96"/>
+</svg>

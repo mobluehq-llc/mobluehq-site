@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#4D9FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<title>blueAtlas</title>
+<circle cx="100" cy="100" r="52"/>
+<path d="M48 100h104M100 48v104"/>
+<ellipse cx="100" cy="100" rx="25" ry="52"/>
+<circle cx="100" cy="48" r="9" fill="#4D9FFF" stroke="none"/>
+<circle cx="152" cy="100" r="9" fill="#4D9FFF" stroke="none"/>
+<circle cx="100" cy="152" r="9" fill="#4D9FFF" stroke="none"/>
+<circle cx="48" cy="100" r="9" fill="#4D9FFF" stroke="none"/>
+</svg>
