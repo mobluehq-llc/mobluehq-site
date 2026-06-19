@@ -8,7 +8,7 @@
       "status": "active_mvp",
       "description": "The verification substrate every MOBLUEHQ product runs on. A private inference mesh that returns sealed, signed results - the scheduler never sees your data, and every answer carries a receipt anyone can verify. ",
       "redacted_tail": true,
-      "description_after": " The rail underneath the portfolio. For everyone building AI into decisions that carry consequences - the layer that makes those answers provable, not just plausible.",
+      "description_after": " The rail underneath the portfolio. For everyone building AI into decisions that carry consequences - the layer that proves how an answer was produced, not just that it sounds right.",
       "patent_pending": true
     },
     {
@@ -34,7 +34,7 @@
       "status": "demo",
       "description": "The Blue chatbot for everyone. Works offline on your own device; online it draws on the whole mesh, shows where each answer came from, and tells you when it is unsure - showing the disagreement instead of guessing. ",
       "redacted_tail": true,
-      "description_after": " Private demo available on request. For anyone who wants capable AI that works anywhere and shows its work - proof that verifiable AI belongs in everyday hands, not just the data center.",
+      "description_after": " Private demo available on request. For anyone who wants capable AI that works anywhere and shows its work - proof that AI you can check belongs in everyday hands, not just the data center.",
       "patent_pending": true,
       "on_device": true
     },
@@ -45,7 +45,7 @@
       "status": "active_mvp",
       "description": "Donate your computer's idle time to the mesh. Install it, and when you're away your machine quietly helps run verified AI work - then gets out of the way the instant you return. Built on a simple bet: if enough idle machines pitch in, much of the AI work we do never needs a giant new data center built for it.",
       "redacted_tail": true,
-      "description_after": " Private demo available on request. For anyone with a capable machine and idle hours - the supply side that lets verifiable AI scale without hyperscaler lock-in.",
+      "description_after": " Private demo available on request. For anyone with a capable machine and idle hours - the supply side that lets a verifiable mesh scale without hyperscaler lock-in.",
       "patent_pending": true,
       "on_device": true,
       "stage_label": "Shipped - API + app, verified over the internet"
@@ -57,7 +57,7 @@
       "status": "active_mvp",
       "description": "Verification engine running: signed receipts, offline verification, council with judge-and-doer separation. Private demo available on request. ",
       "redacted_tail": true,
-      "description_after": " Private demo available on request. For engineering and compliance leaders shipping AI features - so 'the model said so' becomes something you can prove.",
+      "description_after": " Private demo available on request. For engineering and compliance leaders shipping AI features - so 'the model said so' becomes a claim you can check.",
       "patent_pending": true
     },
     {
@@ -130,7 +130,7 @@
       "on_device": true,
       "description": "Receipt-backed institutional memory - a tamper-evident record of what your organization knew and decided.",
       "redacted_tail": true,
-      "description_after": " For regulated organizations that must prove what they knew - and prove what they erased - memory you can hand to an examiner."
+      "description_after": " For regulated organizations that must show what they knew and what they decided - memory you can hand to an examiner."
     },
     {
       "id": "blueveil",
@@ -263,7 +263,7 @@
       "patent_pending": true,
       "description": "Quality verification for advanced manufacturing. ",
       "redacted_tail": true,
-      "description_after": " For advanced manufacturers - quality verification that can prove its own results."
+      "description_after": " For advanced manufacturers - quality verification that produces evidence for every result."
     },
     {
       "id": "blueledger",
