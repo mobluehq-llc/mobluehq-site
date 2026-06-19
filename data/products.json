@@ -43,12 +43,13 @@
       "name": "slumberNet",
       "logo": "/assets/logos/slumbernet.svg",
       "status": "active_mvp",
-      "description": "Donate your computer's idle time to the mesh. Install it, and when you're away your machine quietly helps run verified AI work - then gets out of the way the instant you return. Built on a simple bet: if enough idle machines pitch in, much of the AI work we do never needs a giant new data center built for it.",
+      "description": "Donate your computer's idle time to the mesh. Install it, and when you're away your machine quietly helps run verified AI work - then gets out of the way the instant you return. Built on a simple bet: if enough idle machines pitch in, ",
       "redacted_tail": true,
       "description_after": " Private demo available on request. For anyone with a capable machine and idle hours - the supply side that lets a verifiable mesh scale without hyperscaler lock-in.",
       "patent_pending": true,
       "on_device": true,
-      "stage_label": "Shipped - API + app, verified over the internet"
+      "stage_label": "Shipped - API + app, verified over the internet",
+      "description_bold": "much of the AI work the world does will never need a giant data center built for it."
     },
     {
       "id": "bluecheck",

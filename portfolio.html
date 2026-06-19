@@ -187,6 +187,12 @@ function buildTile(p) {
     desc.setAttribute('aria-hidden', 'true');
   } else if (p.redacted_tail) {
     desc.appendChild(document.createTextNode(p.description || ''));
+    if (p.description_bold) {
+      const strongEl = document.createElement('strong');
+      strongEl.textContent = p.description_bold;
+      strongEl.style.color = '#FFFFFF';
+      desc.appendChild(strongEl);
+    }
     const blurSpan = document.createElement('span');
     blurSpan.textContent = 'Details withheld here until this ships.';
     blurSpan.style.cssText = BLUR_CSS;
