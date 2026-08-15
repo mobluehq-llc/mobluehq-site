@@ -30,49 +30,205 @@
 <link rel="preload" href="/assets/style.css?v=7" as="style" />
 <link rel="stylesheet" href="/assets/style.css?v=8">
 <style>
-  .portfolio-release-link {
-    display: grid;
-    grid-template-columns: 86px 1fr;
-    gap: 16px;
+  /* blueMonster featured hero */
+  .hero-featured {
+    display: flex;
+    gap: 24px;
     align-items: center;
-    margin: 24px 0 28px;
-    padding: 14px 16px;
-    border: 1px solid rgba(77, 159, 255, 0.35);
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(11, 18, 32, 0.92) 0%, rgba(10, 22, 48, 0.9) 100%);
+    margin: 26px 0 8px;
+    padding: 26px;
+    border-radius: 16px;
+    background: linear-gradient(120deg, #0A1628 0%, #0D1A30 100%);
+    border: 1px solid var(--divider-bright);
     text-decoration: none;
-    color: #c6cdd9;
+    color: inherit;
+    transition: border-color 0.15s, transform 0.15s;
   }
-  .portfolio-release-link:hover {
-    border-color: rgba(77, 159, 255, 0.55);
-    transform: translateY(-1px);
+  .hero-featured:hover {
+    border-color: rgba(77, 159, 255, 0.5);
+    transform: translateY(-2px);
   }
-  .portfolio-release-link:focus-visible {
-    outline: 2px solid #4d9fff;
-    outline-offset: 2px;
+  .hero-featured .hero-ico {
+    flex: 0 0 96px;
+    width: 96px;
+    height: 96px;
+    border-radius: 20px;
+    background: var(--bg-elev);
+    border: 1px solid var(--divider);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .portfolio-release-link img {
-    width: 76px;
-    height: 76px;
-    border-radius: 18px;
-    box-shadow: 0 10px 28px rgba(11, 18, 32, 0.35);
+  .hero-featured .hero-ico img {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
   }
-  .portfolio-release-link b {
-    color: #ffffff;
-    font-family: Geist, sans-serif;
+  .hero-featured h2 {
+    font-family: 'Geist', sans-serif;
+    font-size: 26px;
+    margin: 0 0 4px;
     font-weight: 700;
-    font-size: 20px;
   }
-  .portfolio-release-link b span {
-    color: #4d9fff;
+  .hero-featured h2 .accent {
+    color: var(--hq);
   }
-  .portfolio-release-link small {
-    display: block;
-    margin-top: 6px;
-    font-family: "JetBrains Mono", monospace;
+  .hero-featured p {
+    font-family: 'Geist', sans-serif;
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 6px 0 14px;
+    max-width: 560px;
+    line-height: 1.5;
+  }
+  .hero-featured .eyebrow {
     font-size: 11px;
-    letter-spacing: 1.6px;
-    color: #8a94a6;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--status-active-mvp);
+    margin-bottom: 6px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--hq);
+    color: #04121f;
+    font-weight: 700;
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    padding: 11px 20px;
+    border-radius: 9px;
+    letter-spacing: 0.3px;
+  }
+
+  /* Section heading */
+  h2.sec-heading {
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 44px 0 16px;
+    font-weight: 600;
+  }
+
+  /* Product/area cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--portfolio-tile-bg);
+    border: 1px solid var(--divider);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    transition: border-color 0.15s, transform 0.15s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .card:hover {
+    border-color: var(--divider-bright);
+    transform: translateY(-2px);
+  }
+  .card .card-ico {
+    flex: 0 0 54px;
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    background: var(--bg-elev);
+    border: 1px solid var(--divider);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .card .card-ico img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+  }
+  .card .card-ico svg {
+    width: 30px;
+    height: 30px;
+  }
+  .card h3 {
+    font-family: 'Geist', sans-serif;
+    margin: 0 0 2px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .card h3 .accent {
+    color: var(--hq);
+  }
+  .card p {
+    margin: 6px 0 10px;
+    font-family: 'Geist', sans-serif;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-size: 10.5px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--divider-bright);
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .badge.ship {
+    color: var(--status-active-mvp);
+    border-color: rgba(52, 211, 153, 0.45);
+  }
+  .badge.pat {
+    color: var(--status-near-mvp);
+    border-color: rgba(251, 191, 36, 0.45);
+  }
+  .badge.research {
+    color: var(--hq);
+    border-color: rgba(77, 159, 255, 0.45);
+  }
+
+  /* Patent note */
+  .patent-note {
+    margin: 22px 0 6px;
+    padding: 16px 18px;
+    border: 1px solid var(--divider);
+    border-left: 2px solid var(--status-near-mvp);
+    border-radius: 10px;
+    background: var(--bg-soft);
+    font-family: 'Geist', sans-serif;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .patent-note strong {
+    color: var(--text-primary);
+  }
+
+  /* Lead paragraph */
+  .lead-text {
+    font-family: 'Geist', sans-serif;
+    color: var(--text-secondary);
+    max-width: 720px;
+    font-size: 15px;
+    margin: 14px 0 8px;
+    line-height: 1.6;
+  }
+  .lead-text strong {
+    color: var(--text-primary);
+    font-weight: 600;
   }
 </style>
 </head>
@@ -94,51 +250,75 @@
     <h1 class="section-label">Portfolio</h1>
     <div class="section-label-line section-label-line--portfolio"></div>
 
-    <a class="portfolio-release-link" href="/portfolio/bluemonster" aria-label="Open blueMonster lite release page">
-      <img src="/assets/logos/bluemonster-monster.png?v=1" alt="blueMonster little monster icon" loading="lazy" />
+    <p class="lead-text">MOBLUEHQ builds <strong>AI verification infrastructure</strong> — systems that prove <em>how</em> an AI result was produced, running on ordinary machines instead of hyperscaler data centers. Our first products ship now; our research spans the regulated industries where a wrong answer is expensive.</p>
+
+    <a class="hero-featured" href="/portfolio/bluemonster">
+      <div class="hero-ico"><img src="/assets/logos/bluemonster-monster.png" alt="" /></div>
       <div>
-        <b>blue<span>Monster</span> lite</b>
-        <small>PUBLIC DEMO · V1.0 · DOWNLOAD PAGE</small>
+        <div class="eyebrow">Free demo · Mac · shipping now</div>
+        <h2>blue<span class="accent">Monster</span></h2>
+        <p>The idea-discovery engine. Ask it a hard question; overnight it generates, attacks, and develops candidates, then hands you an evidence dossier for the next step.</p>
+        <span class="cta-btn">▶ Click here to demo blueMonster →</span>
       </div>
     </a>
 
-    <div class="portfolio-section-block" style="margin-top: 48px; margin-bottom: 64px;">
-      <h2 class="portfolio-section-title">Areas</h2>
-      <p class="portfolio-section-subtitle">MOBLUEHQ builds AI verification infrastructure for regulated work. We develop coordination protocols that treat disagreement between independent AI systems as a quality signal, deployed on consumer-class hardware. blueMonster is our first shipping product; below are the broader areas of research and development.</p>
-
-      <div style="display: flex; flex-direction: column; gap: 32px; max-width: 840px; margin-top: 32px;">
+    <h2 class="sec-heading">Also shipping</h2>
+    <div class="card-grid">
+      <a class="card" href="#">
+        <div class="card-ico"><img src="/assets/logos/slumbernet.svg" alt="" /></div>
         <div>
-          <h3 style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 16px; color: var(--text-primary); margin-bottom: 10px; letter-spacing: -0.01em;">blueMonster — AI-Assisted Idea Generation</h3>
-          <p style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.75; color: var(--text-secondary); margin: 0;">Our flagship shipping product. An AI-powered tool for brainstorming and ideation, designed to help users explore concepts and generate ideas with assistance from multiple AI models.</p>
+          <h3>slumber<span class="accent">Net</span></h3>
+          <p>The compute mesh underneath. Idle, consented machines run verified AI work and step aside the instant their owner returns — no data center required.</p>
+          <div class="badges"><span class="badge ship">Shipping with blueMonster</span><span class="badge pat">Patent pending</span></div>
         </div>
-
+      </a>
+      <a class="card" href="#">
+        <div class="card-ico"><img src="/assets/logos/blue.svg" alt="" /></div>
         <div>
-          <h3 style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 16px; color: var(--text-primary); margin-bottom: 10px; letter-spacing: -0.01em;">Verifiable AI Execution</h3>
-          <p style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.75; color: var(--text-secondary); margin: 0;">Proving how an AI answer was produced. Infrastructure for signed receipts, verification councils, and cryptographic provenance that let users audit AI outputs and understand the reasoning path taken.</p>
+          <h3>Blue</h3>
+          <p>The verification spine. Signed receipts and independent review that let anyone audit how a result was produced — the trust layer every product above is built on.</p>
+          <div class="badges"><span class="badge ship">Shipping</span><span class="badge pat">Patent pending</span></div>
         </div>
+      </a>
+    </div>
 
+    <div class="patent-note"><strong>Patent portfolio.</strong> Our verification, distributed-compute, and provenance methods are protected by multiple <strong>patent-pending filings</strong>.</div>
+
+    <h2 class="sec-heading">Areas of interest &amp; research</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#4D9FFF" stroke-width="1.6"><path d="M3 12h4l2 5 3-11 2 6h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div>
-          <h3 style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 16px; color: var(--text-primary); margin-bottom: 10px; letter-spacing: -0.01em;">Distributed Compute Mesh</h3>
-          <p style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.75; color: var(--text-secondary); margin: 0;">Running AI workloads on ordinary machines instead of hyperscaler infrastructure. Architectural separation ensures inference tasks can execute without centralized schedulers seeing user content, enabling privacy-preserving coordination at scale.</p>
+          <h3>Healthcare AI Verification</h3>
+          <p>Proving that clinical and diagnostic AI followed an auditable, defensible process — for settings where an unverifiable answer cannot be used.</p>
+          <div class="badges"><span class="badge research">Research area</span></div>
         </div>
-
+      </div>
+      <div class="card">
+        <div class="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#4D9FFF" stroke-width="1.6"><path d="M4 19V5M4 19h16M8 15l3-4 3 3 4-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div>
-          <h3 style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 16px; color: var(--text-primary); margin-bottom: 10px; letter-spacing: -0.01em;">Trust & Provenance Tooling</h3>
-          <p style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.75; color: var(--text-secondary); margin: 0;">Systems for cryptographic receipts, verification attestations, and auditability in regulated contexts. Tools that provide evidence of process integrity and enable third-party validation of AI-generated work.</p>
+          <h3>Financial AI Verification</h3>
+          <p>Evidence and provenance for AI used in credit, risk, and settlement — where regulators and counterparties demand a checkable trail, not a black box.</p>
+          <div class="badges"><span class="badge research">Research area</span></div>
         </div>
-
+      </div>
+      <div class="card">
+        <div class="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#4D9FFF" stroke-width="1.6"><path d="M12 3v18M6 7h12M6 7l-3 6a3 3 0 0 0 6 0L6 7zm12 0l-3 6a3 3 0 0 0 6 0l-3-6zM7 21h10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div>
-          <h3 style="font-family: 'Geist', sans-serif; font-weight: 600; font-size: 16px; color: var(--text-primary); margin-bottom: 10px; letter-spacing: -0.01em;">Multi-Model Coordination</h3>
-          <p style="font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.75; color: var(--text-secondary); margin: 0;">Protocols that use disagreement between independent AI systems as a quality signal. Coordination infrastructure for regulated industries where consensus and validation across multiple models strengthen confidence in outputs.</p>
+          <h3>Legal AI Verification</h3>
+          <p>Auditability for AI in contracts, disputes, and compliance — process integrity a court or opposing party could independently validate.</p>
+          <div class="badges"><span class="badge research">Research area</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#4D9FFF" stroke-width="1.6"><path d="M4 21V10l5-3 5 3M4 21h16M14 21V7l6 3v11M8 21v-4h2v4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h3>Manufacturing AI Verification</h3>
+          <p>Trustworthy autonomy for industrial control and inspection — where an unverified action changes the physical world and cannot simply be undone.</p>
+          <div class="badges"><span class="badge research">Research area</span></div>
         </div>
       </div>
     </div>
-
-    <div id="portfolioRoot">
-      <div class="portfolio-loading" role="status" aria-live="polite">Loading portfolio</div>
-    </div>
-
-    <div class="portfolio-meta" id="portfolioMeta"></div>
   </section>
 </main>
 
@@ -153,234 +333,6 @@
   </div>
   <div>© 2026 MOBLUEHQ LLC · Delaware</div>
 </footer>
-
-<script>
-/** Bust immutable year-long /assets/* cache when CSS or logos change (see vercel.json). */
-var MOBLUE_ASSET_V = '20';
-
-function escapeHtml(str) {
-  if (typeof str !== 'string') return '';
-  return str.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
-}
-
-function cacheBustAssetUrl(url) {
-  if (!url || typeof url !== 'string') return '';
-  var sep = url.indexOf('?') >= 0 ? '&' : '?';
-  return url + sep + 'v=' + MOBLUE_ASSET_V;
-}
-
-function logoSources(logoPath) {
-  var svg = logoPath.endsWith('.svg') ? logoPath : logoPath.replace(/\.png$/i, '.svg');
-  var png = svg.replace(/\.svg$/i, '.png');
-  return { svg: svg, png: png };
-}
-
-function buildTile(p) {
-  const card = document.createElement('article');
-  card.className = 'portfolio-card';
-  card.setAttribute('data-brand', p.id);
-
-  const tile = document.createElement('div');
-  tile.className = 'portfolio-tile';
-
-  const logoWrap = document.createElement('div');
-  logoWrap.className = 'portfolio-tile-logo-wrap';
-  const img = document.createElement('img');
-  img.className = 'portfolio-tile-logo';
-  img.alt = escapeHtml(p.name);
-  img.loading = 'lazy';
-    const sources = logoSources(p.logo);
-    var preferPng = /\.png$/i.test(p.logo);
-    var triedFallback = false;
-    img.src = cacheBustAssetUrl(preferPng ? sources.png : sources.svg);
-    img.onerror = function onLogoErr() {
-      if (!triedFallback) {
-        triedFallback = true;
-        this.src = cacheBustAssetUrl(preferPng ? sources.svg : sources.png);
-        return;
-      }
-      this.onerror = null;
-      this.style.opacity = '0.35';
-    };
-
-  logoWrap.appendChild(img);
-  tile.appendChild(logoWrap);
-
-  const meta = document.createElement('div');
-  meta.className = 'portfolio-card-meta';
-
-  const nameRow = document.createElement('div');
-  nameRow.className = 'portfolio-card-name-row';
-  const nameEl = document.createElement('span');
-  nameEl.className = 'portfolio-card-name';
-  nameEl.textContent = p.name;
-  const badge = document.createElement('span');
-  badge.className = 'portfolio-tile-badge portfolio-tile-badge--' + p.status;
-  badge.textContent =
-    p.status === 'active_mvp'
-      ? 'Active MVP'
-      : p.status === 'demo'
-        ? 'Demo Available'
-        : p.status === 'near_mvp'
-          ? 'Near MVP'
-          : p.status === 'dev'
-            ? 'In Development'
-            : p.status === 'concept'
-              ? 'Platform-Ready'
-              : p.status;
-
-  nameRow.appendChild(nameEl);
-  nameRow.appendChild(badge);
-  if (p.stage_label) {
-    const st = document.createElement('span');
-    st.className = 'portfolio-tile-badge';
-    st.style.cssText =
-      'margin-left:6px;color:#4D9FFF;border:1px solid rgba(77,159,255,0.45);border-radius:4px;padding:1px 6px;font-size:10px;letter-spacing:0.06em';
-    st.textContent = p.stage_label;
-    nameRow.appendChild(st);
-  }
-  if (p.patent_pending) {
-    const pp = document.createElement('span');
-    pp.className = 'portfolio-tile-badge';
-    pp.style.cssText = 'margin-left:6px;opacity:0.75';
-    pp.textContent = 'Patent pending';
-    nameRow.appendChild(pp);
-  } else if (p.badges_redacted) {
-    const pp = document.createElement('span');
-    pp.className = 'portfolio-tile-badge';
-    pp.style.cssText =
-      'margin-left:6px;opacity:0.75;filter:blur(4px);user-select:none;pointer-events:none';
-    pp.setAttribute('aria-hidden', 'true');
-    pp.textContent = 'Undisclosed';
-    nameRow.appendChild(pp);
-  }
-
-  if (p.on_device) {
-    const odb = document.createElement('span');
-    odb.className = 'portfolio-tile-badge';
-    odb.style.cssText = 'margin-left:6px;color:#3DD68C;border:1px solid rgba(61,214,140,0.45);border-radius:4px;padding:1px 6px;font-size:10px;letter-spacing:0.06em';
-    odb.textContent = 'On-device';
-    nameRow.appendChild(odb);
-  }
-  const desc = document.createElement('p');
-  desc.className = 'portfolio-card-desc';
-  var BLUR_PLACEHOLDER =
-    'Details intentionally withheld for now. More about this concept will be published here at a later date.';
-  var BLUR_CSS = 'filter:blur(5px);user-select:none;pointer-events:none';
-  if (p.redacted) {
-    desc.textContent = BLUR_PLACEHOLDER;
-    desc.style.cssText = BLUR_CSS;
-    desc.setAttribute('aria-hidden', 'true');
-  } else if (p.redacted_tail) {
-    desc.appendChild(document.createTextNode(p.description || ''));
-    if (p.description_bold) {
-      const strongEl = document.createElement('strong');
-      strongEl.textContent = p.description_bold;
-      strongEl.style.color = '#FFFFFF';
-      desc.appendChild(strongEl);
-    }
-    const blurSpan = document.createElement('span');
-    blurSpan.textContent = 'Details withheld here until this ships.';
-    blurSpan.style.cssText = BLUR_CSS;
-    blurSpan.setAttribute('aria-hidden', 'true');
-    desc.appendChild(blurSpan);
-    if (p.description_after) {
-      desc.appendChild(document.createTextNode(p.description_after));
-    }
-  } else {
-    desc.textContent = p.description;
-  }
-
-  meta.appendChild(nameRow);
-  meta.appendChild(desc);
-
-  if (
-    (p.status === 'near_mvp' || p.status === 'dev') &&
-    Array.isArray(p.blockers) &&
-    p.blockers.length
-  ) {
-    const blockersEl = document.createElement('p');
-    blockersEl.className = 'portfolio-card-blockers';
-    blockersEl.textContent = 'Blocked on: ' + p.blockers.join(', ');
-    meta.appendChild(blockersEl);
-  }
-
-  card.appendChild(tile);
-  card.appendChild(meta);
-  return card;
-}
-
-var PORTFOLIO_EMPTY_SECTION =
-  'Nothing here yet — by design. We launch with planned media events on real domains, not soft soft-launches on subdomains.';
-
-function buildSection(title, products, subtitle) {
-  const block = document.createElement('div');
-  block.className = 'portfolio-section portfolio-section-block';
-
-  const h = document.createElement('h2');
-  h.className = 'portfolio-section-title';
-  h.textContent = title;
-
-  block.appendChild(h);
-
-  if (subtitle) {
-    const sub = document.createElement('p');
-    sub.className = 'portfolio-section-subtitle';
-    sub.textContent = subtitle;
-    block.appendChild(sub);
-  }
-
-  if (!products.length) {
-    const empty = document.createElement('p');
-    empty.className = 'portfolio-section-empty';
-    empty.textContent = PORTFOLIO_EMPTY_SECTION;
-    block.appendChild(empty);
-    return block;
-  }
-
-  const grid = document.createElement('div');
-  grid.className = 'portfolio-grid';
-  products.forEach(p => grid.appendChild(buildTile(p)));
-  block.appendChild(grid);
-  return block;
-}
-
-async function loadPortfolio() {
-  const root = document.getElementById('portfolioRoot');
-  const metaEl = document.getElementById('portfolioMeta');
-  try {
-    const response = await fetch('/data/products.json', { cache: 'no-cache' });
-    if (!response.ok) throw new Error('Failed to load products.json');
-    const data = await response.json();
-
-    const active_mvp = data.products.filter(p => p.status === 'active_mvp');
-    const demo = data.products.filter(p => p.status === 'demo');
-    const dev = data.products.filter(p => p.status === 'dev');
-    const ready = data.products.filter(p => p.status === 'concept');
-
-    root.innerHTML = '';
-    root.appendChild(buildSection('Active MVP', active_mvp,
-      'Working software you can use or demo today.'));
-    if (demo.length) {
-      root.appendChild(buildSection('Demo Available', demo,
-        'Working software, shown privately. Use the contact link below to request a session.'));
-    }
-    root.appendChild(buildSection('In Development', dev,
-      'In active build on the shared verification API. The foundation most of these depend on is being developed in parallel with our current program; each product\'s domain pack, interface, and validation follow.'));
-    root.appendChild(buildSection('Platform-Ready', ready,
-      'Not speculative. Each is the proven engine - verification council, signed receipts, on-device runtime, PII and egress controls - pointed at a new domain. The infrastructure is built; what remains is the vertical pack: criteria, data, UI, and validation.'));
-
-    if (metaEl && data.lastReviewed) {
-      metaEl.textContent = 'Portfolio last reviewed ' + data.lastReviewed;
-    }
-  } catch (err) {
-    console.error('Portfolio load failed:', err);
-    root.innerHTML = '<div class="portfolio-loading">Portfolio temporarily unavailable</div>';
-  }
-}
-
-loadPortfolio();
-</script>
 
 </body>
 </html>
