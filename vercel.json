@@ -27,6 +27,30 @@
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
+    },
+    {
+      "source": "/demo",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store" }
+      ]
+    },
+    {
+      "source": "/portfolio/bluemonster",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store" }
+      ]
+    },
+    {
+      "source": "/portfolio/bluemonster/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store" }
+      ]
+    },
+    {
+      "source": "/api/(demo-gate|download)",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store" }
+      ]
     }
   ],
   "crons": [
@@ -41,6 +65,12 @@
     },
     "api/refresh.js": {
       "maxDuration": 60
+    },
+    "api/demo-gate.js": {
+      "maxDuration": 10
+    },
+    "api/download.js": {
+      "maxDuration": 15
     }
   }
 }

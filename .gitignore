@@ -1,2 +1,11 @@
 .DS_Store
 node_modules/
+.vercel/
+.env
+.env.local
+.env*.local
+
+# Local-only: the actual 166MB DMG asset is never committed to git.
+# Copied here for local `vercel dev` testing of the Option A (Vercel-hosted
+# static file) delivery path only.
+/portfolio/bluemonster/blueMonster.dmg
