@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Demo Access — MOBLUEHQ</title>
+<meta name="description" content="Enter the password to access the blueMonster demo." />
+<meta name="robots" content="noindex, nofollow" />
+
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=8">
+<style>
+  .demo-gate-wrap { max-width: 440px; }
+  .demo-gate-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 8px;
+    max-width: 360px;
+  }
+  .demo-gate-input {
+    width: 100%;
+    background: #11203A;
+    border: 1px solid #2A3B58;
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .demo-gate-input::placeholder { color: var(--text-muted); }
+  .demo-gate-input:hover { background: #16294A; border-color: #3A4D70; }
+  .demo-gate-input:focus {
+    outline: none;
+    border-color: rgba(77, 159, 255, 0.45);
+    box-shadow: 0 0 0 3px rgba(77, 159, 255, 0.08);
+  }
+  .demo-gate-error {
+    color: #FBBF24;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    min-height: 1.2em;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav aria-label="Primary">
+  <a href="/" class="nav-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></a>
+  <ul class="nav-links">
+    <li><a href="/about">About</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/investors">Investors</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <section class="content demo-gate-wrap">
+    <h1 class="section-label">Demo Access</h1>
+    <div class="section-label-line"></div>
+    <p class="lead-text">blueMonster's free demo is gated during early access. Enter the password to continue.</p>
+
+    <form class="demo-gate-form" id="demoGateForm" novalidate>
+      <label class="form-question" for="demoPassword">Password</label>
+      <input class="demo-gate-input" type="password" id="demoPassword" name="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" required />
+      <button class="submit-btn" type="submit" id="demoGateSubmit">Enter</button>
+      <div class="demo-gate-error" id="demoGateError" role="alert" aria-live="polite"></div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></div>
+  <div class="footer-links">
+    <a href="/trust">Trust</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/terms">Terms</a>
+    <a href="/privacy">Privacy</a>
+  </div>
+  <div>© 2026 MOBLUEHQ LLC · Delaware</div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('demoGateForm');
+  var errorEl = document.getElementById('demoGateError');
+  var submitBtn = document.getElementById('demoGateSubmit');
+  var passwordEl = document.getElementById('demoPassword');
+  var params = new URLSearchParams(window.location.search);
+  var next = params.get('next') || '/portfolio/bluemonster';
+  // Only ever follow a same-site path — never let a query param send the
+  // user off mobluehq.com after a successful password check.
+  if (!/^\/[^/\\]/.test(next) || next.indexOf('//') === 0) {
+    next = '/portfolio/bluemonster';
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var password = passwordEl.value;
+    errorEl.textContent = '';
+    if (!password) { errorEl.textContent = 'Enter the password.'; return; }
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Checking…';
+    try {
+      var r = await fetch('/api/demo-gate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: password })
+      });
+      var data = await r.json().catch(function () { return {}; });
+      if (r.ok && data.ok) {
+        window.location.href = data.redirect || next;
+        return;
+      }
+      errorEl.textContent = (data && data.error) || 'Incorrect password.';
+      passwordEl.value = '';
+      passwordEl.focus();
+    } catch (err) {
+      errorEl.textContent = 'Could not verify — please try again.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enter';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

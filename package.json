@@ -1,11 +1,16 @@
 {
   "name": "mobluehq-site",
   "private": true,
+  "type": "module",
   "scripts": {
     "a11y": "node scripts/a11y-scan.mjs"
   },
+  "dependencies": {
+    "@vercel/functions": "^1.5.0"
+  },
   "devDependencies": {
     "@axe-core/cli": "^4.10.1",
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "vercel": "^37.0.0"
   }
 }
