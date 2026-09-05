@@ -421,7 +421,7 @@
 
     <div class="bm-sec">WHAT IT CHECKS</div>
     <div class="mode" style="border-left:4px solid var(--blue-deep)">
-      <p>Every deployed detection rule — Sigma, SPL, or KQL — is parsed and mapped to the exact canonical log sources and fields it consumes. Each metered source is then classified: consumed by a live rule, partially consumed, sub-floor (no enabled, successfully parsed rule can use it), never evaluated (no ingest row was seen), or unable-to-classify (an unresolved parser or mapping gap makes the answer unknown — not the same as unused). A source is only classified as sub-floor once every applicable blocker has been ruled out; an unparsed rule is never assumed to consume nothing.</p>
+      <p>Every deployed detection rule — Sigma, SPL, or KQL — is parsed and mapped to the exact canonical log sources and fields it consumes. Each metered source is then classified: consumed by a live rule, partially consumed, sub-floor (no enabled, successfully parsed rule can use it), never evaluated (no ingest row was seen), or cannot-certify (an unresolved parser or mapping gap makes the answer unknown — not the same as unused). A source is only classified as sub-floor once every applicable blocker has been ruled out; an unparsed rule is never assumed to consume nothing.</p>
     </div>
 
     <div class="bm-sec">HOW IT WORKS</div>
@@ -461,8 +461,8 @@
           <li><b>Partially-consumed</b> — only part of the source's field inventory is proven used.</li>
           <li><b>Sub-floor</b> — no enabled parsed rule consumes it, and nothing blocks that finding.</li>
           <li><b>Never-evaluated</b> — the source was inventoried but no ingest row was seen.</li>
-          <li><b>Unable-to-classify</b> — an unresolved parser or mapping gap makes the answer unknown.</li>
-          <li><b>Coverage unknown</b> — the source is consumed by rules, but all of those rules failed to parse. An unparseable rule may depend on this source, distinct from unable-to-classify.</li>
+          <li><b>Cannot-certify</b> — an unresolved parser or mapping gap makes the answer unknown.</li>
+          <li><b>Coverage unknown</b> — the source is consumed by rules, but all of those rules failed to parse. An unparseable rule may depend on this source, distinct from cannot-certify.</li>
         </ul>
       </details>
       <details open class="always">
