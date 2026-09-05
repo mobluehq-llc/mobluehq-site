@@ -1,0 +1,14 @@
+/portfolio/bluealibi.html violations: 0 passes: 15
+/portfolio/bluefloor.html violations: 0 passes: 15
+/portfolio/blueintent.html violations: 0 passes: 15
+/portfolio/blueparity.html violations: 0 passes: 15
+/portfolio/bluepipeline.html violations: 0 passes: 15
+/portfolio.html violations: 0 passes: 16
+TOTAL violations across pages: 0
+
+# Method (2026-09-05, coordinator): `npm run a11y` (@axe-core/cli) fails on this machine — ChromeDriver
+# supports Chrome 149, installed Chrome is 152 — a harness failure, not a page result. Ran axe-core
+# (node_modules/axe-core/axe.min.js) through Playwright chromium at 1280x900 with runOnly wcag2a+wcag2aa
+# against the local preview on 127.0.0.1:8210 instead. Screenshots in this folder are full-page Playwright
+# captures at 1280 and 390 widths. KNOWN DEFECT at 390: primary nav does not wrap; "CONTACT" is clipped and
+# the body scrolls horizontally — to be fixed by the page-copy lane in _template.html and all five pages.
