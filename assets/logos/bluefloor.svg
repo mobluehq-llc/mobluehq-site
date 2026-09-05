@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+<title id="title">blueFloor app icon</title>
+<desc id="desc">Three covered log sources above a detection floor and one measured amber source below it.</desc>
+<defs>
+  <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#003D57"/>
+    <stop offset="0.48" stop-color="#007E96"/>
+    <stop offset="1" stop-color="#16E3E8"/>
+  </linearGradient>
+  <linearGradient id="whiteFace" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset="1" stop-color="#E9F0F4"/>
+  </linearGradient>
+  <linearGradient id="amberFace" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#FFC13D"/>
+    <stop offset="1" stop-color="#FF8A00"/>
+  </linearGradient>
+  <filter id="tileShadow" x="-20%" y="-20%" width="140%" height="150%">
+    <feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#001824" flood-opacity="0.28"/>
+  </filter>
+  <filter id="glyphShadow" x="-30%" y="-30%" width="160%" height="170%">
+    <feDropShadow dx="0" dy="13" stdDeviation="12" flood-color="#001824" flood-opacity="0.34"/>
+  </filter>
+</defs>
+<rect x="28" y="28" width="968" height="968" rx="190" fill="url(#tile)" filter="url(#tileShadow)"/>
+<path d="M72 158C290 54 644 78 955 56V274C692 322 328 286 72 424Z" fill="#FFFFFF" opacity="0.16"/>
+<path d="M74 706C314 614 682 640 958 486V950H74Z" fill="#001F31" opacity="0.16"/>
+<g filter="url(#glyphShadow)">
+  <rect x="210" y="246" width="156" height="150" rx="36" fill="url(#whiteFace)"/>
+  <rect x="434" y="246" width="156" height="150" rx="36" fill="url(#whiteFace)"/>
+  <rect x="658" y="246" width="156" height="150" rx="36" fill="url(#whiteFace)"/>
+  <rect x="264" y="380" width="48" height="108" rx="22" fill="url(#whiteFace)"/>
+  <rect x="488" y="380" width="48" height="108" rx="22" fill="url(#whiteFace)"/>
+  <rect x="712" y="380" width="48" height="108" rx="22" fill="url(#whiteFace)"/>
+  <rect x="146" y="462" width="732" height="100" rx="48" fill="url(#whiteFace)"/>
+  <path d="M364 674V626Q364 606 384 606H420" fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M660 674V626Q660 606 640 606H604" fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M364 792V842Q364 862 384 862H640Q660 862 660 842V792" fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="432" y="666" width="160" height="160" rx="38" fill="url(#amberFace)"/>
+  <path d="M456 690H568" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" opacity="0.28"/>
+</g>
+</svg>

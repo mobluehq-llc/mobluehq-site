@@ -76,7 +76,7 @@
       "name": "blueProof",
       "logo": "/assets/logos/blueproof.svg",
       "status": "dev",
-      "description": "Prove what your model is. Turns a trained decision model into evidence regulators can read — built for filings, validations, and examinations. For chief actuaries and model-risk leaders - turning a model into evidence a regulator can read.",
+      "description": "Prove what your model is. Turns a trained decision model into evidence regulators can read \u2014 built for filings, validations, and examinations. For chief actuaries and model-risk leaders - turning a model into evidence a regulator can read.",
       "patent_pending": true
     },
     {
@@ -291,7 +291,7 @@
       "name": "blueDocket",
       "logo": "/assets/logos/bluedocket.svg",
       "status": "dev",
-      "description": "Continuous prior-art watch for patent practices — the screening your team does by hand, running around the clock on every active matter. For patent practices - around-the-clock prior-art watch on every live matter.",
+      "description": "Continuous prior-art watch for patent practices \u2014 the screening your team does by hand, running around the clock on every active matter. For patent practices - around-the-clock prior-art watch on every live matter.",
       "patent_pending": true
     },
     {
@@ -307,7 +307,7 @@
       "name": "blueGuard",
       "logo": "/assets/logos/blueguard.svg",
       "status": "dev",
-      "description": "AML evidence packets — every decision arrives with the deliberation examiners want to see. For AML investigators - evidence packets carrying the deliberation examiners expect to see.",
+      "description": "AML evidence packets \u2014 every decision arrives with the deliberation examiners want to see. For AML investigators - evidence packets carrying the deliberation examiners expect to see.",
       "patent_pending": true
     },
     {
@@ -328,6 +328,46 @@
       "redacted": true,
       "patent_pending": false,
       "badges_redacted": true
+    },
+    {
+      "id": "bluealibi",
+      "name": "blueAlibi",
+      "logo": "/assets/logos/bluealibi.svg",
+      "status": "dev",
+      "description": "Find claims the recorded evidence and tools could not support.",
+      "tagline": "Find claims the recorded evidence and tools could not support."
+    },
+    {
+      "id": "bluefloor",
+      "name": "blueFloor",
+      "logo": "/assets/logos/bluefloor.svg",
+      "status": "dev",
+      "description": "Measure the ingest your deployed detections can actually use.",
+      "tagline": "Measure the ingest your deployed detections can actually use."
+    },
+    {
+      "id": "blueintent",
+      "name": "blueIntent",
+      "logo": "/assets/logos/blueintent.svg",
+      "status": "dev",
+      "description": "Check whether declared code invariants survived a change.",
+      "tagline": "Check whether declared code invariants survived a change."
+    },
+    {
+      "id": "blueparity",
+      "name": "blueParity",
+      "logo": "/assets/logos/blueparity.svg",
+      "status": "dev",
+      "description": "Prove a replacement system stays equivalent within a declared contract.",
+      "tagline": "Prove a replacement system stays equivalent within a declared contract."
+    },
+    {
+      "id": "bluepipeline",
+      "name": "bluePipeline",
+      "logo": "/assets/logos/bluepipeline.svg",
+      "status": "dev",
+      "description": "See what actually reached the model.",
+      "tagline": "See what actually reached the model."
     }
   ]
 }

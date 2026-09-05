@@ -21,7 +21,12 @@ const pages = [
   '/trust',
   '/pricing',
   '/terms',
-  '/privacy'
+  '/privacy',
+  '/portfolio/bluealibi',
+  '/portfolio/bluefloor',
+  '/portfolio/blueintent',
+  '/portfolio/blueparity',
+  '/portfolio/bluepipeline'
 ];
 
 const mime = {
