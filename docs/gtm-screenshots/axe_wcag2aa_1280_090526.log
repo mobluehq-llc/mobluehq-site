@@ -12,3 +12,15 @@ TOTAL violations across pages: 0
 # against the local preview on 127.0.0.1:8210 instead. Screenshots in this folder are full-page Playwright
 # captures at 1280 and 390 widths. KNOWN DEFECT at 390: primary nav does not wrap; "CONTACT" is clipped and
 # the body scrolls horizontally — to be fixed by the page-copy lane in _template.html and all five pages.
+
+# Update (2026-09-05, lane B2-9): copy written for all five pages (0 [COPY PENDING] markers
+# remain). Nav-wrap defect above is FIXED in _template.html and all five pages: .nav now
+# flex-wraps (row-gap 10px) instead of forcing .navlinks off-screen; also fixed an unrelated
+# pre-existing bug found while verifying — `details` had `display:flex;justify-content:space-between`
+# which squeezed the GUIDES accordion's <summary> into a narrow vertical sliver beside its own
+# content (did not cause horizontal scroll, but was visibly broken); `details` is now block with
+# a `details summary` heading style, matching bluemonster.html's stacked accordion look.
+# Re-ran axe-core via Playwright post-fix: 0 violations, 18 passes per portfolio page (up from 15
+# pre-copy — more content now, still clean). document.documentElement.scrollWidth <= window.innerWidth
+# verified true at 390px for all five pages via Playwright (see linkcheck/screenshot run). Screenshots
+# in this folder were regenerated at 1280 and 390 from the fixed, copy-complete pages.

@@ -72,9 +72,11 @@
   }
   .nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    row-gap: 10px;
     padding: 26px 48px;
     max-width: 1480px;
     margin: 0 auto;
@@ -282,11 +284,16 @@
   details {
     border: 1px solid var(--lite-edge);
     border-radius: 8px;
-    padding: 20px 0;
+    padding: 20px 24px;
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  }
+  details summary {
+    cursor: default;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--lite-ink);
+    margin-bottom: 10px;
   }
   details p,
   details li {
@@ -369,6 +376,16 @@
       gap: 24px;
     }
     .bm-hero h1 { font-size: 32px; }
+  }
+  @media (max-width: 480px) {
+    .navlinks {
+      gap: 18px;
+      font-size: 11px;
+    }
+    .bm-hero {
+      grid-template-columns: 1fr;
+    }
+    .bm-mon { max-width: 96px; }
   }
 </style>
 </head>

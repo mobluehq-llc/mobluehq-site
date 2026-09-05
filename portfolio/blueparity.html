@@ -4,19 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>blueParity — MOBLUEHQ</title>
-<meta name="description" content="[COPY PENDING]" />
+<meta name="description" content="blueParity runs two systems against the same corpus under a declared contract, and certifies exactly what matched, diverged, or was never exercised." />
 <link rel="canonical" href="https://www.mobluehq.com/portfolio/blueparity" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mobluehq.com/portfolio/blueparity" />
 <meta property="og:title" content="blueParity — MOBLUEHQ" />
-<meta property="og:description" content="[COPY PENDING]" />
+<meta property="og:description" content="blueParity runs two systems against the same corpus under a declared contract, and certifies exactly what matched, diverged, or was never exercised." />
 <meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="blueParity — MOBLUEHQ" />
-<meta name="twitter:description" content="[COPY PENDING]" />
+<meta name="twitter:description" content="blueParity runs two systems against the same corpus under a declared contract, and certifies exactly what matched, diverged, or was never exercised." />
 <meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
@@ -72,9 +72,11 @@
   }
   .nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    row-gap: 10px;
     padding: 26px 48px;
     max-width: 1480px;
     margin: 0 auto;
@@ -282,11 +284,16 @@
   details {
     border: 1px solid var(--lite-edge);
     border-radius: 8px;
-    padding: 20px 0;
+    padding: 20px 24px;
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  }
+  details summary {
+    cursor: default;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--lite-ink);
+    margin-bottom: 10px;
   }
   details p,
   details li {
@@ -370,6 +377,16 @@
     }
     .bm-hero h1 { font-size: 32px; }
   }
+  @media (max-width: 480px) {
+    .navlinks {
+      gap: 18px;
+      font-size: 11px;
+    }
+    .bm-hero {
+      grid-template-columns: 1fr;
+    }
+    .bm-mon { max-width: 96px; }
+  }
 </style>
 </head>
 <body>
@@ -398,18 +415,22 @@
         <div class="dlrow">
           <a class="cta" href="/contact">REQUEST A DEMO</a>
         </div>
-        <div class="meta">[COPY PENDING]</div>
+        <div class="meta">Runs locally &middot; CLI or web UI &middot; Ed25519-signed certificates &middot; no cloud account required</div>
       </div>
     </div>
 
     <div class="bm-sec">WHAT IT CHECKS</div>
     <div class="mode" style="border-left:4px solid var(--blue-deep)">
-      <p>[COPY PENDING]</p>
+      <p>Both systems run as black-box command adapters over the same JSONL corpus, under an equivalence contract declared and hashed before execution: which outputs matter, what tolerance applies to each, which fields are ignored. Every declared behavior resolves to matched, matched within the declared tolerance, diverged, or not exercised, and every divergence is pinned to a minimal counterexample — the smallest input pair that shows the two systems actually disagreeing.</p>
     </div>
 
     <div class="bm-sec">HOW IT WORKS</div>
     <div class="steps">
-      [COPY PENDING: Replace with numbered steps]
+      <div class="step"><div>1</div><div><b>Wrap both systems.</b> Point blueParity at two command adapters — the legacy system and its replacement — each reading one JSON object per line.</div></div>
+      <div class="step"><div>2</div><div><b>Declare the contract.</b> A YAML equivalence contract names the fields that matter, their tolerances, and any fields to ignore, hashed before the run starts.</div></div>
+      <div class="step"><div>3</div><div><b>Run the corpus.</b> <code>blue-parity run</code> drives both systems over the same JSONL corpus.</div></div>
+      <div class="step"><div>4</div><div><b>Read the certificate.</b> Every rule gets a typed verdict, with divergences clustered and pinned to a minimal counterexample.</div></div>
+      <div class="step"><div>5</div><div><b>Verify offline.</b> The bare receipt checks with <code>verify_receipt.py</code>; the full certificate bundle checks with <code>blue-parity verify</code>.</div></div>
     </div>
 
     <div class="bm-sec">WHAT IT IS NOT</div>
@@ -420,6 +441,7 @@
     <div class="bm-sec">THE RECEIPT</div>
     <div class="receipt-boundary">
       A signed receipt proves what blueParity ran and recorded; it does not prove an underlying real-world claim is true.
+      The certificate binds the equivalence contract, the corpus hash, both adapters' hashes, and every per-behavior verdict — change any one and verification fails. The standalone <code>verify_receipt.py</code> lets a reviewer or auditor check a bare result receipt without installing blueParity; a full certificate bundle verifies with <code>blue-parity verify</code> instead.
     </div>
 
     <div class="design-partner-line">
@@ -428,7 +450,23 @@
 
     <div class="bm-sec">GUIDES</div>
     <div class="docs">
-      [COPY PENDING: Replace with product-specific guides]
+      <details open class="always">
+        <summary>Pre-registered vs. post-hoc</summary>
+        <p>A contract hashed and sealed before the corpus is first seen seals as PRE_REGISTERED. Re-running the same demo data seals as POST_HOC instead, honestly — the corpus's first-seen record is never reset just because identical content was re-uploaded.</p>
+      </details>
+      <details open class="always">
+        <summary>The four verdicts</summary>
+        <ul>
+          <li><b>Matched</b> — field-for-field agreement.</li>
+          <li><b>Matched within tolerance</b> — within the declared numeric bound.</li>
+          <li><b>Diverged</b> — the two systems disagreed; a minimal counterexample is attached.</li>
+          <li><b>Not exercised</b> — the behavior was declared but never triggered by the corpus.</li>
+        </ul>
+      </details>
+      <details open class="always">
+        <summary>Two verifiers for two artifacts</summary>
+        <p>A bare result receipt (like <code>make demo</code>'s output) verifies with the standalone <code>verify_receipt.py</code>. The full certificate bundle downloaded from the UI or CLI — the shape that also proves pre-registration — verifies with <code>blue-parity verify</code> instead. Running <code>verify_receipt.py</code> directly against a bundle correctly reports it invalid; that's the wrong tool for that artifact, not a tamper finding.</p>
+      </details>
     </div>
   </div>
 </main>

@@ -4,19 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>blueAlibi — MOBLUEHQ</title>
-<meta name="description" content="[COPY PENDING]" />
+<meta name="description" content="blueAlibi checks an AI-drafted document against the producing run's own record, and marks every claim with a capability-relative provenance verdict." />
 <link rel="canonical" href="https://www.mobluehq.com/portfolio/bluealibi" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mobluehq.com/portfolio/bluealibi" />
 <meta property="og:title" content="blueAlibi — MOBLUEHQ" />
-<meta property="og:description" content="[COPY PENDING]" />
+<meta property="og:description" content="blueAlibi checks an AI-drafted document against the producing run's own record, and marks every claim with a capability-relative provenance verdict." />
 <meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="blueAlibi — MOBLUEHQ" />
-<meta name="twitter:description" content="[COPY PENDING]" />
+<meta name="twitter:description" content="blueAlibi checks an AI-drafted document against the producing run's own record, and marks every claim with a capability-relative provenance verdict." />
 <meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
@@ -72,9 +72,11 @@
   }
   .nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    row-gap: 10px;
     padding: 26px 48px;
     max-width: 1480px;
     margin: 0 auto;
@@ -282,11 +284,16 @@
   details {
     border: 1px solid var(--lite-edge);
     border-radius: 8px;
-    padding: 20px 0;
+    padding: 20px 24px;
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  }
+  details summary {
+    cursor: default;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--lite-ink);
+    margin-bottom: 10px;
   }
   details p,
   details li {
@@ -370,6 +377,16 @@
     }
     .bm-hero h1 { font-size: 32px; }
   }
+  @media (max-width: 480px) {
+    .navlinks {
+      gap: 18px;
+      font-size: 11px;
+    }
+    .bm-hero {
+      grid-template-columns: 1fr;
+    }
+    .bm-mon { max-width: 96px; }
+  }
 </style>
 </head>
 <body>
@@ -398,18 +415,22 @@
         <div class="dlrow">
           <a class="cta" href="/contact">REQUEST A DEMO</a>
         </div>
-        <div class="meta">[COPY PENDING]</div>
+        <div class="meta">Runs locally &middot; CLI or web UI &middot; Ed25519-signed receipts &middot; no cloud account required</div>
       </div>
     </div>
 
     <div class="bm-sec">WHAT IT CHECKS</div>
     <div class="mode" style="border-left:4px solid var(--blue-deep)">
-      <p>[COPY PENDING]</p>
+      <p>Every factual claim in the document — a cited work, a named dataset, a quantitative result, a claimed action, an institutional reference — is checked against the producing run's own trace of what it accessed, called, and retrieved. A claim that traces to a recorded source is marked supported by provenance. A claim of a kind the run had no mechanism to produce — no experiment tool, no dataset access, no institutional contact in the manifest — is marked unsupportable by construction, and the report names the exact missing capability. A claim with no matching source is marked unsupported, and a claim too vague to check either way is marked unresolved rather than guessed at.</p>
     </div>
 
     <div class="bm-sec">HOW IT WORKS</div>
     <div class="steps">
-      [COPY PENDING: Replace with numbered steps]
+      <div class="step"><div>1</div><div><b>Gather the inputs.</b> A document, a JSONL run trace of what the pipeline actually did, and a YAML capability manifest declaring what it could have done.</div></div>
+      <div class="step"><div>2</div><div><b>Run the audit.</b> <code>blue-alibi audit</code> locally, or the same flow through the web UI — no server required either way.</div></div>
+      <div class="step"><div>3</div><div><b>Read the claim census.</b> Every claim gets one of four typed verdicts, linked to the evidence at its exact place in the document.</div></div>
+      <div class="step"><div>4</div><div><b>Open the trace.</b> Inspect the exact retrieval or tool-call event behind a supported claim, or confirm the manifest gap behind an unsupportable one.</div></div>
+      <div class="step"><div>5</div><div><b>Verify offline.</b> <code>blue-alibi verify</code>, or the standalone <code>verify_receipt.py</code>, checks the signed report with no database and no network connection.</div></div>
     </div>
 
     <div class="bm-sec">WHAT IT IS NOT</div>
@@ -420,6 +441,7 @@
     <div class="bm-sec">THE RECEIPT</div>
     <div class="receipt-boundary">
       A signed receipt proves what blueAlibi ran and recorded; it does not prove an underlying real-world claim is true.
+      The signature binds the run's input hashes, the capability manifest, every claim verdict, and the evidence list — change any one of them and verification fails. Anyone can check it with the standalone <code>verify_receipt.py</code> script, without installing blueAlibi.
     </div>
 
     <div class="design-partner-line">
@@ -428,7 +450,29 @@
 
     <div class="bm-sec">GUIDES</div>
     <div class="docs">
-      [COPY PENDING: Replace with product-specific guides]
+      <details open class="always">
+        <summary>What goes into an audit</summary>
+        <p>Three inputs, all local: the document, a JSONL trace of the producing run's retrievals and tool calls, and a YAML manifest of what that pipeline was actually capable of. Optional source documents let a claim resolve to an exact quoted line.</p>
+        <ul>
+          <li><b>Document:</b> Markdown or plain text.</li>
+          <li><b>Trace:</b> retrievals, tool calls, datasets touched, measurements taken.</li>
+          <li><b>Manifest:</b> the tools and data paths that pipeline actually has — never inferred from the trace itself.</li>
+        </ul>
+      </details>
+      <details open class="always">
+        <summary>The four verdicts</summary>
+        <p>Every claim gets exactly one of four typed states — never a blended score.</p>
+        <ul>
+          <li><b>Supported by provenance</b> — a recorded source could support it.</li>
+          <li><b>Unsupported, no source</b> — nothing in the trace backs it.</li>
+          <li><b>Unsupportable by construction</b> — the pipeline had no capability to produce this kind of claim; the missing capability is named.</li>
+          <li><b>Unresolved</b> — too vague, or the evidence doesn't settle it either way.</li>
+        </ul>
+      </details>
+      <details open class="always">
+        <summary>Verify a report without installing blueAlibi</summary>
+        <p>A signed report can be checked by anyone with nothing but the receipt file: <code>blue-alibi verify report.json</code>, or hand a counterparty the standalone <code>verify_receipt.py</code> — stdlib plus one crypto library, no server, no account.</p>
+      </details>
     </div>
   </div>
 </main>

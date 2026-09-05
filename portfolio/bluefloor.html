@@ -4,19 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>blueFloor — MOBLUEHQ</title>
-<meta name="description" content="[COPY PENDING]" />
+<meta name="description" content="blueFloor maps deployed detection rules to ingest and cost data, and certifies exactly which spend no rule can currently use, in a signed, independently verifiable report." />
 <link rel="canonical" href="https://www.mobluehq.com/portfolio/bluefloor" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mobluehq.com/portfolio/bluefloor" />
 <meta property="og:title" content="blueFloor — MOBLUEHQ" />
-<meta property="og:description" content="[COPY PENDING]" />
+<meta property="og:description" content="blueFloor maps deployed detection rules to ingest and cost data, and certifies exactly which spend no rule can currently use, in a signed, independently verifiable report." />
 <meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="blueFloor — MOBLUEHQ" />
-<meta name="twitter:description" content="[COPY PENDING]" />
+<meta name="twitter:description" content="blueFloor maps deployed detection rules to ingest and cost data, and certifies exactly which spend no rule can currently use, in a signed, independently verifiable report." />
 <meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
@@ -72,9 +72,11 @@
   }
   .nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    row-gap: 10px;
     padding: 26px 48px;
     max-width: 1480px;
     margin: 0 auto;
@@ -282,11 +284,16 @@
   details {
     border: 1px solid var(--lite-edge);
     border-radius: 8px;
-    padding: 20px 0;
+    padding: 20px 24px;
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  }
+  details summary {
+    cursor: default;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--lite-ink);
+    margin-bottom: 10px;
   }
   details p,
   details li {
@@ -370,6 +377,16 @@
     }
     .bm-hero h1 { font-size: 32px; }
   }
+  @media (max-width: 480px) {
+    .navlinks {
+      gap: 18px;
+      font-size: 11px;
+    }
+    .bm-hero {
+      grid-template-columns: 1fr;
+    }
+    .bm-mon { max-width: 96px; }
+  }
 </style>
 </head>
 <body>
@@ -398,18 +415,22 @@
         <div class="dlrow">
           <a class="cta" href="/contact">REQUEST A DEMO</a>
         </div>
-        <div class="meta">[COPY PENDING]</div>
+        <div class="meta">Runs locally &middot; read-only, no SIEM writes &middot; Ed25519-signed receipts &middot; no cloud account required</div>
       </div>
     </div>
 
     <div class="bm-sec">WHAT IT CHECKS</div>
     <div class="mode" style="border-left:4px solid var(--blue-deep)">
-      <p>[COPY PENDING]</p>
+      <p>Every deployed detection rule — Sigma, SPL, or KQL — is parsed and mapped to the exact canonical log sources and fields it consumes. Each metered source is then classified: consumed by a live rule, partially consumed, sub-floor (no enabled, successfully parsed rule can use it), never evaluated (no ingest row was seen), or cannot-certify (an unresolved parser or mapping gap makes the answer unknown — not the same as unused). A source only reaches sub-floor certification once every applicable blocker has been ruled out; an unparsed rule is never assumed to consume nothing.</p>
     </div>
 
     <div class="bm-sec">HOW IT WORKS</div>
     <div class="steps">
-      [COPY PENDING: Replace with numbered steps]
+      <div class="step"><div>1</div><div><b>Export your rules and metering.</b> Sigma, SPL, or KQL rule exports, plus ingest and cost metering exports — nothing connects to a live SIEM.</div></div>
+      <div class="step"><div>2</div><div><b>Run the analysis.</b> <code>bluefloor analyze</code> locally, or the same flow through the web UI.</div></div>
+      <div class="step"><div>3</div><div><b>Read the source verdicts.</b> Every metered source gets a typed verdict with the reason codes and rule hashes behind it.</div></div>
+      <div class="step"><div>4</div><div><b>Inspect a blocker.</b> Open the exact rule or mapping gap keeping a source from being certified.</div></div>
+      <div class="step"><div>5</div><div><b>Verify offline.</b> The signed report checks against <code>verify_receipt.py</code> with no SIEM access and no network connection.</div></div>
     </div>
 
     <div class="bm-sec">WHAT IT IS NOT</div>
@@ -420,6 +441,7 @@
     <div class="bm-sec">THE RECEIPT</div>
     <div class="receipt-boundary">
       A signed receipt proves what blueFloor ran and recorded; it does not prove an underlying real-world claim is true.
+      The signature binds the parsed rule set, the source-consumption map, the metering totals, and every per-source verdict — change any one and verification fails. <code>verify_receipt.py</code> is a standalone, dependency-light script, so a counterparty can check the report without installing blueFloor.
     </div>
 
     <div class="design-partner-line">
@@ -428,7 +450,24 @@
 
     <div class="bm-sec">GUIDES</div>
     <div class="docs">
-      [COPY PENDING: Replace with product-specific guides]
+      <details open class="always">
+        <summary>What SUB-FLOOR means (and doesn't)</summary>
+        <p>SUB-FLOOR means no supplied, enabled, successfully parsed rule is proven to consume the source, and no unresolved rule can plausibly consume it either. It does not mean the source has no forensic, compliance, operational, or future detection value — that judgment stays with your team.</p>
+      </details>
+      <details open class="always">
+        <summary>Reading the five verdicts</summary>
+        <ul>
+          <li><b>Consumed</b> — one or more enabled, parsed rules use the source.</li>
+          <li><b>Partially-consumed</b> — only part of the source's field inventory is proven used.</li>
+          <li><b>Sub-floor</b> — no enabled parsed rule consumes it, and nothing blocks that finding.</li>
+          <li><b>Never-evaluated</b> — the source was inventoried but no ingest row was seen.</li>
+          <li><b>Cannot-certify</b> — an unresolved parser or mapping gap makes the answer unknown.</li>
+        </ul>
+      </details>
+      <details open class="always">
+        <summary>Verify a report without installing blueFloor</summary>
+        <p><code>./.venv/bin/python src/bluekit/verify_receipt.py path/to/receipt.json</code> — stdlib plus one crypto library, no dependency on the rest of the product, so a counterparty can check a receipt on its own.</p>
+      </details>
     </div>
   </div>
 </main>

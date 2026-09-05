@@ -4,19 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>bluePipeline — MOBLUEHQ</title>
-<meta name="description" content="[COPY PENDING]" />
+<meta name="description" content="bluePipeline records the prompt-asset hashes and assembled prompt behind every model call, and signs the result so an edit can be proven to have reached the model." />
 <link rel="canonical" href="https://www.mobluehq.com/portfolio/bluepipeline" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mobluehq.com/portfolio/bluepipeline" />
 <meta property="og:title" content="bluePipeline — MOBLUEHQ" />
-<meta property="og:description" content="[COPY PENDING]" />
+<meta property="og:description" content="bluePipeline records the prompt-asset hashes and assembled prompt behind every model call, and signs the result so an edit can be proven to have reached the model." />
 <meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="bluePipeline — MOBLUEHQ" />
-<meta name="twitter:description" content="[COPY PENDING]" />
+<meta name="twitter:description" content="bluePipeline records the prompt-asset hashes and assembled prompt behind every model call, and signs the result so an edit can be proven to have reached the model." />
 <meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
@@ -72,9 +72,11 @@
   }
   .nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    row-gap: 10px;
     padding: 26px 48px;
     max-width: 1480px;
     margin: 0 auto;
@@ -282,11 +284,16 @@
   details {
     border: 1px solid var(--lite-edge);
     border-radius: 8px;
-    padding: 20px 0;
+    padding: 20px 24px;
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  }
+  details summary {
+    cursor: default;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--lite-ink);
+    margin-bottom: 10px;
   }
   details p,
   details li {
@@ -370,6 +377,16 @@
     }
     .bm-hero h1 { font-size: 32px; }
   }
+  @media (max-width: 480px) {
+    .navlinks {
+      gap: 18px;
+      font-size: 11px;
+    }
+    .bm-hero {
+      grid-template-columns: 1fr;
+    }
+    .bm-mon { max-width: 96px; }
+  }
 </style>
 </head>
 <body>
@@ -398,18 +415,22 @@
         <div class="dlrow">
           <a class="cta" href="/contact">REQUEST A DEMO</a>
         </div>
-        <div class="meta">[COPY PENDING]</div>
+        <div class="meta">Python SDK + local dashboard &middot; Ed25519-signed receipts &middot; no cloud account required</div>
       </div>
     </div>
 
     <div class="bm-sec">WHAT IT CHECKS</div>
     <div class="mode" style="border-left:4px solid var(--blue-deep)">
-      <p>[COPY PENDING]</p>
+      <p>Every model call is instrumented at the SDK level: the hash of every prompt asset actually loaded, the prompt exactly as assembled — after templating, truncation, and tool injection — and, where a derived query is issued, whether it echoes the user's content or the pipeline's own scaffolding. Each call resolves to a typed verdict: the expected config was live, a loaded asset's hash drifted from what the manifest declares, two resolvers can disagree on the same asset, a fragment was duplicated, or a scaffolding string leaked into a derived query — never a dashboard that only shows what the config surface believes is deployed.</p>
     </div>
 
     <div class="bm-sec">HOW IT WORKS</div>
     <div class="steps">
-      [COPY PENDING: Replace with numbered steps]
+      <div class="step"><div>1</div><div><b>Wrap your model client.</b> Install the SDK and wrap the call site — a raw client, LangChain, or a queue worker; three shipped recipes.</div></div>
+      <div class="step"><div>2</div><div><b>Get static findings on day one.</b> The resolver analyzer inventories every externalized prompt asset and flags any two code paths that can resolve the same asset differently — no runtime change needed.</div></div>
+      <div class="step"><div>3</div><div><b>Every call seals a receipt.</b> At call time, the SDK hashes every loaded asset and captures the final assembled-prompt digest at the last point before transport.</div></div>
+      <div class="step"><div>4</div><div><b>Read the findings.</b> The dashboard diffs live hashes against declared config and renders the assembled prompt exactly as sent.</div></div>
+      <div class="step"><div>5</div><div><b>Verify offline.</b> <code>bluekit.verify_receipt</code> checks the signed receipt with no server and no model API access.</div></div>
     </div>
 
     <div class="bm-sec">WHAT IT IS NOT</div>
@@ -420,6 +441,7 @@
     <div class="bm-sec">THE RECEIPT</div>
     <div class="receipt-boundary">
       A signed receipt proves what bluePipeline ran and recorded; it does not prove an underlying real-world claim is true.
+      The signature binds the prompt-manifest hash, the assembled-prompt digest, resolver identity, and the call's typed verdict — change any one and verification fails. The standalone <code>bluekit.verify_receipt</code> lets a teammate or auditor check a receipt without installing bluePipeline. A valid signature says who signed; it does not by itself say that signer is trusted.
     </div>
 
     <div class="design-partner-line">
@@ -428,7 +450,25 @@
 
     <div class="bm-sec">GUIDES</div>
     <div class="docs">
-      [COPY PENDING: Replace with product-specific guides]
+      <details open class="always">
+        <summary>The five verdicts</summary>
+        <ul>
+          <li><b>Expected config active</b> — the declared prompt assets are what actually loaded.</li>
+          <li><b>Config drift</b> — a loaded asset's hash doesn't match what the manifest declares.</li>
+          <li><b>Resolver split</b> — two code paths can resolve the same asset differently.</li>
+          <li><b>Duplicate fragment</b> — the same prompt fragment was injected more than once.</li>
+          <li><b>Template leak</b> — pipeline scaffolding text turned up in a derived query.</li>
+        </ul>
+      </details>
+      <details open class="always">
+        <summary>Three ways to wrap a call</summary>
+        <p>Wrap the call site directly, whichever way your pipeline actually calls a model.</p>
+        <div class="llm"><span>Raw API client</span><span>LangChain</span><span>Queue worker</span></div>
+      </details>
+      <details open class="always">
+        <summary>Redaction is opt-in, off by default</summary>
+        <p>Prompt-body capture is off by default; with it off, receipts and traces carry only hashes and structural metadata, never prompt text. Turn it on per project if you need the literal text — redaction patterns for keys, tokens, and emails still apply either way.</p>
+      </details>
     </div>
   </div>
 </main>

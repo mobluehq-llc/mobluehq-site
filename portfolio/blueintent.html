@@ -4,19 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>blueIntent — MOBLUEHQ</title>
-<meta name="description" content="[COPY PENDING]" />
+<meta name="description" content="blueIntent checks a declared intent.yaml against a base and head git revision, and emits a typed, evidence-backed verdict for every declared invariant." />
 <link rel="canonical" href="https://www.mobluehq.com/portfolio/blueintent" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mobluehq.com/portfolio/blueintent" />
 <meta property="og:title" content="blueIntent — MOBLUEHQ" />
-<meta property="og:description" content="[COPY PENDING]" />
+<meta property="og:description" content="blueIntent checks a declared intent.yaml against a base and head git revision, and emits a typed, evidence-backed verdict for every declared invariant." />
 <meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="blueIntent — MOBLUEHQ" />
-<meta name="twitter:description" content="[COPY PENDING]" />
+<meta name="twitter:description" content="blueIntent checks a declared intent.yaml against a base and head git revision, and emits a typed, evidence-backed verdict for every declared invariant." />
 <meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
@@ -72,9 +72,11 @@
   }
   .nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    row-gap: 10px;
     padding: 26px 48px;
     max-width: 1480px;
     margin: 0 auto;
@@ -282,11 +284,16 @@
   details {
     border: 1px solid var(--lite-edge);
     border-radius: 8px;
-    padding: 20px 0;
+    padding: 20px 24px;
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  }
+  details summary {
+    cursor: default;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--lite-ink);
+    margin-bottom: 10px;
   }
   details p,
   details li {
@@ -370,6 +377,16 @@
     }
     .bm-hero h1 { font-size: 32px; }
   }
+  @media (max-width: 480px) {
+    .navlinks {
+      gap: 18px;
+      font-size: 11px;
+    }
+    .bm-hero {
+      grid-template-columns: 1fr;
+    }
+    .bm-mon { max-width: 96px; }
+  }
 </style>
 </head>
 <body>
@@ -398,18 +415,22 @@
         <div class="dlrow">
           <a class="cta" href="/contact">REQUEST A DEMO</a>
         </div>
-        <div class="meta">[COPY PENDING]</div>
+        <div class="meta">Runs as a CI gate &middot; CLI or web UI &middot; Ed25519-signed receipts &middot; no cloud account required</div>
       </div>
     </div>
 
     <div class="bm-sec">WHAT IT CHECKS</div>
     <div class="mode" style="border-left:4px solid var(--blue-deep)">
-      <p>[COPY PENDING]</p>
+      <p>A conservative intent.yaml — the invariants a team declares must not silently break, such as a required file staying in place, a forbidden path staying untouched, or a public symbol staying exported — is evaluated against a base and head git revision. Each invariant resolves to one of five typed verdicts, backed by the exact file, symbol, or line evidence behind it. An invariant the engine cannot evaluate — no matching file, an unsupported language, a check outside this version's narrow rule set — is marked unproven or never-evaluated, never silently passed.</p>
     </div>
 
     <div class="bm-sec">HOW IT WORKS</div>
     <div class="steps">
-      [COPY PENDING: Replace with numbered steps]
+      <div class="step"><div>1</div><div><b>Declare your invariants.</b> Write an intent.yaml naming what must not change — required files, forbidden paths, retained symbols, forbidden substrings.</div></div>
+      <div class="step"><div>2</div><div><b>Register the repo.</b> Point blueIntent at a local git repository by path; no code leaves the machine.</div></div>
+      <div class="step"><div>3</div><div><b>Run the check.</b> <code>blue-intent check --base main --head HEAD</code>, or wire the same gate into CI.</div></div>
+      <div class="step"><div>4</div><div><b>Read the verdicts.</b> Preserved, violated, unproven, never-evaluated, or out-of-scope per invariant, each with its evidence.</div></div>
+      <div class="step"><div>5</div><div><b>Verify offline.</b> <code>blue-intent verify</code> or the standalone <code>verify_receipt.py</code> confirms the signed report independent of the CI logs.</div></div>
     </div>
 
     <div class="bm-sec">WHAT IT IS NOT</div>
@@ -420,6 +441,7 @@
     <div class="bm-sec">THE RECEIPT</div>
     <div class="receipt-boundary">
       A signed receipt proves what blueIntent ran and recorded; it does not prove an underlying real-world claim is true.
+      The signature binds the base and head revision hashes, the intent.yaml contract, and every per-invariant verdict — change any one and verification fails. <code>verify_receipt.py</code> lets a reviewer or auditor check the result without installing blueIntent or trusting the CI logs.
     </div>
 
     <div class="design-partner-line">
@@ -428,7 +450,24 @@
 
     <div class="bm-sec">GUIDES</div>
     <div class="docs">
-      [COPY PENDING: Replace with product-specific guides]
+      <details open class="always">
+        <summary>The five verdicts</summary>
+        <ul>
+          <li><b>Preserved</b> — evidence shows the invariant held.</li>
+          <li><b>Violated</b> — evidence shows the invariant broke.</li>
+          <li><b>Unproven</b> — evaluated, but the evidence doesn't settle it either way.</li>
+          <li><b>Never-evaluated</b> — nothing in this diff touched it.</li>
+          <li><b>Out of scope</b> — outside what this invariant type checks.</li>
+        </ul>
+      </details>
+      <details open class="always">
+        <summary>What an intent.yaml can declare today</summary>
+        <p>Required-file retention, forbidden paths, public-symbol retention (Python only in this version), forbidden-substring checks, and JSON-schema-compatible checks — each a narrow, deterministic rule, not general program verification. Content-scoped checks look at one named file at a time, not a repo-wide pattern.</p>
+      </details>
+      <details open class="always">
+        <summary>Wiring it into CI</summary>
+        <p>The same gate that evaluates locally runs in CI against a repo's own intent.yaml. Exit codes are scriptable: <code>0</code> for PASS, <code>1</code> for HOLD or a failed run, <code>2</code> for a usage error.</p>
+      </details>
     </div>
   </div>
 </main>
