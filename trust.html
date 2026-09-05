@@ -51,16 +51,19 @@
 
       <h2>Data handling</h2>
       <ul>
-        <li><strong>Website &amp; forms:</strong> Contact and investor messages are transmitted to our inbox provider and stored only as long as needed to respond.</li>
-        <li><strong>Product data:</strong> Verification inputs and outputs are processed to deliver signed receipts. Retention periods vary by plan and are documented in product agreements.</li>
+        <li><strong>Website &amp; forms:</strong> Contact and investor messages are transmitted to our form-delivery providers and stored only as long as needed to respond.</li>
+        <li><strong>Product data (hosted products):</strong> For blueMonster, slumberNet, and Blue, verification inputs and outputs are processed to deliver signed receipts. Retention periods vary by plan and are documented in product agreements.</li>
         <li><strong>Logs:</strong> Operational logs (errors, latency, abuse signals) are kept for a limited period and access is restricted to personnel who need them.</li>
-        <li><strong>Encryption:</strong> Data in transit uses TLS. Data at rest uses provider-managed encryption on our cloud infrastructure.</li>
+        <li><strong>Encryption (hosted products):</strong> Data in transit uses TLS. Data at rest uses provider-managed encryption on our cloud infrastructure.</li>
         <li><strong>Deletion:</strong> You may request deletion of account-linked data by contacting us. Some records may be retained where required by law or for legitimate security purposes.</li>
       </ul>
 
+      <h2>Verification tools — a different data posture</h2>
+      <p>blueAlibi, blueFloor, blueIntent, blueParity, and bluePipeline are not part of the hosted-product statements above. Each is local software: it runs on your machine against files, exported logs, or a local repository you point it at, with no cloud account and no server call required to run or verify a result. We do not receive, transmit, or store the inputs or outputs of these tools, and no network connection is required to operate them — that data never reaches MOBLUEHQ. Every signed receipt or certificate they produce is generated and checked on your machine; we never see, hold, or have access to the signing key involved.</p>
+
       <h2 id="subprocessors">Subprocessors</h2>
       <p>We use vetted third parties to host and operate MOBLUEHQ. This list is updated when vendors change.</p>
-      <div class="trust-table-wrap">
+      <div class="trust-table-wrap" tabindex="0" role="region" aria-label="MOBLUEHQ subprocessor list, scrollable">
         <table class="trust-table">
           <caption class="sr-only">MOBLUEHQ subprocessor list</caption>
           <thead>
@@ -79,8 +82,14 @@
               <td><span class="trust-status trust-status--active">Active</span></td>
             </tr>
             <tr>
+              <td>Cloudflare Workers</td>
+              <td>Contact form lead delivery</td>
+              <td>Global edge</td>
+              <td><span class="trust-status trust-status--active">Active</span></td>
+            </tr>
+            <tr>
               <td>FormSubmit</td>
-              <td>Contact &amp; inquiry form delivery</td>
+              <td>Investor inquiry form delivery</td>
               <td>US</td>
               <td><span class="trust-status trust-status--active">Active</span></td>
             </tr>
