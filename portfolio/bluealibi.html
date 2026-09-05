@@ -427,7 +427,7 @@
     <div class="bm-sec">HOW IT WORKS</div>
     <div class="steps">
       <div class="step"><div>1</div><div><b>Gather the inputs.</b> A document, a JSONL run trace of what the pipeline actually did, and a YAML capability manifest declaring what it could have done.</div></div>
-      <div class="step"><div>2</div><div><b>Run the audit.</b> <code>blue-alibi audit</code> locally, or the same flow through the web UI — no server required either way.</div></div>
+      <div class="step"><div>2</div><div><b>Run the audit.</b> <code>blue-alibi audit</code> locally with no server, or the same flow through the web UI with <code>blue-alibi serve</code>.</div>
       <div class="step"><div>3</div><div><b>Read the claim census.</b> Every claim gets one of four typed verdicts, linked to the evidence at its exact place in the document.</div></div>
       <div class="step"><div>4</div><div><b>Open the trace.</b> Inspect the exact retrieval or tool-call event behind a supported claim, or confirm the manifest gap behind an unsupportable one.</div></div>
       <div class="step"><div>5</div><div><b>Verify offline.</b> <code>blue-alibi verify</code>, or the standalone <code>verify_receipt.py</code>, checks the signed report with no database and no network connection.</div></div>

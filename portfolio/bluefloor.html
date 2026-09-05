@@ -4,19 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>blueFloor — MOBLUEHQ</title>
-<meta name="description" content="blueFloor maps deployed detection rules to ingest and cost data, and certifies exactly which spend no rule can currently use, in a signed, independently verifiable report." />
+<meta name="description" content="blueFloor maps deployed detection rules to ingest and cost data, and identifies exactly which spend no rule can currently use, in a signed, independently verifiable report." />
 <link rel="canonical" href="https://www.mobluehq.com/portfolio/bluefloor" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mobluehq.com/portfolio/bluefloor" />
 <meta property="og:title" content="blueFloor — MOBLUEHQ" />
-<meta property="og:description" content="blueFloor maps deployed detection rules to ingest and cost data, and certifies exactly which spend no rule can currently use, in a signed, independently verifiable report." />
+<meta property="og:description" content="blueFloor maps deployed detection rules to ingest and cost data, and identifies exactly which spend no rule can currently use, in a signed, independently verifiable report." />
 <meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="blueFloor — MOBLUEHQ" />
-<meta name="twitter:description" content="blueFloor maps deployed detection rules to ingest and cost data, and certifies exactly which spend no rule can currently use, in a signed, independently verifiable report." />
+<meta name="twitter:description" content="blueFloor maps deployed detection rules to ingest and cost data, and identifies exactly which spend no rule can currently use, in a signed, independently verifiable report." />
 <meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
@@ -411,7 +411,7 @@
       <div>
         <h1>blue<b>Floor</b></h1>
         <div class="bm-tag">MEASURE THE INGEST YOUR DEPLOYED DETECTIONS CAN ACTUALLY USE.</div>
-        <p class="bm-sub">SIEM bills scale with ingest. Teams may pay to ingest sources that no deployed detection rule can consume, while cost-cutting exercises sample valuable sources without evidence about which detections depend on them. blueFloor is a local, read-only analyzer: it parses exported detection rules (Sigma / SPL / KQL), maps each rule to the canonical log sources and fields it consumes, joins exported ingest and cost metering, and identifies spend that can be certified below the deployed detection floor — showing every limitation that prevents certification, and emitting a signed report a third party can verify without installing blueFloor.</p>
+        <p class="bm-sub">SIEM bills scale with ingest. Teams may pay to ingest sources that no deployed detection rule can consume, while cost-cutting exercises sample valuable sources without evidence about which detections depend on them. blueFloor is a local, read-only analyzer: it parses exported detection rules (Sigma / SPL / KQL), maps each rule to the canonical log sources and fields it consumes, joins exported ingest and cost metering, and identifies spend classified as below the deployed detection floor — showing every limitation that prevents classification, and emitting a signed report a third party can verify without installing blueFloor.</p>
         <div class="dlrow">
           <a class="cta" href="/contact?segment=bluefloor">REQUEST A DEMO</a>
         </div>
@@ -421,7 +421,7 @@
 
     <div class="bm-sec">WHAT IT CHECKS</div>
     <div class="mode" style="border-left:4px solid var(--blue-deep)">
-      <p>Every deployed detection rule — Sigma, SPL, or KQL — is parsed and mapped to the exact canonical log sources and fields it consumes. Each metered source is then classified: consumed by a live rule, partially consumed, sub-floor (no enabled, successfully parsed rule can use it), never evaluated (no ingest row was seen), or cannot-certify (an unresolved parser or mapping gap makes the answer unknown — not the same as unused). A source only reaches sub-floor certification once every applicable blocker has been ruled out; an unparsed rule is never assumed to consume nothing.</p>
+      <p>Every deployed detection rule — Sigma, SPL, or KQL — is parsed and mapped to the exact canonical log sources and fields it consumes. Each metered source is then classified: consumed by a live rule, partially consumed, sub-floor (no enabled, successfully parsed rule can use it), never evaluated (no ingest row was seen), or unable-to-classify (an unresolved parser or mapping gap makes the answer unknown — not the same as unused). A source is only classified as sub-floor once every applicable blocker has been ruled out; an unparsed rule is never assumed to consume nothing.</p>
     </div>
 
     <div class="bm-sec">HOW IT WORKS</div>
@@ -429,7 +429,7 @@
       <div class="step"><div>1</div><div><b>Export your rules and metering.</b> Sigma, SPL, or KQL rule exports, plus ingest and cost metering exports — nothing connects to a live SIEM.</div></div>
       <div class="step"><div>2</div><div><b>Run the analysis.</b> <code>bluefloor analyze</code> locally, or the same flow through the web UI.</div></div>
       <div class="step"><div>3</div><div><b>Read the source verdicts.</b> Every metered source gets a typed verdict with the reason codes and rule hashes behind it.</div></div>
-      <div class="step"><div>4</div><div><b>Inspect a blocker.</b> Open the exact rule or mapping gap keeping a source from being certified.</div></div>
+      <div class="step"><div>4</div><div><b>Inspect a blocker.</b> Open the exact rule or mapping gap keeping a source from being classified below the detection floor.</div></div>
       <div class="step"><div>5</div><div><b>Verify offline.</b> The signed report checks against <code>verify_receipt.py</code> with no SIEM access and no network connection.</div></div>
     </div>
 
@@ -461,13 +461,13 @@
           <li><b>Partially-consumed</b> — only part of the source's field inventory is proven used.</li>
           <li><b>Sub-floor</b> — no enabled parsed rule consumes it, and nothing blocks that finding.</li>
           <li><b>Never-evaluated</b> — the source was inventoried but no ingest row was seen.</li>
-          <li><b>Cannot-certify</b> — an unresolved parser or mapping gap makes the answer unknown.</li>
-          <li><b>Coverage unknown</b> — the source is consumed by rules, but all of those rules failed to parse. An unparseable rule may depend on this source, distinct from cannot-certify.</li>
+          <li><b>Unable-to-classify</b> — an unresolved parser or mapping gap makes the answer unknown.</li>
+          <li><b>Coverage unknown</b> — the source is consumed by rules, but all of those rules failed to parse. An unparseable rule may depend on this source, distinct from unable-to-classify.</li>
         </ul>
       </details>
       <details open class="always">
         <summary>Verify a report without installing blueFloor</summary>
-        <p><code>./.venv/bin/python src/bluekit/verify_receipt.py path/to/receipt.json</code> — stdlib plus one crypto library, no dependency on the rest of the product, so a counterparty can check a receipt on its own.</p>
+        <p><code>python -m bluekit.verify_receipt path/to/receipt.json</code> — stdlib plus one crypto library, no dependency on the rest of the product, so a counterparty who installed blueFloor can check a receipt on their own.</p>
       </details>
     </div>
   </div>
