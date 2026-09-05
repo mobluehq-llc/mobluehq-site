@@ -387,6 +387,13 @@
     }
     .bm-mon { max-width: 96px; }
   }
+  /* Long command names and file names must wrap rather than force the page
+     to scroll sideways on a phone. Verified at 390px. */
+  code, .step, .step *, .steps, details, details * {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .steps, .step, .step > div, .mode, details { min-width: 0; }
 </style>
 </head>
 <body>
