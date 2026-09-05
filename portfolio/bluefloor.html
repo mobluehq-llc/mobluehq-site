@@ -413,7 +413,7 @@
         <div class="bm-tag">MEASURE THE INGEST YOUR DEPLOYED DETECTIONS CAN ACTUALLY USE.</div>
         <p class="bm-sub">SIEM bills scale with ingest. Teams may pay to ingest sources that no deployed detection rule can consume, while cost-cutting exercises sample valuable sources without evidence about which detections depend on them. blueFloor is a local, read-only analyzer: it parses exported detection rules (Sigma / SPL / KQL), maps each rule to the canonical log sources and fields it consumes, joins exported ingest and cost metering, and identifies spend that can be certified below the deployed detection floor — showing every limitation that prevents certification, and emitting a signed report a third party can verify without installing blueFloor.</p>
         <div class="dlrow">
-          <a class="cta" href="/contact">REQUEST A DEMO</a>
+          <a class="cta" href="/contact?segment=bluefloor">REQUEST A DEMO</a>
         </div>
         <div class="meta">Runs locally &middot; read-only, no SIEM writes &middot; Ed25519-signed receipts &middot; no cloud account required</div>
       </div>
@@ -455,13 +455,14 @@
         <p>SUB-FLOOR means no supplied, enabled, successfully parsed rule is proven to consume the source, and no unresolved rule can plausibly consume it either. It does not mean the source has no forensic, compliance, operational, or future detection value — that judgment stays with your team.</p>
       </details>
       <details open class="always">
-        <summary>Reading the five verdicts</summary>
+        <summary>Reading the six verdicts</summary>
         <ul>
           <li><b>Consumed</b> — one or more enabled, parsed rules use the source.</li>
           <li><b>Partially-consumed</b> — only part of the source's field inventory is proven used.</li>
           <li><b>Sub-floor</b> — no enabled parsed rule consumes it, and nothing blocks that finding.</li>
           <li><b>Never-evaluated</b> — the source was inventoried but no ingest row was seen.</li>
           <li><b>Cannot-certify</b> — an unresolved parser or mapping gap makes the answer unknown.</li>
+          <li><b>Coverage unknown</b> — the source is consumed by rules, but all of those rules failed to parse. An unparseable rule may depend on this source, distinct from cannot-certify.</li>
         </ul>
       </details>
       <details open class="always">

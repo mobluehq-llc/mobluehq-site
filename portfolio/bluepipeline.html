@@ -413,7 +413,7 @@
         <div class="bm-tag">SEE WHAT ACTUALLY REACHED THE MODEL.</div>
         <p class="bm-sub">Prompt configuration can be edited successfully in one path while a worker resolves a different file, making an intervention appear live when the model never received it. bluePipeline is a Python SDK and local dashboard that records prompt-asset hashes, the assembled prompt, resolver identity, and derived-query provenance for every model call, and signs the result so it can be independently verified offline.</p>
         <div class="dlrow">
-          <a class="cta" href="/contact">REQUEST A DEMO</a>
+          <a class="cta" href="/contact?segment=bluepipeline">REQUEST A DEMO</a>
         </div>
         <div class="meta">Python SDK + local dashboard &middot; Ed25519-signed receipts &middot; no cloud account required</div>
       </div>
@@ -451,13 +451,13 @@
     <div class="bm-sec">GUIDES</div>
     <div class="docs">
       <details open class="always">
-        <summary>The five verdicts</summary>
+        <summary>The verdicts (three live, two defined without live demo paths in v1)</summary>
         <ul>
           <li><b>Expected config active</b> — the declared prompt assets are what actually loaded.</li>
           <li><b>Config drift</b> — a loaded asset's hash doesn't match what the manifest declares.</li>
           <li><b>Resolver split</b> — two code paths can resolve the same asset differently.</li>
-          <li><b>Duplicate fragment</b> — the same prompt fragment was injected more than once.</li>
-          <li><b>Template leak</b> — pipeline scaffolding text turned up in a derived query.</li>
+          <li><b>Duplicate fragment</b> — defined but no live demo path in v1.</li>
+          <li><b>Template leak</b> — defined but no live demo path in v1.</li>
         </ul>
       </details>
       <details open class="always">

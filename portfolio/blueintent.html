@@ -413,7 +413,7 @@
         <div class="bm-tag">CHECK WHETHER DECLARED CODE INVARIANTS SURVIVED A CHANGE.</div>
         <p class="bm-sub">A passing test suite doesn't state which declared structural, API, or security invariants an AI-authored change preserved, violated, or left unproven. blueIntent is a CI gate that evaluates a conservative intent.yaml against a base and head revision and emits typed verdicts — PRESERVED, VIOLATED, UNPROVEN, NEVER-EVALUATED, OUT_OF_SCOPE — backed by exact evidence and an offline-verifiable, Ed25519-signed receipt.</p>
         <div class="dlrow">
-          <a class="cta" href="/contact">REQUEST A DEMO</a>
+          <a class="cta" href="/contact?segment=blueintent">REQUEST A DEMO</a>
         </div>
         <div class="meta">Runs as a CI gate &middot; CLI or web UI &middot; Ed25519-signed receipts &middot; no cloud account required</div>
       </div>
@@ -462,7 +462,7 @@
       </details>
       <details open class="always">
         <summary>What an intent.yaml can declare today</summary>
-        <p>Required-file retention, forbidden paths, public-symbol retention (Python only in this version), forbidden-substring checks, and JSON-schema-compatible checks — each a narrow, deterministic rule, not general program verification. Content-scoped checks look at one named file at a time, not a repo-wide pattern.</p>
+        <p>Required-file retention, forbidden paths, allowed paths, public-symbol retention (Python only in this version), must-contain checks, forbidden-substring checks, forbidden-AST-call checks, JSON-schema-compatible checks, and required-command execution — each a narrow, deterministic rule, not general program verification. Content-scoped checks look at one named file at a time, not a repo-wide pattern.</p>
       </details>
       <details open class="always">
         <summary>Wiring it into CI</summary>

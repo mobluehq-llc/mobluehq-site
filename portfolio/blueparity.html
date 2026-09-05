@@ -413,7 +413,7 @@
         <div class="bm-tag">PROVE A REPLACEMENT SYSTEM STAYS EQUIVALENT WITHIN A DECLARED CONTRACT.</div>
         <p class="bm-sub">Migration teams comparing an old and a new system usually rely on spot checks and cannot state precisely which behaviors matched, diverged, or were never exercised. blueParity runs both systems as black-box command adapters over the same JSONL corpus under a predeclared, hashed-before-execution equivalence contract, and emits a signed, independently verifiable equivalence certificate.</p>
         <div class="dlrow">
-          <a class="cta" href="/contact">REQUEST A DEMO</a>
+          <a class="cta" href="/contact?segment=blueparity">REQUEST A DEMO</a>
         </div>
         <div class="meta">Runs locally &middot; CLI or web UI &middot; Ed25519-signed certificates &middot; no cloud account required</div>
       </div>
@@ -452,7 +452,7 @@
     <div class="docs">
       <details open class="always">
         <summary>Pre-registered vs. post-hoc</summary>
-        <p>A contract hashed and sealed before the corpus is first seen seals as PRE_REGISTERED. Re-running the same demo data seals as POST_HOC instead, honestly — the corpus's first-seen record is never reset just because identical content was re-uploaded.</p>
+        <p>A contract hashed and sealed before the corpus is first seen seals as PRE_REGISTERED. Sealing is POST_HOC when a contract is declared against a corpus that has already been first-seen in the same data directory — the first-seen record is never reset by re-uploading identical content.</p>
       </details>
       <details open class="always">
         <summary>The four verdicts</summary>
