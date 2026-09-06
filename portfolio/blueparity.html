@@ -436,7 +436,7 @@
       <div class="step"><div>1</div><div><b>Wrap both systems.</b> Point blueParity at two command adapters — the legacy system and its replacement — each reading one JSON object per line.</div></div>
       <div class="step"><div>2</div><div><b>Declare the contract.</b> A YAML equivalence contract names the fields that matter, their tolerances, and any fields to ignore, hashed before the run starts.</div></div>
       <div class="step"><div>3</div><div><b>Run the corpus.</b> <code>blue-parity run</code> drives both systems over the same JSONL corpus and produces verdicts with divergences pinned to minimal counterexamples.</div></div>
-      <div class="step"><div>4</div><div><b>Download the certificate.</b> Export a signed certificate bundle from the web UI, the API, or <code>blue-parity demo</code>. The file contains both the declare and result receipts.</div></div>
+      <div class="step"><div>4</div><div><b>Write the certificate.</b> <code>blue-parity run --out certificate.json</code> writes the signed bundle — both the declare and result receipts — in the same command. You can also export it from the web interface.</div></div>
       <div class="step"><div>5</div><div><b>Verify offline.</b> The bare receipt checks with <code>verify_receipt.py</code>; the full certificate bundle checks with <code>blue-parity verify</code>.</div></div>
     </div>
 
