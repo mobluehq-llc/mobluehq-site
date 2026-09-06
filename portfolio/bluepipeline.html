@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>bluePipeline — MOBLUEHQ</title>
+<meta name="description" content="bluePipeline records the prompt-asset hashes and assembled prompt behind every model call, and signs the result so an edit can be proven to have reached the model." />
+<link rel="canonical" href="https://www.mobluehq.com/portfolio/bluepipeline" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mobluehq.com/portfolio/bluepipeline" />
+<meta property="og:title" content="bluePipeline — MOBLUEHQ" />
+<meta property="og:description" content="bluePipeline records the prompt-asset hashes and assembled prompt behind every model call, and signs the result so an edit can be proven to have reached the model." />
+<meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="bluePipeline — MOBLUEHQ" />
+<meta name="twitter:description" content="bluePipeline records the prompt-asset hashes and assembled prompt behind every model call, and signs the result so an edit can be proven to have reached the model." />
+<meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #05080f;
+    --paper: #e8ecf2;
+    --blue: #4b96ff;
+    --blue-deep: #2f6fd6;
+    --card-edge: #1a2434;
+    --lite-bg: #f4f7fb;
+    --lite-card: #ffffff;
+    --lite-ink: #0b1220;
+    --lite-dim: #5a6578;
+    --lite-edge: #dce4ef;
+    --ok: #4ade80;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "Geist", "Helvetica Neue", Inter, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--lite-bg);
+    color: var(--lite-ink);
+  }
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--lite-edge);
+    background: #fff;
+    color: #000;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    row-gap: 10px;
+    padding: 26px 48px;
+    max-width: 1480px;
+    margin: 0 auto;
+  }
+  .nav .brand {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--lite-ink);
+  }
+  .nav .brand b { color: #1a4a99; }
+  .navlinks {
+    display: flex;
+    gap: 32px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .navlinks a {
+    text-decoration: none;
+    color: #4a5568;
+  }
+  .bm-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 26px 48px 0;
+  }
+  .backlink {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--lite-dim);
+    text-decoration: none;
+  }
+  .bm-hero {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 42px;
+    align-items: center;
+    padding: 44px 0 10px;
+  }
+  .bm-mon {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 22%;
+    display: block;
+    box-shadow: 0 18px 50px rgba(11, 18, 32, 0.25);
+  }
+  .bm-hero h1 {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 44px;
+    margin: 0 0 6px;
+  }
+  .bm-hero h1 b { color: var(--blue-deep); }
+  .bm-tag {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    color: var(--lite-dim);
+    margin-bottom: 18px;
+  }
+  .bm-sub {
+    font-size: 16.5px;
+    line-height: 1.65;
+    max-width: 62ch;
+    color: #2a3444;
+  }
+  .dlrow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .cta {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #ffffff;
+    background: var(--blue-deep);
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-weight: 700;
+  }
+  .meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--lite-dim);
+    letter-spacing: 1px;
+    margin-top: 12px;
+    line-height: 1.7;
+  }
+  .hash-slot {
+    display: inline-block;
+    border: 1px dashed var(--lite-edge);
+    border-radius: 8px;
+    padding: 3px 8px;
+    background: #fff;
+    color: #33405a;
+  }
+  .bm-sec {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 3.5px;
+    color: #1a4a99;
+    margin: 64px 0 22px;
+  }
+  .bm-sec::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 2px;
+    background: #1a4a99;
+    margin-top: 9px;
+  }
+  .badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .b-dim { color: #9aa4b4; border-color: rgba(154, 164, 180, 0.4); }
+  .mode {
+    background: var(--lite-card);
+    border: 1px solid var(--lite-edge);
+    border-radius: 14px;
+    padding: 26px 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mode h4 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 19px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .mode ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #33405a;
+  }
+  .mode p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #2a3444;
+    margin: 0;
+    max-width: 70ch;
+  }
+  .price {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--lite-dim);
+    border-top: 1px dashed var(--lite-edge);
+    padding-top: 12px;
+    margin-top: auto;
+  }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .step {
+    display: flex;
+    gap: 16px;
+  }
+  .step > div:first-child {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue-deep);
+    color: white;
+    border-radius: 50%;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .step > div:last-child {
+    padding-top: 4px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #33405a;
+  }
+  .docs {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  details {
+    border: 1px solid var(--lite-edge);
+    border-radius: 8px;
+    padding: 20px 24px;
+    list-style: none;
+  }
+  details summary {
+    cursor: default;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--lite-ink);
+    margin-bottom: 10px;
+  }
+  details p,
+  details li {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #33405a;
+  }
+  details ol,
+  details ul {
+    padding-left: 20px;
+    margin: 0 0 18px;
+  }
+  .llm {
+    display: flex;
+    gap: 8px;
+    margin: 0 0 20px;
+    flex-wrap: wrap;
+  }
+  .llm span {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    border: 1px solid var(--lite-edge);
+    border-radius: 999px;
+    padding: 5px 12px;
+    color: #33405a;
+    background: #f7fafe;
+  }
+  .receipt-boundary {
+    border: 1px solid var(--lite-edge);
+    border-radius: 12px;
+    padding: 24px;
+    background: #f9fafb;
+    margin: 44px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #33405a;
+  }
+  .design-partner-line {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #33405a;
+    margin: 22px 0;
+    font-family: var(--sans);
+  }
+  footer {
+    border-top: 1px solid var(--lite-edge);
+    margin-top: 90px;
+    padding: 44px 48px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .foot-in {
+    max-width: 1480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: var(--lite-dim);
+  }
+  .foot-links {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+  .foot-links a {
+    text-decoration: none;
+    color: #4a5568;
+  }
+  @media (max-width: 760px) {
+    .nav,
+    .bm-wrap,
+    footer {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .bm-hero {
+      grid-template-columns: 130px 1fr;
+      gap: 24px;
+    }
+    .bm-hero h1 { font-size: 32px; }
+  }
+  @media (max-width: 480px) {
+    .navlinks {
+      gap: 18px;
+      font-size: 11px;
+    }
+    .bm-hero {
+      grid-template-columns: 1fr;
+    }
+    .bm-mon { max-width: 96px; }
+  }
+  /* Long command names and file names must wrap rather than force the page
+     to scroll sideways on a phone. Verified at 390px. */
+  code, .step, .step *, .steps, details, details * {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .steps, .step, .step > div, .mode, details { min-width: 0; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<nav class="nav" aria-label="Primary">
+  <a class="brand" href="/">MOBLUE<b>HQ</b></a>
+  <div class="navlinks">
+    <a href="/about">ABOUT</a>
+    <a href="/portfolio">PORTFOLIO</a>
+    <a href="/investors">INVESTORS</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="bm-wrap">
+    <a class="backlink" href="/portfolio">← PORTFOLIO</a>
+    <div class="bm-hero">
+      <div style="display:flex;align-items:center;justify-content:center">
+        <img class="bm-mon" alt="bluePipeline" src="/assets/logos/bluepipeline.svg" />
+      </div>
+      <div>
+        <h1>blue<b>Pipeline</b></h1>
+        <div class="bm-tag">SEE WHAT ACTUALLY REACHED THE MODEL.</div>
+        <p class="bm-sub">Prompt configuration can be edited successfully in one path while a worker resolves a different file, making an intervention appear live when the model never received it. bluePipeline is a Python SDK and local dashboard that records prompt-asset hashes, the assembled prompt, resolver identity, and derived-query provenance for every model call, and signs the result so it can be checked offline, without having to trust bluePipeline itself.</p>
+        <div class="dlrow">
+          <a class="cta" href="/contact?segment=bluepipeline">REQUEST A PILOT</a>
+        </div>
+        <div class="meta">Python SDK + local dashboard &middot; Ed25519-signed receipts &middot; no cloud account required</div>
+      </div>
+    </div>
+
+    <div class="bm-sec">WHAT IT CHECKS</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p>Every model call is instrumented at the SDK level: the hash of every prompt asset actually loaded, the prompt exactly as assembled — after templating, truncation, and tool injection — and, where a derived query is issued, whether it echoes the user's content or the pipeline's own scaffolding. Each call resolves to a typed verdict: the expected config was live, a loaded asset's hash drifted from what the manifest declares, two resolvers can disagree on the same asset, a fragment was duplicated, or a scaffolding string leaked into a derived query — never a dashboard that only shows what the config surface believes is deployed.</p>
+    </div>
+
+    <div class="bm-sec">HOW IT WORKS</div>
+    <div class="steps">
+      <div class="step"><div>1</div><div><b>Wrap your model client.</b> Install the SDK and wrap the call site — a raw client, LangChain, or a queue worker; three shipped recipes.</div></div>
+      <div class="step"><div>2</div><div><b>Get static findings on day one.</b> The resolver analyzer inventories every externalized prompt asset and flags any two code paths that can resolve the same asset differently — no runtime change needed.</div></div>
+      <div class="step"><div>3</div><div><b>Every call seals a receipt.</b> At call time, the SDK hashes every loaded asset and captures the final assembled-prompt digest at the last point before transport.</div></div>
+      <div class="step"><div>4</div><div><b>Read the findings.</b> The dashboard diffs live hashes against declared config and renders the assembled prompt exactly as sent.</div></div>
+      <div class="step"><div>5</div><div><b>Verify offline.</b> <code>python -m bluekit.verify_receipt receipt.json</code> checks the signed receipt with no server and no model API access.</div></div>
+    </div>
+
+    <div class="bm-sec">WHAT IT IS NOT</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p>This is not a general LLM observability platform, a model-quality scorer, or an auto-repair tool.</p>
+    </div>
+
+    <div class="bm-sec">THE RECEIPT</div>
+    <div class="receipt-boundary">
+      A signed receipt proves what bluePipeline ran and recorded; it does not prove an underlying real-world claim is true.
+      The signature binds the prompt-manifest hash, the assembled-prompt digest, resolver identity, and the call's typed verdict — change any one and verification fails. The standalone <code>verify_receipt.py</code> script lets a teammate or auditor check a receipt without installing bluePipeline. A valid signature says who signed; it does not by itself say that signer is trusted.
+    </div>
+
+    <div class="bm-sec">GUIDES</div>
+    <div class="docs">
+      <details open class="always">
+        <summary>The verdicts (three live, two defined without live demo paths in v1)</summary>
+        <ul>
+          <li><b>Expected config active</b> — the declared prompt assets are what actually loaded.</li>
+          <li><b>Config drift</b> — a loaded asset's hash doesn't match what the manifest declares.</li>
+          <li><b>Resolver split</b> — two code paths can resolve the same asset differently.</li>
+          <li><b>Duplicate fragment</b> — defined but no live demo path in v1.</li>
+          <li><b>Template leak</b> — defined but no live demo path in v1.</li>
+        </ul>
+      </details>
+      <details open class="always">
+        <summary>Three ways to wrap a call</summary>
+        <p>Wrap the call site directly, whichever way your pipeline actually calls a model.</p>
+        <div class="llm"><span>Raw API client</span><span>LangChain</span><span>Queue worker</span></div>
+      </details>
+      <details open class="always">
+        <summary>Redaction is always on; prompt capture is opt-in</summary>
+        <p>Prompt-body capture is off by default; with it off, receipts and traces carry only hashes and structural metadata, never prompt text. Turn it on per project if you need the literal text — redaction patterns for keys, tokens, and emails still apply either way.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="brand" style="font-size:16px;color:var(--lite-ink)">MOBLUE<b style="color:#1a4a99">HQ</b></div>
+    <div class="foot-links">
+      <a href="/contact">Contact</a>
+      <a href="/trust">Trust</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+  </div>
+</footer>
+</body>
+</html>

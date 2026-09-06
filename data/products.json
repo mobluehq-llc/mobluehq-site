@@ -1,5 +1,5 @@
 {
-  "lastReviewed": "June 19, 2026",
+  "lastReviewed": "September 6, 2026",
   "products": [
     {
       "id": "blue",
@@ -23,6 +23,56 @@
       "on_device": true,
       "stage_label": "Shipped - API + app, verified over the internet",
       "description_bold": "much of the AI work the world does will never need a giant data center built for it."
+    },
+    {
+      "id": "bluealibi",
+      "name": "blueAlibi",
+      "logo": "/assets/logos/bluealibi.svg",
+      "status": "releasing_soon",
+      "one_liner": "Find claims the recorded evidence and tools could not support.",
+      "audience": "Pharma regulatory ops, medical-writing/compliance teams, and law-firm filing review",
+      "not_this": "not a global fact checker, not a legal or regulatory opinion, and provenance support does not prove a claim is true. A signed receipt proves what this software ran and recorded — nothing more.",
+      "page": "/portfolio/bluealibi"
+    },
+    {
+      "id": "bluefloor",
+      "name": "blueFloor",
+      "logo": "/assets/logos/bluefloor.svg",
+      "status": "releasing_soon",
+      "one_liner": "Measure the ingest your deployed detections can actually use.",
+      "audience": "CISO / SecOps teams under SIEM cost pressure",
+      "not_this": "blueFloor does not author detections or judge whether a rule is good. SUB-FLOOR means only that no supplied, enabled, successfully parsed rule is proven to consume the source and no unresolved rule can plausibly consume it. It does not mean the source has no forensic, compliance, operational, or future detection value. A signed receipt proves what blueFloor ran and recorded; it does not prove an underlying real-world claim is true.",
+      "page": "/portfolio/bluefloor"
+    },
+    {
+      "id": "blueintent",
+      "name": "blueIntent",
+      "logo": "/assets/logos/blueintent.svg",
+      "status": "releasing_soon",
+      "one_liner": "Check whether declared code invariants survived a change.",
+      "audience": "AI coding platforms and regulated engineering teams (defense, fintech, cloud infrastructure) shipping AI-generated changes",
+      "not_this": "This is not formal verification, not a claim of full semantic preservation, and not autonomous code repair.",
+      "page": "/portfolio/blueintent"
+    },
+    {
+      "id": "blueparity",
+      "name": "blueParity",
+      "logo": "/assets/logos/blueparity.svg",
+      "status": "releasing_soon",
+      "one_liner": "Prove a replacement system stays equivalent within a declared contract.",
+      "audience": "Regulated organizations mid-migration (banks, insurers, engineering firms) and the consultants running the migration",
+      "not_this": "Equivalence is not correctness. A signed receipt proves what this software ran and recorded; it does not prove either system, or any underlying real-world claim, is correct.",
+      "page": "/portfolio/blueparity"
+    },
+    {
+      "id": "bluepipeline",
+      "name": "bluePipeline",
+      "logo": "/assets/logos/bluepipeline.svg",
+      "status": "releasing_soon",
+      "one_liner": "See what actually reached the model.",
+      "audience": "LLM engineering teams running production prompts",
+      "not_this": "This is not a general LLM observability platform, a model-quality scorer, or an auto-repair tool.",
+      "page": "/portfolio/bluepipeline"
     }
   ]
 }
