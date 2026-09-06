@@ -1,3 +1,4 @@
+const PORT = process.env.SITE_PORT || '3000';
 import { chromium } from '/Users/adamfaust/products/blueAlibi/apps/web/node_modules/playwright/index.mjs';
 
 // Simplified axe check using the axe-core CLI through NPM
@@ -27,7 +28,7 @@ const viewports = [
       await page.setViewportSize({ width: viewport.width, height: viewport.height });
       
       try {
-        await page.goto(`http://localhost:3000/${pageFile}`);
+        await page.goto(`http://127.0.0.1:${PORT}/${pageFile}`);
         
         console.log(`\n--- ${pageFile} at ${viewport.name} ---`);
         
@@ -72,7 +73,7 @@ const viewports = [
   await browser.close();
   
   console.log(`\n=== SUMMARY ===`);
-  console.log(allPassed ? 'All pages passed accessibility scan' : 'Some pages failed accessibility scan');
+  console.log(allPassed ? 'All pages passed accessibility scan' : 'Scan did NOT come back clean — check above whether pages had VIOLATIONS or could not be REACHED (a connection error is not a passing or failing page, it is an unmeasured one)');
   
   process.exit(allPassed ? 0 : 1);
 })();
