@@ -4,19 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>blueAlibi — MOBLUEHQ</title>
-<meta name="description" content="blueAlibi checks an AI-drafted document against the producing run's own record, and marks every claim with a capability-relative provenance verdict." />
+<meta name="description" content="blueAlibi scans citation-dense research documents for claims and checks them against a pipeline's capability manifest and run trace, marking each with a provenance verdict." />
 <link rel="canonical" href="https://www.mobluehq.com/portfolio/bluealibi" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mobluehq.com/portfolio/bluealibi" />
 <meta property="og:title" content="blueAlibi — MOBLUEHQ" />
-<meta property="og:description" content="blueAlibi checks an AI-drafted document against the producing run's own record, and marks every claim with a capability-relative provenance verdict." />
+<meta property="og:description" content="blueAlibi scans citation-dense research documents for claims and checks them against a pipeline's capability manifest and run trace, marking each with a provenance verdict." />
 <meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="blueAlibi — MOBLUEHQ" />
-<meta name="twitter:description" content="blueAlibi checks an AI-drafted document against the producing run's own record, and marks every claim with a capability-relative provenance verdict." />
+<meta name="twitter:description" content="blueAlibi scans citation-dense research documents for claims and checks them against a pipeline's capability manifest and run trace, marking each with a provenance verdict." />
 <meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
@@ -428,7 +428,7 @@
 
     <div class="bm-sec">WHAT IT CHECKS</div>
     <div class="mode" style="border-left:4px solid var(--blue-deep)">
-      <p>Every factual claim in the document — a cited work, a named dataset, a quantitative result, a claimed action, an institutional reference — is checked against the producing run's own trace of what it accessed, called, and retrieved. A claim that traces to a recorded source is marked supported by provenance. A claim of a kind the run had no mechanism to produce — no experiment tool, no dataset access, no institutional contact in the manifest — is marked unsupportable by construction, and the report names the exact missing capability. A claim with no matching source is marked unsupported, and a claim too vague to check either way is marked unresolved rather than guessed at.</p>
+      <p>The claim extractor recognizes five specific shapes in citation-dense research documents: Author (Year) citations, named institutions, n=NNN cohort sizes, percentages, and "we ran/conducted/performed..." claimed actions. Every recognized claim is checked against the producing run's own trace of what it accessed, called, and retrieved. A claim that traces to a recorded source is marked supported by provenance. A claim of a kind the run had no mechanism to produce — no experiment tool, no dataset access, no institutional contact in the manifest — is marked unsupportable by construction, and the report names the exact missing capability. A claim with no matching source is marked unsupported, and a claim too vague to check either way is marked unresolved rather than guessed at. A document that does not contain any of these shapes — a README, legal memo, market analysis, or technical report using footnotes instead of inline citations — returns zero claims and zero verdicts: a clean, correctly-signed empty run, not an error.</p>
     </div>
 
     <div class="bm-sec">HOW IT WORKS</div>

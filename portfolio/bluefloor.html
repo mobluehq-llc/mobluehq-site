@@ -474,7 +474,7 @@
       </details>
       <details open class="always">
         <summary>Verify a report without installing blueFloor</summary>
-        <p><code>python -m bluekit.verify_receipt path/to/receipt.json</code> — stdlib plus one crypto library, no dependency on the rest of the product, so a counterparty who installed blueFloor can check a receipt on their own.</p>
+        <p><code>bluefloor verify path/to/receipt.json</code> — checks the receipt with the standalone <code>verify_receipt.py</code> script (included in the blueFloor package), or copy that script to an offline machine with only Python and the cryptography library to verify without any blueFloor installation.</p>
       </details>
     </div>
   </div>

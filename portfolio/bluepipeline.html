@@ -437,7 +437,7 @@
       <div class="step"><div>2</div><div><b>Get static findings on day one.</b> The resolver analyzer inventories every externalized prompt asset and flags any two code paths that can resolve the same asset differently — no runtime change needed.</div></div>
       <div class="step"><div>3</div><div><b>Every call seals a receipt.</b> At call time, the SDK hashes every loaded asset and captures the final assembled-prompt digest at the last point before transport.</div></div>
       <div class="step"><div>4</div><div><b>Read the findings.</b> The dashboard diffs live hashes against declared config and renders the assembled prompt exactly as sent.</div></div>
-      <div class="step"><div>5</div><div><b>Verify offline.</b> <code>bluekit.verify_receipt</code> checks the signed receipt with no server and no model API access.</div></div>
+      <div class="step"><div>5</div><div><b>Verify offline.</b> <code>python -m bluekit.verify_receipt receipt.json</code> checks the signed receipt with no server and no model API access.</div></div>
     </div>
 
     <div class="bm-sec">WHAT IT IS NOT</div>
@@ -448,7 +448,7 @@
     <div class="bm-sec">THE RECEIPT</div>
     <div class="receipt-boundary">
       A signed receipt proves what bluePipeline ran and recorded; it does not prove an underlying real-world claim is true.
-      The signature binds the prompt-manifest hash, the assembled-prompt digest, resolver identity, and the call's typed verdict — change any one and verification fails. The standalone <code>bluekit.verify_receipt</code> lets a teammate or auditor check a receipt without installing bluePipeline. A valid signature says who signed; it does not by itself say that signer is trusted.
+      The signature binds the prompt-manifest hash, the assembled-prompt digest, resolver identity, and the call's typed verdict — change any one and verification fails. The standalone <code>verify_receipt.py</code> script lets a teammate or auditor check a receipt without installing bluePipeline. A valid signature says who signed; it does not by itself say that signer is trusted.
     </div>
 
     <div class="design-partner-line">

@@ -435,9 +435,9 @@
     <div class="steps">
       <div class="step"><div>1</div><div><b>Declare your invariants.</b> Write an intent.yaml naming what must not change — required files, forbidden paths, retained symbols, forbidden substrings.</div></div>
       <div class="step"><div>2</div><div><b>Register the repo.</b> Point blueIntent at a local git repository by path; no code leaves the machine.</div></div>
-      <div class="step"><div>3</div><div><b>Run the check.</b> <code>blue-intent check --base main --head HEAD</code>, or wire the same gate into CI.</div></div>
+      <div class="step"><div>3</div><div><b>Run the check.</b> <code>blue-intent check --base main --head HEAD --out receipt.json</code>, or wire the same gate into CI with <code>--out</code> to write the receipt file.</div></div>
       <div class="step"><div>4</div><div><b>Read the verdicts.</b> Preserved, violated, unproven, never-evaluated, or out-of-scope per invariant, each with its evidence.</div></div>
-      <div class="step"><div>5</div><div><b>Verify offline.</b> <code>blue-intent verify</code> or the standalone <code>verify_receipt.py</code> confirms the signed report independent of the CI logs.</div></div>
+      <div class="step"><div>5</div><div><b>Verify offline.</b> <code>blue-intent verify receipt.json</code> or the standalone <code>verify_receipt.py</code> confirms the signed report independent of the CI logs.</div></div>
     </div>
 
     <div class="bm-sec">WHAT IT IS NOT</div>
