@@ -17,31 +17,47 @@ const root = join(fileURLToPath(import.meta.url), '..', '..');
 
 const EXCLUDE_DIRS = new Set(['node_modules', '.git', '.worktrees', '.vercel']);
 
-// Banned vocabulary, exactly as specified: word-boundary matched, case-insensitive.
-// "automatically escalat" is deliberately a prefix (matches escalate/escalates/escalating/escalation).
+// Banned vocabulary, case-insensitive. Each entry is either a plain string
+// (word-boundary matched on BOTH sides — an exact word or phrase) or a
+// `{ term, prefix: true }` object (word-boundary anchored at the START of
+// the word only, so it catches the whole word family: donat -> donate,
+// donates, donation, donating, donator).
+//
+// Stemming, not enumeration: rather than listing every inflected form of a
+// word one at a time (which silently misses forms nobody thought to add —
+// e.g. "donate" itself was missing while "donates"/"donation" were listed),
+// a `prefix` entry matches the shared stem and everything built on it.
 const BANNED_TERMS = [
-  'novel',
-  'novelty',
+  { term: 'novel', prefix: true }, // novel, novels, novelty, novelties
   'undiscovered',
   'patentable',
   'verified finding',
-  'verbatim',
-  'donates',
-  'donation',
-  'automatically escalat',
-  'provably',
-  'guarantee'
+  { term: 'verbatim', prefix: true },
+  { term: 'donat', prefix: true }, // donate, donates, donation, donating, donator
+  { term: 'automatically escalat', prefix: true }, // escalate/escalates/escalating/escalation
+  { term: 'provab', prefix: true }, // provable, provably, provability
+  { term: 'guarante', prefix: true }, // guarantee, guarantees, guaranteed, guarantor
+  'council',
+  'consensus',
+  'dissent',
+  'unanimous',
+  'panel of',
+  'independently verified',
+  'anchored'
 ];
 
-function termToRegex(term) {
-  // Word-boundary on the left always. Word-boundary on the right only when the
-  // term doesn't already end mid-word by design (the escalat prefix).
+function termToRegex(entry) {
+  const term = typeof entry === 'string' ? entry : entry.term;
+  const isPrefix = typeof entry === 'object' && entry.prefix === true;
   const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const rightBoundary = term.endsWith('escalat') ? '' : '\\b';
+  const rightBoundary = isPrefix ? '' : '\\b';
   return new RegExp(`\\b${escaped}${rightBoundary}`, 'i');
 }
 
-const TERM_PATTERNS = BANNED_TERMS.map((term) => ({ term, re: termToRegex(term) }));
+const TERM_PATTERNS = BANNED_TERMS.map((entry) => ({
+  term: typeof entry === 'string' ? entry : entry.term,
+  re: termToRegex(entry)
+}));
 
 async function collectTargetFiles(dir) {
   const out = [];
