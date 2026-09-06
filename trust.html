@@ -47,70 +47,105 @@
     <div class="docs-prose">
       <h2>Privacy posture</h2>
       <p>We collect only what we need to operate the site, respond to inquiries, and (when you use our products) deliver verification services. We do not sell personal information. Product traffic is designed so inference workloads can run without the scheduler seeing your underlying content — that architectural separation is central to the Blue substrate described in our portfolio.</p>
-      <p>See our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a> for full details.</p>
+      <p>See our <a href="/privacy">Privacy Policy</a> and our <a href="/terms">Terms of Service</a> for full details.</p>
+
+      <h2>Local-only by design, for five tools and both free tiers</h2>
+      <p>Most of this page describes what leaves your machine when it does. Some of our software never sends anything anywhere: <strong>blueAlibi, blueFloor, blueIntent, blueParity, and bluePipeline</strong> (our five evaluation tools), and the <strong>local/free tiers of blueMonster and blueGlu</strong>, run entirely on your own device. We checked this claim the way we check any other — by reading the code for outbound network calls, not by describing the architecture — and found none in normal operation. Nothing about that is a promise to keep watching; it is what the shipping code does today.</p>
 
       <h2>Data handling</h2>
       <ul>
         <li><strong>Website &amp; forms:</strong> Contact and investor messages are transmitted to our inbox provider and stored only as long as needed to respond.</li>
-        <li><strong>Product data:</strong> Verification inputs and outputs are processed to deliver signed receipts. Retention periods vary by plan and are documented in product agreements.</li>
+        <li><strong>Local-only tools and tiers:</strong> the five evaluation tools and the local/free tiers named above process everything on-device. We never receive your inputs, outputs, or files from that usage.</li>
+        <li><strong>Hosted and cloud-tier product data:</strong> when you use a hosted or cloud-enabled tier (blueMonster Premium, blueMonster Pro's cloud tier, blueGlu's bring-your-own-key or web-search features), verification inputs and outputs are processed to deliver signed receipts and, where applicable, are sent to the specific subprocessor named in the table below. Retention periods vary by plan and are documented in product agreements.</li>
         <li><strong>Logs:</strong> Operational logs (errors, latency, abuse signals) are kept for a limited period and access is restricted to personnel who need them.</li>
         <li><strong>Encryption:</strong> Data in transit uses TLS. Data at rest uses provider-managed encryption on our cloud infrastructure.</li>
         <li><strong>Deletion:</strong> You may request deletion of account-linked data by contacting us. Some records may be retained where required by law or for legitimate security purposes.</li>
       </ul>
 
       <h2 id="subprocessors">Subprocessors</h2>
-      <p>We use vetted third parties to host and operate MOBLUEHQ. This list is updated when vendors change.</p>
+      <p>Every party below that can receive data from a MOBLUEHQ product or the website is listed, with what it receives, which product sends it, and how we confirmed the status shown. This table is corrected as of 2026-09-06 against the currently deployed service and current code, not against product descriptions alone; it is updated whenever that changes.</p>
       <div class="trust-table-wrap">
         <table class="trust-table">
           <caption class="sr-only">MOBLUEHQ subprocessor list</caption>
           <thead>
             <tr>
               <th scope="col">Vendor</th>
-              <th scope="col">Purpose</th>
-              <th scope="col">Region</th>
+              <th scope="col">What it receives</th>
+              <th scope="col">Product(s)</th>
               <th scope="col">Status</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td>Google (Vertex AI / Gemini)</td>
+              <td>Content submitted through the cloud-overflow path, so Google can generate a result</td>
+              <td>blueMonster Pro — cloud tier</td>
+              <td><span class="trust-status trust-status--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Tavily</td>
+              <td>Your search query, only when web search is enabled and you have consented</td>
+              <td>blueGlu</td>
+              <td><span class="trust-status trust-status--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>Brave Search</td>
+              <td>Your search query, only when web search is enabled and you have consented, and Brave is the provider selected</td>
+              <td>blueGlu</td>
+              <td><span class="trust-status trust-status--active">Active</span></td>
+            </tr>
+            <tr>
+              <td>A third-party AI provider of your choosing (bring-your-own-key)</td>
+              <td>Your question or content, only when you supply your own API key for that provider</td>
+              <td>blueGlu (BYOK); blueMonster Premium (tenant BYOK)</td>
+              <td><span class="trust-status trust-status--active">User-configured</span></td>
+            </tr>
+            <tr>
+              <td>Anthropic</td>
+              <td>Would process cloud-tier requests if this path ships</td>
+              <td>blueMonster (potential future cloud tier)</td>
+              <td><span class="trust-status trust-status--planned">Planned</span></td>
+            </tr>
+            <tr>
+              <td>Stripe</td>
+              <td>Payment and billing information</td>
+              <td>blueMonster / blueGlu paid tiers</td>
+              <td><span class="trust-status trust-status--planned">Test mode only — not live</span></td>
+            </tr>
+            <tr>
               <td>Vercel</td>
               <td>Website hosting &amp; serverless functions</td>
-              <td>US / global edge</td>
+              <td>Public website</td>
               <td><span class="trust-status trust-status--active">Active</span></td>
             </tr>
             <tr>
               <td>FormSubmit</td>
               <td>Contact &amp; inquiry form delivery</td>
-              <td>US</td>
+              <td>Public website</td>
               <td><span class="trust-status trust-status--active">Active</span></td>
-            </tr>
-            <tr>
-              <td>Stripe</td>
-              <td>Payment processing &amp; billing</td>
-              <td>US</td>
-              <td><span class="trust-status trust-status--planned">Planned</span></td>
             </tr>
             <tr>
               <td>Resend</td>
               <td>Transactional email</td>
-              <td>US</td>
+              <td>Public website / future account infrastructure</td>
               <td><span class="trust-status trust-status--planned">Planned</span></td>
             </tr>
             <tr>
               <td>Plain</td>
               <td>Customer support inbox</td>
-              <td>US</td>
+              <td>Public website / future account infrastructure</td>
               <td><span class="trust-status trust-status--planned">Planned</span></td>
             </tr>
             <tr>
               <td>WorkOS</td>
               <td>SSO &amp; workforce identity</td>
-              <td>US</td>
+              <td>Public website / future account infrastructure</td>
               <td><span class="trust-status trust-status--planned">Planned</span></td>
             </tr>
           </tbody>
         </table>
       </div>
+      <p>We do not sell personal information. Full detail on what each product shape collects, and your rights, is in our <a href="/privacy">Privacy Policy</a>.</p>
 
       <h2>Security contact</h2>
       <p>Report suspected vulnerabilities or security incidents to <a href="mailto:security@mobluehq.com">security@mobluehq.com</a>. We aim to acknowledge reports within two business days.</p>
@@ -141,7 +176,7 @@
       <a href="/terms">Terms</a>
     <a href="/privacy">Privacy</a>
   </div>
-  <div>© 2026 MOBLUEHQ LLC · Delaware</div>
+  <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
 </footer>
 
 </body>
