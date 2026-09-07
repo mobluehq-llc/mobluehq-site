@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>blueMonster lite — MOBLUEHQ</title>
-<meta name="description" content="blueMonster lite: the idea-discovery engine for Mac with MBR export, pool sharing, and signed receipt-backed runs." />
-<link rel="canonical" href="https://www.mobluehq.com/portfolio/bluemonster" />
+<title>blueGlu — MOBLUEHQ</title>
+<meta name="description" content="blueGlu: a private Mac AI assistant that answers from your own files on-device by default, and only reaches further — your own API key, or Blue Network — when you ask it to." />
+<link rel="canonical" href="https://www.mobluehq.com/portfolio/blueglu" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.mobluehq.com/portfolio/bluemonster" />
-<meta property="og:title" content="blueMonster lite — MOBLUEHQ" />
-<meta property="og:description" content="Ask a hard question. Overnight, blueMonster builds and judges candidate ideas with exportable MBR run evidence." />
+<meta property="og:url" content="https://www.mobluehq.com/portfolio/blueglu" />
+<meta property="og:title" content="blueGlu — MOBLUEHQ" />
+<meta property="og:description" content="A calm, private AI assistant for your Mac. Runs on-device by default; escalate on your own terms, never automatically." />
 <meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="blueMonster lite — MOBLUEHQ" />
-<meta name="twitter:description" content="The idea-discovery engine for Mac: Local and Pro modes, MBR mining workflow, and pool sharing." />
+<meta name="twitter:title" content="blueGlu — MOBLUEHQ" />
+<meta name="twitter:description" content="A private, on-device AI assistant for your Mac. You choose if and when it reaches further." />
 <meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<base href="/portfolio/bluemonster/" />
+<base href="/portfolio/blueglu/" />
 <style>
   :root {
     --ink: #05080f;
@@ -102,7 +102,7 @@
     text-decoration: none;
     color: #4a5568;
   }
-  .bm-wrap {
+  .gl-wrap {
     max-width: 1180px;
     margin: 0 auto;
     padding: 26px 48px 0;
@@ -114,35 +114,41 @@
     color: var(--lite-dim);
     text-decoration: none;
   }
-  .bm-hero {
+  .gl-hero {
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 42px;
     align-items: center;
     padding: 44px 0 10px;
   }
-  .bm-mon {
+  .gl-mark-tile {
     width: 100%;
     max-width: 150px;
+    aspect-ratio: 1 / 1;
     border-radius: 22%;
-    display: block;
-    box-shadow: 0 18px 50px rgba(11, 18, 32, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid var(--lite-edge);
+    box-shadow: 0 18px 50px rgba(11, 18, 32, 0.15);
   }
-  .bm-hero h1 {
+  .gl-mark-tile img { width: 62%; height: 62%; }
+  .gl-hero h1 {
     font-family: var(--sans);
     font-weight: 800;
     font-size: 44px;
     margin: 0 0 6px;
   }
-  .bm-hero h1 b { color: var(--blue-deep); }
-  .bm-tag {
+  .gl-hero h1 b { color: var(--blue-deep); }
+  .gl-tag {
     font-family: var(--mono);
     font-size: 13px;
     letter-spacing: 2.5px;
     color: var(--lite-dim);
     margin-bottom: 18px;
   }
-  .bm-sub {
+  .gl-sub {
     font-size: 16.5px;
     line-height: 1.65;
     max-width: 62ch;
@@ -183,14 +189,14 @@
     background: #fff;
     color: #33405a;
   }
-  .bm-sec {
+  .gl-sec {
     font-family: var(--mono);
     font-size: 12px;
     letter-spacing: 3.5px;
     color: var(--blue-deep);
     margin: 64px 0 22px;
   }
-  .bm-sec::after {
+  .gl-sec::after {
     content: "";
     display: block;
     width: 70px;
@@ -314,22 +320,6 @@
     padding-left: 20px;
     margin: 0 0 18px;
   }
-  .llm {
-    display: flex;
-    gap: 8px;
-    margin: 0 0 20px;
-    flex-wrap: wrap;
-  }
-  .llm span {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 1px;
-    border: 1px solid var(--lite-edge);
-    border-radius: 999px;
-    padding: 5px 12px;
-    color: #33405a;
-    background: #f7fafe;
-  }
   footer {
     border-top: 1px solid var(--lite-edge);
     margin-top: 90px;
@@ -357,16 +347,16 @@
   }
   @media (max-width: 760px) {
     .nav,
-    .bm-wrap,
+    .gl-wrap,
     footer {
       padding-left: 20px;
       padding-right: 20px;
     }
-    .bm-hero {
+    .gl-hero {
       grid-template-columns: 130px 1fr;
       gap: 24px;
     }
-    .bm-hero h1 { font-size: 32px; }
+    .gl-hero h1 { font-size: 32px; }
   }
 </style>
 </head>
@@ -382,103 +372,88 @@
 </nav>
 
 <main id="main-content">
-  <div class="bm-wrap">
+  <div class="gl-wrap">
     <a class="backlink" href="/portfolio">← PORTFOLIO</a>
-    <div class="bm-hero">
-      <div style="display:flex;align-items:center;justify-content:center">
-        <img class="bm-mon" alt="blueMonster" src="/assets/logos/bluemonster-monster.png?v=1" />
+    <div class="gl-hero">
+      <div class="gl-mark-tile">
+        <img alt="blueGlu" src="/assets/logos/blueglued.svg?v=1" />
       </div>
       <div>
-        <h1>blue<b>Monster</b></h1>
-        <div class="bm-tag">THE IDEA-DISCOVERY ENGINE · A MOBLUEHQ PRODUCT · MEET THE MONSTER</div>
-        <p class="bm-sub">Ask it a hard question. Overnight, it generates hundreds of candidates, attacks them from every angle, develops the survivors, and crowns the strongest with an evidence dossier you can hand to any AI — or any human — for the next step.</p>
+        <h1>blue<b>Glu</b></h1>
+        <div class="gl-tag">PRIVATE AI FOR YOUR MAC · A MOBLUEHQ PRODUCT</div>
+        <p class="gl-sub">Ask it about the files on your Mac. blueGlu answers from a model already running on your machine, cites the passages it used, and stays there — nothing leaves your Mac unless you tell it to. When a question calls for more than your Mac can do on its own, you decide whether to reach further: your own API key for a premium model, on a question-by-question basis.</p>
         <div class="dlrow">
-          <a class="cta" href="/api/download">⬇ DOWNLOAD FOR MAC — FREE DEMO</a>
+          <!-- REVIEW: this static path follows the site's existing per-product DMG convention
+               (see /portfolio/bluemonster/blueMonster.dmg). The signed, notarized blueGlu.dmg
+               itself is not in this repo — the release pipeline must publish it at this path
+               before this link resolves. Do not merge a claim that this link works until it does. -->
+          <a class="cta" href="/portfolio/blueglu/blueGlu.dmg">⬇ DOWNLOAD FOR MAC — FREE</a>
         </div>
-        <!-- REVIEW: mockup-approved flow copy retained; verify this in-app upgrade path during release QA. -->
-        <div class="meta">v1.0 · Apple Silicon · sha256 verified · signed updates · Windows coming soon<br>Free to download. Upgrade to Pro anytime inside the app: Options → Upgrade.<br>SHA-256: <span class="hash-slot">cb1853749d5ab2b1fc7841d3f8e9baf0a4140f2df7f0b70f9a0347999d3642d2</span></div>
-        <div class="meta" style="margin-top:10px">These are hypotheses to verify, not findings — blueMonster doesn't search for prior art or establish that an idea is new. <a href="/disclaimers" style="color:var(--blue-deep)">Full disclaimer →</a></div>
+        <!-- REVIEW: version string and SHA-256 are release-pipeline outputs, not something this
+             page-authoring pass can compute — no blueGlu.dmg exists anywhere in this repo or on
+             this machine to hash. Fill in from the actual signed artifact before publish. -->
+        <div class="meta">Apple Silicon · signed &amp; notarized by Apple · Free, no account required to try it<br>SHA-256: <span class="hash-slot">[fill in from the published blueGlu.dmg — do not invent this value]</span></div>
+        <div class="meta" style="margin-top:10px">blueGlu is AI and can make mistakes — double-check anything before relying on it. <a href="/disclaimers" style="color:var(--blue-deep)">Full disclaimer →</a></div>
       </div>
     </div>
 
-    <div class="bm-sec">THREE MODES</div>
+    <div class="gl-sec">HOW IT DECIDES</div>
     <div class="modes">
       <div class="mode">
-        <h4>🖥 Local</h4>
+        <h4>💻 On your Mac</h4>
         <ul>
-          <li><b>Your search itself runs entirely on-device</b>, on a bundled model — no data center in the loop. (The app separately checks for updates, and sign-in needs a connection.)</li>
-          <li>Best for sensitive questions.</li>
-          <li>Slower and lighter than Pro — same funnel, smaller brain.</li>
+          <li>The default for every question: a model already running on your machine, with no server round-trip and no account needed to try it.</li>
+          <li>Your files are indexed locally and answers cite the passages they came from.</li>
+          <li>If it can't find a citation-backed answer in your files, it says so instead of guessing.</li>
         </ul>
-        <div class="price">INCLUDED IN THE FREE DEMO</div>
+        <div class="price">FREE — INCLUDED</div>
       </div>
       <div class="mode" style="border-color:var(--blue-deep);border-width:2px">
-        <h4>⚡ Pro</h4>
+        <h4>⏱ Set the pace</h4>
         <ul>
-          <li>Your search runs on bigger models than your Mac can hold — in the cloud by default, with our own GPUs picking up work behind the scenes. Deeper funnels, faster cycles.</li>
-          <li>Every step returns a signed receipt; independent judges — no model grades its own work.</li>
+          <li>Pick <b>Answer now</b>, <b>Think 10 min</b>, or <b>Deep answer by morning</b> per question — you choose how long blueGlu works before it responds.</li>
+          <li>This is still the on-device model; a longer budget doesn't leave your Mac.</li>
         </ul>
-        <div class="price">PRO — $19.95/MO · MONTHLY SEARCH ALLOWANCE<br>PRO MAX — $60/MO · EXPANDED ALLOWANCE FOR HEAVY USE</div>
+        <div class="price">FREE — INCLUDED</div>
       </div>
       <div class="mode">
-        <h4>◆ Premium <span class="badge b-dim" style="font-size:9px">COMING</span></h4>
+        <h4>🔑 Reach further, on your terms</h4>
         <ul>
-          <li>Frontier models (Claude, GPT, Gemini) step in <b>only where they measurably beat</b> the free-model roster.</li>
-          <li>Same receipts, same independent judging.</li>
+          <li>Add your own API key in Settings to let a specific question use a premium model instead.</li>
+          <li>Before anything is sent, blueGlu shows you exactly what will and won't leave your Mac, and asks you to approve it — once per message, or for the rest of the conversation.</li>
+          <li>Nothing escalates on its own. You click Approve, or you don't.</li>
         </ul>
-        <div class="price">COMING AFTER LAUNCH</div>
+        <div class="price">REQUIRES YOUR OWN API KEY</div>
       </div>
     </div>
 
-    <div class="bm-sec">WHERE IT ACTUALLY RUNS</div>
+    <div class="gl-sec">WHAT STAYS ON YOUR MAC</div>
     <div class="mode" style="border-left:4px solid var(--blue-deep)">
-      <p style="font-size:15px;line-height:1.7;color:#2A3444;margin:0;max-width:70ch"><b>Your Mac runs every stage it can</b> — the free tier works fully offline, no cloud required. When a Pro search needs more than your Mac can do, it goes to the cloud by default, with our own GPUs quietly picking up jobs behind the scenes as a cost-saver whenever they can — part of why Pro is priced the way it is. You don’t have to take our word for where any of it ran: every stage of a Pro search comes back with a signed receipt that records it, so you can check instead of trust. <b>slumberNet</b> — our member-machine mesh, built on a filed patent (provisional 64/091,999) — is where we’re taking this next: more of that cloud work moving onto machines like yours instead of a data center’s. It isn’t carrying customer searches yet. That’s the direction we’re building toward, not what happens today.</p>
+      <p style="font-size:15px;line-height:1.7;color:#2A3444;margin:0;max-width:70ch">By default, blueGlu's model, your file index, and your conversations run entirely on your Mac — there's no cloud step in the ordinary path. The only time anything leaves is when you explicitly choose to reach further for a single question, and even then blueGlu shows you the destination and exactly what it's about to send before it goes, and asks you to approve it first.</p>
     </div>
 
-    <div class="bm-sec">QUICKSTART — FIVE MINUTES</div>
+    <div class="gl-sec">QUICKSTART</div>
     <div class="steps">
-      <div class="step"><div><b>Download &amp; open.</b> First launch may ask for two "Always Allow" keychain approvals — that's macOS protecting your sign-in, once.</div></div>
-      <!-- REVIEW: mockup-approved redemption flow wording retained; confirm current app menu path before publish. -->
-      <div class="step"><div><b>Sign in</b> with Google or email. Have a coupon? Redeem it under Account → Pro code for a free Pro week.</div></div>
-      <div class="step"><div><b>Pick a pool</b> (the sources your search draws from) and choose Local or Pro.</div></div>
-      <div class="step"><div><b>Write your question.</b> The harder and more specific, the better blueMonster hunts. One paragraph is plenty.</div></div>
-      <div class="step"><div><b>Press Search and walk away.</b> The board fills live: ideas → screened → attacked → developed → Ready&nbsp;to&nbsp;Judge. Every column explains itself, even when it's empty.</div></div>
-      <div class="step"><div><b>Stop when you're ready.</b> You get the MBR — <b>Mine blueMonster Run</b> — the report built for exactly that: mining everything the run learned.</div></div>
+      <div class="step"><div><b>Download &amp; open.</b> First launch downloads a small on-device model — this happens once and stays on your Mac.</div></div>
+      <div class="step"><div><b>Point it at a folder.</b> Attach the files or folder you want blueGlu to answer from.</div></div>
+      <div class="step"><div><b>Ask a question.</b> Answers come back with citations to the exact passages they're based on.</div></div>
+      <div class="step"><div><b>Choose your pace.</b> Answer now for something quick, or Think 10 min / Deep answer by morning when you'd rather it take its time.</div></div>
+      <div class="step"><div><b>Reach further only if you want to.</b> Add your own API key in Settings, and approve the one-time consent screen when a question needs more than your Mac provides.</div></div>
     </div>
 
-    <div class="bm-sec">GUIDES — QUICK READS</div>
+    <div class="gl-sec">GUIDES — QUICK READS</div>
     <div class="docs">
       <details open class="always">
-        <summary>The MBR (“Mine blueMonster Run”) → your favorite AI</summary>
-        <p>MBR stands for <b>Mine blueMonster Run</b> — and that's the instruction. It's the run's final report: winners, near-misses, the whole screened corpus, and provenance for every claim. It's built to be <b>mined by an AI</b> — instructions for the AI are embedded at the top of the file.</p>
-        <ol>
-          <li>Open your run → <b>Export MBR</b> (a single .md file).</li>
-          <li>Attach or paste it into your assistant.</li>
-          <li>Ask: <i>"Follow the mining instructions at the top of this report."</i></li>
-        </ol>
-        <div class="llm"><span>Claude</span><span>ChatGPT</span><span>Gemini</span><span>any LLM</span></div>
+        <summary>Citations, not guesses</summary>
+        <p>Every answer blueGlu gives from your files is grounded in a specific passage. If nothing in your files supports an answer, blueGlu says so rather than answering from general knowledge without telling you.</p>
       </details>
       <details open class="always">
-        <summary>Pools — download &amp; upload</summary>
-        <!-- REVIEW: mockup-approved pool flow wording retained; verify labels still match current app UI. -->
-        <p>A pool is the source material a search hunts through. The demo ships with starter pools; grab more from the community or build your own.</p>
-        <ul>
-          <li><b>Download:</b> Pools → Browse → add to your library.</li>
-          <li><b>Upload / share:</b> Pools → yours → Share — it exports a single file anyone can import.</li>
-          <li>Starter and shared pools are sources only. Your own pool can also grow from your verified search discoveries as you search — share it, and those go too.</li>
-        </ul>
+        <summary>Approving before anything leaves</summary>
+        <p>The first time a question would use anything other than your on-device model, blueGlu shows a consent screen: where it's going, what will be sent, what won't, and any expected cost. Approve once for that message, or for the rest of the conversation — nothing goes out until you do.</p>
       </details>
       <details open class="always">
-        <summary>Question lists — the engine's instincts</summary>
-        <p>blueMonster hunts by asking questions of every idea: <i>can this be simplified? combined with something cheaper? moved to another industry?</i> Lists <b>learn</b> — questions that find winners rise, duds fade.</p>
-        <ul>
-          <li><b>⬇ share</b> downloads a list as a file to give a friend.</li>
-          <li><b>Upload</b> imports theirs — stats start fresh so it learns <i>your</i> patterns.</li>
-        </ul>
-      </details>
-      <details open class="always">
-        <summary>Local vs Pro vs Premium</summary>
-        <p><b>Local</b>: private — your search runs on-device on a bundled model, no data center involved. <b>Pro</b>: bigger models than your Mac can hold — run in the cloud by default, with our own GPUs taking jobs behind the scenes where they can. Receipts on every step, independent judging. <b>Premium</b> (coming): frontier models only where they measurably beat the free-model roster. Switch per-search; the board and MBR work the same everywhere.</p>
+        <summary>AI can be wrong</summary>
+        <p>blueGlu is AI and can make mistakes. Treat every answer, including cited ones, as something to double-check rather than something to trust outright — see the <a href="/disclaimers" style="color:var(--blue-deep)">full disclaimer</a>.</p>
       </details>
     </div>
   </div>
@@ -493,6 +468,7 @@
       <a href="/pricing">Pricing</a>
       <a href="/terms">Terms</a>
       <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
     </div>
     <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
   </div>

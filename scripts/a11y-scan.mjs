@@ -20,7 +20,8 @@ const pages = [
   '/trust',
   '/pricing',
   '/terms',
-  '/privacy'
+  '/privacy',
+  '/disclaimers'
 ];
 
 const mime = {
