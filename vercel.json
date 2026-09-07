@@ -51,6 +51,18 @@
       "headers": [
         { "key": "Cache-Control", "value": "private, no-store" }
       ]
+    },
+    {
+      "source": "/api/download/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store" }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/download/:product",
+      "destination": "/api/download?product=:product"
     }
   ],
   "crons": [
