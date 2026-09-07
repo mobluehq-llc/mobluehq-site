@@ -5,7 +5,8 @@
   "scripts": {
     "a11y": "node scripts/a11y-scan.mjs",
     "build:portfolio": "node scripts/build_portfolio.mjs",
-    "check:portfolio-sync": "node scripts/check_portfolio_sync.mjs"
+    "check:portfolio-sync": "node scripts/check_portfolio_sync.mjs",
+    "claims": "node scripts/check_claims.mjs"
   },
   "dependencies": {
     "@vercel/functions": "^1.5.0"
