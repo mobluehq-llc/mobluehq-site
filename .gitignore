@@ -9,3 +9,5 @@ node_modules/
 # Copied here for local `vercel dev` testing of the Option A (Vercel-hosted
 # static file) delivery path only.
 /portfolio/bluemonster/blueMonster.dmg
+.vercel
+.env*
