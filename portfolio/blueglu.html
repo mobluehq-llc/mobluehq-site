@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueGlu — MOBLUEHQ</title>
+<meta name="description" content="blueGlu: a private Mac AI assistant that answers from your own files on-device by default, and only reaches further — your own API key, or Blue Network — when you ask it to." />
+<link rel="canonical" href="https://www.mobluehq.com/portfolio/blueglu" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mobluehq.com/portfolio/blueglu" />
+<meta property="og:title" content="blueGlu — MOBLUEHQ" />
+<meta property="og:description" content="A calm, private AI assistant for your Mac. Runs on-device by default; escalate on your own terms, never automatically." />
+<meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="blueGlu — MOBLUEHQ" />
+<meta name="twitter:description" content="A private, on-device AI assistant for your Mac. You choose if and when it reaches further." />
+<meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<base href="/portfolio/blueglu/" />
+<style>
+  :root {
+    --ink: #05080f;
+    --paper: #e8ecf2;
+    --blue: #4b96ff;
+    --blue-deep: #2f6fd6;
+    --card-edge: #1a2434;
+    --lite-bg: #f4f7fb;
+    --lite-card: #ffffff;
+    --lite-ink: #0b1220;
+    --lite-dim: #5a6578;
+    --lite-edge: #dce4ef;
+    --ok: #4ade80;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "Geist", "Helvetica Neue", Inter, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--lite-bg);
+    color: var(--lite-ink);
+  }
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--lite-edge);
+    background: #fff;
+    color: #000;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 26px 48px;
+    max-width: 1480px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--lite-edge);
+  }
+  .brand {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    color: var(--lite-ink);
+  }
+  .brand b { color: var(--blue-deep); }
+  .navlinks {
+    display: flex;
+    gap: 24px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    flex-wrap: wrap;
+  }
+  .navlinks a {
+    text-decoration: none;
+    color: #4a5568;
+  }
+  .gl-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 26px 48px 0;
+  }
+  .backlink {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--lite-dim);
+    text-decoration: none;
+  }
+  .gl-hero {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 42px;
+    align-items: center;
+    padding: 44px 0 10px;
+  }
+  .gl-mark-tile {
+    width: 100%;
+    max-width: 150px;
+    aspect-ratio: 1 / 1;
+    border-radius: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid var(--lite-edge);
+    box-shadow: 0 18px 50px rgba(11, 18, 32, 0.15);
+  }
+  .gl-mark-tile img { width: 62%; height: 62%; }
+  .gl-hero h1 {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 44px;
+    margin: 0 0 6px;
+  }
+  .gl-hero h1 b { color: var(--blue-deep); }
+  .gl-tag {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    color: var(--lite-dim);
+    margin-bottom: 18px;
+  }
+  .gl-sub {
+    font-size: 16.5px;
+    line-height: 1.65;
+    max-width: 62ch;
+    color: #2a3444;
+  }
+  .dlrow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .cta {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #ffffff;
+    background: var(--blue-deep);
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-weight: 700;
+  }
+  .meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--lite-dim);
+    letter-spacing: 1px;
+    margin-top: 12px;
+    line-height: 1.7;
+  }
+  .hash-slot {
+    display: inline-block;
+    border: 1px dashed var(--lite-edge);
+    border-radius: 8px;
+    padding: 3px 8px;
+    background: #fff;
+    color: #33405a;
+  }
+  .gl-sec {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 3.5px;
+    color: var(--blue-deep);
+    margin: 64px 0 22px;
+  }
+  .gl-sec::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 2px;
+    background: var(--blue-deep);
+    margin-top: 9px;
+  }
+  .badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .b-dim { color: #9aa4b4; border-color: rgba(154, 164, 180, 0.4); }
+  .modes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+  }
+  .mode {
+    background: var(--lite-card);
+    border: 1px solid var(--lite-edge);
+    border-radius: 14px;
+    padding: 26px 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mode h4 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 19px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .mode ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #33405a;
+  }
+  .price {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--lite-dim);
+    border-top: 1px dashed var(--lite-edge);
+    padding-top: 12px;
+    margin-top: auto;
+  }
+  .steps {
+    counter-reset: s;
+    display: grid;
+    gap: 0;
+    background: var(--lite-card);
+    border: 1px solid var(--lite-edge);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    border-bottom: 1px solid var(--lite-edge);
+  }
+  .step:last-child { border-bottom: none; }
+  .step::before {
+    counter-increment: s;
+    content: counter(s, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 15px;
+    color: var(--blue-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #edf3fc;
+    border-right: 1px solid var(--lite-edge);
+  }
+  .step div {
+    padding: 16px 22px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #2a3444;
+  }
+  .step b { font-family: var(--mono); font-size: 13px; letter-spacing: 0.5px; }
+  .docs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 22px;
+  }
+  details {
+    background: var(--lite-card);
+    border: 1px solid var(--lite-edge);
+    border-radius: 14px;
+    padding: 0 24px;
+  }
+  summary {
+    cursor: default;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 16px;
+    padding: 20px 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  details p,
+  details li {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #33405a;
+  }
+  details ol,
+  details ul {
+    padding-left: 20px;
+    margin: 0 0 18px;
+  }
+  footer {
+    border-top: 1px solid var(--lite-edge);
+    margin-top: 90px;
+    padding: 44px 48px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .foot-in {
+    max-width: 1480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: var(--lite-dim);
+  }
+  .foot-links {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+  .foot-links a {
+    text-decoration: none;
+    color: #4a5568;
+  }
+  @media (max-width: 760px) {
+    .nav,
+    .gl-wrap,
+    footer {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .gl-hero {
+      grid-template-columns: 130px 1fr;
+      gap: 24px;
+    }
+    .gl-hero h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<nav class="nav" aria-label="Primary">
+  <a class="brand" href="/">MOBLUE<b>HQ</b></a>
+  <div class="navlinks">
+    <a href="/about">ABOUT</a>
+    <a href="/portfolio">PORTFOLIO</a>
+    <a href="/investors">INVESTORS</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="gl-wrap">
+    <a class="backlink" href="/portfolio">← PORTFOLIO</a>
+    <div class="gl-hero">
+      <div class="gl-mark-tile">
+        <img alt="blueGlu" src="/assets/logos/blueglued.svg?v=1" />
+      </div>
+      <div>
+        <h1>blue<b>Glu</b></h1>
+        <div class="gl-tag">PRIVATE AI FOR YOUR MAC · A MOBLUEHQ PRODUCT</div>
+        <p class="gl-sub">Ask it about the files on your Mac. blueGlu answers from a model already running on your machine, cites the passages it used, and stays there — nothing leaves your Mac unless you tell it to. When a question calls for more than your Mac can do on its own, you decide whether to reach further: your own API key for a premium model, on a question-by-question basis.</p>
+        <div class="dlrow">
+          <!-- REVIEW: this static path follows the site's existing per-product DMG convention
+               (see /portfolio/bluemonster/blueMonster.dmg). The signed, notarized blueGlu.dmg
+               itself is not in this repo — the release pipeline must publish it at this path
+               before this link resolves. Do not merge a claim that this link works until it does. -->
+          <a class="cta" href="/portfolio/blueglu/blueGlu.dmg">⬇ DOWNLOAD FOR MAC — FREE</a>
+        </div>
+        <!-- REVIEW: version string and SHA-256 are release-pipeline outputs, not something this
+             page-authoring pass can compute — no blueGlu.dmg exists anywhere in this repo or on
+             this machine to hash. Fill in from the actual signed artifact before publish. -->
+        <div class="meta">Apple Silicon · signed &amp; notarized by Apple · Free, no account required to try it<br>SHA-256: <span class="hash-slot">[fill in from the published blueGlu.dmg — do not invent this value]</span></div>
+        <div class="meta" style="margin-top:10px">blueGlu is AI and can make mistakes — double-check anything before relying on it. <a href="/disclaimers" style="color:var(--blue-deep)">Full disclaimer →</a></div>
+      </div>
+    </div>
+
+    <div class="gl-sec">HOW IT DECIDES</div>
+    <div class="modes">
+      <div class="mode">
+        <h4>💻 On your Mac</h4>
+        <ul>
+          <li>The default for every question: a model already running on your machine, with no server round-trip and no account needed to try it.</li>
+          <li>Your files are indexed locally and answers cite the passages they came from.</li>
+          <li>If it can't find a citation-backed answer in your files, it says so instead of guessing.</li>
+        </ul>
+        <div class="price">FREE — INCLUDED</div>
+      </div>
+      <div class="mode" style="border-color:var(--blue-deep);border-width:2px">
+        <h4>⏱ Set the pace</h4>
+        <ul>
+          <li>Pick <b>Answer now</b>, <b>Think 10 min</b>, or <b>Deep answer by morning</b> per question — you choose how long blueGlu works before it responds.</li>
+          <li>This is still the on-device model; a longer budget doesn't leave your Mac.</li>
+        </ul>
+        <div class="price">FREE — INCLUDED</div>
+      </div>
+      <div class="mode">
+        <h4>🔑 Reach further, on your terms</h4>
+        <ul>
+          <li>Add your own API key in Settings to let a specific question use a premium model instead.</li>
+          <li>Before anything is sent, blueGlu shows you exactly what will and won't leave your Mac, and asks you to approve it — once per message, or for the rest of the conversation.</li>
+          <li>Nothing escalates on its own. You click Approve, or you don't.</li>
+        </ul>
+        <div class="price">REQUIRES YOUR OWN API KEY</div>
+      </div>
+    </div>
+
+    <div class="gl-sec">WHAT STAYS ON YOUR MAC</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p style="font-size:15px;line-height:1.7;color:#2A3444;margin:0;max-width:70ch">By default, blueGlu's model, your file index, and your conversations run entirely on your Mac — there's no cloud step in the ordinary path. The only time anything leaves is when you explicitly choose to reach further for a single question, and even then blueGlu shows you the destination and exactly what it's about to send before it goes, and asks you to approve it first.</p>
+    </div>
+
+    <div class="gl-sec">QUICKSTART</div>
+    <div class="steps">
+      <div class="step"><div><b>Download &amp; open.</b> First launch downloads a small on-device model — this happens once and stays on your Mac.</div></div>
+      <div class="step"><div><b>Point it at a folder.</b> Attach the files or folder you want blueGlu to answer from.</div></div>
+      <div class="step"><div><b>Ask a question.</b> Answers come back with citations to the exact passages they're based on.</div></div>
+      <div class="step"><div><b>Choose your pace.</b> Answer now for something quick, or Think 10 min / Deep answer by morning when you'd rather it take its time.</div></div>
+      <div class="step"><div><b>Reach further only if you want to.</b> Add your own API key in Settings, and approve the one-time consent screen when a question needs more than your Mac provides.</div></div>
+    </div>
+
+    <div class="gl-sec">GUIDES — QUICK READS</div>
+    <div class="docs">
+      <details open class="always">
+        <summary>Citations, not guesses</summary>
+        <p>Every answer blueGlu gives from your files is grounded in a specific passage. If nothing in your files supports an answer, blueGlu says so rather than answering from general knowledge without telling you.</p>
+      </details>
+      <details open class="always">
+        <summary>Approving before anything leaves</summary>
+        <p>The first time a question would use anything other than your on-device model, blueGlu shows a consent screen: where it's going, what will be sent, what won't, and any expected cost. Approve once for that message, or for the rest of the conversation — nothing goes out until you do.</p>
+      </details>
+      <details open class="always">
+        <summary>AI can be wrong</summary>
+        <p>blueGlu is AI and can make mistakes. Treat every answer, including cited ones, as something to double-check rather than something to trust outright — see the <a href="/disclaimers" style="color:var(--blue-deep)">full disclaimer</a>.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="brand" style="font-size:16px;color:var(--lite-ink)">MOBLUE<b style="color:var(--blue-deep)">HQ</b></div>
+    <div class="foot-links">
+      <a href="/contact">Contact</a>
+      <a href="/trust">Trust</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+  </div>
+</footer>
+</body>
+</html>
