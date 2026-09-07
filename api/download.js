@@ -35,6 +35,8 @@
 //   Cloudflare account, many buckets/keys — but can be overridden per
 //   product with the same _<PRODUCT> suffix if a product ever needs its own
 //   credentials.
+//
+// blueGlu is free at 0.1 and ships ungated — no demo password applies to it.
 
 import {
   COOKIE_NAME,
