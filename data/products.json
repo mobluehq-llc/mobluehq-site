@@ -1,5 +1,5 @@
 {
-  "lastReviewed": "September 6, 2026",
+  "lastReviewed": "September 7, 2026",
   "products": [
     {
       "id": "bluemonster",
@@ -36,6 +36,46 @@
       "page": null,
       "version": null,
       "patent_pending": true
+    },
+    {
+      "id": "bluealibi",
+      "name": "blueAlibi",
+      "logo": "/assets/logos/bluealibi.svg",
+      "status": "in_development",
+      "one_liner": "Find claims the recorded evidence and tools could not support.",
+      "page": "/portfolio/bluealibi"
+    },
+    {
+      "id": "bluefloor",
+      "name": "blueFloor",
+      "logo": "/assets/logos/bluefloor.svg",
+      "status": "in_development",
+      "one_liner": "Measure the ingest your deployed detections can actually use.",
+      "page": "/portfolio/bluefloor"
+    },
+    {
+      "id": "blueintent",
+      "name": "blueIntent",
+      "logo": "/assets/logos/blueintent.svg",
+      "status": "in_development",
+      "one_liner": "Check whether declared code invariants survived a change.",
+      "page": "/portfolio/blueintent"
+    },
+    {
+      "id": "blueparity",
+      "name": "blueParity",
+      "logo": "/assets/logos/blueparity.svg",
+      "status": "in_development",
+      "one_liner": "Prove a replacement system stays equivalent within a declared contract.",
+      "page": "/portfolio/blueparity"
+    },
+    {
+      "id": "bluepipeline",
+      "name": "bluePipeline",
+      "logo": "/assets/logos/bluepipeline.svg",
+      "status": "in_development",
+      "one_liner": "See what actually reached the model.",
+      "page": "/portfolio/bluepipeline"
     }
   ]
 }
