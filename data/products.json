@@ -1,28 +1,41 @@
 {
-  "lastReviewed": "June 19, 2026",
+  "lastReviewed": "September 6, 2026",
   "products": [
+    {
+      "id": "bluemonster",
+      "name": "blueMonster",
+      "logo": "/assets/logos/bluemonster-monster.png",
+      "status": "releasing_soon",
+      "one_liner": "blueMonster lite: the idea-discovery engine for Mac with MBR export, pool sharing, and signed receipt-backed runs.",
+      "audience": "Anyone with a hard question who wants a wide, evidenced search of the space",
+      "not_this": null,
+      "page": "/portfolio/bluemonster",
+      "version": "v1.0",
+      "patent_pending": false
+    },
     {
       "id": "blue",
       "name": "Blue",
       "logo": "/assets/logos/blue.svg",
-      "status": "active_mvp",
-      "description": "The verification substrate every MOBLUEHQ product runs on. A private inference mesh that returns sealed, signed results - the scheduler never sees your data, and every answer carries a receipt anyone can verify. ",
-      "redacted_tail": true,
-      "description_after": " The rail underneath the portfolio. For everyone building AI into decisions that carry consequences - the layer that proves how an answer was produced, not just that it sounds right.",
+      "status": "infrastructure",
+      "one_liner": "The verification substrate every MOBLUEHQ product runs on. A private inference mesh that returns sealed, signed results — the scheduler never sees your data, and every answer carries a receipt anyone can verify.",
+      "audience": "Anyone building AI into decisions that carry consequences",
+      "not_this": null,
+      "page": null,
+      "version": null,
       "patent_pending": true
     },
     {
       "id": "slumbernet",
       "name": "slumberNet",
       "logo": "/assets/logos/slumbernet.svg",
-      "status": "active_mvp",
-      "description": "Pool your computer's spare capacity into the mesh. Install it, and your machine takes on verified AI work in the background, designed to stay out of your way when you're back at it. Built on a simple bet: if enough machines pitch in, ",
-      "redacted_tail": true,
-      "description_after": " Private demo available on request. For anyone with a capable machine and spare capacity to share - the supply side that lets a verifiable mesh scale without hyperscaler lock-in.",
-      "patent_pending": true,
-      "on_device": true,
-      "stage_label": "Shipped - API + app, verified over the internet",
-      "description_bold": "much of the AI work the world does will never need a giant data center built for it."
+      "status": "infrastructure",
+      "one_liner": "Pool your computer's spare capacity into the mesh. Install it, and your machine takes on verified AI work in the background, designed to stay out of your way when you're back at it.",
+      "audience": "Anyone with a capable machine and spare capacity to share",
+      "not_this": null,
+      "page": null,
+      "version": null,
+      "patent_pending": true
     }
   ]
 }
