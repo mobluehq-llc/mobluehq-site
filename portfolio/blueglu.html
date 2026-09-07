@@ -383,16 +383,22 @@
         <div class="gl-tag">PRIVATE AI FOR YOUR MAC · A MOBLUEHQ PRODUCT</div>
         <p class="gl-sub">Ask it about the files on your Mac. blueGlu answers from a model already running on your machine, cites the passages it used, and stays there — nothing leaves your Mac unless you tell it to. When a question calls for more than your Mac can do on its own, you decide whether to reach further: your own API key for a premium model, on a question-by-question basis.</p>
         <div class="dlrow">
-          <!-- REVIEW: this static path follows the site's existing per-product DMG convention
-               (see /portfolio/bluemonster/blueMonster.dmg). The signed, notarized blueGlu.dmg
-               itself is not in this repo — the release pipeline must publish it at this path
-               before this link resolves. Do not merge a claim that this link works until it does. -->
-          <a class="cta" href="/portfolio/blueglu/blueGlu.dmg">⬇ DOWNLOAD FOR MAC — FREE</a>
+          <!-- Served by the multi-product endpoint (api/download.js), which already registers
+               blueglu as gated:false. A STATIC path was the original placeholder and is wrong:
+               it repeats blueMonster's known-broken DMG_SOURCE=vercel pattern, where the page
+               points at a gitignored file that never deploys. The endpoint reads the artifact
+               from R2 per A-53. -->
+          <a class="cta" href="/api/download?product=blueglu">⬇ DOWNLOAD FOR MAC — FREE</a>
         </div>
-        <!-- REVIEW: version string and SHA-256 are release-pipeline outputs, not something this
-             page-authoring pass can compute — no blueGlu.dmg exists anywhere in this repo or on
-             this machine to hash. Fill in from the actual signed artifact before publish. -->
-        <div class="meta">Apple Silicon · signed &amp; notarized by Apple · Free, no account required to try it<br>SHA-256: <span class="hash-slot">[fill in from the published blueGlu.dmg — do not invent this value]</span></div>
+        <!-- SHA-256 below is the release candidate staged 2026-09-07 as
+             _artifacts/blueGlu_0.1.0_aarch64_skinny_notarized_090726.dmg, 176,972,623 bytes.
+             Verified by the coordinator twice (before and after staging):
+             `xcrun stapler validate` -> worked; `spctl -a -vv` -> accepted,
+             source=Notarized Developer ID; Developer ID Application: Adam Faust (4YQWKYKF49);
+             notarization submission f213f2d0-ae60-4ea8-8e3c-0bfed4f9526d Accepted.
+             Source commit 323df52b, tag blueglu-rc/090726-aarch64-skinny.
+             IF A DIFFERENT BUILD IS UPLOADED, THIS HASH MUST BE REGENERATED. -->
+        <div class="meta">Apple Silicon · signed &amp; notarized by Apple · Free, no account required to try it<br>SHA-256: <span class="hash-slot">27aa56e511feacc8d105f028f7a04f9fcd15c1fdb522f4c75e6ac0929f4a579b</span></div>
         <div class="meta" style="margin-top:10px">blueGlu is AI and can make mistakes — double-check anything before relying on it. <a href="/disclaimers" style="color:var(--blue-deep)">Full disclaimer →</a></div>
       </div>
     </div>
