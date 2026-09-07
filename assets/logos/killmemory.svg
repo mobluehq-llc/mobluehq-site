@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">KillMemory option C: Echo Break</title><desc id="desc">A recurring echo meets a durable memory spine and cannot repeat.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#273453"/><stop offset=".58" stop-color="#7758CA"/><stop offset="1" stop-color="#273453"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="9" stdDeviation="10" flood-color="#06162F" flood-opacity=".28"/></filter>
+</defs>
+<rect x="8" y="8" width="240" height="240" rx="52" fill="url(#bg)" filter="url(#shadow)"/>
+<path d="M20 70C77 22 157 33 238 18v48C167 93 88 76 20 116z" fill="white" opacity=".11"/>
+<path d="M52 95c26-26 49-26 75 0s49 26 77 0M52 128c26-26 49-26 75 0s49 26 77 0M52 161c26-26 49-26 75 0" fill="none" stroke="white" stroke-width="11" stroke-linecap="round"/><path d="M150 62v132" stroke="#FF967D" stroke-width="14" stroke-linecap="round"/><circle cx="150" cy="128" r="11" fill="#FF967D"/>
+</svg>

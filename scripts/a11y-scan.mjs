@@ -21,7 +21,12 @@ const pages = [
   '/pricing',
   '/terms',
   '/privacy',
-  '/disclaimers'
+  '/disclaimers',
+  '/portfolio/bluescout',
+  '/portfolio/blueredteam',
+  '/portfolio/bluegrant',
+  '/portfolio/comparativescreen',
+  '/portfolio/killmemory'
 ];
 
 const mime = {
