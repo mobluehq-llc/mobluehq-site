@@ -15,7 +15,6 @@ const pages = [
   '/',
   '/about',
   '/portfolio',
-  '/portfolio-mockup',
   '/contact',
   '/investors',
   '/trust',
