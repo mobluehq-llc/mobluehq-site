@@ -9,3 +9,7 @@ node_modules/
 # Copied here for local `vercel dev` testing of the Option A (Vercel-hosted
 # static file) delivery path only.
 /portfolio/bluemonster/blueMonster.dmg
+
+# Local-only: the actual ~169MB blueGlu DMG asset is never committed to git
+# either. Same convention as blueMonster above.
+/portfolio/blueglu/blueGlu.dmg
