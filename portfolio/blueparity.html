@@ -427,14 +427,14 @@
 
     <div class="bm-sec">WHAT IT CHECKS</div>
     <div class="mode" style="border-left:4px solid var(--blue-deep)">
-      <p>Both systems run as black-box command adapters over the same JSONL corpus, under an equivalence contract declared and hashed before execution: which outputs matter, what tolerance applies to each, which fields are ignored. Every declared behavior resolves to matched, matched within the declared tolerance, diverged, or not exercised, and every divergence is pinned to a minimal counterexample — the smallest input pair that shows the two systems actually disagreeing.</p>
+      <p>Both systems run as black-box command adapters over the same JSONL corpus, under an equivalence contract declared and hashed before execution: which outputs matter, what tolerance applies to each, which fields are ignored. Every declared behavior resolves to matched, matched within the declared tolerance, diverged, or not exercised, and every divergence is pinned to a concrete counterexample — the first case in your corpus where the two systems actually disagreed, with the exact input and both outputs attached.</p>
     </div>
 
     <div class="bm-sec">HOW IT WORKS</div>
     <div class="steps">
       <div class="step"><div>1</div><div><b>Wrap both systems.</b> Point blueParity at two command adapters — the legacy system and its replacement — each reading one JSON object per line.</div></div>
       <div class="step"><div>2</div><div><b>Declare the contract.</b> A YAML equivalence contract names the fields that matter, their tolerances, and any fields to ignore, hashed before the run starts.</div></div>
-      <div class="step"><div>3</div><div><b>Run the corpus.</b> <code>blue-parity run</code> drives both systems over the same JSONL corpus and produces verdicts with divergences pinned to minimal counterexamples.</div></div>
+      <div class="step"><div>3</div><div><b>Run the corpus.</b> <code>blue-parity run</code> drives both systems over the same JSONL corpus and produces verdicts with each divergence pinned to a concrete counterexample from your data.</div></div>
       <div class="step"><div>4</div><div><b>Write the certificate.</b> <code>blue-parity run --out certificate.json</code> writes the signed bundle — both the declare and result receipts — in the same command. You can also export it from the web interface.</div></div>
       <div class="step"><div>5</div><div><b>Verify offline.</b> The bare receipt checks with <code>verify_receipt.py</code>; the full certificate bundle checks with <code>blue-parity verify</code>.</div></div>
     </div>
@@ -461,7 +461,7 @@
         <ul>
           <li><b>Matched</b> — field-for-field agreement.</li>
           <li><b>Matched within tolerance</b> — within the declared numeric bound.</li>
-          <li><b>Diverged</b> — the two systems disagreed; a minimal counterexample is attached.</li>
+          <li><b>Diverged</b> — the two systems disagreed; a concrete counterexample from the corpus is attached.</li>
           <li><b>Not exercised</b> — the behavior was declared but never triggered by the corpus.</li>
         </ul>
       </details>
