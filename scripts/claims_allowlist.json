@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "file": "about.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "contact.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "demo.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "disclaimers.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "index.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "investors.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "portfolio.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "portfolio/bluemonster.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "pricing.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "privacy.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "terms.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "trust.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  }
+]
