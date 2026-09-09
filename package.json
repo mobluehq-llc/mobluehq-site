@@ -6,6 +6,8 @@
     "a11y": "node scripts/a11y-scan.mjs",
     "build:portfolio": "node scripts/build_portfolio.mjs",
     "check:portfolio-sync": "node scripts/check_portfolio_sync.mjs",
+    "build:pricing": "node scripts/build_pricing.mjs",
+    "check:pricing-sync": "node scripts/check_pricing_sync.mjs",
     "claims": "node scripts/check_claims.mjs"
   },
   "dependencies": {
