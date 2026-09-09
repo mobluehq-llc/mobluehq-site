@@ -830,3 +830,26 @@ footer .footer-mark .hq { color: var(--hq); }
 @media (max-width: 899px) {
   .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
 }
+
+/* AI / user-responsibility disclaimer — Adam-approved SHORT FORM, 2026-09-09.
+   Canon: BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md
+   Shown in the footer of every served page. `flex-basis: 100%` puts it on its
+   own row beneath the footer's existing flex children; `order: 1` keeps it
+   after the mark/links/copyright regardless of source position. */
+footer .footer-disclaimer {
+  flex-basis: 100%;
+  order: 1;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--divider);
+  font-family: 'Geist', sans-serif;
+  font-size: 12px;
+  line-height: 1.65;
+  letter-spacing: 0;
+  color: var(--text-secondary);
+  max-width: 80ch;
+}
+footer .footer-disclaimer p { margin: 0 0 8px; }
+footer .footer-disclaimer p:last-child { margin-bottom: 0; }
+footer .footer-disclaimer strong { color: var(--text-primary); font-weight: 600; }
+footer .footer-disclaimer a { color: var(--hq); text-decoration: underline; }
