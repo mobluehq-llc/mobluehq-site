@@ -59,7 +59,7 @@
       <a href="/terms">Terms</a>
     <a href="/privacy">Privacy</a>
   </div>
-  <div>© 2026 MOBLUEHQ LLC · Delaware</div>
+  <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
 </footer>
 
 <script src="/assets/endpoints.js"></script>
@@ -68,7 +68,7 @@
   var params = new URLSearchParams(window.location.search);
   var segment = params.get('segment');
   var plan = params.get('plan');
-  if (segment === 'self_serve' || segment === 'enterprise') {
+  if (segment === 'self_serve' || segment === 'enterprise' || segment === 'bluealibi' || segment === 'bluefloor' || segment === 'blueintent' || segment === 'blueparity' || segment === 'bluepipeline') {
     document.getElementById('leadSegment').value = segment;
   }
   if (plan) {
