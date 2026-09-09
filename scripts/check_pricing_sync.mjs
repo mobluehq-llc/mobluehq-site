@@ -57,23 +57,96 @@ function checkMarkerBlock(label, path, start, end, expected) {
   console.log(`OK: ${label} in ${path} matches data/pricing.json.`);
 }
 
-// Candidate locations for the mobluehq-platform checkout, checked in order.
-// This repo (mobluehq-site) and mobluehq-platform are separate repos with no
-// package dependency between them, so there is no import-time way to read
-// config.py directly — this is the best-effort filesystem probe the task
-// asked for ("add a check script that FAILS when the page and the config
-// disagree" — this is that script for the one case a static site CAN reach
-// its cross-repo source of truth: a sibling checkout on the same machine).
-function findConfigPy(explicitPath) {
-  const candidates = [
-    explicitPath,
-    process.env.BLUEHELM_CONFIG_PY,
-    join(ROOT, "..", "mobluehq-platform", "packages", "bluehelm", "src", "bluehelm", "config.py"),
-  ].filter(Boolean);
-  for (const c of candidates) {
-    if (existsSync(c)) return c;
+// Resolves the git ref to use for reading config.py from mobluehq-platform.
+// Checked in order: explicit CLI flag, $BLUEHELM_GIT_REF env var, default to rc/bluemonster-v1.0-rc1.
+// Example: node check_pricing_sync.mjs --ref=main
+// The returned object {ref, found} indicates whether the ref actually exists in the remote.
+function resolveGitRef(argv) {
+  let ref = null;
+
+  // Check for --ref=<value> flag
+  const refFlag = argv.find(arg => arg.startsWith("--ref="));
+  if (refFlag) {
+    ref = refFlag.split("=")[1];
   }
-  return null;
+
+  // Check env var
+  if (!ref && process.env.BLUEHELM_GIT_REF) {
+    ref = process.env.BLUEHELM_GIT_REF;
+  }
+
+  // Default
+  if (!ref) {
+    ref = "rc/bluemonster-v1.0-rc1";
+  }
+
+  return ref;
+}
+
+// Reads the bluehelm config from mobluehq-platform at a named git ref.
+// Returns {text, ref, repoPath} on success, or throws with a descriptive error.
+function readConfigFromRef(ref, platformRepoPath) {
+  let actualRepoPath = platformRepoPath;
+
+  // If not explicitly provided, try to find the repo
+  if (!actualRepoPath) {
+    const candidates = [
+      join(ROOT, "..", "mobluehq-platform"),
+      "/opt/mobluehq/platform",
+      process.env.MOBLUEHQ_PLATFORM_REPO,
+    ].filter(Boolean);
+
+    for (const c of candidates) {
+      try {
+        execFileSync("git", ["-C", c, "rev-parse", "--is-inside-work-tree"], {
+          encoding: "utf8",
+          stdio: ["pipe", "pipe", "pipe"], // suppress stderr
+        });
+        actualRepoPath = c;
+        break;
+      } catch (_e) {
+        // Not a git repo, continue
+      }
+    }
+  }
+
+  if (!actualRepoPath) {
+    throw new Error(
+      "FATAL: could not locate mobluehq-platform repository. " +
+      "Checked: ~/dev/../mobluehq-platform, /opt/mobluehq/platform, and $MOBLUEHQ_PLATFORM_REPO env var. " +
+      "Pass the repo path explicitly as the second argument."
+    );
+  }
+
+  // Verify the ref exists
+  try {
+    execFileSync("git", ["-C", actualRepoPath, "rev-parse", ref], {
+      encoding: "utf8",
+      stdio: ["pipe", "pipe", "pipe"], // suppress stderr
+    });
+  } catch (_e) {
+    throw new Error(
+      `FATAL: git ref "${ref}" does not exist in ${actualRepoPath}. ` +
+      `Verify the ref name is correct and run: git -C ${actualRepoPath} branch -a | grep ${ref}`
+    );
+  }
+
+  // Read the config from the named ref
+  const configPath = "packages/bluehelm/src/bluehelm/config.py";
+  let text;
+  try {
+    text = execFileSync("git", ["-C", actualRepoPath, "show", `${ref}:${configPath}`], {
+      encoding: "utf8",
+      stdio: ["pipe", "pipe", "pipe"], // suppress stderr
+    });
+  } catch (e) {
+    throw new Error(
+      `FATAL: could not read ${configPath} from ref "${ref}" in ${actualRepoPath}. ` +
+      `File may not exist in that ref. Original error: ${e.message}`
+    );
+  }
+
+  return { text, ref, repoPath: actualRepoPath };
 }
 
 function parseHoursField(text, fieldName) {
@@ -103,43 +176,43 @@ function main() {
     renderConsumerPricingCards(data)
   );
 
-  // --- Check 2: cross-repo (JSON -> bluehelm/config.py) ---
-  const explicitPath = process.argv[2];
-  const configPath = findConfigPy(explicitPath);
-  if (!configPath) {
-    console.warn(
-      "WARN: could not find a mobluehq-platform checkout's packages/bluehelm/src/bluehelm/config.py " +
-        "on this machine (checked explicit arg, $BLUEHELM_CONFIG_PY, and a sibling ../mobluehq-platform). " +
-        "The cross-repo check was NOT performed — this is a gap in coverage, not a pass. " +
-        "Re-run with the path explicit, e.g.: node scripts/check_pricing_sync.mjs /path/to/mobluehq-platform/packages/bluehelm/src/bluehelm/config.py"
-    );
-  } else {
-    let branchNote = "";
-    try {
-      const branch = execFileSync("git", ["-C", dirname(configPath), "rev-parse", "--abbrev-ref", "HEAD"], {
-        encoding: "utf8",
-      }).trim();
-      branchNote = ` (checkout is on branch "${branch}")`;
-    } catch (_e) {
-      // best-effort only; a missing/foreign git binary must not fail the gate
+  // --- Check 2: cross-repo (JSON -> bluehelm/config.py from a named git ref) ---
+  const ref = resolveGitRef(process.argv.slice(2));
+  const platformRepoPath = process.argv.find(arg => arg.startsWith("--repo="))?.split("=")[1] || process.env.MOBLUEHQ_PLATFORM_REPO;
+
+  let configResult;
+  try {
+    configResult = readConfigFromRef(ref, platformRepoPath);
+  } catch (err) {
+    console.error(`\n${err.message}`);
+    process.exit(1);
+  }
+
+  console.log(`Cross-repo check: comparing against git ref "${configResult.ref}" in ${configResult.repoPath}`);
+
+  const configText = configResult.text;
+  let fieldsMissing = [];
+  for (const tier of data.tiers) {
+    const configValue = parseHoursField(configText, tier.configKey);
+    if (configValue === null) {
+      fieldsMissing.push(tier.configKey);
+      fail(`could not find field "${tier.configKey}" in ref "${ref}"`);
+      continue;
     }
-    console.log(`Cross-repo check: comparing against ${configPath}${branchNote}`);
-    const configText = readFileSync(configPath, "utf8");
-    for (const tier of data.tiers) {
-      const configValue = parseHoursField(configText, tier.configKey);
-      if (configValue === null) {
-        fail(`could not find field "${tier.configKey}" in ${configPath}`);
-        continue;
-      }
-      if (configValue !== tier.hours) {
-        fail(
-          `data/pricing.json tier "${tier.id}" says ${tier.hours} hours but ` +
-            `${configPath}'s ${tier.configKey} default is ${configValue}.`
-        );
-        continue;
-      }
-      console.log(`OK: tier "${tier.id}" (${tier.configKey}) — data/pricing.json (${tier.hours}) matches ${configPath} (${configValue}).`);
+    if (configValue !== tier.hours) {
+      fail(
+        `data/pricing.json tier "${tier.id}" says ${tier.hours} hours but ` +
+          `ref "${ref}"'s ${tier.configKey} default is ${configValue}.`
+      );
+      continue;
     }
+    console.log(`OK: tier "${tier.id}" (${tier.configKey}) — data/pricing.json (${tier.hours}) matches ref "${ref}" (${configValue}).`);
+  }
+
+  // If all fields were missing, that's a ref mismatch — give a clearer message
+  if (fieldsMissing.length === data.tiers.length) {
+    console.error(`\nFAIL: NONE of the expected fields exist in ref "${ref}". This suggests the ref does not contain the expected bluehelm version.`);
+    process.exit(1);
   }
 
   if (failed) {
