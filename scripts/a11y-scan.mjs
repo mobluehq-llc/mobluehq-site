@@ -21,7 +21,11 @@ const pages = [
   '/pricing',
   '/terms',
   '/privacy',
-  '/disclaimers'
+  '/disclaimers',
+  '/portfolio/bluemonster',
+  '/portfolio/bluemoat',
+  '/portfolio/bluealibi',
+  '/portfolio/blueglu'
 ];
 
 const mime = {

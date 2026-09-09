@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueAlibi — MOBLUEHQ</title>
+<meta name="description" content="Find claims the recorded evidence and tools could not support." />
+<link rel="canonical" href="https://www.mobluehq.com/portfolio/bluealibi" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mobluehq.com/portfolio/bluealibi" />
+<meta property="og:title" content="blueAlibi — MOBLUEHQ" />
+<meta property="og:description" content="A local, offline claim-provenance auditor: compares a document against a run trace and marks every claim with a signed verdict." />
+<meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="blueAlibi — MOBLUEHQ" />
+<meta name="twitter:description" content="Find claims the recorded evidence and tools could not support." />
+<meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<base href="/portfolio/bluealibi/" />
+<style>
+  :root {
+    --pink-deep: #b8005a;
+    --lite-bg: #f4f7fb;
+    --lite-card: #ffffff;
+    --lite-ink: #0b1220;
+    --lite-dim: #5a6578;
+    --lite-edge: #dce4ef;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "Geist", "Helvetica Neue", Inter, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: var(--sans); background: var(--lite-bg); color: var(--lite-ink); }
+  .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+  .skip-link:focus { position: static; width: auto; height: auto; margin: 12px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--lite-edge); background: #fff; color: #000; font-family: var(--mono); font-size: 12px; letter-spacing: 1px; text-decoration: none; }
+  .nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 26px 48px; max-width: 1480px; margin: 0 auto; border-bottom: 1px solid var(--lite-edge); }
+  .brand { font-family: var(--sans); font-weight: 800; font-size: 22px; letter-spacing: 0.5px; text-decoration: none; color: var(--lite-ink); }
+  .brand b { color: var(--pink-deep); }
+  .navlinks { display: flex; gap: 24px; font-family: var(--mono); font-size: 12px; letter-spacing: 2px; flex-wrap: wrap; }
+  .navlinks a { text-decoration: none; color: #4a5568; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 26px 48px 0; }
+  .backlink { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; color: var(--lite-dim); text-decoration: none; }
+  .hero { display: grid; grid-template-columns: 140px 1fr; gap: 42px; align-items: center; padding: 44px 0 10px; }
+  .hero-ico { width: 100%; max-width: 110px; border-radius: 22%; display: block; box-shadow: 0 18px 50px rgba(11, 18, 32, 0.25); }
+  .hero h1 { font-family: var(--sans); font-weight: 800; font-size: 40px; margin: 0 0 6px; }
+  .hero h1 b { color: var(--pink-deep); }
+  .tag { font-family: var(--mono); font-size: 13px; letter-spacing: 2.5px; color: var(--lite-dim); margin-bottom: 18px; }
+  .sub { font-size: 16.5px; line-height: 1.65; max-width: 66ch; color: #2a3444; }
+  .status-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 22px; }
+  .badge { font-family: var(--mono); font-size: 10px; letter-spacing: 1.6px; padding: 5px 12px; border-radius: 999px; border: 1px solid; white-space: nowrap; }
+  .b-dev { color: var(--pink-deep); border-color: rgba(184, 0, 90, 0.4); background: #fdeef6; }
+  .b-dim { color: #9aa4b4; border-color: rgba(154, 164, 180, 0.4); }
+  .sec { font-family: var(--mono); font-size: 12px; letter-spacing: 3.5px; color: var(--pink-deep); margin: 60px 0 22px; }
+  .sec::after { content: ""; display: block; width: 70px; height: 2px; background: var(--pink-deep); margin-top: 9px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+  .card { background: var(--lite-card); border: 1px solid var(--lite-edge); border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px; }
+  .card h4 { margin: 0; font-family: var(--sans); font-weight: 800; font-size: 18px; }
+  .card p, .card li { font-size: 14.5px; line-height: 1.65; color: #33405a; }
+  .card ul { margin: 4px 0 0; padding-left: 18px; }
+  .grounding { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .grounding th, .grounding td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--lite-edge); vertical-align: top; }
+  .grounding th { font-family: var(--mono); font-size: 11px; letter-spacing: 1px; color: var(--lite-dim); text-transform: uppercase; }
+  .grounding td code { font-family: var(--mono); font-size: 12px; background: #fbeaf3; padding: 1px 5px; border-radius: 4px; }
+  .grounding-wrap { overflow-x: auto; background: var(--lite-card); border: 1px solid var(--lite-edge); border-radius: 14px; padding: 6px 20px; }
+  .not-sold { border-left: 4px solid var(--pink-deep); background: var(--lite-card); border-radius: 0 14px 14px 0; padding: 22px 26px; }
+  .not-sold p { font-size: 15px; line-height: 1.7; color: #2a3444; margin: 0; max-width: 72ch; }
+  footer { border-top: 1px solid var(--lite-edge); margin-top: 90px; padding: 44px 48px; font-family: var(--mono); font-size: 12px; letter-spacing: 1px; }
+  .foot-in { max-width: 1480px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; color: var(--lite-dim); }
+  .footer-disclaimer { max-width: 1480px; margin: 20px auto 0; padding-top: 18px; border-top: 1px solid var(--lite-edge); font-family: var(--sans, 'Geist', sans-serif); font-size: 12px; line-height: 1.65; letter-spacing: 0; color: var(--lite-dim); }
+  .footer-disclaimer p { margin: 0 0 8px; }
+  .footer-disclaimer p:last-child { margin-bottom: 0; }
+  .footer-disclaimer strong { color: var(--lite-ink); font-weight: 600; }
+  .footer-disclaimer a { color: var(--pink-deep); text-decoration: underline; }
+  .foot-links { display: flex; gap: 26px; flex-wrap: wrap; }
+  .foot-links a { text-decoration: none; color: #4a5568; }
+  @media (max-width: 760px) {
+    .nav, .wrap, footer { padding-left: 20px; padding-right: 20px; }
+    .hero { grid-template-columns: 100px 1fr; gap: 24px; }
+    .hero h1 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<nav class="nav" aria-label="Primary">
+  <a class="brand" href="/">MOBLUE<b>HQ</b></a>
+  <div class="navlinks">
+    <a href="/about">ABOUT</a>
+    <a href="/portfolio">PORTFOLIO</a>
+    <a href="/investors">INVESTORS</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="wrap">
+    <a class="backlink" href="/portfolio">← PORTFOLIO</a>
+    <div class="hero">
+      <div style="display:flex;align-items:center;justify-content:center">
+        <img class="hero-ico" alt="blueAlibi" src="/assets/logos/bluealibi.svg" />
+      </div>
+      <div>
+        <h1>blue<b>Alibi</b></h1>
+        <div class="tag">A CLAIM-PROVENANCE AUDITOR · A MOBLUEHQ PRODUCT · IN DEVELOPMENT</div>
+        <p class="sub">blueAlibi compares a document against the run trace and capability manifest behind it, and marks every claim with a verdict: what the recorded evidence actually supports, and what it doesn't. It runs entirely on your own machine — nothing about the audit itself leaves it.</p>
+        <div class="status-row">
+          <span class="badge b-dev">In development</span>
+          <a class="badge b-dim" href="/contact">Notify me</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">WHAT IT DOES TODAY</div>
+    <div class="grid">
+      <div class="card">
+        <h4>The audit</h4>
+        <ul>
+          <li>Reads a document plus the pipeline's own run trace and capability manifest, and marks each claim with a provenance verdict — what the trace can and can't back up.</li>
+          <li>Ends with a signed receipt. The receipt proves what the software ran and recorded — nothing more.</li>
+          <li>Runs fully offline. No server, no account, no analytics call — the codebase has no outbound network dependency at all, and the product's own interface carries a chip confirming it.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>How you'd buy it</h4>
+        <ul>
+          <li>A one-time-issued licence file you place on disk. Verified entirely offline, with the same signing machinery the audit itself uses.</li>
+          <li>The trust anchor is a public key shipped inside the install — it can confirm a licence was signed by MOBLUEHQ, never mint a new one. There is nothing to phone home to, at purchase or ever after.</li>
+          <li><b>The licence does not gate the audit.</b> The audit engine behaves identically whether or not a licence is present. Checking for one is an administrative record for support and renewal, not a lock — a locally-editable file could never be a real lock, and pretending otherwise would be dishonest.</li>
+          <li>Pricing is not yet set. blueAlibi runs entirely on your machine and uses none of MOBLUEHQ's own compute, so the mesh-hours pricing the rest of the portfolio uses does not apply here — a different number, still to be decided, will apply when this ships.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>What isn't done yet</h4>
+        <ul>
+          <li>The signing key baked into the current build is a development placeholder. Minting and custodying the real signing key is a one-time, owner-run step that happens immediately before this is actually sold — not something that quietly becomes "production" on its own.</li>
+          <li>No purchase flow is live on this site yet — this page describes the mechanism, not a working checkout.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec">NOT THIS</div>
+    <div class="not-sold">
+      <p><b>Not a global fact-checker, and not a legal or regulatory opinion.</b> blueAlibi audits one thing: whether a document's claims are backed by the specific run trace and capability manifest it was checked against. It says nothing about whether a claim is true in the world — only whether the evidence on hand supports it.</p>
+    </div>
+
+    <div class="sec">GROUNDING — EVERY CLAIM ON THIS PAGE</div>
+    <div class="grounding-wrap">
+      <table class="grounding">
+        <thead><tr><th>Claim on this page</th><th>Artifact</th></tr></thead>
+        <tbody>
+          <tr><td>Compares a document to a run trace/capability manifest, marks each claim with a provenance verdict</td><td><code>~/products/blueAlibi</code>, <code>MVP_STATUS.md</code>; <code>make demo</code> / <code>blue-alibi demo</code></td></tr>
+          <tr><td>Signed receipt proves what ran and was recorded, nothing more</td><td><code>src/bluealibi/receipts/keys.py</code>; <code>blue-alibi verify RECEIPT.json</code> runs an offline check</td></tr>
+          <tr><td>Fully offline, no outbound network dependency</td><td>Verified directly: no HTTP client in <code>pyproject.toml</code>'s runtime dependencies; <code>grep</code> for outbound-call patterns across <code>src/</code>/<code>apps/</code> returns nothing but doc comments and a localhost banner string; <code>docs/build_brief.md</code>: "Do not add analytics or outbound telemetry"</td></tr>
+          <tr><td>Licence file is a one-time issuance, verified fully offline, never phones home</td><td>Branch <code>gtm/licensing-offline-090926</code>, <code>src/bluealibi/licensing.py</code> — Ed25519 verification against a public key, no network call anywhere in the module</td></tr>
+          <tr><td>Licence does not gate the audit engine</td><td><code>src/bluealibi/cli.py</code>'s <code>license</code> command docstring: "does NOT gate audit/verify/demo: the audit engine behaves identically whether or not a licence is present"; confirmed by reading the command wiring directly</td></tr>
+          <tr><td>Public key ships in the install; grants no one the ability to forge a licence</td><td><code>licensing.py</code> module docstring: "verifying a signature with it can only confirm a document was signed by whoever holds the matching PRIVATE key... it grants no one the ability to forge a new licence"</td></tr>
+          <tr><td>The shipped signing key today is a development placeholder, not the real one</td><td><code>licensing.py</code>: constant named <code>DEV_PLACEHOLDER_LICENSE_PUBLIC_KEY_HEX</code>, with its own comment stating the real key ceremony happens once, immediately before sale</td></tr>
+          <tr><td>Test count</td><td>Fresh run, this lane, <code>~/products/blueAlibi</code> with a built wheel present: <code>python -m pytest -q</code> → <code>142 passed</code> (0 failed) — not quoted on the page as a customer-facing claim, kept here in the grounding table only</td></tr>
+          <tr><td>Pricing not yet set; hours pricing does not apply</td><td>Owner ruling A-104 (hours pricing) explicitly carries a stated exception for blueAlibi, since it consumes none of MOBLUEHQ's own compute; canon <code>BUILD_CONTROL/GTM_MASTER/BLUEALIBI_PATH_TO_SALE_090926.md</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="brand" style="font-size:16px;color:var(--lite-ink)">MOBLUE<b style="color:var(--pink-deep)">HQ</b></div>
+    <div class="foot-links">
+      <a href="/contact">Contact</a>
+      <a href="/trust">Trust</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+  </div>
+  <div class="footer-disclaimer">
+    <p><strong>AI-generated. Verify before you rely on it.</strong> blueMonster produces machine-generated hypotheses using large language models. <strong>LLMs make mistakes, including confident ones</strong> &mdash; they can state figures, sources, mechanisms and institutions that do not exist. MOBLUEHQ, Inc. designs this system to disclose how each result was produced and to refuse rather than guess where it can, but <strong>no such system is free of error</strong>.</p>
+    <p><strong>This output is not a prior-art search, a patentability opinion, or professional advice of any kind.</strong></p>
+    <p><strong>You are responsible for independently verifying the accuracy, novelty, and legal status of any mechanism, claim, or product before relying on it, publishing it, filing on it, or commercialising it.</strong> <a href="/disclaimers">Read the full disclaimers</a>.</p>
+  </div>
+</footer>
+</body>
+</html>

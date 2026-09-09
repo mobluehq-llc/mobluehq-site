@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueGlu — MOBLUEHQ</title>
+<meta name="description" content="A local-first chat assistant for Mac. Answers on-device by default; you choose when to send a question to a bigger model." />
+<link rel="canonical" href="https://www.mobluehq.com/portfolio/blueglu" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mobluehq.com/portfolio/blueglu" />
+<meta property="og:title" content="blueGlu — MOBLUEHQ" />
+<meta property="og:description" content="A calm, private assistant for your Mac. On-device by default; escalate to a bigger model yourself, on your own terms." />
+<meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="blueGlu — MOBLUEHQ" />
+<meta name="twitter:description" content="A local-first Mac assistant. You choose when a question goes to a bigger model." />
+<meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<base href="/portfolio/blueglu/" />
+<style>
+  :root {
+    --teal-deep: #0f7a72;
+    --lite-bg: #f4f7fb;
+    --lite-card: #ffffff;
+    --lite-ink: #0b1220;
+    --lite-dim: #5a6578;
+    --lite-edge: #dce4ef;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "Geist", "Helvetica Neue", Inter, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: var(--sans); background: var(--lite-bg); color: var(--lite-ink); }
+  .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+  .skip-link:focus { position: static; width: auto; height: auto; margin: 12px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--lite-edge); background: #fff; color: #000; font-family: var(--mono); font-size: 12px; letter-spacing: 1px; text-decoration: none; }
+  .nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 26px 48px; max-width: 1480px; margin: 0 auto; border-bottom: 1px solid var(--lite-edge); }
+  .brand { font-family: var(--sans); font-weight: 800; font-size: 22px; letter-spacing: 0.5px; text-decoration: none; color: var(--lite-ink); }
+  .brand b { color: var(--teal-deep); }
+  .navlinks { display: flex; gap: 24px; font-family: var(--mono); font-size: 12px; letter-spacing: 2px; flex-wrap: wrap; }
+  .navlinks a { text-decoration: none; color: #4a5568; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 26px 48px 0; }
+  .backlink { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; color: var(--lite-dim); text-decoration: none; }
+  .hero { display: grid; grid-template-columns: 140px 1fr; gap: 42px; align-items: center; padding: 44px 0 10px; }
+  .hero-ico { width: 100%; max-width: 110px; border-radius: 22%; display: block; box-shadow: 0 18px 50px rgba(11, 18, 32, 0.25); }
+  .hero h1 { font-family: var(--sans); font-weight: 800; font-size: 40px; margin: 0 0 6px; }
+  .hero h1 b { color: var(--teal-deep); }
+  .tag { font-family: var(--mono); font-size: 13px; letter-spacing: 2.5px; color: var(--lite-dim); margin-bottom: 18px; }
+  .sub { font-size: 16.5px; line-height: 1.65; max-width: 66ch; color: #2a3444; }
+  .status-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 22px; }
+  .badge { font-family: var(--mono); font-size: 10px; letter-spacing: 1.6px; padding: 5px 12px; border-radius: 999px; border: 1px solid; white-space: nowrap; }
+  .b-dev { color: var(--teal-deep); border-color: rgba(15, 122, 114, 0.4); background: #e8f6f4; }
+  .b-dim { color: #9aa4b4; border-color: rgba(154, 164, 180, 0.4); }
+  .sec { font-family: var(--mono); font-size: 12px; letter-spacing: 3.5px; color: var(--teal-deep); margin: 60px 0 22px; }
+  .sec::after { content: ""; display: block; width: 70px; height: 2px; background: var(--teal-deep); margin-top: 9px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+  .card { background: var(--lite-card); border: 1px solid var(--lite-edge); border-radius: 14px; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px; }
+  .card h4 { margin: 0; font-family: var(--sans); font-weight: 800; font-size: 18px; }
+  .card p, .card li { font-size: 14.5px; line-height: 1.65; color: #33405a; }
+  .card ul { margin: 4px 0 0; padding-left: 18px; }
+  .grounding { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .grounding th, .grounding td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--lite-edge); vertical-align: top; }
+  .grounding th { font-family: var(--mono); font-size: 11px; letter-spacing: 1px; color: var(--lite-dim); text-transform: uppercase; }
+  .grounding td code { font-family: var(--mono); font-size: 12px; background: #e7f4f2; padding: 1px 5px; border-radius: 4px; }
+  .grounding-wrap { overflow-x: auto; background: var(--lite-card); border: 1px solid var(--lite-edge); border-radius: 14px; padding: 6px 20px; }
+  .not-sold { border-left: 4px solid var(--teal-deep); background: var(--lite-card); border-radius: 0 14px 14px 0; padding: 22px 26px; }
+  .not-sold p { font-size: 15px; line-height: 1.7; color: #2a3444; margin: 0; max-width: 72ch; }
+  footer { border-top: 1px solid var(--lite-edge); margin-top: 90px; padding: 44px 48px; font-family: var(--mono); font-size: 12px; letter-spacing: 1px; }
+  .foot-in { max-width: 1480px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; color: var(--lite-dim); }
+  .footer-disclaimer { max-width: 1480px; margin: 20px auto 0; padding-top: 18px; border-top: 1px solid var(--lite-edge); font-family: var(--sans, 'Geist', sans-serif); font-size: 12px; line-height: 1.65; letter-spacing: 0; color: var(--lite-dim); }
+  .footer-disclaimer p { margin: 0 0 8px; }
+  .footer-disclaimer p:last-child { margin-bottom: 0; }
+  .footer-disclaimer strong { color: var(--lite-ink); font-weight: 600; }
+  .footer-disclaimer a { color: var(--teal-deep); text-decoration: underline; }
+  .foot-links { display: flex; gap: 26px; flex-wrap: wrap; }
+  .foot-links a { text-decoration: none; color: #4a5568; }
+  @media (max-width: 760px) {
+    .nav, .wrap, footer { padding-left: 20px; padding-right: 20px; }
+    .hero { grid-template-columns: 100px 1fr; gap: 24px; }
+    .hero h1 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<nav class="nav" aria-label="Primary">
+  <a class="brand" href="/">MOBLUE<b>HQ</b></a>
+  <div class="navlinks">
+    <a href="/about">ABOUT</a>
+    <a href="/portfolio">PORTFOLIO</a>
+    <a href="/investors">INVESTORS</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="wrap">
+    <a class="backlink" href="/portfolio">← PORTFOLIO</a>
+    <div class="hero">
+      <div style="display:flex;align-items:center;justify-content:center">
+        <img class="hero-ico" alt="blueGlu" src="/assets/logos/blueglued.svg" />
+      </div>
+      <div>
+        <h1>blue<b>Glu</b></h1>
+        <div class="tag">A LOCAL-FIRST MAC ASSISTANT · A MOBLUEHQ PRODUCT · IN DEVELOPMENT</div>
+        <p class="sub">blueGlu answers on your Mac by default, on a model that lives on your device. When a question needs more than that model can give, you press a button and send it to a bigger model yourself — the app never decides that for you.</p>
+        <div class="status-row">
+          <span class="badge b-dev">In development</span>
+          <a class="badge b-dim" href="/contact">Notify me</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">WHAT IT DOES TODAY</div>
+    <div class="grid">
+      <div class="card">
+        <h4>The assistant</h4>
+        <ul>
+          <li>Runs on-device by default, on your Mac's own hardware.</li>
+          <li>A real routing layer decides which local model handles a given question, weighing cost against a per-question difficulty read — this part is built and wired in, not a stub.</li>
+          <li>An early agent runtime exists underneath: a plan-execute loop with a defined set of tools and a real stopping condition, not just a single request/response call.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Escalation, honestly</h4>
+        <ul>
+          <li><b>Escalating to a bigger model is a button you press.</b> There is no automatic elevation today — nothing in the app decides on its own that a question is hard enough to send further. If that's what you're picturing, it isn't built yet.</li>
+          <li>If you already have your own key for a frontier model, escalation goes straight to it. Without one, escalation has nowhere further to go yet.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>What isn't ready yet</h4>
+        <ul>
+          <li>On a brand-new install, the routing layer's own decision table hasn't been populated with a signed, current set of measurements — until that one-time setup step runs, a fresh install's choices are the same simple fallback the app has always shipped with, not the tuned version.</li>
+          <li>The trust key that will let a device verify that decision table is authentic is currently a development placeholder, not the final one — the real key is minted once, in one sitting, before this ships.</li>
+          <li>iOS has no download or install path yet and does not run a real on-device model — Mac is the only real build today.</li>
+          <li>Sharing your machine's spare capacity with the wider network exists as a design, but usage accounting for it is still being built and is not yet something you or anyone else can independently check.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec">NOT THIS</div>
+    <div class="not-sold">
+      <p><b>Not an auto-escalating router.</b> blueGlu's stated goal is a model that quietly gets harder questions in front of something stronger on its own — that half is not built. What exists today is a local-first assistant with a routing layer choosing among on-device models, and a button you press when you want more.</p>
+    </div>
+
+    <div class="sec">GROUNDING — EVERY CLAIM ON THIS PAGE</div>
+    <div class="grounding-wrap">
+      <table class="grounding">
+        <thead><tr><th>Claim on this page</th><th>Artifact</th></tr></thead>
+        <tbody>
+          <tr><td>On-device by default, on your Mac's own hardware</td><td>blueGlu 0.1 notarized/stapled build, verified fresh: SHA256 <code>27aa56e5...29f4a579b</code>, <code>spctl -a -vv</code> and <code>xcrun stapler validate</code> both passed (per canon <code>GTM_MASTER/CLAIMS_REGISTER.md</code> row BG-3)</td></tr>
+          <tr><td>A real routing layer picks the model per question by cost vs. difficulty</td><td>Branch <code>gtm/blueglu-integration-090826</code> (mobluehq-platform) — every call site (<code>apps/blueglu-desktop/src-tauri/src/lib.rs</code>, <code>inference.rs</code> x2, <code>streaming.rs</code>) passes <code>routing_store.registry()</code> into <code>route_and_record</code>, verified directly by reading the source at each site</td></tr>
+          <tr><td>An agent runtime exists: plan-execute loop, defined tools, real stopping condition</td><td><code>packages/blueglu-core/src/agent/</code>: <code>runner.rs</code>, <code>parser.rs</code>, <code>tool.rs</code>, <code>builtin_tools.rs</code> present and verified by directory listing</td></tr>
+          <tr><td>Escalation is a button, not automatic</td><td>Repo-wide search for auto-escalation logic (<code>auto_escalat</code>, <code>should_escalate</code>, <code>confidence_threshold</code>) across <code>packages/blueglu-core/src</code> returns zero hits</td></tr>
+          <tr><td>Fresh-install routing uses the same fallback until a signed table is seeded</td><td><code>packages/slumbernet-core/src/routing.rs</code> — the hand-curated model list this replaces (<code>MODEL_RANK</code>) no longer exists in source; the current fallback is a size-class ranking (<code>route_v0_fallback</code>) used whenever no seeded registry is present</td></tr>
+          <tr><td>Trust key is a development placeholder, not final</td><td><code>packages/slumbernet-core/src/routing_registry.rs:382,428-434</code> — the compiled-in public anchor and its matching private test key are both literal constants in source, confirmed by canon <code>BUILD_CONTROL/GTM_MASTER/BLUEGLU_A14_GATE_090926.md</code>, which built a release gate that fails closed on exactly this today</td></tr>
+          <tr><td>iOS has no install path, no real on-device model</td><td>Stated in this lane's briefing (Apple org enrollment pending); not independently re-verified by this page beyond that briefing</td></tr>
+          <tr><td>Idle-compute sharing exists as design; usage accounting unverified</td><td>Canon <code>GTM_MASTER/CLAIMS_REGISTER.md</code> row BG-2: idle/AC state asserted, not independently measured as of this writing; approved phrasing used here follows that row directly</td></tr>
+          <tr><td>Auto-elevation ("picks the cheapest model and elevates automatically") is NOT claimed</td><td>Canon <code>GTM_MASTER/CLAIMS_REGISTER.md</code> row BG-1: verdict KNOWN FALSE for the auto-elevating framing; this page uses that row's approved phrasing instead</td></tr>
+          <tr><td>No group-review or multi-reviewer sign-off language is used for any blueGlu process</td><td>Canon <code>GTM_MASTER/CLAIMS_REGISTER.md</code> row BG-5: a prior claim of that shape was found to name a single hardcoded reviewer for a different product; this page names no review process at all for blueGlu, since none was verified</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="brand" style="font-size:16px;color:var(--lite-ink)">MOBLUE<b style="color:var(--teal-deep)">HQ</b></div>
+    <div class="foot-links">
+      <a href="/contact">Contact</a>
+      <a href="/trust">Trust</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+  </div>
+  <div class="footer-disclaimer">
+    <p><strong>AI-generated. Verify before you rely on it.</strong> blueMonster produces machine-generated hypotheses using large language models. <strong>LLMs make mistakes, including confident ones</strong> &mdash; they can state figures, sources, mechanisms and institutions that do not exist. MOBLUEHQ, Inc. designs this system to disclose how each result was produced and to refuse rather than guess where it can, but <strong>no such system is free of error</strong>.</p>
+    <p><strong>This output is not a prior-art search, a patentability opinion, or professional advice of any kind.</strong></p>
+    <p><strong>You are responsible for independently verifying the accuracy, novelty, and legal status of any mechanism, claim, or product before relying on it, publishing it, filing on it, or commercialising it.</strong> <a href="/disclaimers">Read the full disclaimers</a>.</p>
+  </div>
+</footer>
+</body>
+</html>

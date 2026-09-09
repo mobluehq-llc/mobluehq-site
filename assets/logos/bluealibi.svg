@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+<title id="title">blueAlibi app icon</title>
+<desc id="desc">Find claims the recorded evidence and tools could not support.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#9E0059"/>
+    <stop offset="0.62" stop-color="#F2006D"/>
+    <stop offset="1" stop-color="#9E0059"/>
+  </linearGradient>
+  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#001238" flood-opacity="0.28"/>
+  </filter>
+</defs>
+<rect x="24" y="24" width="976" height="976" rx="196" fill="url(#bg)" filter="url(#softShadow)"/>
+<path d="M72 270C278 146 574 168 952 92V260C660 346 356 312 72 430Z" fill="#FFFFFF" opacity="0.10"/>
+<circle cx="475" cy="510" r="205" stroke-width="98" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"/><path d="M680 510V706Q680 758 735 758" stroke-width="92" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"/><circle cx="803" cy="758" r="34" fill="#FFFFFF"/>
+</svg>

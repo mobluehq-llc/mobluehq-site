@@ -36,6 +36,42 @@
       "page": null,
       "version": null,
       "patent_pending": true
+    },
+    {
+      "id": "bluemoat",
+      "name": "blueMoat",
+      "logo": "/assets/logos/bluemoat.svg",
+      "status": "in_development",
+      "one_liner": "Screens filings for relevant prior art and ties each quote to its exact place in the source, or refuses to show it.",
+      "audience": "Patent litigation and prosecution teams who need a prior-art first pass they can check line by line",
+      "not_this": "Not a patentability opinion, and not sold or demoed as a tool for drafting or pressing a patent assertion.",
+      "page": "/portfolio/bluemoat",
+      "version": null,
+      "patent_pending": false
+    },
+    {
+      "id": "bluealibi",
+      "name": "blueAlibi",
+      "logo": "/assets/logos/bluealibi.svg",
+      "status": "in_development",
+      "one_liner": "Find claims the recorded evidence and tools could not support.",
+      "audience": "Anyone shipping an AI pipeline who needs to know which of its own claims the trace actually backs up",
+      "not_this": "Not a global fact-checker, and not a legal or regulatory opinion.",
+      "page": "/portfolio/bluealibi",
+      "version": null,
+      "patent_pending": false
+    },
+    {
+      "id": "blueglu",
+      "name": "blueGlu",
+      "logo": "/assets/logos/blueglued.svg",
+      "status": "in_development",
+      "one_liner": "A local-first chat assistant for Mac. Answers on-device by default; you choose when to send a question to a bigger model.",
+      "audience": "Anyone who wants a private, on-device assistant with a frontier model one click away",
+      "not_this": "Not an auto-escalating router today — elevation is a button you press, not something the app decides for you.",
+      "page": "/portfolio/blueglu",
+      "version": null,
+      "patent_pending": false
     }
   ]
 }
