@@ -394,6 +394,24 @@
     word-break: break-word;
   }
   .steps, .step, .step > div, .mode, details { min-width: 0; }
+  /* AI / user-responsibility disclaimer — Adam-approved SHORT FORM, 2026-09-09.
+     This page is self-contained (it does not load /assets/style.css), so the
+     rule from that stylesheet is restated here rather than inherited. */
+  .footer-disclaimer {
+    max-width: 1480px;
+    margin: 20px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--lite-edge);
+    font-family: var(--sans, 'Geist', sans-serif);
+    font-size: 12px;
+    line-height: 1.65;
+    letter-spacing: 0;
+    color: var(--lite-dim);
+  }
+  .footer-disclaimer p { margin: 0 0 8px; }
+  .footer-disclaimer p:last-child { margin-bottom: 0; }
+  .footer-disclaimer strong { color: var(--lite-ink); font-weight: 600; }
+  .footer-disclaimer a { color: var(--blue-deep); text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -491,6 +509,11 @@
       <a href="/disclaimers">Disclaimers</a>
     </div>
     <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+  <div class="footer-disclaimer">
+    <p><strong>AI-generated. Verify before you rely on it.</strong> blueMonster produces machine-generated hypotheses using large language models. <strong>LLMs make mistakes, including confident ones</strong> &mdash; they can state figures, sources, mechanisms and institutions that do not exist. MOBLUEHQ, Inc. designs this system to disclose how each result was produced and to refuse rather than guess where it can, but <strong>no such system is free of error</strong>.</p>
+    <p><strong>This output is not a prior-art search, a patentability opinion, or professional advice of any kind.</strong></p>
+    <p><strong>You are responsible for independently verifying the accuracy, novelty, and legal status of any mechanism, claim, or product before relying on it, publishing it, filing on it, or commercialising it.</strong> <a href="/disclaimers">Read the full disclaimers</a>.</p>
+  </div>
   </div>
 </footer>
 </body>
