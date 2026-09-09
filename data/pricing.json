@@ -1,0 +1,46 @@
+{
+  "unit": "search-hours",
+  "unitNote": "A search-hour is wall-clock time inside a Pro search. The meter has no venue dimension: local and cloud execution burn the SAME hours. Local-first improves our margin, not the customer's bill — never state or imply a customer saves hours by running locally.",
+  "sourceOfTruth": "packages/bluehelm/src/bluehelm/config.py in mobluehq-llc/mobluehq-platform (fields entry_search_hours / starter_search_hours / paid_search_hours / topup_search_hours). This file's numbers must match that config; run `node scripts/check_pricing_sync.mjs` to verify, and re-run it any time the config or this file changes.",
+  "verifiedAgainstCommit": "54b4f27bc7245be1d404d857bfa64ac461a992cc",
+  "verifiedOn": "2026-09-09",
+  "rulingReference": "Owner ruling A-104, 2026-09-09: use hours pricing.",
+  "tiers": [
+    {
+      "id": "entry",
+      "configKey": "entry_search_hours",
+      "displayName": "Entry",
+      "priceUsd": 9.95,
+      "period": "mo",
+      "hours": 4.0,
+      "shownOn": ["pricing"]
+    },
+    {
+      "id": "starter",
+      "configKey": "starter_search_hours",
+      "displayName": "Pro",
+      "priceUsd": 19.95,
+      "period": "mo",
+      "hours": 8.5,
+      "shownOn": ["pricing", "bluemonster"]
+    },
+    {
+      "id": "pro",
+      "configKey": "paid_search_hours",
+      "displayName": "Pro Max",
+      "priceUsd": 60,
+      "period": "mo",
+      "hours": 26.5,
+      "shownOn": ["pricing", "bluemonster"]
+    },
+    {
+      "id": "topup",
+      "configKey": "topup_search_hours",
+      "displayName": "Top-up",
+      "priceUsd": 25,
+      "period": "one-time",
+      "hours": 10.5,
+      "shownOn": ["pricing"]
+    }
+  ]
+}
