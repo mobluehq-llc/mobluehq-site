@@ -21,7 +21,8 @@ const pages = [
   '/pricing',
   '/terms',
   '/privacy',
-  '/disclaimers'
+  '/disclaimers',
+  '/waitlist'
 ];
 
 const mime = {
