@@ -58,10 +58,18 @@ function renderReleasingSoonCard(p) {
   const notThis = p.not_this
     ? `<p class="not-this"><em>Not this:</em> ${esc(p.not_this)}</p>`
     : "";
+  // Title links to the product's own page when one exists, so the page is
+  // reachable from portfolio.html without a second, nested <a> (the "Notify
+  // me" link below is a sibling anchor, not a wrapper, to keep the markup
+  // valid). The page itself carries the honest "releasing soon" framing --
+  // linking to it is not a stronger claim than the badge already makes.
+  const title = p.page
+    ? `<a href="${esc(p.page)}">${esc(p.name)}</a>`
+    : esc(p.name);
   return `<div class="card card--soon">
         <div class="card-ico">${logoOrMonogram(p)}</div>
         <div>
-          <h3>${esc(p.name)}</h3>
+          <h3>${title}</h3>
           <p>${esc(p.one_liner)}</p>
           ${notThis}
           <div class="badges">
@@ -74,11 +82,16 @@ function renderReleasingSoonCard(p) {
 
 function renderInDevelopmentCard(p) {
   // Job 2 requirement: name + one-liner ONLY. No claims, no CTA, no date,
-  // no version -- so no not_this, no audience, no badges, no link.
+  // no version, no badges -- but the title itself may link to the product's
+  // own page when one exists, so an in-development page that has actually
+  // been written is reachable from portfolio.html rather than orphaned.
+  const title = p.page
+    ? `<a href="${esc(p.page)}">${esc(p.name)}</a>`
+    : esc(p.name);
   return `<div class="card card--dev">
         <div class="card-ico">${logoOrMonogram(p)}</div>
         <div>
-          <h3>${esc(p.name)}</h3>
+          <h3>${title}</h3>
           <p>${esc(p.one_liner)}</p>
         </div>
       </div>`;

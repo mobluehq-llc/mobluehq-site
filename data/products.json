@@ -1,5 +1,5 @@
 {
-  "lastReviewed": "September 7, 2026",
+  "lastReviewed": "September 9, 2026",
   "products": [
     {
       "id": "bluemonster",
@@ -11,6 +11,18 @@
       "not_this": null,
       "page": "/portfolio/bluemonster",
       "version": "v1.0",
+      "patent_pending": false
+    },
+    {
+      "id": "blueglu",
+      "name": "blueGlu",
+      "logo": "/assets/logos/blueglued.svg",
+      "status": "releasing_soon",
+      "one_liner": "A calm, private AI assistant for your Mac. Runs on-device by default; escalate on your own terms, never automatically.",
+      "audience": "Anyone who wants a local-first assistant with a frontier model one click away",
+      "not_this": "Not an auto-escalating router — you choose when a question goes past the on-device model.",
+      "page": "/portfolio/blueglu",
+      "version": "v0.1",
       "patent_pending": false
     },
     {
@@ -76,6 +88,14 @@
       "status": "in_development",
       "one_liner": "See what actually reached the model.",
       "page": "/portfolio/bluepipeline"
+    },
+    {
+      "id": "bluemoat",
+      "name": "blueMoat",
+      "logo": "/assets/logos/bluemoat.svg",
+      "status": "in_development",
+      "one_liner": "Screens filings for relevant prior art and anchors each quote to its exact place in the source, or refuses to show it.",
+      "page": "/portfolio/bluemoat"
     }
   ]
 }
