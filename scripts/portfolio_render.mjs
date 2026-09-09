@@ -74,7 +74,7 @@ function renderReleasingSoonCard(p) {
           ${notThis}
           <div class="badges">
             <span class="badge pat">Releasing soon</span>
-            <a class="badge notify-link" href="/contact">Notify me</a>
+            <a class="badge notify-link" href="/waitlist?product=${esc(encodeURIComponent(p.name))}">Notify me</a>
           </div>
         </div>
       </div>`;
