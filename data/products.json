@@ -15,13 +15,13 @@
       "id": "slumbernet",
       "name": "slumberNet",
       "logo": "/assets/logos/slumbernet.svg",
-      "status": "active_mvp",
-      "description": "Pool your computer's spare capacity into the mesh. Install it, and your machine takes on verified AI work in the background, designed to stay out of your way when you're back at it. Built on a simple bet: if enough machines pitch in, ",
+      "status": "in_development",
+      "description": "The compute mesh we're building toward - pool a machine's spare capacity to help run verified AI work. Not a public download yet: today's build is internal and unsigned, run only on our own machines. Built on a simple bet: if enough machines pitch in, ",
       "redacted_tail": true,
-      "description_after": " Private demo available on request. For anyone with a capable machine and spare capacity to share - the supply side that lets a verifiable mesh scale without hyperscaler lock-in.",
+      "description_after": " This is the direction we're building toward, not what happens today. For anyone with a capable machine and spare capacity to share - the supply side that would let a verifiable mesh scale without hyperscaler lock-in.",
       "patent_pending": true,
       "on_device": true,
-      "stage_label": "Shipped - API + app, verified over the internet",
+      "stage_label": "In development - internal build only, not yet available to install",
       "description_bold": "much of the AI work the world does will never need a giant data center built for it."
     }
   ]
