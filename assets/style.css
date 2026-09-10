@@ -631,6 +631,11 @@ footer .footer-mark .hq { color: var(--hq); }
   margin-bottom: 36px;
   max-width: 640px;
 }
+.page-lead a {
+  color: var(--hq);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .docs-prose h2 {
   font-family: 'Geist', sans-serif;
   font-weight: 600;
