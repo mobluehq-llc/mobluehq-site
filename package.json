@@ -11,7 +11,8 @@
     "claims": "node scripts/check_claims.mjs"
   },
   "dependencies": {
-    "@vercel/functions": "^1.5.0"
+    "@vercel/functions": "^1.5.0",
+    "chromedriver": "^152.0.3"
   },
   "devDependencies": {
     "@axe-core/cli": "^4.10.1",
