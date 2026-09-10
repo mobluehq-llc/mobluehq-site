@@ -22,7 +22,9 @@ const pages = [
   '/terms',
   '/privacy',
   '/disclaimers',
-  '/waitlist'
+  '/waitlist',
+  '/demo',
+  '/portfolio/bluemonster'
 ];
 
 const mime = {
