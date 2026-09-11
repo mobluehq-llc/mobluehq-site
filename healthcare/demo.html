@@ -30,36 +30,44 @@
   <div class="hc-wrap">
     <a class="hc-back" href="/healthcare">&larr; BLUEHEALTHCARE</a>
     <div class="hc-eyebrow" style="margin-top:24px">Demo</div>
-    <h1 style="font-weight:800;font-size:34px;margin:0 0 14px">See it running, on synthetic data</h1>
-    <p class="hc-sub">The hosted blueHealthcare demo runs blueChart and blueClaims (and, as the remaining modules reach demo-ready state, the rest of the suite) against synthetic fixtures — no real patient, member, or claimant data anywhere in it.</p>
+    <h1 style="font-weight:800;font-size:34px;margin:0 0 14px">Demo</h1>
+    <p style="max-width:70ch;line-height:1.7">Run blueHealthcare on your own Mac: the launcher with all eight products, on synthetic data. Nothing in the demo is real &mdash; no real patient, member or claimant appears anywhere in it.</p>
 
-    <div class="hc-sec">Status</div>
-    <div class="hc-card" style="border-left:4px solid #8A5A00">
-      <p><b>The hosted demo is not deployed yet.</b> When it is live, this page will link directly to it. It will be password-protected the same way this section is.</p>
-      <p><!-- TODO: hosted demo URL — add once the blueHealthcare demo deployment exists. Do not fabricate a URL here in the meantime. --></p>
+    <div class="hc-card" style="margin-top:24px">
+      <h2 style="margin:0 0 8px;font-size:20px">Download for Mac (Apple Silicon)</h2>
+      <p style="margin:0 0 14px"><a href="/healthcare/download/blueHealthcare-demo.dmg" download style="display:inline-block;background:var(--hc-primary);color:#fff;text-decoration:none;font-weight:700;padding:11px 20px;border-radius:9px">Download blueHealthcare-demo.dmg</a></p>
+      <p style="margin:0;line-height:1.7;color:var(--hc-dim);font-size:14px">About 0.7 MB. Signed by MOBLUEHQ and notarized by Apple. SHA-256: <code style="word-break:break-all">44d087cef316d38780491cf468600543bd659a6528e0bba45914713e050e8544</code></p>
     </div>
 
-    <div class="hc-sec">What you'll see, once it's live</div>
+    <h2 style="margin:32px 0 10px;font-size:20px">Before you start</h2>
     <div class="hc-card">
-      <ul>
-        <li>blueChart's evidence map: a coverage requirement checked against chart evidence, typed into five lanes.</li>
-        <li>blueClaims' Workbench: a claim anchored to policy clauses and record evidence, with typed gaps.</li>
-        <li>The signed receipt behind each, and the offline verifier catching a one-byte tamper.</li>
+      <ul style="margin:0;padding-left:20px;line-height:1.8">
+        <li>A Mac with Apple Silicon (M1 or later).</li>
+        <li><a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> (free) &mdash; choose the Apple Silicon version, open it once, and wait until it says it is running.</li>
+        <li>A GitHub username and access token from MOBLUEHQ, sent to you separately. The demo software is private; the token lets your Mac fetch it. <a href="/healthcare/contact">Request one</a>.</li>
+        <li>Time on the first start: the download above is small, but the first start fetches a few gigabytes of software. Later starts are quick.</li>
       </ul>
-      <p class="hc-meta">Every screen and every record shown will be clearly marked synthetic.</p>
     </div>
 
-    <div class="hc-sec">Can I run it myself right now?</div>
+    <h2 style="margin:32px 0 10px;font-size:20px">Starting it</h2>
     <div class="hc-card">
-      <p><b>Not yet, from outside the company.</b> Each product's own repository does have a scripted, deterministic <code>make demo</code> / <code>make verify-demo</code> pair that runs offline against synthetic fixtures — but every one of those repositories is private today, so there is nothing public to clone or install. The <a href="/healthcare/manuals">manuals</a> describe those commands for reference, not as something you can run without access to the code.</p>
-      <p>The hosted demo above is the way to see it running without access to any repository. It is not deployed yet; when it is, it will be password-protected the same way this section is.</p>
+      <ol style="margin:0;padding-left:22px;line-height:1.8">
+        <li>Open Docker Desktop and wait until it is running.</li>
+        <li>Open the downloaded file and double-click <strong>Start blueHealthcare Demo</strong>.</li>
+        <li>The first time only, your Mac asks two questions: choose <strong>Open</strong> (it was downloaded from the internet), then <strong>OK</strong> (the demo opens a Terminal window to show its progress).</li>
+        <li>The first time only, enter the GitHub username and access token MOBLUEHQ sent you.</li>
+        <li>Your browser opens the blueHealthcare launcher. Sign in with the username and password the Terminal window shows you.</li>
+      </ol>
+      <p style="margin:14px 0 0;line-height:1.7">When you are done, double-click <strong>Stop blueHealthcare Demo</strong>, or simply quit Docker Desktop. What you did is kept for next time.</p>
     </div>
 
-    <div class="hc-row">
-      <a class="hc-cta" href="/healthcare/contact?segment=demo_request">Request early access to the hosted demo</a>
+    <h2 style="margin:32px 0 10px;font-size:20px">A hosted demo, with nothing to install</h2>
+    <div class="hc-card">
+      <p style="margin:0;line-height:1.7">A hosted version that runs in your browser &mdash; no Docker, no download &mdash; is being prepared. It will sit behind a password like this section. Until it is announced here, the download above is the way to see blueHealthcare running.</p>
     </div>
-  </div>
-</main>
+
+    <p style="margin-top:28px"><a href="/healthcare/contact">Questions, or need an access token? Contact blueHealthcare &rarr;</a></p>
+  </main>
 
 <footer class="hc-footer">
   <div class="hc-footer-in">
