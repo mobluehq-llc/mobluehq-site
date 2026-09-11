@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CodingSystem spec — blueOpenHealthcare — MOBLUEHQ</title>
-<meta name="description" content="The CodingSystem protocol, quoted from platform/core/jurisdiction/interface.py." />
-<link rel="canonical" href="https://www.mobluehq.com/healthcare/open/spec/coding-system" />
+<title>Downloads — blueOpenHealthcare — MOBLUEHQ</title>
+<meta name="description" content="Planned downloads for blueOpenHealthcare: a clinic-server installer, a developer kit, and translation templates. Nothing is available yet." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/open/downloads" />
 <meta name="robots" content="noindex, nofollow" />
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
-<style>:root { --hc-primary: #0066E6; }</style>
+<style>:root { --hc-primary: #14337A; }</style>
 </head>
 <body class="hc-body">
 <a class="hc-skip" href="#main-content">Skip to content</a>
@@ -29,25 +29,30 @@
 <main id="main-content">
   <div class="hc-wrap">
     <a class="hc-back" href="/healthcare/open">&larr; OPEN</a>
-    <div class="hc-eyebrow" style="margin-top:24px">Spec</div>
-    <h1 style="font-weight:800;font-size:32px;margin:0 0 14px">The CodingSystem protocol</h1>
-    <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack">Spec</a><a href="/healthcare/open/contribute">Contribute</a><a href="/healthcare/open/fixtures">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap">Roadmap</a><a href="/healthcare/open/downloads">Downloads</a><a href="/healthcare/open/community">Community</a></div>
-    
-    <p class="hc-sub">A jurisdiction's clinical coding vocabularies, addressed by a jurisdiction-neutral category name (e.g. "diagnosis", "procedure", "lab") — never by one jurisdiction's own vocabulary.</p>
+    <div class="hc-eyebrow" style="margin-top:24px">Downloads</div>
+    <h1 style="font-weight:800;font-size:32px;margin:0 0 14px">Planned downloads</h1>
+    <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack">Spec</a><a href="/healthcare/open/contribute">Contribute</a><a href="/healthcare/open/fixtures">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap">Roadmap</a><a href="/healthcare/open/downloads" style="font-weight:800;color:var(--hc-ink)">Downloads</a><a href="/healthcare/open/community">Community</a></div>
+
+    <div class="hc-boundary"><strong>Nothing on this page is available today.</strong> Every item below is planned, not built. There is no installer, no developer kit, and no template pack to download yet — see <a href="/healthcare/open/roadmap">the roadmap</a> for what's actually built and measured.</div>
+
+    <div class="hc-sec">How this is meant to reach a clinic</div>
     <div class="hc-card">
-      <pre><code>system_id() -&gt; str
-    # A short identifier for this coding-system bundle.
-
-code_categories() -&gt; frozenset[str]
-    # The category names this bundle answers for, e.g. {"diagnosis", "procedure", "lab"}.
-    # A pack may cover a subset — there's no requirement every category is covered.
-
-system_uri(category: str) -&gt; str | None
-    # The FHIR `system` URI for `category`, or None if this pack doesn't cover it.
-    # Never raises on an unknown category — an unsupported category is data, not an error.</code></pre>
+      <p>One small server at the clinic — a mini-PC, a laptop, or a cloud server — keeps working when the internet drops. Every other device just uses a web browser against that server: Android phones and tablets, Windows PCs, iPads. Nothing installs per device.</p>
     </div>
-    <p class="hc-meta">The US pack's current implementation selects ICD-10-CM and CPT. ICD-10/ICD-11, SNOMED CT, OPCS-4, ACHI and LOINC are named slots, not implementations, in the interface itself.</p>
-    <div class="hc-boundary">This page describes website-depth requirements only, drawn from public information about each market. It is not legal advice, not a compliance claim, and not validated in-country. Nothing here has been reviewed by local counsel or a local regulator.</div>
+
+    <div class="hc-sec">Planned downloads</div>
+    <div class="hc-grid">
+      <div class="hc-card"><h4>Clinic-server installer</h4><p>A one-step installer for Linux, plus a ready-made machine image, with no Docker for staff to install themselves. <span class="hc-badge hc-badge-planned">Planned</span></p></div>
+      <div class="hc-card"><h4>Developer kit</h4><p>Source, synthetic demo data, and a sandbox to build in. <span class="hc-badge hc-badge-planned">Planned</span></p></div>
+      <div class="hc-card"><h4>Translation and country templates</h4><p>Templates, specifications, and manuals for a new language or jurisdiction. <span class="hc-badge hc-badge-planned">Planned</span></p></div>
+    </div>
+
+    <div class="hc-sec">Mobile</div>
+    <div class="hc-card">
+      <p>Web first, optimised for Android phones — no app to install. A native Android app may come later, for community health workers who need to work offline. A Windows server version comes only if clinics ask for one.</p>
+    </div>
+
+    <p class="hc-meta">See <a href="/healthcare/open/licensing/eligibility">who's eligible</a> to use blueOpenHealthcare once these exist, and <a href="/healthcare/open/security">what has to be true first</a>.</p>
 
   </div>
 </main>
@@ -70,7 +75,7 @@ system_uri(category: str) -&gt; str | None
     </div>
     <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
     <div class="hc-footer-disclaimer">
-      
+
     <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
     <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
 
