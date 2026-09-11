@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sample licence application — MOBLUEHQ</title>
+<meta name="description" content="Proposed blueHealthcare sample licence application — pending legal review." />
+<link rel="the designical" href="https://www.mobluehq.com/healthcare/open/licensing/application" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <a class="hc-brand" href="/healthcare">MOBLUE<b>HQ</b> <span style="color:var(--hc-dim);font-weight:500">/ blueHealthcare</span></a>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/open/licensing">&larr; LICENSING</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Proposed terms — pending legal review</div>
+    <h1 style="font-weight:800;font-size:34px;margin:0 0 14px">Sample licence application</h1>
+    <div class="hc-boundary" style="margin-bottom:24px"><strong>These are drafts prepared for counsel. They are not in effect, and no licence has been granted.</strong></div>
+
+    <p>This file illustrates, mechanically, how **MPL-2.0** (the recommended default from
+`the licensing analysis`) would be applied to the open part of the blueHealthcare platform,
+with **AGPL-3.0** noted as the alternative wherever the mechanics differ. Nothing here has been
+written into any actual file in `the project` or any other repository.</p>
+<h2> 1. SPDX header per file
+<p>The SPDX License List is the standard machine-readable way to mark a file's licence without
+reproducing the full licence text in every file (SPDX, License List: <https://spdx.org/licenses/>).
+A file under the open licence would carry, as its first lines (adjusted per language's comment
+syntax):</p>
+<pre><code># SPDX-License-Identifier: MPL-2.0
+# SPDX-FileCopyrightText: (c) 2026 MOBLUEHQ, Inc.
+</code></pre>
+<p>If AGPL-3.0 were chosen instead, the only change is the identifier:</p>
+<pre><code># SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-FileCopyrightText: (c) 2026 MOBLUEHQ, Inc.
+</code></pre>
+<p>(`AGPL-3.0-only` vs. `AGPL-3.0-or-later` is itself a decision for counsel — see
+`legal guidance`.) A file that stays proprietary carries no SPDX open-source identifier
+at all; it would instead carry the company's own proprietary-notice header (a separate, short
+internal template, not drafted here since it is not open-source licensing).</p>
+<h2> 2. `LICENSE` / `NOTICE` structure
+<p>If MPL-2.0 is adopted, the top of the open portion's tree (i.e., `the core/`, not the repository
+root, since the repository as a whole would remain mixed — see §3) would carry:</p>
+<li>**`LICENSE`** — the full, unmodified MPL-2.0 text, linked from and matching Mozilla's the designical</li>
+<p>  copy (<https://www.mozilla.org/en-US/MPL/2.0/>). **This scaffold does not reproduce that text here**
+  per the "don't invent licence text" rule; counsel or the eventual maintainer would copy it verbatim
+  from Mozilla's site.</p>
+<li>**A healthcare disclaimer addendum**, modelled on OpenMRS's own approach of adding a</li>
+<p>  Health-Related Additional Disclaimer of Warranty and Limitation of Liability on top of MPL-2.0
+  (OpenMRS wiki: <https://openmrs.atlassian.net/wiki/spaces/RES/pages/26312431/Proposed+Adoption+of+MPL+2.0+with+Disclaimer>;
+  OpenMRS's actual license file for the exact combined form: <https://github.com/openmrs/openmrs-core/blob/master/LICENSE>).
+  Counsel would draft blueHealthcare's own version of this addendum — it should not simply copy
+  OpenMRS's wording, both because that wording is itself their copyrighted document and because
+  blueHealthcare's specific harms profile (a receipts/verification spine, not a full EHR) differs
+  from OpenMRS's.</p>
+<li>**`NOTICE`** — required practice (and, for Apache-2.0, an explicit licence requirement) for</li>
+<p>  attributions that must survive redistribution: the project's own copyright line, and the
+  third-party licence inventory described in §4 below, or a pointer to it.</p>
+<p>If AGPL-3.0 were chosen instead, the same `LICENSE` file would hold the AGPL-3.0 text
+(<https://www.gnu.org/licenses/agpl-3.0.en.html>), and the same healthcare-disclaimer addendum
+pattern would apply on top of it — Bahmni's current AGPL-3.0 licensing does not appear to carry an
+equivalent healthcare disclaimer as of this writing (unverified beyond the license pages cited in
+`the licensing analysis` §2; counsel should check Bahmni's actual repository headers directly
+if this matters).</p>
+<h2> 3. Which directories fall under it, and which stay proprietary
+<p>Based on the addendum's own stated split (`the open-source addendum` §3) and the
+actual repository layout observed at `the project/platform/core/` on 2026-09-10
+(subdirectories: `capture/`, `consent/`, `cutover/`, `events/`, `identity/`, `jurisdiction/` — with
+`us/` and `xx/` packs — `receipts/`, `record/`, `terminology/`, `trust/`), a sample split would be:</p>
+<p>| Path | Proposed licensing | Why |
+|---|---|---|
+| `the core/` (all subdirectories above) | Open (MPL-2.0 or AGPL-3.0 per counsel) | This is the receipt spine, verifier, record core, and jurisdiction interfaces the design names as the open part |
+| `the core/jurisdiction/us/` specifically | Open, but see note | Contains US-specific values; open licensing here is about the *code*, not a claim that its content (e.g. references to CPT, ICD-10-CM) is itself freely licensed — see §4 |
+| `the platform/app/`, `launcher/`, billing, tenancy, enterprise-export code | Proprietary, not publicly distributed | the design own rule: enterprise features excluded "at build time, not by a runtime licence check" (`the open-source addendum` §3) |
+| The individual commercial products (blueChart, blueClaims, blueBench, blueDelta, blueRecall, blueNull, blueCatch) | Proprietary | These are the products sold commercially; the design never proposes opening them |
+| `the core/jurisdiction/openmrs/` adapter slot | Open, once it exists | Named in the addendum (§3) as a planned interface stub; **it does not exist yet** (verified: no `openmrs`-path file found under `the core/` as of 2026-09-10) |</p>
+<p>**Important caveat, carried from the the project's design (§0.2) and the addendum itself:** `the core/` is
+documented as having a measured number of live dependencies on `app/` (117 total, 28 in production
+code per `docs/design/the boundary design`, as summarized in the brainstorm). Until that
+boundary is actually clean, "license `the core/` openly" is a *target*, not something that can be done
+today without either (a) also opening code that depends on `app/` internals, or (b) shipping a
+`the core/` that does not build stand-alone. This is an engineering precondition to publishing anything
+under whatever licence is chosen, independent of which licence counsel picks.</p>
+<h2> 4. Third-party licence inventory requirement
+<p>Any open release must ship a third-party licence inventory — a list of every dependency, its licence,
+and (for copyleft dependencies) whether its terms are compatible with the outbound licence. This is
+standard open-source hygiene, not something specific to healthcare. Two concrete facts from this
+codebase make it non-optional here:</p>
+<li>The platform already vendors a large number of third-party Python and JavaScript packages with</li>
+<p>  their own licences (spot-checked under `the platform/venv/` and `launcher/web/node_modules/` — dozens
+  of `LICENSE` files from packages like `fastapi`, `sqlalchemy`, `pydantic`, `react`, `vite`, etc.,
+  each under its own permissive licence, mostly MIT/BSD/Apache-2.0 by their filenames — **not
+  individually verified license-by-license here**; a real inventory tool (e.g. `pip-licenses`,
+  `license-checker`, or an SBOM generator) should be run before any release, not hand-compiled).</p>
+<li>**Coding-system content is a separate, sharper issue.** Standard medical coding systems referenced</li>
+<p>  by the US jurisdiction pack — CPT in particular — are themselves proprietary and licensed by their
+  publishers (the American Medical Association, for CPT). The v1.5 addendum's own design already
+  anticipates this correctly: packs should carry *identifiers/URIs* pointing at coding systems, never
+  the licensed code tables themselves (this mirrors the the project's design's contribution rule, §4.2:
+  "packs carry URIs, not code tables"). The licence inventory must explicitly confirm no licensed
+  vocabulary content (CPT, SNOMED CT, LOINC tables, etc.) is committed to the open repository, only
+  references to where an implementer can obtain a licence for those vocabularies themselves.</p>
+<p>**Recommended inventory format:** a single `THIRD_PARTY_LICENSES` (or SPDX-format SBOM) at the
+root of the open portion, generated by tooling on every release, not maintained by hand.</p>
+<h2> 5. Healthcare-specific notices — separate documents, not licence terms
+<p>These are drafted as their own short notices, not folded into the licence, because they are product
+and clinical-safety statements, not grants of rights. A licence answers "what may you do with this
+code"; these answer "what does this software claim about itself." Suggested filenames, to sit
+alongside `LICENSE` and `NOTICE`:</p>
+<li>**`NOTICE_NO_WARRANTY_CLINICAL_USE`** — states plainly that the software is provided with no</li>
+<p>  warranty of fitness for clinical use, that it has not been validated for use in patient care in any
+  jurisdiction, and that deploying it clinically is entirely the deploying institution's own
+  responsibility and risk. This is in addition to, not instead of, the licence's own standard
+  disclaimer of warranty (both MPL-2.0 §7 and AGPL-3.0 already disclaim warranty generally; this
+  notice makes the clinical-specific version explicit and prominent, matching OpenMRS's own pattern
+  of adding a health-specific disclaimer on top of a standard OSS licence).</p>
+<li>**`NOTICE_NO_AUTOMATED_DECISIONS`** — states that the software never approves, denies,</li>
+<p>  recommends, or pays anything on its own; every consequential action is taken by a named human. This
+  mirrors the two boundary sentences already used on the commercial site per the the project's design
+  (§2.4, §5): *"receipts prove process, not truth"* and *"a named human still decides."*</p>
+<li>**`NOTICE_NOT_A_MEDICAL_DEVICE`** — states that the software is not represented as, and has not</li>
+<p>  been cleared or approved as, a medical device by the FDA, the EU (MDR/IVDR or AI Act "high-risk AI
+  system" pathways), Australia's TGA, or any other regulator, and that no such claim should be
+  inferred from its use of clinical terminology or FHIR profiles.</p>
+<li>**`NOTICE_SYNTHETIC_DEMO_DATA`** — states that any demo, fixture, or example data shipped with</li>
+<p>  the software is synthetically generated and does not represent any real patient, member, claimant,
+  or clinician, matching the project's own `is_synthetic` fixture-provenance pattern described in the
+  the project's design (§4.7) and the `BH_DEMO_FIXTURES_ONLY` lock it references.</p>
+<p>Each of these should be one paragraph, plain language, and linked (not merged) from the main
+`README` of the open portion. Counsel should confirm whether any of them need to be more than a
+courtesy notice — e.g., whether a jurisdiction's law requires a specific medical-device disclaimer
+form to have legal effect (see `legal guidance` Q11).</p>
+
+
+    <div class="hc-row" style="margin-top:28px">
+      <a class="hc-cta-outline" href="/healthcare/open/licensing">Back to licensing</a>
+    </div>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on the developer's own machine — no PHI, no signed pilot, no live deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The pack model — MOBLUEHQ</title>
+<meta name="description" content="How blueHealthcare turns a country into a configuration pack: what exists in code today, and what does not yet." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/international/anywhere" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <a class="hc-brand" href="/healthcare">MOBLUE<b>HQ</b> <span style="color:var(--hc-dim);font-weight:500">/ blueHealthcare</span></a>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/international">&larr; INTERNATIONAL</a>
+    <div class="hc-eyebrow" style="margin-top:24px">The mechanism</div>
+    <h1 style="font-weight:800;font-size:34px;margin:0 0 14px">How a country becomes a pack</h1>
+    <p class="hc-sub">blueHealthcare is built so that a country is a configuration pack — never a fork. This page describes what that means today, precisely, including what is not true yet.</p>
+    <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:22px;margin:28px 0 8px"><a href="/healthcare/international">International</a><a href="/healthcare/international/germany">Germany</a><a href="/healthcare/international/australia">Australia</a><a href="/healthcare/international/saudi-arabia">Saudi Arabia</a><a href="/healthcare/international/anywhere" style="font-weight:800;color:var(--hc-ink)">The pack model</a></div>
+
+    <div class="hc-sec">What exists in code today</div>
+    <div class="hc-card">
+      <p>A jurisdiction-neutral interface (<code>JurisdictionPack</code>, plus three pluggable Protocols: <code>CodingSystem</code>, <code>PrivacyRegime</code>, <code>FhirProfile</code>) with 17 fields covering coding, privacy, FHIR profile, compliance-rule identifier, policy-pack format, payer vocabulary, currency, locale, date/number format, data-residency flags, and five additional consent-related fields. See the full field list on <a href="/healthcare/open/spec/jurisdiction-pack">the pack spec page</a>.</p>
+      <p>Two packs are registered: <code>us</code> (real — the only pack any code path uses today) and <code>xx</code> (a deliberate, empty non-US stub proving the interface doesn't assume a US answer). The loader refuses an unknown pack id outright — there is no silent fallback to <code>us</code>.</p>
+    </div>
+
+    <div class="hc-sec">What this does not mean yet</div>
+    <div class="hc-card" style="border-left:4px solid #D43A26">
+      <p><b>We do not say "switch the pack and it runs in Germany."</b> That would not be true. Here is the measured state instead:</p>
+      <ul>
+        <li>Exactly <b>one</b> place in the codebase resolves a jurisdiction pack today: the consent gate (<code>core/consent/gate.py</code>), which loads a record's own pack to answer a single question — is secondary use allowed under that record's jurisdiction.</li>
+        <li>The rest of the platform's core still reads US-specific constants directly rather than through a selected pack. A standing test greps for exactly that and is <b>deliberately red on purpose</b>: as of the product's own tracking, it finds <b>61</b> US-only tokens outside the one directory allowed to hold them (<code>core/jurisdiction/us/</code>) — unchanged across at least two build lanes.</li>
+        <li>A second standing test measures the dependency count from the platform's core to its application layer: <b>115</b> such dependencies exist today, also unchanged across at least two build lanes, and also a known, open gap rather than a finished boundary.</li>
+        <li>The addendum's own required demonstration — "switch to the <code>xx</code> stub pack and boot the app with no US strings visible" — is not reachable yet, for the same reason: there is no boot path that reads from a selected pack.</li>
+      </ul>
+      <p>We publish the migration counts, not a finish date.</p>
+    </div>
+
+    <div class="hc-sec">What "anywhere" means, mechanically</div>
+    <div class="hc-card">
+      <p>Adding a new country means a new directory under <code>core/jurisdiction/&lt;xx&gt;/</code> implementing the three Protocols and the 17 fields, then registering it by id in the pack registry. An unregistered directory does nothing — there is no filesystem-scanning magic, so a half-built pack can't silently activate.</p>
+    </div>
+
+    <div class="hc-boundary">This page describes website-depth requirements only, drawn from public information about each market. It is not legal advice, not a compliance claim, and not validated in-country. Nothing here has been reviewed by local counsel or a local regulator. The interface existing is not a claim that migration is finished, and no country is "supported" until its own page here is updated by a named steward, never by a lane's own say-so.</div>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on the developer's own machine — no PHI, no signed pilot, no live deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

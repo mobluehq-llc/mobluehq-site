@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Security & Compliance — MOBLUEHQ</title>
+<meta name="description" content="blueHealthcare security and compliance posture, stated from what is measured today, not what is aspired to." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/security" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <a class="hc-brand" href="/healthcare">MOBLUE<b>HQ</b> <span style="color:var(--hc-dim);font-weight:500">/ blueHealthcare</span></a>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare">&larr; BLUEHEALTHCARE</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Security &amp; compliance posture</div>
+    <h1 style="font-weight:800;font-size:34px;margin:0 0 14px">What's true today, stated plainly</h1>
+    <p class="hc-sub">This page states only what is measured, not what is aspired to. Where a claim isn't true yet, it says so — including here.</p>
+
+    <div class="hc-sec">Data</div>
+    <div class="hc-card">
+      <p><b>The public demo uses synthetic data only.</b> No real patient, member, or claimant information has been used in any blueHealthcare demo, screenshot, or public material.</p>
+      <p><b>No live PHI has been processed</b> by any blueHealthcare product to date, and no customer pilot is signed.</p>
+    </div>
+
+    <div class="hc-sec">Access control</div>
+    <div class="hc-card">
+      <p>The blueHealthcare launcher enforces role-based authorization: a session belongs to a named user with a role, and every access is written to an append-only, hash-chained audit log with daily signed checkpoints.</p>
+      <p>Care-team-scoped access control — restricting a user to records for patients on their own care team — is enforced for a subset of clinical record types today and is being extended to the remaining types. It is not yet enforced across every record type in the system. We report this as a work item, not a finished guarantee, until it measurably covers all of them.</p>
+      <p>A startup safety guard refuses to run the platform outside a synthetic-fixtures posture while any record type remains unenforced, so a partial rollout cannot silently reach a production-shaped deployment.</p>
+    </div>
+
+    <div class="hc-sec">Verified access, never data</div>
+    <div class="hc-card">
+      <p>blueHealthcare sells verified access to review tools — never data. No product in this line has, or plans, any surface for exchanging patient, member, or claimant records for money, in either direction.</p>
+    </div>
+
+    <div class="hc-sec">Receipts</div>
+    <div class="hc-card">
+      <p>Every product signs its output with Ed25519 and ships a standalone, dependency-light verifier that checks the signature with no server, no database, and no network connection. Tamper one byte of a signed packet and verification fails — this is a genuinely testable claim, not a marketing one.</p>
+      <p>A signed receipt proves what the software ran and recorded. It does not prove an underlying real-world claim, conclusion, or coverage determination is true.</p>
+    </div>
+
+    <div class="hc-sec">What is not true yet</div>
+    <div class="hc-card" style="border-left:4px solid #D43A26">
+      <ul>
+        <li>No SOC 2 report, HIPAA Business Associate attestation, or equivalent third-party audit exists yet.</li>
+        <li>No signed customer pilot exists yet.</li>
+        <li>No product has processed real PHI.</li>
+        <li>No non-US or community-edition deployment exists yet.</li>
+        <li>Care-team scoping does not yet cover every clinical record type (see Access control above).</li>
+      </ul>
+      <p>We would rather under-claim here than have this page say something the product can't back up.</p>
+    </div>
+
+    <div class="hc-row">
+      <a class="hc-cta-outline" href="/healthcare/contact">Ask us a question about this page</a>
+    </div>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on the developer's own machine — no PHI, no signed pilot, no live deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,218 @@
+/* blueHealthcare section stylesheet — NEW FILE, used only by pages under
+   /portfolio/bluehealthcare/, /healthcare-gate, and manuals/*.
+   Deliberately does not touch or extend /assets/style.css (blueMonster's
+   stylesheet) so this section can be reviewed, changed, or removed without
+   any risk to the blueMonster page.
+
+   Design intent (owner request, 2026-09-10): read as a healthcare company,
+   not a dev tool. Light surface, calm navy ink, generous whitespace, each
+   product tinted with its OWN Brand Law v4 color — never a single "family
+   blue" accent (Brand Law v4 rule 8). */
+
+:root {
+  --hc-ink: #0B1734;
+  --hc-ink-soft: #33405A;
+  --hc-dim: #5A6578;
+  --hc-bg: #FFFFFF;
+  --hc-bg-soft: #F6F8FB;
+  --hc-edge: #DCE4EF;
+  --hc-card: #FFFFFF;
+  --hc-primary: #14337A;   /* default = blueHealthcare primary; pages override */
+  --hc-signal: #B9FFE0;
+  --hc-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --hc-sans: "Geist", "Helvetica Neue", Inter, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body.hc-body {
+  font-family: var(--hc-sans);
+  background: var(--hc-bg);
+  color: var(--hc-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.hc-skip {
+  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.hc-skip:focus {
+  position: static; width: auto; height: auto; margin: 12px; padding: 8px 10px;
+  border-radius: 8px; border: 1px solid var(--hc-edge); background: #fff; color: #000;
+  font-family: var(--hc-mono); font-size: 12px; letter-spacing: 1px; text-decoration: none;
+}
+
+/* Nav */
+.hc-nav {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+  gap: 20px; row-gap: 10px; padding: 26px 48px; max-width: 1200px; margin: 0 auto;
+}
+.hc-nav .hc-brand { font-size: 16px; font-weight: 700; text-decoration: none; color: var(--hc-ink); }
+.hc-nav .hc-brand b { color: var(--hc-primary); }
+.hc-navlinks { display: flex; gap: 28px; font-family: var(--hc-mono); font-size: 12px; letter-spacing: 1px; flex-wrap: wrap; }
+.hc-navlinks a { text-decoration: none; color: var(--hc-dim); }
+.hc-navlinks a:hover { color: var(--hc-ink); }
+
+/* Layout */
+.hc-wrap { max-width: 980px; margin: 0 auto; padding: 8px 48px 0; }
+.hc-wrap-wide { max-width: 1200px; margin: 0 auto; padding: 8px 48px 0; }
+.hc-back {
+  font-family: var(--hc-mono); font-size: 11px; letter-spacing: 2px; color: var(--hc-dim);
+  text-decoration: none;
+}
+.hc-back:hover { color: var(--hc-ink); }
+
+/* Hero */
+.hc-hero { display: grid; grid-template-columns: 120px 1fr; gap: 36px; align-items: center; padding: 40px 0 8px; }
+.hc-hero-icon {
+  width: 100%; max-width: 96px; border-radius: 22%; display: block;
+}
+.hc-hero h1 { font-weight: 800; font-size: 40px; margin: 0 0 8px; letter-spacing: -0.01em; }
+.hc-hero h1 b { color: var(--hc-primary); }
+.hc-eyebrow {
+  font-family: var(--hc-mono); font-size: 12px; letter-spacing: 2.5px; color: var(--hc-dim);
+  text-transform: uppercase; margin-bottom: 16px;
+}
+.hc-sub { font-size: 17px; line-height: 1.7; max-width: 66ch; color: var(--hc-ink-soft); }
+
+/* Section headers */
+.hc-sec {
+  font-family: var(--hc-mono); font-size: 12px; letter-spacing: 3px; color: var(--hc-primary);
+  margin: 56px 0 20px; text-transform: uppercase;
+}
+.hc-sec::after { content: ""; display: block; width: 56px; height: 2px; background: var(--hc-primary); margin-top: 9px; }
+
+/* Cards */
+.hc-card {
+  background: var(--hc-card); border: 1px solid var(--hc-edge); border-radius: 14px;
+  padding: 26px 28px; display: flex; flex-direction: column; gap: 10px;
+}
+.hc-card p { font-size: 15px; line-height: 1.7; color: var(--hc-ink-soft); margin: 0; }
+.hc-card ul, .hc-card ol { font-size: 15px; line-height: 1.75; color: var(--hc-ink-soft); margin: 6px 0 0; padding-left: 20px; }
+.hc-card h4 { margin: 0; font-weight: 800; font-size: 18px; }
+
+.hc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+
+/* Status badges — three-tier honesty, never one undifferentiated "our products" list */
+.hc-badge {
+  display: inline-block; font-family: var(--hc-mono); font-size: 10.5px; letter-spacing: 1.4px;
+  padding: 5px 12px; border-radius: 999px; border: 1px solid; white-space: nowrap; text-transform: uppercase;
+}
+.hc-badge-flagship { color: #0B5A2E; border-color: #9FE6BE; background: #EEFBF3; }
+.hc-badge-module { color: #1A4A99; border-color: #C7DBFB; background: #EFF5FE; }
+.hc-badge-build { color: #8A5A00; border-color: #F3D89B; background: #FFF8EA; }
+.hc-badge-notbuilt { color: #7A2C2C; border-color: #F0BEBE; background: #FDF1F1; }
+/* PLANNED — a market or feature with no built code and no date. Deliberately
+   neutral gray, not flagship-green/module-blue/build-amber, so a planned
+   market can never be visually mistaken for something live. */
+.hc-badge-planned { color: #4A4E58; border-color: #D8DBE2; background: #F3F4F6; }
+
+/* Steps */
+.hc-steps { display: flex; flex-direction: column; gap: 18px; }
+.hc-step { display: flex; gap: 16px; }
+.hc-step > .hc-step-n {
+  flex: 0 0 auto; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
+  background: var(--hc-primary); color: white; border-radius: 50%; font-family: var(--hc-mono);
+  font-size: 12px; font-weight: 700;
+}
+.hc-step > .hc-step-t { padding-top: 4px; font-size: 15px; line-height: 1.65; color: var(--hc-ink-soft); }
+
+/* Receipt / boundary callouts */
+.hc-boundary {
+  border: 1px solid var(--hc-edge); border-radius: 12px; padding: 24px; background: var(--hc-bg-soft);
+  margin: 40px 0; font-size: 14.5px; line-height: 1.7; color: var(--hc-ink-soft);
+}
+.hc-boundary b { color: var(--hc-ink); }
+
+/* Status table — wrap in an overflow-x:auto container on narrow viewports
+   rather than letting the page itself scroll sideways. */
+.hc-table-scroll { overflow-x: auto; }
+.hc-status-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 480px; }
+.hc-status-table th, .hc-status-table td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--hc-edge); }
+.hc-status-table th { font-family: var(--hc-mono); font-size: 11px; letter-spacing: 1.2px; color: var(--hc-dim); text-transform: uppercase; }
+
+/* Product picker on the hub/overview pages */
+.hc-product-card {
+  display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit;
+  background: var(--hc-card); border: 1px solid var(--hc-edge); border-radius: 14px; padding: 22px 24px;
+  transition: border-color .15s, transform .15s;
+}
+.hc-product-card:hover { border-color: var(--hc-card-accent, var(--hc-primary)); transform: translateY(-2px); }
+.hc-product-card h4 { margin: 0; font-size: 17px; font-weight: 800; }
+.hc-product-card p { margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--hc-dim); }
+
+/* CTA buttons */
+.hc-cta {
+  display: inline-block; font-family: var(--hc-mono); font-size: 13px; letter-spacing: 1.6px;
+  text-decoration: none; color: #fff; background: var(--hc-primary); padding: 13px 24px;
+  border-radius: 8px; font-weight: 700; text-transform: uppercase;
+}
+.hc-cta-outline {
+  display: inline-block; font-family: var(--hc-mono); font-size: 13px; letter-spacing: 1.6px;
+  text-decoration: none; color: var(--hc-primary); background: transparent; border: 1.5px solid var(--hc-primary);
+  padding: 11.5px 22px; border-radius: 8px; font-weight: 700; text-transform: uppercase;
+}
+.hc-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 24px; }
+.hc-meta {
+  font-family: var(--hc-mono); font-size: 11.5px; color: var(--hc-dim); letter-spacing: .6px;
+  margin-top: 14px; line-height: 1.8;
+}
+
+/* Manual TOC + screenshot placeholders */
+.hc-toc { display: flex; flex-direction: column; gap: 8px; }
+.hc-toc a { text-decoration: none; color: var(--hc-primary); font-size: 15px; }
+.hc-shot-todo {
+  border: 1.5px dashed var(--hc-edge); border-radius: 10px; padding: 34px 20px; text-align: center;
+  color: var(--hc-dim); font-family: var(--hc-mono); font-size: 12px; letter-spacing: .6px; background: var(--hc-bg-soft);
+  margin: 10px 0 22px;
+}
+
+details.hc-details { border: 1px solid var(--hc-edge); border-radius: 10px; padding: 20px 24px; margin-bottom: 14px; }
+details.hc-details summary { cursor: pointer; font-weight: 800; font-size: 15px; color: var(--hc-ink); margin-bottom: 8px; }
+details.hc-details p, details.hc-details li { font-size: 14.5px; line-height: 1.7; color: var(--hc-ink-soft); }
+details.hc-details ol, details.hc-details ul { padding-left: 20px; margin: 6px 0 14px; }
+
+code { font-family: var(--hc-mono); background: var(--hc-bg-soft); border-radius: 4px; padding: 1px 5px; font-size: 13px; }
+pre {
+  font-family: var(--hc-mono); background: var(--hc-bg-soft); border: 1px solid var(--hc-edge);
+  border-radius: 8px; padding: 14px 16px; font-size: 13px; line-height: 1.6;
+  white-space: pre-wrap; word-break: break-word; overflow-wrap: anywhere; overflow-x: auto; max-width: 100%;
+}
+pre code { background: none; padding: 0; }
+
+/* Footer */
+.hc-footer { border-top: 1px solid var(--hc-edge); margin-top: 90px; padding: 44px 48px; font-family: var(--hc-mono); font-size: 12px; letter-spacing: 1px; }
+.hc-footer-in { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; color: var(--hc-dim); }
+.hc-footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.hc-footer-links a { text-decoration: none; color: var(--hc-dim); }
+.hc-footer-links a:hover { color: var(--hc-ink); }
+.hc-footer-disclaimer {
+  max-width: 1200px; margin: 20px auto 0; padding-top: 18px; border-top: 1px solid var(--hc-edge);
+  font-family: var(--hc-sans); font-size: 12px; line-height: 1.65; letter-spacing: 0; color: var(--hc-dim);
+}
+.hc-footer-disclaimer p { margin: 0 0 8px; }
+.hc-footer-disclaimer strong { color: var(--hc-ink); font-weight: 600; }
+.hc-footer-disclaimer a { color: var(--hc-primary); text-decoration: underline; }
+
+/* Gate form (own copy — mirrors demo.html's pattern, light not dark) */
+.hc-gate-form { display: flex; flex-direction: column; gap: 18px; margin-top: 8px; max-width: 360px; }
+.hc-gate-input {
+  width: 100%; background: #fff; border: 1px solid var(--hc-edge); color: var(--hc-ink);
+  font-family: var(--hc-mono); font-size: 14px; padding: 14px 16px; border-radius: 12px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.hc-gate-input:hover { border-color: #B9C6DA; }
+.hc-gate-input:focus { outline: none; border-color: var(--hc-primary); box-shadow: 0 0 0 3px rgba(20,51,122,.12); }
+.hc-gate-error { color: #B23A3A; font-family: var(--hc-mono); font-size: 12px; letter-spacing: .4px; min-height: 1.2em; }
+
+@media (max-width: 760px) {
+  .hc-nav, .hc-wrap, .hc-wrap-wide, .hc-footer { padding-left: 20px; padding-right: 20px; }
+  .hc-hero { grid-template-columns: 84px 1fr; gap: 20px; }
+  .hc-hero h1 { font-size: 30px; }
+}
+@media (max-width: 480px) {
+  .hc-navlinks { gap: 16px; font-size: 11px; }
+  .hc-hero { grid-template-columns: 1fr; }
+  .hc-hero-icon { max-width: 72px; }
+}
+code, .hc-step, .hc-step *, .hc-steps, details, details * { overflow-wrap: anywhere; word-break: break-word; }
+.hc-steps, .hc-step, .hc-step > div, .hc-card, details { min-width: 0; }

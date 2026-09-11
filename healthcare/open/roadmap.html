@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Roadmap — blueOpenHealthcare — MOBLUEHQ</title>
+<meta name="description" content="What's built, measured, and not yet, for the open spine of blueHealthcare, in plain words." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/open/roadmap" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <a class="hc-brand" href="/healthcare">MOBLUE<b>HQ</b> <span style="color:var(--hc-dim);font-weight:500">/ blueHealthcare</span></a>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/open">&larr; OPEN</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Roadmap</div>
+    <h1 style="font-weight:800;font-size:32px;margin:0 0 14px">What's built, what's measured, what isn't</h1>
+    <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack">Spec</a><a href="/healthcare/open/contribute">Contribute</a><a href="/healthcare/open/fixtures">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap" style="font-weight:800;color:var(--hc-ink)">Roadmap</a><a href="/healthcare/open/community">Community</a></div>
+    
+    <p class="hc-sub">This page mirrors the platform's own named-gaps tracking, in plain words. See <a href="/healthcare/status">the commercial suite's status page</a> for the seven-product met/not-met/not-measured counts — this page is about the shared spine underneath them.</p>
+
+    <div class="hc-sec">Built and falsified</div>
+    <div class="hc-card">
+      <ul>
+        <li>The jurisdiction-neutral pack interface (17 fields, three Protocols) and two registered packs (<code>us</code> real, <code>xx</code> a deliberate empty stub).</li>
+        <li>A consent gate that reads a record's own pack to decide whether secondary use is allowed — the one real caller of the pack loader today.</li>
+        <li>A capture-gating mechanism that refuses to enable without a valid, unexpired, jurisdiction-matched approval, and an exporter that never returns a raw record.</li>
+        <li>A standing scanner that fails the build if a surface for exchanging patient records for money — in any shape — is added anywhere in the codebase.</li>
+      </ul>
+    </div>
+
+    <div class="hc-sec">Measured, still open</div>
+    <div class="hc-card" style="border-left:4px solid #8A5A00">
+      <ul>
+        <li><b>61</b> US-only tokens remain outside the one directory allowed to hold them — a standing test is deliberately red until they're migrated.</li>
+        <li><b>115</b> dependencies run from the platform's core into its application layer — a standing test is deliberately red until that boundary closes.</li>
+        <li>No i18n scaffold exists in either web application yet — glossary work can start as text; string files wait for it.</li>
+        <li><code>make community</code> does not exist in the platform's Makefile yet.</li>
+        <li>The <code>openmrs/</code> integration slot named in the addendum has not been created.</li>
+      </ul>
+    </div>
+
+    <div class="hc-sec">Not started</div>
+    <div class="hc-card">
+      <ul>
+        <li>A chosen licence and inbound contribution terms (counsel's decision).</li>
+        <li>A public repository of any kind.</li>
+        <li>A funded community-edition maintainer.</li>
+      </ul>
+    </div>
+
+    <div class="hc-boundary">Every number on this page is measured against the platform's own tests and tracking files, not estimated. Where a lane's own file doesn't state a number, this page doesn't invent one.</div>
+
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on the developer's own machine — no PHI, no signed pilot, no live deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueCatch Manual — MOBLUEHQ</title>
+<meta name="description" content="blueCatch user manual: getting started, screens, and known gaps." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/manuals/bluecatch" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #006B45; --hc-ink: #0B1324; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <a class="hc-brand" href="/healthcare">MOBLUE<b>HQ</b> <span style="color:var(--hc-dim);font-weight:500">/ blueHealthcare</span></a>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/manuals">&larr; MANUALS</a>
+    <div class="hc-hero" style="padding-top:24px">
+      <img class="hc-hero-icon" alt="blueCatch" src="/assets/logos/healthcare/bluecatch/icon.svg" />
+      <div>
+        <h1 style="font-size:32px;margin:0 0 6px">blue<b>Catch</b> manual</h1>
+        <p class="hc-sub" style="font-size:15px">Blinds seeded error cases into a real review queue, imports the reviewer's actual decisions, and signs a scorecard of per-class catch rates with confidence intervals — scoring the process, never a named reviewer.</p>
+      </div>
+    </div>
+
+    <div class="hc-sec">What this product is and is not</div>
+    <div class="hc-card"><p><b>Is:</b> What a review process actually catches.</p><p><b>Is not:</b> Not a live covert-seeding tool, not an employee-surveillance product, and it never touches medical, legal, or financial production records.</p></div>
+
+    <div class="hc-sec">Who uses it</div>
+    <div class="hc-card"><p>Quality and review-assurance leads.</p></div>
+
+    <div class="hc-sec">Getting started — the local demo</div>
+    <div class="hc-card">
+      <p>From the product's own repository:</p>
+      <pre><code>make demo
+make demo-ui   # to see the scored project in the web UI</code></pre>
+      <p>This runs entirely offline against synthetic fixtures and exits non-zero on any mismatch. It does not connect to any production data source.</p>
+    </div>
+
+    <div class="hc-sec">Screen-by-screen walkthrough</div>
+    <div class="hc-toc"><a href="#">Blinded review queue export</a><a href="#">Scorecard — per-class catch rates with confidence intervals</a></div>
+    <div class="hc-shot-todo"><!-- SCREENSHOT TODO: blueCatch — Blinded review queue export --></div><div class="hc-shot-todo"><!-- SCREENSHOT TODO: blueCatch — Scorecard — per-class catch rates with confidence intervals --></div>
+
+    <div class="hc-sec">What a receipt proves</div>
+    <div class="hc-boundary">A signed receipt proves what blueCatch ran and recorded; it does not prove an underlying real-world claim is true. Anyone can check the signature offline with the standalone verifier shipped alongside the product, without installing blueCatch itself.</div>
+
+    <div class="hc-sec">Known gaps, stated plainly</div>
+    <div class="hc-card"><ul><li>Scores a process, never a named reviewer, by design.</li></ul></div>
+
+    <div class="hc-sec">FAQ</div>
+    <details class="hc-details"><summary>Does blueCatch make the decision for me?</summary><p>No. Not a live covert-seeding tool, not an employee-surveillance product, and it never touches medical, legal, or financial production records.</p></details>
+    <details class="hc-details"><summary>Does blueCatch replace the system I already use?</summary><p>No — it is an overlay. Your existing record system, LIMS, or claims platform stays exactly where it is.</p></details>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on the developer's own machine — no PHI, no signed pilot, no live deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

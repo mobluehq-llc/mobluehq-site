@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Status, measured — MOBLUEHQ</title>
+<meta name="description" content="blueHealthcare status: met / not met / not measured, per product, per criterion, each sourced from that product's own status file." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/status" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <a class="hc-brand" href="/healthcare">MOBLUE<b>HQ</b> <span style="color:var(--hc-dim);font-weight:500">/ blueHealthcare</span></a>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap-wide">
+    <a class="hc-back" href="/healthcare">&larr; BLUEHEALTHCARE</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Status, measured</div>
+    <h1 style="font-weight:800;font-size:34px;margin:0 0 14px">What's actually true, per product, per criterion</h1>
+    <p class="hc-sub">Three counts, never one score: <b>met</b>, <b>not met</b>, and <b>not measured</b> — reported this way on purpose, because a single percentage hides which kind of unknown you're looking at. Every cell below traces to an exact, dated, quoted line in that product's own <code>MVP_STATUS.md</code>, a file this site does not edit and did not write. Where that file doesn't clearly say, this page says "not measured" rather than guess.</p>
+
+    <div class="hc-sec">The nine criteria</div>
+    <div class="hc-card"><ol><li>Backend/unit test suite passes with 0 failures</li><li>Frontend/UI test suite passes</li><li>Lint is clean</li><li>Typecheck is clean</li><li>`make demo` succeeds</li><li>`make verify-demo` / tamper battery rejects every tamper vector</li><li>A signed customer pilot exists</li><li>Live/real PHI has been processed</li><li>A non-US or community-edition deployment exists</li></ol>
+    <p class="hc-meta">Applied the same way to every product. A "not measured" criterion isn't a failure — it means the product's own status file doesn't address it either way, so this page doesn't invent an answer.</p></div>
+
+    <div class="hc-sec">Per product</div>
+    <div class="hc-table-scroll">
+    <table class="hc-status-table">
+      <tr><th>Product</th><th>Met</th><th>Not met</th><th>Not measured</th><th>Measured</th><th>Source</th></tr>
+      <tr>
+      <td><a href="/healthcare/bluechart">blueChart</a></td>
+      <td>6</td><td>2</td><td>1</td>
+      <td>2026-09-05</td>
+      <td><code>blueChart/MVP_STATUS.md</code></td>
+    </tr><tr>
+      <td><a href="/healthcare/blueclaims">blueClaims</a></td>
+      <td>6</td><td>1</td><td>2</td>
+      <td>2026-09-05</td>
+      <td><code>blueClaims/MVP_STATUS.md</code></td>
+    </tr><tr>
+      <td><a href="/healthcare/bluebench">blueBench</a></td>
+      <td>5</td><td>1</td><td>3</td>
+      <td>2026-09-05</td>
+      <td><code>blueBench/MVP_STATUS.md</code></td>
+    </tr><tr>
+      <td><a href="/healthcare/bluedelta">blueDelta</a></td>
+      <td>4</td><td>1</td><td>4</td>
+      <td>2026-09-08</td>
+      <td><code>blueDelta/MVP_STATUS.md</code></td>
+    </tr><tr>
+      <td><a href="/healthcare/bluerecall">blueRecall</a></td>
+      <td>6</td><td>0</td><td>3</td>
+      <td>2026-09-05</td>
+      <td><code>blueRecall/MVP_STATUS.md</code></td>
+    </tr><tr>
+      <td><a href="/healthcare/bluenull">blueNull</a></td>
+      <td>6</td><td>0</td><td>3</td>
+      <td>2026-09-05</td>
+      <td><code>blueNull/MVP_STATUS.md</code></td>
+    </tr><tr>
+      <td><a href="/healthcare/bluecatch">blueCatch</a></td>
+      <td>6</td><td>0</td><td>3</td>
+      <td>2026-09-05</td>
+      <td><code>blueCatch/MVP_STATUS.md</code></td>
+    </tr>
+    </table>
+    </div>
+    <p class="hc-meta">Source files are each product's own repository, read-only, not published alongside this site. Dates are the most recent dated entry in that file addressing the criteria above, not the file's overall last-edit date.</p>
+
+    <div class="hc-sec">Per-criterion detail, with citations</div>
+    
+    <details class="hc-details">
+      <summary>blueChart — 6 met / 2 not met / 1 not measured (measured 2026-09-05)</summary>
+      <div class="hc-table-scroll"><table class="hc-status-table">
+        <tr><th>Criterion</th><th>Status</th><th>Evidence</th></tr>
+        <tr><td>Backend/unit test suite passes with 0 failures</td><td><b>MET</b></td><td>““215 passed, 3 deselected (perf marker), 0 failed”” (line 30)</td></tr><tr><td>Frontend/UI test suite passes</td><td><b>MET</b></td><td>“Playwright 18/18 clean” (line 992, dated 2026-09-02)</td></tr><tr><td>Lint is clean</td><td><b>MET</b></td><td>““All checks passed” (ruff)” (line 32)</td></tr><tr><td>Typecheck is clean</td><td><b>MET</b></td><td>““Success: no issues found in 22 source files” (mypy)” (line 33)</td></tr><tr><td>`make demo` succeeds</td><td><b>MET</b></td><td>““SUCCESS — verdict matches golden expectation”” (lines 34-35)</td></tr><tr><td>`make verify-demo` / tamper battery rejects every tamper vector</td><td><b>MET</b></td><td>““all 14 tamper mutations rejected”” (lines 36-37)</td></tr><tr><td>A signed customer pilot exists</td><td><b>NOT MET</b></td><td>“framed as the still-open next falsifier — a real reviewer running a real chart has not happened” (lines 1035-1036, dated 2026-09-02)</td></tr><tr><td>Live/real PHI has been processed</td><td><b>NOT MET</b></td><td>“every run is against synthetic data (golden fixture + seeded demo library)” (lines 658-659, dated 2026-09-02)</td></tr><tr><td>A non-US or community-edition deployment exists</td><td><b>NOT MEASURED</b></td><td>“no statement anywhere in the file” (—)</td></tr>
+      </table></div>
+    </details>
+    <details class="hc-details">
+      <summary>blueClaims — 6 met / 1 not met / 2 not measured (measured 2026-09-05)</summary>
+      <div class="hc-table-scroll"><table class="hc-status-table">
+        <tr><th>Criterion</th><th>Status</th><th>Evidence</th></tr>
+        <tr><td>Backend/unit test suite passes with 0 failures</td><td><b>MET</b></td><td>““135 passed, 3 skipped” (pre-existing, unrelated gap)” (line 671)</td></tr><tr><td>Frontend/UI test suite passes</td><td><b>MET</b></td><td>“vitest: “3 files, 10 tests passed”” (line 672)</td></tr><tr><td>Lint is clean</td><td><b>MET</b></td><td>“ruff + eslint --max-warnings 0 both clean” (line 673)</td></tr><tr><td>Typecheck is clean</td><td><b>MET</b></td><td>“mypy clean on 46 files; tsc -b clean” (line 674)</td></tr><tr><td>`make demo` succeeds</td><td><b>MET</b></td><td>“PASS both lanes (P&C, health)” (line 675)</td></tr><tr><td>`make verify-demo` / tamper battery rejects every tamper vector</td><td><b>MET</b></td><td>“PASS, 16/16 checks (genuine + 7 mutations × 2 lanes)” (line 678)</td></tr><tr><td>A signed customer pilot exists</td><td><b>NOT MEASURED</b></td><td>“the word “pilot” never appears; only a hypothetical future scenario is discussed” (lines 451, 460)</td></tr><tr><td>Live/real PHI has been processed</td><td><b>NOT MET</b></td><td>“every project defaults `is_synthetic=True`; a synthetic-data notice is forced onto every export/UI surface” (lines 478-484)</td></tr><tr><td>A non-US or community-edition deployment exists</td><td><b>NOT MEASURED</b></td><td>“no mention anywhere in the file” (—)</td></tr>
+      </table></div>
+    </details>
+    <details class="hc-details">
+      <summary>blueBench — 5 met / 1 not met / 3 not measured (measured 2026-09-05)</summary>
+      <div class="hc-table-scroll"><table class="hc-status-table">
+        <tr><th>Criterion</th><th>Status</th><th>Evidence</th></tr>
+        <tr><td>Backend/unit test suite passes with 0 failures</td><td><b>MET</b></td><td>““170 passed”” (line 393)</td></tr><tr><td>Frontend/UI test suite passes</td><td><b>NOT MET</b></td><td>““not written; ... there is no regression net for future frontend changes”” (line 145)</td></tr><tr><td>Lint is clean</td><td><b>MET</b></td><td>““All checks passed”” (line 377)</td></tr><tr><td>Typecheck is clean</td><td><b>MET</b></td><td>““Success, 55 source files”” (line 378)</td></tr><tr><td>`make demo` succeeds</td><td><b>MET</b></td><td>“re-verified at the new path” (lines 391-393)</td></tr><tr><td>`make verify-demo` / tamper battery rejects every tamper vector</td><td><b>MET</b></td><td>“2 genuine receipts + all 13 tamper mutations pass” (lines 391-393)</td></tr><tr><td>A signed customer pilot exists</td><td><b>NOT MEASURED</b></td><td>““customer” appears only as a hypothetical usability exercise, never a signed pilot” (line 166)</td></tr><tr><td>Live/real PHI has been processed</td><td><b>NOT MEASURED</b></td><td>“the file never states either way; only synthetic-fixture flagging is discussed” (—)</td></tr><tr><td>A non-US or community-edition deployment exists</td><td><b>NOT MEASURED</b></td><td>“no mention anywhere in the file” (—)</td></tr>
+      </table></div>
+    </details>
+    <details class="hc-details">
+      <summary>blueDelta — 4 met / 1 not met / 4 not measured (measured 2026-09-08)</summary>
+      <div class="hc-table-scroll"><table class="hc-status-table">
+        <tr><th>Criterion</th><th>Status</th><th>Evidence</th></tr>
+        <tr><td>Backend/unit test suite passes with 0 failures</td><td><b>NOT MEASURED</b></td><td>“latest entry states “361 backend tests (was 348)” without restating pass/fail, leaving an earlier same-week “1 failed” unresolved” (lines 73-74, 302-303)</td></tr><tr><td>Frontend/UI test suite passes</td><td><b>MET</b></td><td>““51/51 vitest”” (line 303)</td></tr><tr><td>Lint is clean</td><td><b>MET</b></td><td>““ruff/mypy/eslint/tsc clean”” (line 303)</td></tr><tr><td>Typecheck is clean</td><td><b>MET</b></td><td>““ruff/mypy/eslint/tsc clean”” (line 303)</td></tr><tr><td>`make demo` succeeds</td><td><b>MET</b></td><td>““`make demo`/`make verify-demo` pass”” (line 303)</td></tr><tr><td>`make verify-demo` / tamper battery rejects every tamper vector</td><td><b>NOT MEASURED</b></td><td>“an earlier entry says 12 tamper vectors, a later one 13, without a single reconciled count” (lines 78-79, 93)</td></tr><tr><td>A signed customer pilot exists</td><td><b>NOT MET</b></td><td>“the “Next customer falsifier” section frames a real customer's file as the next, not-yet-attempted, thing that would break the tool” (lines 282-290)</td></tr><tr><td>Live/real PHI has been processed</td><td><b>NOT MEASURED</b></td><td>“the string “PHI” does not appear anywhere in the file” (—)</td></tr><tr><td>A non-US or community-edition deployment exists</td><td><b>NOT MEASURED</b></td><td>“no mention anywhere in the file” (—)</td></tr>
+      </table></div>
+    </details>
+    <details class="hc-details">
+      <summary>blueRecall — 6 met / 0 not met / 3 not measured (measured 2026-09-05)</summary>
+      <div class="hc-table-scroll"><table class="hc-status-table">
+        <tr><th>Criterion</th><th>Status</th><th>Evidence</th></tr>
+        <tr><td>Backend/unit test suite passes with 0 failures</td><td><b>MET</b></td><td>““315 passed, 2 skipped”” (lines 518-519)</td></tr><tr><td>Frontend/UI test suite passes</td><td><b>MET</b></td><td>“frontend “99/99”” (line 499)</td></tr><tr><td>Lint is clean</td><td><b>MET</b></td><td>“ruff + eslint both clean” (line 500)</td></tr><tr><td>Typecheck is clean</td><td><b>MET</b></td><td>“mypy clean on 34 + 13 files” (lines 501-502)</td></tr><tr><td>`make demo` succeeds</td><td><b>MET</b></td><td>“re-verified at the new path” (lines 515-518)</td></tr><tr><td>`make verify-demo` / tamper battery rejects every tamper vector</td><td><b>MET</b></td><td>“genuine receipt + all 14 tamper mutations pass” (lines 516-518)</td></tr><tr><td>A signed customer pilot exists</td><td><b>NOT MEASURED</b></td><td>“never mentions a customer pilot anywhere in the file” (—)</td></tr><tr><td>Live/real PHI has been processed</td><td><b>NOT MEASURED</b></td><td>“never mentions PHI; all runs described use synthetic/demo fixtures” (line 454)</td></tr><tr><td>A non-US or community-edition deployment exists</td><td><b>NOT MEASURED</b></td><td>“no mention anywhere in the file” (—)</td></tr>
+      </table></div>
+    </details>
+    <details class="hc-details">
+      <summary>blueNull — 6 met / 0 not met / 3 not measured (measured 2026-09-05)</summary>
+      <div class="hc-table-scroll"><table class="hc-status-table">
+        <tr><th>Criterion</th><th>Status</th><th>Evidence</th></tr>
+        <tr><td>Backend/unit test suite passes with 0 failures</td><td><b>MET</b></td><td>““180 passed, 1 skipped (backend)”” (lines 446-447)</td></tr><tr><td>Frontend/UI test suite passes</td><td><b>MET</b></td><td>“frontend “28/28”” (line 447)</td></tr><tr><td>Lint is clean</td><td><b>MET</b></td><td>“ruff + eslint --max-warnings 0 both clean” (line 416)</td></tr><tr><td>Typecheck is clean</td><td><b>MET</b></td><td>“mypy clean on 31 files; tsc --noEmit clean” (line 417)</td></tr><tr><td>`make demo` succeeds</td><td><b>MET</b></td><td>“both PASS (36 tests)” (lines 445-446)</td></tr><tr><td>`make verify-demo` / tamper battery rejects every tamper vector</td><td><b>MET</b></td><td>“12-class tamper battery + E8 untrusted-signer vector, standalone verifier, all pass” (lines 445-446)</td></tr><tr><td>A signed customer pilot exists</td><td><b>NOT MEASURED</b></td><td>“the word “pilot” does not appear anywhere in the file” (—)</td></tr><tr><td>Live/real PHI has been processed</td><td><b>NOT MEASURED</b></td><td>“never uses the term PHI; data described is explicitly synthetic” (lines 307-308)</td></tr><tr><td>A non-US or community-edition deployment exists</td><td><b>NOT MEASURED</b></td><td>“no mention anywhere in the file” (—)</td></tr>
+      </table></div>
+    </details>
+    <details class="hc-details">
+      <summary>blueCatch — 6 met / 0 not met / 3 not measured (measured 2026-09-05)</summary>
+      <div class="hc-table-scroll"><table class="hc-status-table">
+        <tr><th>Criterion</th><th>Status</th><th>Evidence</th></tr>
+        <tr><td>Backend/unit test suite passes with 0 failures</td><td><b>MET</b></td><td>““164 passed, 1 skipped (backend)”” (lines 464-465)</td></tr><tr><td>Frontend/UI test suite passes</td><td><b>MET</b></td><td>“frontend “40/40”” (line 465)</td></tr><tr><td>Lint is clean</td><td><b>MET</b></td><td>“ruff + eslint --max-warnings 0 both clean” (line 435)</td></tr><tr><td>Typecheck is clean</td><td><b>MET</b></td><td>“mypy clean on 38 files; tsc --noEmit clean” (line 436)</td></tr><tr><td>`make demo` succeeds</td><td><b>MET</b></td><td>“both PASS” (line 463)</td></tr><tr><td>`make verify-demo` / tamper battery rejects every tamper vector</td><td><b>MET</b></td><td>“16 tamper/adversarial + 3 untrusted-signer + 4 standalone self-containment tests” (lines 463-464)</td></tr><tr><td>A signed customer pilot exists</td><td><b>NOT MEASURED</b></td><td>“no occurrence of “pilot”, “customer” or a signed agreement” (—)</td></tr><tr><td>Live/real PHI has been processed</td><td><b>NOT MEASURED</b></td><td>“never mentions PHI; closest is a per-project is_synthetic default-True flag” (line 328)</td></tr><tr><td>A non-US or community-edition deployment exists</td><td><b>NOT MEASURED</b></td><td>“no mention anywhere in the file” (—)</td></tr>
+      </table></div>
+    </details>
+
+    <div class="hc-boundary">
+      <b>What this page is not.</b> It is not a completion percentage, a launch date, or a claim that a product is ready for a pilot. "Met" means a specific, testable thing was true as of a specific date in that product's own build log — nothing more. See each product's own page for what it does and does not do.
+    </div>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on the developer's own machine — no PHI, no signed pilot, no live deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

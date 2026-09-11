@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueHealthcare Overview — MOBLUEHQ</title>
+<meta name="description" content="The blueHealthcare suite: an overlay that produces a signed, verifiable record of what a review process actually checked." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/overview" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <a class="hc-brand" href="/healthcare">MOBLUE<b>HQ</b> <span style="color:var(--hc-dim);font-weight:500">/ blueHealthcare</span></a>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare">&larr; BLUEHEALTHCARE</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Overview</div>
+    <h1 style="font-weight:800;font-size:36px;margin:0 0 14px">The missing layer between a decision and the record that defends it</h1>
+    <p class="hc-sub">Healthcare decisions are getting easier to automate and harder to defend after the fact — in an appeal, an audit, or a dispute. The missing artifact usually isn't a smarter answer. It's a defensible record of the process that produced the answer: what was checked, what wasn't, and why.</p>
+
+    <div class="hc-sec">What blueHealthcare is</div>
+    <div class="hc-card">
+      <p>An overlay that sits above the systems already in place — the EHR, the payer stack, the LIMS — and produces a signed, offline-verifiable receipt of what a review actually checked. It never replaces the EHR, the payer system, or clinical authority. <b>A named human remains the only decision authority</b> for every product in the suite.</p>
+    </div>
+
+    <div class="hc-sec">"None found" is not the same as "I could not look"</div>
+    <div class="hc-card">
+      <p>The suite's shared mechanism is a typed coverage ledger: every requirement or evidence gap is marked <b>searched and absent</b>, <b>never searched</b>, or <b>undetectable with these records</b> — never one undifferentiated "not found." A denial, a refused license, or a missed error class can be checked against what the review actually had the ability to see.</p>
+    </div>
+
+    <div class="hc-sec">The suite</div>
+    <p style="color:var(--hc-ink-soft);max-width:70ch;line-height:1.7">Two flagship products, in active demo-ready build, and five lab-integrity modules, one tier earlier in build depth. All seven share one signed-receipt foundation and one offline verifier design.</p>
+    <div class="hc-table-scroll">
+    <table class="hc-status-table" style="margin-top:10px">
+      <tr><th>Product</th><th>Job</th><th>Tier</th></tr>
+      <tr><td><a href="/healthcare/bluechart">blueChart</a></td><td>Utilization-management evidence mapper</td><td><span class="hc-badge hc-badge-flagship">Flagship</span></td></tr>
+      <tr><td><a href="/healthcare/blueclaims">blueClaims</a></td><td>Claims shadow-review, health + P&amp;C lanes</td><td><span class="hc-badge hc-badge-flagship">Flagship</span></td></tr>
+      <tr><td><a href="/healthcare/bluebench">blueBench</a></td><td>Experiment preflight gate</td><td><span class="hc-badge hc-badge-module">Module</span></td></tr>
+      <tr><td><a href="/healthcare/bluedelta">blueDelta</a></td><td>Manifest diff and candidate minimization</td><td><span class="hc-badge hc-badge-module">Module</span></td></tr>
+      <tr><td><a href="/healthcare/bluerecall">blueRecall</a></td><td>Reverse impact when an input goes bad</td><td><span class="hc-badge hc-badge-module">Module</span></td></tr>
+      <tr><td><a href="/healthcare/bluenull">blueNull</a></td><td>Could the experiment have seen the effect?</td><td><span class="hc-badge hc-badge-module">Module</span></td></tr>
+      <tr><td><a href="/healthcare/bluecatch">blueCatch</a></td><td>What does a review process actually catch?</td><td><span class="hc-badge hc-badge-module">Module</span></td></tr>
+      <tr><td><a href="/healthcare/bluesource">blueSource</a></td><td>Cryptographic eSource for clinical trials</td><td><span class="hc-badge hc-badge-module">Module</span></td></tr>
+    </table>
+    </div>
+    <p class="hc-meta">A shared launcher composes these products behind one entitlement file and one switcher — see the <a href="/healthcare/manuals">blueHealthcare platform manual</a>. Several products named in earlier pitch material — including a lab-discovery and a consumer offering — are not yet built and are intentionally left off this list.</p>
+
+    <div class="hc-sec">Where blueHealthcare is today</div>
+    <div class="hc-card">
+      <p><b>Built and demo-ready:</b> blueChart and blueClaims, both with full test suites, a working UI, and a standalone offline verifier.</p>
+      <p><b>In active build:</b> the five lab-integrity modules — real engines and demos exist for each; see each product's own page for what's measured today.</p>
+      <p><b>Not yet true, stated plainly:</b> no pilot is signed, no live PHI has been processed, and there is no non-US or community-edition deployment.</p>
+    </div>
+
+    <div class="hc-boundary">
+      <b>Receipts prove process, not truth.</b> A signed receipt proves what a blueHealthcare product ran and recorded — it does not prove that an underlying real-world claim, conclusion, or coverage determination is true. No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything.
+    </div>
+
+    <div class="hc-row">
+      <a class="hc-cta" href="/healthcare/security">Read the security &amp; compliance page</a>
+      <a class="hc-cta-outline" href="/healthcare/contact">Talk to us</a>
+    </div>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on the developer's own machine — no PHI, no signed pilot, no live deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

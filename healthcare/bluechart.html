@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueChart — MOBLUEHQ</title>
+<meta name="description" content="blueChart: Utilization-management evidence mapper." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/bluechart" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #0066E6; --hc-ink: #0B1734; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <a class="hc-brand" href="/healthcare">MOBLUE<b>HQ</b> <span style="color:var(--hc-dim);font-weight:500">/ blueHealthcare</span></a>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare">&larr; BLUEHEALTHCARE</a>
+    <div class="hc-hero">
+      <img class="hc-hero-icon" alt="blueChart" src="/assets/logos/healthcare/bluechart/icon.svg" />
+      <div>
+        <h1>blue<b>Chart</b></h1>
+        <div class="hc-eyebrow">Utilization-management evidence mapper</div>
+        <p class="hc-sub">Maps a coverage requirement to the exact chart evidence that supports, contradicts, or never addresses it — then hands a human medical director a signed packet, not a verdict.</p>
+        <div class="hc-row">
+          <span class="hc-badge hc-badge-flagship">Flagship — demo-ready</span>
+        </div>
+        <div class="hc-row">
+          <a class="hc-cta" href="/healthcare/contact?product=bluechart">Request a pilot conversation</a>
+          <a class="hc-cta-outline" href="/healthcare/manuals/bluechart">Read the manual</a>
+        </div>
+        <div class="hc-meta">Runs locally &middot; CLI or web UI &middot; Ed25519-signed receipts &middot; no cloud account required</div>
+      </div>
+    </div>
+
+    <div class="hc-sec">Who it's for</div>
+    <div class="hc-card"><p>Medical directors and UM reviewers at a health plan or delegated UM vendor.</p></div>
+
+    <div class="hc-sec">What it is not</div>
+    <div class="hc-card"><p>blueChart never approves, denies, recommends, or alters coverage. It is not a prior-authorization decision engine.</p></div>
+
+    <div class="hc-sec">How it works</div><div class="hc-steps"><div class="hc-step"><div class="hc-step-n">1</div><div class="hc-step-t">Load the coverage requirement (a policy or criteria set) and the member's chart evidence.</div></div><div class="hc-step"><div class="hc-step-n">2</div><div class="hc-step-t">blueChart's deterministic matcher runs the evidence map: every requirement gets one of five typed lanes — SUPPORTED, CONTRADICTED, ABSENT, UNVERIFIABLE, or CANNOT-CERTIFY.</div></div><div class="hc-step"><div class="hc-step-n">3</div><div class="hc-step-t">A reviewer opens the packet, inspects each lane's linked evidence, and reaches their own determination.</div></div><div class="hc-step"><div class="hc-step-n">4</div><div class="hc-step-t">The packet is signed and exported for the case file.</div></div><div class="hc-step"><div class="hc-step-n">5</div><div class="hc-step-t">Anyone can verify the signature offline, without installing blueChart, with the standalone verifier.</div></div></div>
+
+    <div class="hc-sec">Status, measured</div>
+    <div class="hc-card">
+      <p>Demo-ready: all 12 build-contract milestones complete. Full backend suite, strict type checks, and an end-to-end UI test all pass. <code>make demo</code> and <code>make verify-demo</code> both verified on a fresh clone.</p>
+      <p><b>Not yet true:</b> No signed pilot. No live PHI has ever been processed. No non-US deployment.</p>
+    </div>
+
+    <div class="hc-boundary">
+      A signed receipt proves what blueChart ran and recorded; it does not prove an underlying real-world claim is true. blueChart does not approve, deny, recommend, pay, retract, or alter anything a named human is responsible for deciding.
+    </div>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on the developer's own machine — no PHI, no signed pilot, no live deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>
