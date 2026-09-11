@@ -24,7 +24,8 @@ const pages = [
   '/disclaimers',
   '/waitlist',
   '/demo',
-  '/portfolio/bluemonster'
+  '/portfolio/bluemonster',
+  '/portfolio/bluealibi'
 ];
 
 const mime = {

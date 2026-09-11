@@ -1,5 +1,5 @@
 {
-  "lastReviewed": "September 9, 2026",
+  "lastReviewed": "September 10, 2026",
   "products": [
     {
       "id": "bluemonster",
@@ -11,6 +11,18 @@
       "not_this": null,
       "page": "/portfolio/bluemonster",
       "version": "v1.0",
+      "patent_pending": false
+    },
+    {
+      "id": "bluealibi",
+      "name": "blueAlibi",
+      "logo": "/assets/logos/bluealibi.svg",
+      "status": "releasing_soon",
+      "one_liner": "A local claim census: it compares a document against a pipeline's capability manifest and run trace, and marks every claim with a capability-relative provenance verdict.",
+      "audience": "Teams shipping AI-drafted documents who want a signed, offline-verifiable record of which claims their own pipeline's trace and declared capabilities could substantiate",
+      "not_this": "A capability-relative provenance verdict. Not a global fact check, and provenance support does not make a claim true.",
+      "page": "/portfolio/bluealibi",
+      "version": null,
       "patent_pending": false
     },
     {
