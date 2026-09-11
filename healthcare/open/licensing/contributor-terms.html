@@ -33,27 +33,27 @@
     <h1 style="font-weight:800;font-size:34px;margin:0 0 14px">Sample contributor terms</h1>
     <div class="hc-boundary" style="margin-bottom:24px"><strong>These are drafts prepared for counsel. They are not in effect, and no licence has been granted.</strong></div>
 
-    <p>The the project's design frames this correctly: the outbound licence and the inbound contribution term
+    <p>the project's design frames this correctly: the outbound licence and the inbound contribution term
 are one bundled decision, because accepting code before both exist risks the company holding
 contributions it cannot redistribute under whatever licence it later picks
-(`the project's design notes` §0.3, R2). This file lays out both inbound options so counsel can pick
-alongside the outbound licence in `the licensing analysis`.</p>
+(<code>the project's design notes</code>). This file lays out both inbound options so counsel can pick
+alongside the outbound licence in <code>the licensing analysis</code>.</p>
 <h2> Option A — DCO 1.1 sign-off
 <p>The Developer Certificate of Origin (DCO) 1.1 is a lightweight, industry-standard attestation, not a
 contract. A contributor certifies, per commit, that they wrote the contribution (or otherwise have
 the right to submit it) and agree it can be distributed under the project's licence. the designical text:
-<https://developercertificate.org/>. Per that source, a contributor certifies one of: (a) the
+<a href="https://developercertificate.org/">https://developercertificate.org/</a>. Per that source, a contributor certifies one of: (a) the
 contribution is their own original work and they have the right to submit it under the project's
 licence; (b) it is based on prior work properly covered by a compatible licence, and they have the
 right to submit the modification; (c) it was provided to them by someone who certified (a) or (b) and
 they have not changed it; and (d) they understand the contribution and their sign-off are public and
 may be redistributed.</p>
-<p>**Mechanics:** a contributor adds a `Signed-off-by:` trailer to each commit, generated automatically
-by `git commit -s`, e.g. `Signed-off-by: Random J Developer <random@developer.example.org>` (this
-convention and the `-s` flag are the standard git/DCO mechanism documented by DCO-checking tooling
-such as the Probot DCO GitHub App: <https://github.com/probot/dco>). Enforcement in CI is typically a
+<p><strong>Mechanics:</strong> a contributor adds a <code>Signed-off-by:</code> trailer to each commit, generated automatically
+by <code>git commit -s</code>, e.g. <code>Signed-off-by: Random J Developer <random@developer.example.org></code> (this
+convention and the <code>-s</code> flag are the standard git/DCO mechanism documented by DCO-checking tooling
+such as the Probot DCO GitHub App: <a href="https://github.com/probot/dco">https://github.com/probot/dco</a>). Enforcement in CI is typically a
 GitHub Action or bot that fails a pull request missing a valid sign-off line.</p>
-<h3> Sample `CONTRIBUTING` section (DCO option)
+<h3> Sample <code>CONTRIBUTING</code> section (DCO option)
 <pre><code>## Sign off your work
 
 Every commit must include a Developer Certificate of Origin (DCO) 1.1 sign-off. Read the
@@ -70,28 +70,28 @@ This appends a line like:
     Signed-off-by: Your Name &lt;you@example.com&gt;
 
 using the name and email from your git configuration. Pull requests with any unsigned commit will
-not be merged. If you forgot to sign off, you can amend: `git commit --amend -s` (for the most
+not be merged. If you forgot to sign off, you can amend: <code>git commit --amend -s</code> (for the most
 recent commit) or use an interactive rebase for older ones.
 </code></pre>
 <h2> Option B — an original sample Individual CLA
 <p>A Contributor License Agreement (CLA) is a separate, explicit agreement (beyond the outbound
 licence) in which a contributor grants the company additional rights — most importantly, the right
 to relicense the contribution later (e.g., to offer a commercial licence to paying customers under
-Option D of `the licensing analysis`, "dual licence"). The sample below is **original text**,
-structured to follow the same shape as the **Apache Software Foundation's Individual Contributor
-License Agreement (ICLA) v2.2**, whose section structure was verified directly from the the designical PDF
-(<https://www.apache.org/licenses/icla.pdf>): definitions; a copyright licence grant; a patent
+Option D of <code>the licensing analysis</code>, "dual licence"). The sample below is <strong>original text</strong>,
+structured to follow the same shape as the <strong>Apache Software Foundation's Individual Contributor
+License Agreement (ICLA) v2.2</strong>, whose section structure was verified directly from the designical PDF
+(<a href="https://www.apache.org/licenses/icla.pdf">https://www.apache.org/licenses/icla.pdf</a>): definitions; a copyright licence grant; a patent
 licence grant (with a defensive-termination clause if the contributor sues over patents); a
 representation that the contributor has the right to grant the licence (including an
 employer-rights carve-out); a representation that the contribution is original (with a separate path
 for third-party work); a statement that the contributor has no obligation to provide support; and an
 ongoing duty to notify the foundation/company if any representation becomes inaccurate. The
-**Project Harmony** contributor agreement templates were also reviewed as a second model — Harmony's
+<strong>Project Harmony</strong> contributor agreement templates were also reviewed as a second model — Harmony's
 own overview describes offering both copyright-licence and copyright-assignment forms, and
 "addressing the complexity of corporate contributions" (Harmony Agreements, Overview:
-<https://www.harmonyagreements.org/overview.html>) — but this sample follows the Apache structure
-specifically because it is a copyright-*license* form (not an assignment), which is the lighter-touch
-choice consistent with "counsel decides, but keep friction low" (the project's design §4.6, "no CLA that
+<a href="https://www.harmonyagreements.org/overview.html">https://www.harmonyagreements.org/overview.html</a>) — but this sample follows the Apache structure
+specifically because it is a copyright-<em>license</em> form (not an assignment), which is the lighter-touch
+choice consistent with "counsel decides, but keep friction low" (the project's design, "no CLA that
 requires a lawyer to read").</p>
 <h3> Sample Individual CLA (original text, structure modeled on the Apache ICLA)
 <pre><code># blueOpenHealthcare Individual Contributor License Agreement (SAMPLE — DRAFT, NOT IN EFFECT)
@@ -134,70 +134,79 @@ the Company asks each contributor to agree to the terms below before a contribut
 7. Notification. You agree to tell the Company if you learn that anything in this agreement is no
    longer accurate.
 
-Signature: _______________________  Date: _______________
-Name: ____________________________  Email: ______________
+Signature: ______________<em><strong><em><strong><em><strong>  Date: </strong></em></strong></em></strong></em><em><strong><em><strong>
+Name: </strong></em></strong></em>_____________<em><strong><em><strong><em><strong>  Email: </strong></em></strong></em></strong></em>____<em>
 </code></pre>
 <h3> Corporate CLA note
-<p>Where a contribution is made in the course of someone's employment, an **Entity/Corporate CLA** —
+<p>Where a contribution is made in the course of someone's employment, an <strong>Entity/Corporate CLA</strong> —
 signed by an authorized representative of the employer, covering all of that employer's employees who
-contribute — is the standard companion document (this is exactly the split the Apache ICLA's own §4
+contribute — is the standard companion document (this is exactly the split the Apache ICLA's own
 anticipates, and Harmony's templates offer the same individual/entity pairing). A Corporate CLA
 would additionally need: a list of, or a process for designating, which employees are authorized to
 contribute on the company's behalf; and a term addressing what happens to that authorization when an
 employee leaves. Drafting the Corporate CLA itself is left to counsel; it is a short document once
 the Individual CLA above is settled.</p>
 <h2> Trade-offs: DCO vs. CLA
-<p>| | DCO | Individual CLA |
-|---|---|---|
-| Friction for a first-time or occasional contributor | Very low — one flag on a git command | Higher — a document to read and sign (even a short one) before a first contribution is accepted |
-| Fits the stated audience (occasional, low-bandwidth, international contributors — the project's design §4.6) | Better fit — no separate signature workflow, no need for a laptop-based e-signature flow | Worse fit unless the signing flow is trivial (e.g., a CLA-bot comment-to-sign on a pull request) |
-| Gives the company room to relicense later (e.g., to run the dual-licence option from the memo, or change the outbound licence itself) | No — DCO only certifies the contributor had the right to submit under the *current* project licence; it does not grant the company extra rights to relicense | Yes — this is the CLA's whole purpose; without it, changing the outbound licence later requires tracking down and re-clearing every prior contributor, which becomes impractical as a project grows |
-| What "dual licensing requires" | A DCO-only project cannot cleanly offer a proprietary/commercial version of contributed code without also getting a separate relicensing agreement from every contributor whose code is included | An Individual (or Corporate) CLA that includes the "including under a different license" language in §2 above gives the company that flexibility from the start — which matters directly if counsel picks the "dual licence (AGPL + commercial)" option in `the licensing analysis` |</p>
-<p>**Framing for counsel:** if the outbound licence ends up being plain MPL-2.0 or AGPL-3.0 with no
+<table class="hc-table">
+<thead>
+<tr>
+<td></td>
+<td>DCO</td>
+<td>Individual CLA</td>
+</tr>
+</thead>
+<tbody>
+<tr><td>Friction for a first-time or occasional contributor</td><td>Very low — one flag on a git command</td><td>Higher — a document to read and sign (even a short one) before a first contribution is accepted</td></tr>
+<tr><td>Fits the stated audience (occasional, low-bandwidth, international contributors — the project's design )</td><td>Better fit — no separate signature workflow, no need for a laptop-based e-signature flow</td><td>Worse fit unless the signing flow is trivial (e.g., a CLA-bot comment-to-sign on a pull request)</td></tr>
+<tr><td>Gives the company room to relicense later (e.g., to run the dual-licence option from the memo, or change the outbound licence itself)</td><td>No — DCO only certifies the contributor had the right to submit under the <em>current</em> project licence; it does not grant the company extra rights to relicense</td><td>Yes — this is the CLA's whole purpose; without it, changing the outbound licence later requires tracking down and re-clearing every prior contributor, which becomes impractical as a project grows</td></tr>
+<tr><td>What "dual licensing requires"</td><td>A DCO-only project cannot cleanly offer a proprietary/commercial version of contributed code without also getting a separate relicensing agreement from every contributor whose code is included</td><td>An Individual (or Corporate) CLA that includes the "including under a different license" language in above gives the company that flexibility from the start — which matters directly if counsel picks the "dual licence (AGPL + commercial)" option in <code>the licensing analysis</code></td></tr>
+</tbody>
+</table>
+<p><strong>Framing for counsel:</strong> if the outbound licence ends up being plain MPL-2.0 or AGPL-3.0 with no
 commercial dual-licensing plan, DCO alone is simpler and matches how OpenMRS-adjacent, low-bandwidth
 contributor communities typically operate. If the dual-licence option is live, or the company wants
 the option to change the outbound licence later without re-clearing every contributor, a CLA is
 close to necessary.</p>
-<h2> Project-specific contribution rules (belong in `CONTRIBUTING`, regardless of A or B)
+<h2> Project-specific contribution rules (belong in <code>CONTRIBUTING</code>, regardless of A or B)
 <h3> No real patient data, ever
-<p>**Rule, stated once, verbatim for every contribution surface (from the the project's design §4.7):** *"No
+<p><strong>Rule, stated once, verbatim for every contribution surface (from the project's design ):</strong> <em>"No
 real patient, member, claimant or clinician data of any kind — identifiable, de-identified,
 'anonymised', aggregated, or screenshot — may be posted, attached, or committed anywhere in this
-community. Synthetic, generated fixtures only."* "De-identified" is banned too, on purpose: the
+community. Synthetic, generated fixtures only."</em> "De-identified" is banned too, on purpose: the
 company's own posture is that de-identification is itself a receipted, approved, in-institution act
-(`the core/capture/`), and a community has no way to verify a contributor's claim that something was
-properly de-identified — so the only enforceable line is *generated*, never *derived from real data
-by anyone, including the contributor*.</p>
-<p>**Enforcement steps** (from the project's design §4.7, restated as `CONTRIBUTING` rules):</p>
+(<code>the core/capture/</code>), and a community has no way to verify a contributor's claim that something was
+properly de-identified — so the only enforceable line is <em>generated</em>, never <em>derived from real data
+by anyone, including the contributor</em>.</p>
+<p><strong>Enforcement steps</strong> (from the project's design, restated as <code>CONTRIBUTING</code> rules):</p>
 <p>1. Issue and pull-request templates are text fields that refuse attachments, and the PR template
    requires ticking a box: "generated fixtures only; nothing derived from a real record."
-2. Every fixture file must carry an `is_synthetic: true` marker and a `generator` field naming the
+2. Every fixture file must carry an <code>is</em>synthetic: true</code> marker and a <code>generator</code> field naming the
    tool and seed that produced it; CI rejects any fixture missing both (reusing the project's
    existing instrument-fixture pattern rather than inventing a second one).
-3. A scanner runs in CI and pre-commit for identifier *shapes* — US SSN/NPI/MRN patterns,
+3. A scanner runs in CI and pre-commit for identifier <em>shapes</em> — US SSN/NPI/MRN patterns,
    IBAN-shaped strings, phone-number patterns, a date-of-birth next to a name, realistic address
    lines, DICOM headers, and any non-text (binary/image/PDF) attachment — and hard-rejects a match.
    The scanner is published so contributors can run it locally before submitting. It is described
    honestly as a lie-detector for "this was pasted from a real record," not a guarantee of PHI-free
    content.
 4. Fixtures must come from a generator (e.g., Synthea-shaped for US content; each jurisdiction pack
-   contributes a generator *configuration*, never hand-authored data files). A pile of JSON with no
+   contributes a generator <em>configuration</em>, never hand-authored data files). A pile of JSON with no
    named generator is rejected on shape alone.
 5. A named moderator runs a takedown runbook on suspicion: remove the content, purge it from git
-   history (e.g., `git filter-repo`), notify the contributor, and record that the event occurred
+   history (e.g., <code>git filter-repo</code>), notify the contributor, and record that the event occurred
    (without repeating the data) in the project's public digest — time-boxed to 24 hours.</p>
 <h3> Security issues go through private disclosure, never public issues
-<p>Security vulnerabilities must be reported through a private channel (a `SECURITY` with a named
+<p>Security vulnerabilities must be reported through a private channel (a <code>SECURITY</code> with a named
 contact and, once the project is on GitHub, GitHub's private security-advisory workflow), never as a
-public issue or discussion post. `CONTRIBUTING` should say this in its first section, and link to
-`SECURITY` and a `.well-known/security.txt`. A standard coordinated-disclosure window (commonly 90
+public issue or discussion post. <code>CONTRIBUTING</code> should say this in its first section, and link to
+<code>SECURITY</code> and a <code>.well-known/security.txt</code>. A standard coordinated-disclosure window (commonly 90
 days) should be stated once counsel/security leadership sets one; not fixed here.</p>
 <h3> No marketplace, dataset catalogue, buyer portal, or "sell data" surface
-<p>**This is a hard prohibition, not a style preference.** The company's own v1.6 integration addendum
+<p><strong>This is a hard prohibition, not a style preference.</strong> The company's own v1.6 integration addendum
 states "verified access, never data" as the operating principle, and explicitly forbids any surface
-that manages data access (`the project's integration policy`; restated in the project
-brainstorm as risk R1 and its own `test_no_data_marketplace_surface.py`). `CONTRIBUTING` should state
-this as a **project scope rule**, not merely a code-review preference:</p>
+that manages data access (<code>the project's integration policy</code>; restated in the project
+brainstorm as risk R1 and its own <code>test<em>no</em>data<em>marketplace</em>surface.py</code>). <code>CONTRIBUTING</code> should state
+this as a <strong>project scope rule</strong>, not merely a code-review preference:</p>
 <p>> No contribution — code, documentation, issue, or design proposal — may add a marketplace, dataset
 > catalogue, buyer portal, or any other surface whose function is to list, browse, request, or sell
 > data or access-to-data as a transaction. This is a hard project-scope boundary, not a matter of
@@ -207,15 +216,15 @@ this as a **project scope rule**, not merely a code-review preference:</p>
 > data" (the project's design, risk R1).</p>
 <h3> Jurisdiction work arrives as packs, not forks
 <p>Consistent with the addendum's own architecture ("Jurisdiction is configuration — never a fork,"
-`the open-source addendum` §1), `CONTRIBUTING` should state:</p>
+<code>the open-source addendum</code> ), <code>CONTRIBUTING</code> should state:</p>
 <p>> Country- or region-specific work (coding systems, privacy regimes, FHIR profiles, currency, locale,
-> payer vocabulary) is contributed as a new directory under `the core/jurisdiction/<code>/`, implementing
-> the existing `CodingSystem`, `PrivacyRegime`, and `FhirProfile` interfaces plus the
-> `JurisdictionPack` fields — never as a fork of the project or a copy of `the core/` with local edits. A
+> payer vocabulary) is contributed as a new directory under <code>the core/jurisdiction/<code>/</code>, implementing
+> the existing <code>CodingSystem</code>, <code>PrivacyRegime</code>, and <code>FhirProfile</code> interfaces plus the
+> <code>JurisdictionPack</code> fields — never as a fork of the project or a copy of <code>the core/</code> with local edits. A
 > pack pull request must include a synthetic fixture and pass the interface conformance test. Do not
 > hardcode any jurisdiction-specific constant (a coding system, a currency, a date format, a legal
 > citation) anywhere outside your pack's own directory — the project runs an automated check for this
-> against `the core/` and a PR that adds a new hardcoded constant there will fail it.</p>
+> against <code>the core/</code> and a PR that adds a new hardcoded constant there will fail it.</p>
 
 
     <div class="hc-row" style="margin-top:28px">
