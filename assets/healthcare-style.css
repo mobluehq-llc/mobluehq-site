@@ -48,6 +48,10 @@ body.hc-body {
 }
 .hc-nav .hc-brand { font-size: 16px; font-weight: 700; text-decoration: none; color: var(--hc-ink); }
 .hc-nav .hc-brand b { color: var(--hc-primary); }
+.hc-brandrow { display: flex; align-items: center; gap: 10px; }
+.hc-brand-sep { color: var(--hc-dim); font-weight: 500; }
+.hc-brand-logo { display: inline-flex; }
+.hc-brand-logo img { height: 28px; width: auto; display: block; }
 .hc-navlinks { display: flex; gap: 28px; font-family: var(--hc-mono); font-size: 12px; letter-spacing: 1px; flex-wrap: wrap; }
 .hc-navlinks a { text-decoration: none; color: var(--hc-dim); }
 .hc-navlinks a:hover { color: var(--hc-ink); }
