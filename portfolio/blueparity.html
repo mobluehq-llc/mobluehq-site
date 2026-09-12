@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueParity — MOBLUEHQ</title>
+<meta name="description" content="blueParity runs two systems against the same corpus under a declared contract, and identifies exactly what matched, diverged, or was never exercised." />
+<link rel="canonical" href="https://www.mobluehq.com/portfolio/blueparity" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mobluehq.com/portfolio/blueparity" />
+<meta property="og:title" content="blueParity — MOBLUEHQ" />
+<meta property="og:description" content="blueParity runs two systems against the same corpus under a declared contract, and identifies exactly what matched, diverged, or was never exercised." />
+<meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="blueParity — MOBLUEHQ" />
+<meta name="twitter:description" content="blueParity runs two systems against the same corpus under a declared contract, and identifies exactly what matched, diverged, or was never exercised." />
+<meta name="twitter:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #05080f;
+    --paper: #e8ecf2;
+    --blue: #4b96ff;
+    --blue-deep: #2f6fd6;
+    --card-edge: #1a2434;
+    --lite-bg: #f4f7fb;
+    --lite-card: #ffffff;
+    --lite-ink: #0b1220;
+    --lite-dim: #5a6578;
+    --lite-edge: #dce4ef;
+    --ok: #4ade80;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "Geist", "Helvetica Neue", Inter, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--lite-bg);
+    color: var(--lite-ink);
+  }
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--lite-edge);
+    background: #fff;
+    color: #000;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    row-gap: 10px;
+    padding: 26px 48px;
+    max-width: 1480px;
+    margin: 0 auto;
+  }
+  .nav .brand {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--lite-ink);
+  }
+  .nav .brand b { color: #1a4a99; }
+  .navlinks {
+    display: flex;
+    gap: 32px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .navlinks a {
+    text-decoration: none;
+    color: #4a5568;
+  }
+  .bm-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 26px 48px 0;
+  }
+  .backlink {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--lite-dim);
+    text-decoration: none;
+  }
+  .bm-hero {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 42px;
+    align-items: center;
+    padding: 44px 0 10px;
+  }
+  .bm-mon {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 22%;
+    display: block;
+    box-shadow: 0 18px 50px rgba(11, 18, 32, 0.25);
+  }
+  .bm-hero h1 {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 44px;
+    margin: 0 0 6px;
+  }
+  .bm-hero h1 b { color: var(--blue-deep); }
+  .bm-tag {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    color: var(--lite-dim);
+    margin-bottom: 18px;
+  }
+  .bm-sub {
+    font-size: 16.5px;
+    line-height: 1.65;
+    max-width: 62ch;
+    color: #2a3444;
+  }
+  .dlrow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .cta {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #ffffff;
+    background: var(--blue-deep);
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-weight: 700;
+  }
+  .meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--lite-dim);
+    letter-spacing: 1px;
+    margin-top: 12px;
+    line-height: 1.7;
+  }
+  .hash-slot {
+    display: inline-block;
+    border: 1px dashed var(--lite-edge);
+    border-radius: 8px;
+    padding: 3px 8px;
+    background: #fff;
+    color: #33405a;
+  }
+  .bm-sec {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 3.5px;
+    color: #1a4a99;
+    margin: 64px 0 22px;
+  }
+  .bm-sec::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 2px;
+    background: #1a4a99;
+    margin-top: 9px;
+  }
+  .badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .b-dim { color: #9aa4b4; border-color: rgba(154, 164, 180, 0.4); }
+  .mode {
+    background: var(--lite-card);
+    border: 1px solid var(--lite-edge);
+    border-radius: 14px;
+    padding: 26px 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mode h4 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 19px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .mode ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #33405a;
+  }
+  .mode p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #2a3444;
+    margin: 0;
+    max-width: 70ch;
+  }
+  .price {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--lite-dim);
+    border-top: 1px dashed var(--lite-edge);
+    padding-top: 12px;
+    margin-top: auto;
+  }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .step {
+    display: flex;
+    gap: 16px;
+  }
+  .step > div:first-child {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue-deep);
+    color: white;
+    border-radius: 50%;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .step > div:last-child {
+    padding-top: 4px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #33405a;
+  }
+  .docs {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  details {
+    border: 1px solid var(--lite-edge);
+    border-radius: 8px;
+    padding: 20px 24px;
+    list-style: none;
+  }
+  details summary {
+    cursor: default;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--lite-ink);
+    margin-bottom: 10px;
+  }
+  details p,
+  details li {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #33405a;
+  }
+  details ol,
+  details ul {
+    padding-left: 20px;
+    margin: 0 0 18px;
+  }
+  .llm {
+    display: flex;
+    gap: 8px;
+    margin: 0 0 20px;
+    flex-wrap: wrap;
+  }
+  .llm span {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    border: 1px solid var(--lite-edge);
+    border-radius: 999px;
+    padding: 5px 12px;
+    color: #33405a;
+    background: #f7fafe;
+  }
+  .receipt-boundary {
+    border: 1px solid var(--lite-edge);
+    border-radius: 12px;
+    padding: 24px;
+    background: #f9fafb;
+    margin: 44px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #33405a;
+  }
+  .design-partner-line {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #33405a;
+    margin: 22px 0;
+    font-family: var(--sans);
+  }
+  footer {
+    border-top: 1px solid var(--lite-edge);
+    margin-top: 90px;
+    padding: 44px 48px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .foot-in {
+    max-width: 1480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: var(--lite-dim);
+  }
+  .foot-links {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+  .foot-links a {
+    text-decoration: none;
+    color: #4a5568;
+  }
+  @media (max-width: 760px) {
+    .nav,
+    .bm-wrap,
+    footer {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .bm-hero {
+      grid-template-columns: 130px 1fr;
+      gap: 24px;
+    }
+    .bm-hero h1 { font-size: 32px; }
+  }
+  @media (max-width: 480px) {
+    .navlinks {
+      gap: 18px;
+      font-size: 11px;
+    }
+    .bm-hero {
+      grid-template-columns: 1fr;
+    }
+    .bm-mon { max-width: 96px; }
+  }
+  /* Long command names and file names must wrap rather than force the page
+     to scroll sideways on a phone. Verified at 390px. */
+  code, .step, .step *, .steps, details, details * {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .steps, .step, .step > div, .mode, details { min-width: 0; }
+  /* AI / user-responsibility disclaimer — Adam-approved SHORT FORM, 2026-09-09.
+     This page is self-contained (it does not load /assets/style.css), so the
+     rule from that stylesheet is restated here rather than inherited. */
+  .footer-disclaimer {
+    max-width: 1480px;
+    margin: 20px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--lite-edge);
+    font-family: var(--sans, 'Geist', sans-serif);
+    font-size: 12px;
+    line-height: 1.65;
+    letter-spacing: 0;
+    color: var(--lite-dim);
+  }
+  .footer-disclaimer p { margin: 0 0 8px; }
+  .footer-disclaimer p:last-child { margin-bottom: 0; }
+  .footer-disclaimer strong { color: var(--lite-ink); font-weight: 600; }
+  .footer-disclaimer a { color: var(--blue-deep); text-decoration: underline; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<nav class="nav" aria-label="Primary">
+  <a class="brand" href="/">MOBLUE<b>HQ</b></a>
+  <div class="navlinks">
+    <a href="/about">ABOUT</a>
+    <a href="/portfolio">PORTFOLIO</a>
+    <a href="/investors">INVESTORS</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="bm-wrap">
+    <a class="backlink" href="/portfolio">← PORTFOLIO</a>
+    <div class="bm-hero">
+      <div style="display:flex;align-items:center;justify-content:center">
+        <img class="bm-mon" alt="blueParity" src="/assets/logos/blueparity.svg" />
+      </div>
+      <div>
+        <h1>blue<b>Parity</b></h1>
+        <div class="bm-tag">PROVE A REPLACEMENT SYSTEM STAYS EQUIVALENT WITHIN A DECLARED CONTRACT.</div>
+        <p class="bm-sub">Migration teams comparing an old and a new system usually rely on spot checks and cannot state precisely which behaviors matched, diverged, or were never exercised. blueParity runs both systems as black-box command adapters over the same JSONL corpus under a predeclared, hashed-before-execution equivalence contract, and emits a signed, independently verifiable record of what it found.</p>
+        <div class="dlrow">
+          <a class="cta" href="/contact?segment=blueparity">REQUEST A PILOT</a>
+        </div>
+        <div class="meta">Runs locally &middot; CLI or web UI &middot; Ed25519-signed certificates &middot; no cloud account required</div>
+      </div>
+    </div>
+
+    <div class="bm-sec">WHAT IT CHECKS</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p>Both systems run as black-box command adapters over the same JSONL corpus, under an equivalence contract declared and hashed before execution: which outputs matter, what tolerance applies to each, which fields are ignored. Every declared behavior resolves to matched, matched within the declared tolerance, diverged, or not exercised, and every divergence is pinned to a minimal counterexample — the smallest input pair that shows the two systems actually disagreeing.</p>
+    </div>
+
+    <div class="bm-sec">HOW IT WORKS</div>
+    <div class="steps">
+      <div class="step"><div>1</div><div><b>Wrap both systems.</b> Point blueParity at two command adapters — the legacy system and its replacement — each reading one JSON object per line.</div></div>
+      <div class="step"><div>2</div><div><b>Declare the contract.</b> A YAML equivalence contract names the fields that matter, their tolerances, and any fields to ignore, hashed before the run starts.</div></div>
+      <div class="step"><div>3</div><div><b>Run the corpus.</b> <code>blue-parity run</code> drives both systems over the same JSONL corpus and produces verdicts with divergences pinned to minimal counterexamples.</div></div>
+      <div class="step"><div>4</div><div><b>Write the certificate.</b> <code>blue-parity run --out certificate.json</code> writes the signed bundle — both the declare and result receipts — in the same command. You can also export it from the web interface.</div></div>
+      <div class="step"><div>5</div><div><b>Verify offline.</b> The bare receipt checks with <code>verify_receipt.py</code>; the full certificate bundle checks with <code>blue-parity verify</code>.</div></div>
+    </div>
+
+    <div class="bm-sec">WHAT IT IS NOT</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p>Equivalence is not correctness. A signed receipt proves what this software ran and recorded; it does not prove either system, or any underlying real-world claim, is correct.</p>
+    </div>
+
+    <div class="bm-sec">THE RECEIPT</div>
+    <div class="receipt-boundary">
+      A signed receipt proves what blueParity ran and recorded; it does not prove an underlying real-world claim is true.
+      The certificate binds the equivalence contract, the corpus hash, both adapters' command lines, and every per-behavior verdict — change any one and verification fails. The standalone <code>verify_receipt.py</code> lets a reviewer or auditor check a bare result receipt without installing blueParity; a full certificate bundle verifies with <code>blue-parity verify</code> instead.
+    </div>
+
+    <div class="bm-sec">GUIDES</div>
+    <div class="docs">
+      <details open class="always">
+        <summary>Pre-registered vs. post-hoc</summary>
+        <p>A contract hashed and sealed before the corpus is first seen seals as PRE_REGISTERED. Sealing is POST_HOC when a contract is declared against a corpus that has already been first-seen in the same data directory — the first-seen record is never reset by re-uploading identical content.</p>
+      </details>
+      <details open class="always">
+        <summary>The four verdicts</summary>
+        <ul>
+          <li><b>Matched</b> — field-for-field agreement.</li>
+          <li><b>Matched within tolerance</b> — within the declared numeric bound.</li>
+          <li><b>Diverged</b> — the two systems disagreed; a minimal counterexample is attached.</li>
+          <li><b>Not exercised</b> — the behavior was declared but never triggered by the corpus.</li>
+        </ul>
+      </details>
+      <details open class="always">
+        <summary>Two verifiers for two artifacts</summary>
+        <p>A bare result receipt (like <code>make demo</code>'s output) verifies with the standalone <code>verify_receipt.py</code>. The full certificate bundle downloaded from the web UI — the shape that also proves pre-registration — verifies with <code>blue-parity verify</code> instead. Running <code>verify_receipt.py</code> directly against a bundle correctly reports it invalid; that's the wrong tool for that artifact, not a tamper finding.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="brand" style="font-size:16px;color:var(--lite-ink)">MOBLUE<b style="color:#1a4a99">HQ</b></div>
+    <div class="foot-links">
+      <a href="/contact">Contact</a>
+      <a href="/trust">Trust</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+  <div class="footer-disclaimer">
+    <p><strong>AI-generated. Verify before you rely on it.</strong> blueMonster produces machine-generated hypotheses using large language models. <strong>LLMs make mistakes, including confident ones</strong> &mdash; they can state figures, sources, mechanisms and institutions that do not exist. MOBLUEHQ, Inc. designs this system to disclose how each result was produced and to refuse rather than guess where it can, but <strong>no such system is free of error</strong>.</p>
+    <p><strong>This output is not a prior-art search, a patentability opinion, or professional advice of any kind.</strong></p>
+    <p><strong>You are responsible for independently verifying the accuracy, novelty, and legal status of any mechanism, claim, or product before relying on it, publishing it, filing on it, or commercialising it.</strong> <a href="/disclaimers">Read the full disclaimers</a>.</p>
+  </div>
+  </div>
+</footer>
+</body>
+</html>

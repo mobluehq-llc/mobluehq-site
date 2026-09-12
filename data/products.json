@@ -14,6 +14,18 @@
       "patent_pending": false
     },
     {
+      "id": "blueglu",
+      "name": "blueGlu",
+      "logo": "/assets/logos/blueglued.svg",
+      "status": "releasing_soon",
+      "one_liner": "A calm, private AI assistant for your Mac. Runs on-device by default; escalate on your own terms, never automatically.",
+      "audience": "Anyone who wants a local-first assistant with a frontier model one click away",
+      "not_this": "Not an auto-escalating router — you choose when a question goes past the on-device model.",
+      "page": "/portfolio/blueglu",
+      "version": "v0.1",
+      "patent_pending": false
+    },
+    {
       "id": "blue",
       "name": "Blue",
       "logo": "/assets/logos/blue.svg",
@@ -36,6 +48,54 @@
       "page": null,
       "version": null,
       "patent_pending": true
+    },
+    {
+      "id": "bluealibi",
+      "name": "blueAlibi",
+      "logo": "/assets/logos/bluealibi.svg",
+      "status": "in_development",
+      "one_liner": "Find claims the recorded evidence and tools could not support.",
+      "page": "/portfolio/bluealibi"
+    },
+    {
+      "id": "bluefloor",
+      "name": "blueFloor",
+      "logo": "/assets/logos/bluefloor.svg",
+      "status": "in_development",
+      "one_liner": "Measure the ingest your deployed detections can actually use.",
+      "page": "/portfolio/bluefloor"
+    },
+    {
+      "id": "blueintent",
+      "name": "blueIntent",
+      "logo": "/assets/logos/blueintent.svg",
+      "status": "in_development",
+      "one_liner": "Check whether declared code invariants survived a change.",
+      "page": "/portfolio/blueintent"
+    },
+    {
+      "id": "blueparity",
+      "name": "blueParity",
+      "logo": "/assets/logos/blueparity.svg",
+      "status": "in_development",
+      "one_liner": "Prove a replacement system stays equivalent within a declared contract.",
+      "page": "/portfolio/blueparity"
+    },
+    {
+      "id": "bluepipeline",
+      "name": "bluePipeline",
+      "logo": "/assets/logos/bluepipeline.svg",
+      "status": "in_development",
+      "one_liner": "See what actually reached the model.",
+      "page": "/portfolio/bluepipeline"
+    },
+    {
+      "id": "bluemoat",
+      "name": "blueMoat",
+      "logo": "/assets/logos/bluemoat.svg",
+      "status": "in_development",
+      "one_liner": "Screens filings for relevant prior art and anchors each quote to its exact place in the source, or refuses to show it.",
+      "page": "/portfolio/bluemoat"
     }
   ]
 }

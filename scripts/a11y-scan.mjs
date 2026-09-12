@@ -24,7 +24,14 @@ const pages = [
   '/disclaimers',
   '/waitlist',
   '/demo',
-  '/portfolio/bluemonster'
+  '/portfolio/bluemonster',
+  '/portfolio/blueglu',
+  '/portfolio/bluemoat',
+  '/portfolio/bluealibi',
+  '/portfolio/bluefloor',
+  '/portfolio/blueintent',
+  '/portfolio/blueparity',
+  '/portfolio/bluepipeline'
 ];
 
 const mime = {
