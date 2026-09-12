@@ -177,12 +177,20 @@ body.hc-body {
    site is synthetic demonstration data run on MOBLUEHQ's own demo systems --
    the .hc-shot-tag badge says so on every single image, not just once on
    the page, because a screenshot can be copied out of context. */
-.hc-shot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 10px 0 28px; }
+/* One capture per row, full width of the (already width-capped) content
+   column -- not a multi-up grid. A 1600x1000 capture inside a 280px auto-fit
+   column was scaled to about a third of its native width, and the interface
+   text inside it became unreadable; a screenshot that can't be read defeats
+   the point of showing it, especially in a manual where it IS the
+   documentation. .hc-wrap already caps content at 980px, so full width here
+   does not become oversized on a wide monitor. */
+.hc-shot-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 10px 0 28px; }
 .hc-shot {
   border: 1px solid var(--hc-edge); border-radius: 14px; overflow: hidden; background: var(--hc-card);
   display: flex; flex-direction: column; min-width: 0;
 }
-.hc-shot img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--hc-edge); }
+.hc-shot a { display: block; line-height: 0; }
+.hc-shot img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--hc-edge); cursor: zoom-in; }
 .hc-shot figcaption { padding: 14px 18px 16px; font-size: 13px; line-height: 1.6; color: var(--hc-ink-soft); }
 .hc-shot-tag {
   display: inline-block; font-family: var(--hc-mono); font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase;
