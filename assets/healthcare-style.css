@@ -109,6 +109,9 @@ body.hc-body {
    neutral gray, not flagship-green/module-blue/build-amber, so a planned
    market can never be visually mistaken for something live. */
 .hc-badge-planned { color: #4A4E58; border-color: #D8DBE2; background: #F3F4F6; }
+/* IN DEVELOPMENT — parts of the platform actively being built. Amber-gray,
+   distinct from build (pure amber for modules), to signal "under active
+   construction but not yet demo-ready". */
 
 /* Steps */
 .hc-steps { display: flex; flex-direction: column; gap: 18px; }
@@ -168,6 +171,42 @@ body.hc-body {
   border: 1.5px dashed var(--hc-edge); border-radius: 10px; padding: 34px 20px; text-align: center;
   color: var(--hc-dim); font-family: var(--hc-mono); font-size: 12px; letter-spacing: .6px; background: var(--hc-bg-soft);
   margin: 10px 0 22px;
+}
+
+/* Real product/workflow screen captures (2026-09-12). Every capture on this
+   site is synthetic demonstration data run on MOBLUEHQ's own demo systems --
+   the .hc-shot-tag badge says so on every single image, not just once on
+   the page, because a screenshot can be copied out of context. */
+.hc-shot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin: 10px 0 28px; }
+.hc-shot {
+  border: 1px solid var(--hc-edge); border-radius: 14px; overflow: hidden; background: var(--hc-card);
+  display: flex; flex-direction: column; min-width: 0;
+}
+.hc-shot img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--hc-edge); }
+.hc-shot figcaption { padding: 14px 18px 16px; font-size: 13px; line-height: 1.6; color: var(--hc-ink-soft); }
+.hc-shot-tag {
+  display: inline-block; font-family: var(--hc-mono); font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase;
+  color: #8A5A00; background: #FFF8EA; border: 1px solid #F3D89B; padding: 2px 9px; border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+/* Workflow sequence -- a numbered strip of screens meant to be read in order,
+   one patient moving through the record. Reuses .hc-step-n's numbered-circle
+   look so it reads as a continuation of the steps pattern, not a new idiom. */
+.hc-flow { display: flex; flex-direction: column; gap: 28px; margin: 10px 0 28px; }
+.hc-flow-item { display: grid; grid-template-columns: 32px 1fr; gap: 16px; }
+.hc-flow-n {
+  flex: 0 0 auto; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+  background: var(--hc-primary); color: #fff; border-radius: 50%; font-family: var(--hc-mono);
+  font-size: 13px; font-weight: 700; margin-top: 2px;
+}
+.hc-flow-body { min-width: 0; }
+.hc-flow-body h4 { margin: 2px 0 6px; font-size: 16px; font-weight: 800; color: var(--hc-ink); }
+.hc-flow-body p { margin: 0 0 12px; font-size: 14px; line-height: 1.65; color: var(--hc-ink-soft); }
+.hc-flow-body .hc-shot { max-width: 720px; }
+@media (max-width: 480px) {
+  .hc-flow-item { grid-template-columns: 24px 1fr; gap: 10px; }
+  .hc-flow-n { width: 24px; height: 24px; font-size: 11px; }
 }
 
 details.hc-details { border: 1px solid var(--hc-edge); border-radius: 10px; padding: 20px 24px; margin-bottom: 14px; }
