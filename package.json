@@ -9,7 +9,8 @@
     "build:pricing": "node scripts/build_pricing.mjs",
     "check:pricing-sync": "node scripts/check_pricing_sync.mjs",
     "claims": "node scripts/check_claims.mjs",
-    "lint:healthcare-content": "node scripts/healthcare-content-lint.mjs"
+    "lint:healthcare-content": "node scripts/healthcare-content-lint.mjs",
+    "test": "node --test"
   },
   "dependencies": {
     "@vercel/functions": "^1.5.0",

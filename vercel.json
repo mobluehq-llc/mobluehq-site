@@ -47,7 +47,7 @@
       ]
     },
     {
-      "source": "/api/(demo-gate|download)",
+      "source": "/api/(demo-gate|download|contact)",
       "headers": [
         { "key": "Cache-Control", "value": "private, no-store" }
       ]
@@ -74,6 +74,9 @@
   "functions": {
     "api/triage.js": {
       "maxDuration": 30
+    },
+    "api/contact.js": {
+      "maxDuration": 20
     },
     "api/refresh.js": {
       "maxDuration": 60

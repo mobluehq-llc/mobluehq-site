@@ -5,6 +5,11 @@
 //
 // Required env var: ANTHROPIC_API_KEY (set in Vercel dashboard)
 // Optional env var: TRIAGE_FORWARD_EMAIL (where to send "forward" results)
+//
+// SEE ALSO lib/triage.mjs — a DELIBERATE DUPLICATE of this file's prompt
+// and routing rules, used in-process by api/contact.js as an advisory
+// label generator. This file is left untouched on purpose; edit both if
+// you change the prompt or routing rules here, or they will drift.
 
 export default async function handler(req, res) {
   // CORS for the website itself
