@@ -52,7 +52,21 @@
     <div class="hc-sec">What it is not</div>
     <div class="hc-card"><p>Not a trial management system, not an electronic data capture (EDC) platform on its own, and not a replacement for existing trial infrastructure.</p></div>
 
-    
+    <div class="hc-sec">Screens</div>
+    <div class="hc-shot-grid">
+      <figure class="hc-shot">
+        <img loading="lazy" src="/healthcare/img/captures/bluesource/form-population.png" alt="blueSource Form Population screen: lab and concomitant-medication fields populated deterministically from signed source records, each marked Bound, Unbindable, or Cannot-certify, with an unpopulated field flagged for human entry." />
+        <figcaption><span class="hc-shot-tag">Synthetic study data</span><br>Form population — fields fill deterministically from signed source records; anything that can't be is left blank for a human to enter.</figcaption>
+      </figure>
+      <figure class="hc-shot">
+        <img loading="lazy" src="/healthcare/img/captures/bluesource/discrepancy-queue.png" alt="blueSource Discrepancy Queue screen: five open findings including a Superseded verdict where a medication dose changed after binding, and a Cannot-certify verdict where the source signer is not in the trusted root set." />
+        <figcaption><span class="hc-shot-tag">Synthetic study data</span><br>Discrepancy queue — failed bindings and sources that changed after binding, each carrying one of four named verdicts, never a silent pass.</figcaption>
+      </figure>
+      <figure class="hc-shot">
+        <img loading="lazy" src="/healthcare/img/captures/bluesource/remote-monitor.png" alt="blueSource Remote Source Verification screen: a monitor account with no chart access verifies six bound values by cryptographic receipt hash alone, with every value withheld from view." />
+        <figcaption><span class="hc-shot-tag">Synthetic study data</span><br>Remote monitoring — a monitor verifies the cryptography, not the chart; values stay withheld and verification still succeeds.</figcaption>
+      </figure>
+    </div>
 
     <div class="hc-sec">Status, measured</div>
     <div class="hc-card">

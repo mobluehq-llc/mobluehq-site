@@ -33,7 +33,7 @@
     <h1 style="font-weight:800;font-size:32px;margin:0 0 14px">Planned downloads</h1>
     <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack">Spec</a><a href="/healthcare/open/contribute">Contribute</a><a href="/healthcare/open/fixtures">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap">Roadmap</a><a href="/healthcare/open/downloads" style="font-weight:800;color:var(--hc-ink)">Downloads</a><a href="/healthcare/open/community">Community</a></div>
 
-    <div class="hc-boundary"><strong>Nothing on this page is available today.</strong> Every item below is planned, not built. There is no installer, no developer kit, and no template pack to download yet — see <a href="/healthcare/open/roadmap">the roadmap</a> for what's actually built and measured.</div>
+    <div class="hc-boundary"><strong>Nothing on this page is downloadable by the public today.</strong> A community build now exists internally — <code>make community</code> produces an image containing only the free edition's modules, with a test proving the commercial ones are absent from the artifact, not merely switched off — but the repository and the images are both private, and the published images are single-architecture (arm64 only), measured directly against the published manifest. Most clinic servers are x86-64 and could not run them even with access. There is no installer, no public developer kit, and no template pack to download yet — see <a href="/healthcare/open/roadmap">the roadmap</a> for what's actually built and measured.</div>
 
     <div class="hc-sec">How this is meant to reach a clinic</div>
     <div class="hc-card">
@@ -42,7 +42,7 @@
 
     <div class="hc-sec">Planned downloads</div>
     <div class="hc-grid">
-      <div class="hc-card"><h4>Clinic-server installer</h4><p>A one-step installer for Linux, plus a ready-made machine image, with no Docker for staff to install themselves. <span class="hc-badge hc-badge-planned">Planned</span></p></div>
+      <div class="hc-card"><h4>Clinic-server installer</h4><p>A one-step installer for Linux, plus a ready-made machine image, with no Docker for staff to install themselves. A community build exists today but is private, and its published container images are arm64-only — most clinic servers are x86-64, so a working x86-64 build is a precondition of this being usable, not just a public release of what exists now. <span class="hc-badge hc-badge-planned">Planned</span></p></div>
       <div class="hc-card"><h4>Developer kit</h4><p>Source, synthetic demo data, and a sandbox to build in. <span class="hc-badge hc-badge-planned">Planned</span></p></div>
       <div class="hc-card"><h4>Translation and country templates</h4><p>Templates, specifications, and manuals for a new language or jurisdiction. <span class="hc-badge hc-badge-planned">Planned</span></p></div>
     </div>

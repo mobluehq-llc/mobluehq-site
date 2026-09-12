@@ -58,6 +58,84 @@
       <p>It sits beneath the systems a clinic already runs, or serves as the record system where none exists — a shared foundation the blueHealthcare overlay products build on. Every decision and every clinical assertion belongs to a named human.</p>
     </div>
 
+    <div class="hc-sec">Follow a patient through the record</div>
+    <p style="color:var(--hc-ink-soft);max-width:70ch;line-height:1.7;margin-bottom:10px">Six screens, one synthetic patient, one visit — registration through a critical lab result. Every screen below is a real capture of the running platform, not a mockup.</p>
+    <div class="hc-flow">
+      <div class="hc-flow-item">
+        <div class="hc-flow-n">1</div>
+        <div class="hc-flow-body">
+          <h4>Registration &amp; ADT</h4>
+          <p>Search or register the patient, then admit, transfer, or discharge and assign a bed.</p>
+          <figure class="hc-shot">
+            <img loading="lazy" src="/healthcare/img/captures/platform/registration-adt.png" alt="blueHealthcare platform Registration and ADT screen: patient search by name, DOB, or MRN, with a bed board for admit/transfer/discharge." />
+            <figcaption><span class="hc-shot-tag">Synthetic demo data</span><br>Patient search, MPI candidate matching, and the bed board — for a synthetic patient, no real admission.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="hc-flow-item">
+        <div class="hc-flow-n">2</div>
+        <div class="hc-flow-body">
+          <h4>Schedule</h4>
+          <p>Generate and fill appointment slots against the same patient record.</p>
+          <figure class="hc-shot">
+            <img loading="lazy" src="/healthcare/img/captures/platform/schedule.png" alt="blueHealthcare platform Schedule screen: a provider/resource grid for a chosen date, with a generate-slots action and appointment side panel." />
+            <figcaption><span class="hc-shot-tag">Synthetic demo data</span><br>Provider/resource grid; select a free slot to book or a booked slot to open it.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="hc-flow-item">
+        <div class="hc-flow-n">3</div>
+        <div class="hc-flow-body">
+          <h4>Chart review</h4>
+          <p>The problem list, encounter history, and a signed progress note for the visit.</p>
+          <figure class="hc-shot">
+            <img loading="lazy" src="/healthcare/img/captures/platform/chart-review.png" alt="blueHealthcare platform Chart Review screen: problem list showing Acute kidney injury and Hyperkalemia, an encounter list, and a SOAP-format progress note." />
+            <figcaption><span class="hc-shot-tag">Synthetic demo data</span><br>Problem list, encounters, and documents in one review pane.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="hc-flow-item">
+        <div class="hc-flow-n">4</div>
+        <div class="hc-flow-body">
+          <h4>Orders</h4>
+          <p>A catalogue and order-set composer with typed decision-support warnings.</p>
+          <figure class="hc-shot">
+            <img loading="lazy" src="/healthcare/img/captures/platform/orders.png" alt="blueHealthcare platform Orders screen: an order catalogue and order-set list on the left, a draft-orders composer for the patient on the right." />
+            <figcaption><span class="hc-shot-tag">Synthetic demo data</span><br>Order search, order sets, and a composer that tracks pending vs. signed orders.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="hc-flow-item">
+        <div class="hc-flow-n">5</div>
+        <div class="hc-flow-body">
+          <h4>Flowsheets &amp; vitals</h4>
+          <p>Time-column vitals charting with a batch receipt per entry set.</p>
+          <figure class="hc-shot">
+            <img loading="lazy" src="/healthcare/img/captures/platform/flowsheets-vitals.png" alt="blueHealthcare platform Flowsheets screen: a time-column grid of vitals (heart rate, respiratory rate, SpO2, temperature, blood pressure, pain) charted across an 8-hour shift." />
+            <figcaption><span class="hc-shot-tag">Synthetic demo data</span><br>Vitals, intake/output, and fall-risk/skin scales, each entry set carrying its own receipt.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="hc-flow-item">
+        <div class="hc-flow-n">6</div>
+        <div class="hc-flow-body">
+          <h4>Critical result</h4>
+          <p>A critical lab value surfaces with a closed-loop acknowledgement record.</p>
+          <figure class="hc-shot">
+            <img loading="lazy" src="/healthcare/img/captures/platform/results-critical-value.png" alt="blueHealthcare platform Results screen: an unacknowledged critical results table flagging Creatinine at 10.4 mg/dL, with a results tree showing Potassium 6.8 mmol/L also flagged critical." />
+            <figcaption><span class="hc-shot-tag">Synthetic demo data</span><br>Results tree with abnormal/critical flags; acknowledgement records a closed-loop receipt.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="hc-sec">Patient access — in development</div>
+    <div class="hc-card">
+      <p><b>What exists:</b> A patient-facing module that verifies a signed patient identity before serving anything — signature checking, tamper detection and expiry are implemented and tested. This is the machinery that proves a request belongs to the patient it claims; it is not yet a way for a patient to sign in, which is the piece below. A patient can read only their own record. Two endpoints work today: a record summary and the patient's allergy list.</p>
+      <p><b>What v1 will add:</b> Read-only access to results, problems, allergies, immunisations, procedures, and encounters. Patients will reach this through a patient portal sign-in (identity proofing and enrollment not yet built).</p>
+      <p><b>What is not built:</b> Appointment requests, bill payment, and patient sign-in. These remain planned and are not available in the demo.</p>
+    </div>
+
     <div class="hc-sec">Current state</div>
     <div class="hc-card">
       <p><b>Synthetic data only.</b> No live PHI has been processed. The platform runs in local demo mode with seeded, fixture-based records.</p>

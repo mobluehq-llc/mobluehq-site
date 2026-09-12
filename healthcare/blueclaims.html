@@ -54,6 +54,18 @@
 
     <div class="hc-sec">How it works</div><div class="hc-steps"><div class="hc-step"><div class="hc-step-n">1</div><div class="hc-step-t">Load a claim, its policy, and its supporting records — synthetic in the demo, real files in a pilot.</div></div><div class="hc-step"><div class="hc-step-n">2</div><div class="hc-step-t">The engine maps every clause to its evidence and surfaces contradictions and missing evidence.</div></div><div class="hc-step"><div class="hc-step-n">3</div><div class="hc-step-t">Each gap is typed SEARCHED-ABSENT, NEVER-SEARCHED, or UNDETECTABLE-WITH-THESE-RECORDS — never a single undifferentiated “not found.”</div></div><div class="hc-step"><div class="hc-step-n">4</div><div class="hc-step-t">The adjuster reviews the packet in the Workbench, reaches a decision, and exports it in one of five formats.</div></div><div class="hc-step"><div class="hc-step-n">5</div><div class="hc-step-t">The signed packet is independently verifiable offline.</div></div></div>
 
+    <div class="hc-sec">Screens</div>
+    <div class="hc-shot-grid">
+      <figure class="hc-shot">
+        <img loading="lazy" src="/healthcare/img/captures/blueclaims/evidence.png" alt="blueClaims Plan and clinical document anchors screen: three claim objects with verdicts Supported, Discrepant, and Cannot certify, with an evidence inspector showing the exact plan clause and clinical document that anchor a Supported verdict." />
+        <figcaption><span class="hc-shot-tag">Synthetic demo data</span><br>Plan and clinical document anchors — every object traced to the plan clause and record that support or contradict it.</figcaption>
+      </figure>
+      <figure class="hc-shot">
+        <img loading="lazy" src="/healthcare/img/captures/blueclaims/verdicts-cannot-certify.png" alt="blueClaims Claim evidence packet screen: a service-line summary with one Discrepant billed-amount finding and one Cannot-certify finding requiring adjuster review, plus claim, plan, and contract identifiers." />
+        <figcaption><span class="hc-shot-tag">Synthetic demo data</span><br>Claim evidence packet — a billed-amount discrepancy and an unmapped finding, flagged for the adjuster, not resolved for them.</figcaption>
+      </figure>
+    </div>
+
     <div class="hc-sec">Status, measured</div>
     <div class="hc-card">
       <p>Engine, receipts, persistence, CLI, API, and a working web UI are real and tested for both lanes (health and property &amp; casualty). All five export formats, run ancestry, interrupted-run recovery, drafts/autosave, seeded-scale performance testing, an accessibility audit, and clean-machine packaging are done.</p>
