@@ -47,7 +47,7 @@
       ]
     },
     {
-      "source": "/api/(demo-gate|download)",
+      "source": "/api/(demo-gate|download|notify)",
       "headers": [
         { "key": "Cache-Control", "value": "private, no-store" }
       ]
@@ -83,6 +83,9 @@
     },
     "api/download.js": {
       "maxDuration": 15
+    },
+    "api/notify.js": {
+      "maxDuration": 10
     }
   }
 }
