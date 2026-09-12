@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueHealthcare — MOBLUEHQ</title>
+<meta name="description" content="blueHealthcare: verification tools for utilization management, claims review, and lab research integrity. An overlay, not a replacement." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>
+  :root { --hc-primary: #14337A; }
+  .hc-hero-badge-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap-wide">
+    <div class="hc-hero">
+      <img class="hc-hero-icon" alt="blueHealthcare" src="/assets/logos/healthcare/bluehealthcare/icon.svg" />
+      <div>
+        <div class="hc-eyebrow">MOBLUEHQ · Healthcare &amp; Life Sciences</div>
+        <h1>The record that <b>defends the decision</b></h1>
+        <p class="hc-sub">Healthcare decisions are getting easier to automate and harder to defend in an appeal or an audit. blueHealthcare produces the missing artifact: a signed receipt of the process, verifiable by anyone, anywhere, with no account and no network. An overlay on the systems you already run. A named human still decides.</p>
+        <div class="hc-hero-badge-row">
+          <span class="hc-badge hc-badge-flagship">Receipts prove process, not truth</span>
+        </div>
+        <div class="hc-row">
+          <a class="hc-cta" href="/healthcare/overview">Read the overview</a>
+          <a class="hc-cta-outline" href="/healthcare/contact?segment=pilot">Talk to us about a retrospective pilot</a>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      One-byte-tamper proof, cited: blueChart's own gate proves "all 14 tamper
+      mutations rejected" against a genuine signed receipt
+      (~/products/blueChart/MVP_STATUS.md, "make verify-demo: SUCCESS — genuine
+      receipt verified with a pinned trusted signer (--trusted-signer-pub), all
+      14 tamper mutations rejected", dated 2026-09-05). blueClaims, blueBench,
+      blueDelta, blueRecall, blueNull and blueCatch each run the identical
+      shared verifier and tamper-battery pattern from the same golden bluekit
+      — see each product's own MVP_STATUS.md, and /healthcare/status
+      for the measured count per product.
+    -->
+    <div class="hc-sec">Change one byte, the receipt fails</div>
+    <div class="hc-card">
+      <p>Every product signs its output with Ed25519 and ships a standalone, dependency-light verifier that checks the signature with no server, no database, and no network connection. Tamper a single byte of a signed packet and verification fails — a real, run tamper battery, not a marketing claim. A signed receipt proves what the software ran and recorded; it never proves an underlying real-world claim is true.</p>
+    </div>
+
+    <div class="hc-sec">The products</div>
+    <div class="hc-grid">
+      <a class="hc-product-card" style="--hc-card-accent:#0066E6" href="/healthcare/bluechart">
+        <img src="/assets/logos/healthcare/bluechart/icon.svg" alt="" style="width:40px;height:40px;border-radius:22%" />
+        <h4>blueChart</h4>
+        <span class="hc-badge hc-badge-flagship">Flagship</span>
+        <p>Utilization-management evidence mapper</p>
+      </a>
+      <a class="hc-product-card" style="--hc-card-accent:#3421B5" href="/healthcare/blueclaims">
+        <img src="/assets/logos/healthcare/blueclaims/icon.svg" alt="" style="width:40px;height:40px;border-radius:22%" />
+        <h4>blueClaims</h4>
+        <span class="hc-badge hc-badge-flagship">Flagship</span>
+        <p>Claims shadow-review, health and P&C lanes</p>
+      </a>
+      <a class="hc-product-card" style="--hc-card-accent:#007F8B" href="/healthcare/bluebench">
+        <img src="/assets/logos/healthcare/bluebench/icon.svg" alt="" style="width:40px;height:40px;border-radius:22%" />
+        <h4>blueBench</h4>
+        <span class="hc-badge hc-badge-module">Module</span>
+        <p>Experiment preflight gate</p>
+      </a>
+      <a class="hc-product-card" style="--hc-card-accent:#4325C9" href="/healthcare/bluedelta">
+        <img src="/assets/logos/healthcare/bluedelta/icon.svg" alt="" style="width:40px;height:40px;border-radius:22%" />
+        <h4>blueDelta</h4>
+        <span class="hc-badge hc-badge-module">Module</span>
+        <p>Manifest diff and candidate minimization</p>
+      </a>
+      <a class="hc-product-card" style="--hc-card-accent:#D43A26" href="/healthcare/bluerecall">
+        <img src="/assets/logos/healthcare/bluerecall/icon.svg" alt="" style="width:40px;height:40px;border-radius:22%" />
+        <h4>blueRecall</h4>
+        <span class="hc-badge hc-badge-module">Module</span>
+        <p>Reverse impact when an input goes bad</p>
+      </a>
+      <a class="hc-product-card" style="--hc-card-accent:#0B5CFF" href="/healthcare/bluenull">
+        <img src="/assets/logos/healthcare/bluenull/icon.svg" alt="" style="width:40px;height:40px;border-radius:22%" />
+        <h4>blueNull</h4>
+        <span class="hc-badge hc-badge-module">Module</span>
+        <p>Could the experiment have seen the effect?</p>
+      </a>
+      <a class="hc-product-card" style="--hc-card-accent:#006B45" href="/healthcare/bluecatch">
+        <img src="/assets/logos/healthcare/bluecatch/icon.svg" alt="" style="width:40px;height:40px;border-radius:22%" />
+        <h4>blueCatch</h4>
+        <span class="hc-badge hc-badge-module">Module</span>
+        <p>What a review process actually catches</p>
+      </a>
+      <a class="hc-product-card" style="--hc-card-accent:#A81B57" href="/healthcare/bluesource">
+        <img src="/assets/logos/healthcare/bluesource/icon.svg" alt="" style="width:40px;height:40px;border-radius:22%" />
+        <h4>blueSource</h4>
+        <span class="hc-badge hc-badge-module">Module</span>
+        <p>Cryptographic eSource for clinical trials</p>
+      </a>
+    </div>
+
+    <div class="hc-sec">Start here</div>
+    <div class="hc-grid">
+      <a class="hc-product-card" href="/healthcare/overview"><h4>Overview</h4><p>The problem, the shape of the suite, and what an overlay means in practice.</p></a>
+      <a class="hc-product-card" href="/healthcare/security"><h4>Security &amp; compliance</h4><p>What's true today, stated plainly — including what isn't built yet.</p></a>
+      <a class="hc-product-card" href="/healthcare/status"><h4>Status, measured</h4><p>Met / not met / not measured, per product, sourced from each product's own status file.</p></a>
+      <a class="hc-product-card" href="/healthcare/manuals"><h4>User manuals</h4><p>One manual per product, written from the real, running demo.</p></a>
+      <a class="hc-product-card" href="/healthcare/demo"><h4>Request the demo</h4><p>Synthetic data, password-protected, no PHI.</p></a>
+    </div>
+
+    <!-- TODO: a "/healthcare/platform" page ("the record beneath the
+         overlay" — the 13-module clinical platform, worded so it is never an EHR
+         pitch) is deliberately NOT built yet. Pending the owner's answer on whether
+         US readers should see it at all versus only in the open section. Do not add
+         it without that answer. -->
+    <div class="hc-sec">Built to travel</div>
+    <div class="hc-card">
+      <p>blueHealthcare is a US product today, built so a country is a configuration pack — coding system, privacy regime, FHIR profile, currency, locale — behind one interface. The US is the first pack. <a href="/healthcare/international">See the planned rollout order</a>.</p>
+      <p>The receipt spine and record core are going to be open, so health systems that cannot pay for software can still run a signed, verifiable clinical record. <a href="/healthcare/open">Read what that means, and doesn't mean yet</a>.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Country eligibility and share-back terms — MOBLUEHQ</title>
+<meta name="description" content="Proposed blueHealthcare country eligibility and share-back terms — pending legal review." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/open/licensing/eligibility" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/open/licensing">&larr; LICENSING</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Proposed terms — pending legal review</div>
+    <h1 style="font-weight:800;font-size:34px;margin:0 0 14px">Country eligibility and share-back terms</h1>
+    <div class="hc-boundary" style="margin-bottom:24px"><strong>These are drafts prepared for counsel. They are not in effect, and no licence has been granted.</strong></div>
+
+    <p class="hc-sub">This is the current direction for who can use blueOpenHealthcare and on what terms: free for developers and clinics in countries that are not generally considered industrialized, provided they share back what they build. It refines <a href="/healthcare/open/licensing/options">the licensing options memo</a>'s recommendation, which did not include a country limit.</p>
+
+    <div class="hc-sec">Source-available, not open source</div>
+    <div class="hc-card">
+      <p>An open-source licence, by the Open Source Initiative's own definition, cannot discriminate against a person, group, or field of use — including by country. A country-limited licence therefore cannot be called "open source" and cannot use an OSI-approved licence such as MPL, Apache, or GPL for the parts it limits. This is still called <b>blueOpenHealthcare</b>, and described as <b>free for eligible countries</b> or <b>source-available</b>.</p>
+    </div>
+
+    <div class="hc-sec">Two layers</div>
+    <div class="hc-table-scroll">
+      <table class="hc-status-table">
+        <thead><tr><th>Layer</th><th>What it covers</th><th>Terms</th></tr></thead>
+        <tbody>
+          <tr><td><b>Open spine</b></td><td>The receipt format, the verifier, and the record-core interfaces — the pieces anyone must be able to check</td><td>A standard open licence (MPL-2.0, per the licensing options memo), open to everyone, every country</td></tr>
+          <tr><td><b>Community edition</b></td><td>The clinical platform and applications</td><td>The blueOpenHealthcare Community Licence below: free in eligible countries with share-back; everywhere else, a commercial licence</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hc-sec">Who's eligible</div>
+    <div class="hc-card">
+      <p>Eligibility uses the World Bank's country income classification, published annually — an official, public list already used by lawyers and funders, rather than a bespoke cut-off.</p>
+      <ul>
+        <li><b>Low- and lower-middle-income countries</b> are eligible automatically.</li>
+        <li><b>Upper-middle-income countries</b> may apply; MOBLUEHQ decides case by case.</li>
+        <li><b>High-income countries</b> need a commercial licence.</li>
+        <li><b>Sanctioned countries</b> are excluded regardless of income group.</li>
+      </ul>
+      <p>Canada, the United States, the United Kingdom, Germany, Australia, and Saudi Arabia are all high-income — every market where blueHealthcare is sold commercially is excluded from the free edition by the same test.</p>
+    </div>
+    <div class="hc-card">
+      <p><b>The test is where the patients and clinics are, not where the developer lives.</b> Anyone, anywhere, may read the code, study it, and build with synthetic data. Only production use for patients has a location test.</p>
+    </div>
+    <div class="hc-table-scroll">
+      <table class="hc-status-table">
+        <thead><tr><th>Scenario</th><th>Allowed</th></tr></thead>
+        <tbody>
+          <tr><td>A developer in an eligible country deploys at a clinic in that same country</td><td>Yes</td></tr>
+          <tr><td>An organisation in a high-income country deploys at clinics in an eligible country</td><td>Yes — the patients are in an eligible country</td></tr>
+          <tr><td>A developer in a high-income country builds a translation and contributes it back</td><td>Yes — development is allowed anywhere</td></tr>
+          <tr><td>A clinic in a high-income country runs it for patients in that country</td><td>No — contact MOBLUEHQ for a commercial licence</td></tr>
+          <tr><td>A company in an eligible country sells hosting to clinics in a high-income country</td><td>No — the patients are in a non-eligible country</td></tr>
+          <tr><td>A local company sells implementation services to clinics in its own eligible country</td><td>Yes. Local implementers are how OpenMRS and DHIS2 spread; charging for services is allowed, sublicensing outside eligible countries is not</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hc-sec">Share-back</div>
+    <div class="hc-card">
+      <p>As a condition of this licence, a deploying organisation must:</p>
+      <ul>
+        <li><b>Register</b> each production deployment with MOBLUEHQ — organisation name, country, contact, and which modules are in use — before or within 30 days of going live.</li>
+        <li><b>Send back the code</b> of any modification, translation, or extension it distributes or puts into production, under these same terms, with a short description of what it does. MOBLUEHQ may incorporate it into the software and its commercial products.</li>
+      </ul>
+    </div>
+    <div class="hc-boundary" style="border-left:4px solid #B23A3A"><b>Share-back never means patient data.</b> Nothing in this licence requires or permits sending MOBLUEHQ any patient data, personal data, or health information. Share-back covers code, configuration, translations, and descriptions only.</div>
+
+    <div class="hc-sec">A country that graduates</div>
+    <div class="hc-card"><p>If an eligible country is later reclassified as high-income, clinics already registered there may continue under these terms for three years, after which continued production use needs a commercial licence.</p></div>
+
+    <div class="hc-sec">Everyone else</div>
+    <div class="hc-card"><p>Any use not covered above — a high-income country, or a use outside "Permitted Use" — needs a commercial licence from MOBLUEHQ. <a href="/healthcare/contact">Contact us</a>.</p></div>
+
+    <div class="hc-sec">What the free edition includes</div>
+    <div class="hc-card">
+      <p>A lean list, decided now, expanded as it goes:</p>
+      <ul>
+        <li><b>Included now:</b> patient record and terminology, registration and scheduling, clinical notes, the launcher, the receipt verifier (open to everyone), and a developer kit — synthetic demo data, a sandbox, and translation and country templates.</li>
+        <li><b>Planned, added as we go:</b> orders, results, medicines, lab, imaging, integrations.</li>
+        <li><b>Not in the free edition:</b> the eight commercial products listed on <a href="/healthcare">the healthcare overview</a>. Organisations in eligible countries can ask for any of them free, case by case.</li>
+      </ul>
+      <p class="hc-meta">See <a href="/healthcare/open">the open overview</a> and <a href="/healthcare/open/downloads">the planned downloads</a> for how this reaches a clinic.</p>
+    </div>
+
+    <div class="hc-sec">Before any of this is published</div>
+    <div class="hc-card"><p>A short list of security prerequisites has to be true first — a clean repository, closed care-team access gaps, keys that fail closed outside demo mode, and a disclosure process. See <a href="/healthcare/open/security">the security page</a> for the full list.</p></div>
+
+    <div class="hc-sec">Who runs this</div>
+    <div class="hc-card"><p>MOBLUEHQ, Inc. runs the programme today. Contributor terms are written so that rights can pass to a non-profit foundation later, if one is formed. See <a href="/healthcare/open/governance">governance</a>.</p></div>
+
+    <div class="hc-sec">Open questions for counsel</div>
+    <div class="hc-card">
+      <ul>
+        <li>Is "not high-income under the World Bank classification on the date of first use" clear enough to enforce, and which snapshot date governs?</li>
+        <li>Is "patients located in an eligible country" workable for cross-border hosting and telehealth?</li>
+        <li>Is mandatory share-back of modifications enforceable across these jurisdictions — a licence condition, or a separate contractual covenant?</li>
+        <li>Does registering a deployment's contact details create any data-protection obligation for MOBLUEHQ?</li>
+        <li>Can the blueOpenHealthcare and "blue…" marks be licensed only to compliant users, as the practical enforcement lever?</li>
+        <li>What must contributor terms and trademark ownership look like today so a later transfer to a non-profit foundation is clean?</li>
+      </ul>
+    </div>
+
+    <div class="hc-boundary">Nothing on this page is in effect. It describes a direction for counsel to test, not a licence anyone can rely on today.</div>
+
+    <div class="hc-row" style="margin-top:28px">
+      <a class="hc-cta-outline" href="/healthcare/open/licensing">Back to licensing</a>
+    </div>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

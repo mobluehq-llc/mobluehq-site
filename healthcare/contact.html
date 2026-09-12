@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — MOBLUEHQ</title>
+<meta name="description" content="Contact the blueHealthcare team — demo access, pilots, and security questions." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/contact" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare">&larr; BLUEHEALTHCARE</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Contact</div>
+    <h1 style="font-weight:800;font-size:34px;margin:0 0 14px">Talk to the blueHealthcare team</h1>
+    <p class="hc-sub">Demo access, pilot conversations, security questions, or anything else about the suite.</p>
+
+    <form class="hc-card" id="hcContactForm" novalidate style="max-width:560px;gap:16px">
+      <input type="text" name="_honey" id="hcHoney" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <label class="hc-eyebrow" style="margin:0" for="hcName">Name</label>
+      <input class="hc-gate-input" style="font-family:var(--hc-sans)" type="text" id="hcName" name="name" required autocomplete="off" />
+      <label class="hc-eyebrow" style="margin:0" for="hcEmail">Email</label>
+      <input class="hc-gate-input" style="font-family:var(--hc-sans)" type="email" id="hcEmail" name="email" required autocomplete="off" />
+      <label class="hc-eyebrow" style="margin:0" for="hcMsg">What can we help with?</label>
+      <textarea class="hc-gate-input" style="font-family:var(--hc-sans);min-height:120px" id="hcMsg" name="message" required></textarea>
+      <button class="hc-cta" type="submit" style="align-self:flex-start">Submit</button>
+      <div class="hc-gate-error" id="hcFormNote" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+<script src="/assets/endpoints.js"></script>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var product = params.get('product') || '';
+  var segment = params.get('segment') || 'bluehealthcare';
+  var form = document.getElementById('hcContactForm');
+  var note = document.getElementById('hcFormNote');
+  var leadUrl = (window.MOBLUEHQ_ENDPOINTS && window.MOBLUEHQ_ENDPOINTS.LEAD_INGEST_URL) || '';
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var name = document.getElementById('hcName').value.trim();
+    var email = document.getElementById('hcEmail').value.trim();
+    var msg = document.getElementById('hcMsg').value.trim();
+    if (!name || !email || !msg) { note.textContent = 'Please fill in all fields.'; return; }
+    if (!leadUrl) { note.textContent = 'Could not send — please try again.'; return; }
+    note.textContent = 'Sending…';
+    try {
+      var payload = {
+        id: (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()),
+        name: name,
+        email: email,
+        message: msg,
+        segment: segment,
+        _honey: document.getElementById('hcHoney').value
+      };
+      if (product) { payload.plan_interest = product; }
+      var r = await fetch(leadUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'Idempotency-Key': payload.id },
+        body: JSON.stringify(payload)
+      });
+      if (r.ok) { note.textContent = 'Sent. You will hear back soon.'; form.reset(); }
+      else { note.textContent = 'Could not send — please try again.'; }
+    } catch (err) {
+      note.textContent = 'Could not send — please try again.';
+    }
+  });
+})();
+</script>
+</body>
+</html>

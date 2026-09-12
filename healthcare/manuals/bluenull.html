@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueNull Manual — MOBLUEHQ</title>
+<meta name="description" content="blueNull user manual: getting started, screens, and known gaps." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/manuals/bluenull" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #0B5CFF; --hc-ink: #0B1324; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/manuals">&larr; MANUALS</a>
+    <div class="hc-hero" style="padding-top:24px">
+      <img class="hc-hero-icon" alt="blueNull" src="/assets/logos/healthcare/bluenull/icon.svg" />
+      <div>
+        <h1 style="font-size:32px;margin:0 0 6px">blue<b>Null</b> manual</h1>
+        <p class="hc-sub" style="font-size:15px">Audits realized A/B counts for achieved minimum detectable effect and integrity issues (sample-ratio mismatch, exposure dilution), and signs the result — so a “not significant” dashboard reading can be checked against whether the test could have detected anything at all.</p>
+      </div>
+    </div>
+
+    <div class="hc-sec">What this product is and is not</div>
+    <div class="hc-card"><p><b>Is:</b> Could the experiment have seen the effect?.</p><p><b>Is not:</b> Not a causal-inference platform. A NULL_LICENSED verdict does not claim the underlying effect is exactly zero.</p></div>
+
+    <div class="hc-sec">Who uses it</div>
+    <div class="hc-card"><p>Experimentation and analytics reviewers.</p></div>
+
+    <div class="hc-sec">Getting started — the local demo</div>
+    <div class="hc-card">
+      <p>From the product's own repository:</p>
+      <pre><code>make demo
+make demo-ui   # to see the same scenarios in the web dashboard</code></pre>
+      <p>This runs entirely offline against synthetic fixtures and exits non-zero on any mismatch. It does not connect to any production data source.</p>
+    </div>
+
+    <div class="hc-sec">Screen-by-screen walkthrough</div>
+    <div class="hc-toc"><a href="#">Audit history — powered vs. underpowered results, and sample-ratio-mismatch flags</a></div>
+    <div class="hc-shot-todo"><!-- SCREENSHOT TODO: blueNull — Audit history — powered vs. underpowered results, and sample-ratio-mismatch flags --></div>
+
+    <div class="hc-sec">What a receipt proves</div>
+    <div class="hc-boundary">A signed receipt proves what blueNull ran and recorded; it does not prove an underlying real-world claim is true. Anyone can check the signature offline with the standalone verifier shipped alongside the product, without installing blueNull itself.</div>
+
+    <div class="hc-sec">Known gaps, stated plainly</div>
+    <div class="hc-card"><ul><li>Not a causal-inference platform; no sequential testing or CUPED in V1.</li></ul></div>
+
+    <div class="hc-sec">FAQ</div>
+    <details class="hc-details"><summary>Does blueNull make the decision for me?</summary><p>No. Not a causal-inference platform. A NULL_LICENSED verdict does not claim the underlying effect is exactly zero.</p></details>
+    <details class="hc-details"><summary>Does blueNull replace the system I already use?</summary><p>No — it is an overlay. Your existing record system, LIMS, or claims platform stays exactly where it is.</p></details>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

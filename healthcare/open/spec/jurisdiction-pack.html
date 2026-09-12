@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jurisdiction Pack spec — blueOpenHealthcare — MOBLUEHQ</title>
+<meta name="description" content="The JurisdictionPack interface, quoted field-by-field from platform/core/jurisdiction/interface.py." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/open/spec/jurisdiction-pack" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #3421B5; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/open">&larr; OPEN</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Spec</div>
+    <h1 style="font-weight:800;font-size:32px;margin:0 0 14px">The JurisdictionPack interface</h1>
+    <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack" style="font-weight:800;color:var(--hc-ink)">Spec</a><a href="/healthcare/open/contribute">Contribute</a><a href="/healthcare/open/fixtures">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap">Roadmap</a><a href="/healthcare/open/downloads">Downloads</a><a href="/healthcare/open/community">Community</a></div>
+    
+    <p class="hc-sub">Quoted from the platform's own <code>core/jurisdiction/interface.py</code> (a frozen dataclass, 17 fields). This is the whole envelope a jurisdiction pack fills in — see <a href="/healthcare/open/spec/coding-system">CodingSystem</a>, <a href="/healthcare/open/spec/privacy-regime">PrivacyRegime</a>, and <a href="/healthcare/open/spec/fhir-profile">FhirProfile</a> for the three pluggable slots referenced below.</p>
+    <div class="hc-table-scroll">
+    <table class="hc-status-table">
+      <tr><th>Field</th><th>Type</th><th>What it carries</th></tr>
+      <tr><td><code>pack_id</code></td><td><code>str</code></td><td>Identity — a short id like "us" or "xx".</td></tr><tr><td><code>coding_system</code></td><td><code>CodingSystem</code></td><td>The pluggable coding-vocabulary slot (see the coding-system spec).</td></tr><tr><td><code>privacy_regime</code></td><td><code>PrivacyRegime</code></td><td>The pluggable privacy-law slot (see the privacy-regime spec).</td></tr><tr><td><code>fhir_profile</code></td><td><code>FhirProfile</code></td><td>The pluggable FHIR R4 profile slot (see the FHIR-profile spec).</td></tr><tr><td><code>compliance_rule_set</code></td><td><code>str</code></td><td>An opaque, jurisdiction-defined identifier. No compliance-rule engine reads it yet.</td></tr><tr><td><code>policy_pack_format</code></td><td><code>str</code></td><td>An opaque, jurisdiction-defined identifier. No policy-pack loader reads it yet.</td></tr><tr><td><code>payer_plan_vocabulary</code></td><td><code>tuple[str, ...]</code></td><td>e.g. Medicare / Medicaid / commercial / self-pay for the US pack.</td></tr><tr><td><code>currency</code></td><td><code>str</code></td><td>e.g. "USD".</td></tr><tr><td><code>locale</code></td><td><code>str</code></td><td>e.g. "en-US". Nothing in either web app currently reads this field.</td></tr><tr><td><code>date_format</code></td><td><code>str</code></td><td>e.g. "MM/DD/YYYY".</td></tr><tr><td><code>number_format</code></td><td><code>str</code></td><td>e.g. "1,234.56".</td></tr><tr><td><code>data_residency_flags</code></td><td><code>tuple[str, ...]</code></td><td>e.g. ("no_residency_requirement",) for the US pack.</td></tr><tr><td><code>secondary_use_allowed</code></td><td><code>bool</code></td><td>Whether secondary use of records is allowed under this jurisdiction by default.</td></tr><tr><td><code>deidentification_standard</code></td><td><code>str | None</code></td><td>e.g. "HIPAA Safe Harbor" for the US pack.</td></tr><tr><td><code>small_cell_threshold</code></td><td><code>int | None</code></td><td>A placeholder small-cell suppression threshold; not a validated compliance value.</td></tr><tr><td><code>data_residency_required</code></td><td><code>bool</code></td><td>Whether data must stay within the jurisdiction's own borders.</td></tr><tr><td><code>approval_body_types</code></td><td><code>tuple[str, ...]</code></td><td>e.g. ("IRB", "Privacy Board") for the US pack.</td></tr>
+    </table>
+    </div>
+    <p class="hc-meta">Two packs are registered today: <code>us</code> (real) and <code>xx</code> (a deliberate, empty stub proving the interface assumes nothing about the US). The loader raises on an unknown pack id — it never silently falls back to <code>us</code>.</p>
+    <div class="hc-boundary">This interface existing is not a claim that every product reads from it. See <a href="/healthcare/international/anywhere">the pack model page</a> for the measured, current wiring state.</div>
+
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueHealthcare Launcher Manual — MOBLUEHQ</title>
+<meta name="description" content="How the blueHealthcare launcher, switcher, and entitlement system work." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/manuals/bluehealthcare" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/manuals">&larr; MANUALS</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Manual</div>
+    <h1 style="font-weight:800;font-size:34px;margin:0 0 14px">blueHealthcare launcher &amp; platform</h1>
+    <p class="hc-sub">The launcher is the single window a clinic or reviewer opens: one login, a product switcher, and a reverse proxy in front of each entitled product — never a separate URL or install per product.</p>
+
+    <div class="hc-sec">What this is and is not</div>
+    <div class="hc-card">
+      <p>The launcher itself makes no clinical or claims decisions. It authenticates a named user, decides which products that install is entitled to run (via a signed, offline-verifiable entitlement file), and proxies requests to each product's own process. Every product keeps its own database, its own tests, and its own decision boundary — the launcher depends on the products; no product depends on the launcher.</p>
+    </div>
+
+    <div class="hc-sec">Who uses it</div>
+    <div class="hc-card"><p>An operator (installs and licenses the suite for a site) and named end users with roles — reviewers, adjusters, lab staff — each seeing only the products their entitlement and role permit.</p></div>
+
+    <div class="hc-sec">Getting started — demo only</div>
+    <div class="hc-card">
+      <p>The commands below start the <b>local demo</b>, not a production deployment. Run from <code>~/products/blueHealthcare/launcher</code>:</p>
+      <pre><code>make install        # backend deps
+make web-install     # frontend deps
+make demo            # mints a demo entitlement for all 7 products, starts the launcher</code></pre>
+      <p>The demo prints its login (a demo username and password) on start. <code>make demo-two</code> starts the same launcher with only two products entitled, to see the switcher change what's visible.</p>
+    </div>
+
+    <div class="hc-sec">Screen-by-screen walkthrough</div>
+    <div class="hc-toc">
+      <a href="#">Library / switcher — the one screen the shell renders, listing every entitled product</a>
+      <a href="#">Opening a product — a full-page navigation to that product's own UI, not an iframe</a>
+      <a href="#">Audit log — the append-only, hash-chained record of every access</a>
+    </div>
+    <div class="hc-shot-todo"><!-- SCREENSHOT TODO: blueHealthcare launcher switcher/library screen --></div>
+    <div class="hc-shot-todo"><!-- SCREENSHOT TODO: blueHealthcare launcher audit log view --></div>
+
+    <div class="hc-sec">What a receipt proves</div>
+    <div class="hc-boundary">The launcher's own audit log is hash-chained and checkpointed daily with a signature, so tampering with history is detectable. This proves what happened in the log — it does not itself certify any clinical or claims outcome; that boundary belongs to each product's own signed receipt.</div>
+
+    <div class="hc-sec">Known gaps, stated plainly</div>
+    <div class="hc-card">
+      <ul>
+        <li>Care-team-scoped access control covers a subset of clinical record types today, not all of them (see the <a href="/healthcare/security">security page</a>).</li>
+        <li>The suite composes 13 planned modules; several are still design-only or early build. This manual and the product list on this site describe only what exists in code today.</li>
+        <li>No production deployment exists yet — everything above describes the local demo.</li>
+      </ul>
+    </div>
+
+    <div class="hc-sec">FAQ</div>
+    <details class="hc-details"><summary>Does the launcher replace our EHR?</summary><p>No. It is an overlay that runs alongside your existing systems and produces independent, signed review records.</p></details>
+    <details class="hc-details"><summary>Does opening a product in the launcher change who is responsible for the decision?</summary><p>No. A named human remains the only decision authority for every product in the suite, regardless of how it's launched.</p></details>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

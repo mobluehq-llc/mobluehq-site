@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Platform — MOBLUEHQ</title>
+<meta name="description" content="The 13-module blueHealthcare clinical platform: a record system for sites that have no EHR, and a foundation for the overlay products." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/platform" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare">&larr; BLUEHEALTHCARE</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Infrastructure</div>
+    <h1 style="font-weight:800;font-size:34px;margin:0 0 14px">The record beneath the overlay</h1>
+    <p class="hc-sub">Thirteen clinical modules compose a shared platform record — the foundation every overlay product runs on top of. This page describes the modules as they exist today.</p>
+
+    <div class="hc-sec">What it is</div>
+    <div class="hc-card">
+      <p>A 13-module clinical platform that records care team interactions, observations, medications, orders, results, and service requests — with role-based access control, cryptographic audit logs, and FHIR compliance. The modules are:</p>
+      <ul>
+        <li><code>core.record</code> — the base record types (Patient, Observation, MedicationRequest, etc.) with FHIR mapping</li>
+        <li><code>core.terminology</code> — coding system resolution (ICD, SNOMED, LOINC) plugged into the jurisdiction pack</li>
+        <li><code>build</code> — the compiler that validates and assembles records at test time and at startup</li>
+        <li><code>bridge.ops</code> — operational connectivity to external LIMS and records systems</li>
+        <li><code>admit</code> — patient check-in and registration workflows</li>
+        <li><code>schedule</code> — appointment and slot management</li>
+        <li><code>note</code> — clinical note authoring and annotation</li>
+        <li><code>flow</code> — order routing and task dispatch</li>
+        <li><code>result</code> — lab and imaging result ingestion and display</li>
+        <li><code>order</code> — lab and diagnostic order creation and tracking</li>
+        <li><code>meds</code> — medication preparation, administration, and verification</li>
+        <li><code>accession</code> — specimen accessioning and chain-of-custody</li>
+        <li><code>image</code> — medical image storage and viewer integration</li>
+      </ul>
+    </div>
+
+    <div class="hc-sec">What it is not</div>
+    <div class="hc-card">
+      <p>It sits beneath the systems a clinic already runs, or serves as the record system where none exists — a shared foundation the blueHealthcare overlay products build on. Every decision and every clinical assertion belongs to a named human.</p>
+    </div>
+
+    <div class="hc-sec">Current state</div>
+    <div class="hc-card">
+      <p><b>Synthetic data only.</b> No live PHI has been processed. The platform runs in local demo mode with seeded, fixture-based records.</p>
+      <p><b>Care-team-scoped access control:</b> Role-based authorization is enforced across all record types. Care-team-scoped access — restricting a user to records for patients on their own team — is enforced for 5 of 15 record types as of commit <code>ef3d1a5</code>: Encounter, Observation, ServiceRequest, DiagnosticReport, MedicationRequest. The remaining 10 types receive care-team scoping but it is not enforced; they are inert gates pending full rollout.</p>
+      <p><b>Startup safety gate:</b> The platform refuses to start outside a synthetic-fixtures posture while any record type remains unenforced, so partial enforcement cannot silently reach a production-shaped deployment.</p>
+      <p><b>No production deployment exists yet.</b> Everything described above is the local demo state.</p>
+    </div>
+
+    <div class="hc-boundary">The platform records care team decisions, not outcomes. A named human remains the only authority for every clinical assertion.</div>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

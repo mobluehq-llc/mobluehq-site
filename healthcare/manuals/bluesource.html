@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueSource Manual — MOBLUEHQ</title>
+<meta name="description" content="blueSource user manual: getting started, screens, and known gaps." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/manuals/bluesource" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #A81B57; --hc-ink: #0B1324; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/manuals">&larr; MANUALS</a>
+    <div class="hc-hero" style="padding-top:24px">
+      <img class="hc-hero-icon" alt="blueSource" src="/assets/logos/healthcare/bluesource/icon.svg" />
+      <div>
+        <h1 style="font-size:32px;margin:0 0 6px">blue<b>Source</b> manual</h1>
+        <p class="hc-sub" style="font-size:15px">Secures clinical trial data collection with cryptographic signing and tamper detection, producing verifiable electronic source records.</p>
+      </div>
+    </div>
+
+    <div class="hc-sec">What this product is and is not</div>
+    <div class="hc-card"><p><b>Is:</b> Cryptographic eSource for clinical trials.</p><p><b>Is not:</b> Not a trial management system, not an electronic data capture (EDC) platform on its own, and not a replacement for existing trial infrastructure.</p></div>
+
+    <div class="hc-sec">Who uses it</div>
+    <div class="hc-card"><p>Clinical trial sponsors, CROs, and research integrity teams.</p></div>
+
+    <div class="hc-sec">Getting started — the local demo</div>
+    <div class="hc-card">
+      <p>From the product's own repository:</p>
+      <pre><code>make demo
+make verify-demo</code></pre>
+      <p>This runs entirely offline against synthetic fixtures and exits non-zero on any mismatch. It does not connect to any production data source.</p>
+    </div>
+
+    <div class="hc-sec">Screen-by-screen walkthrough</div>
+    <div class="hc-toc"><a href="#">Enrollment intake — source record form</a><a href="#">Signature verification — the receipt proving cryptographic integrity</a><a href="#">Audit trail — entry timestamps and signer identity</a></div>
+    <div class="hc-shot-todo"><!-- SCREENSHOT TODO: blueSource — Enrollment intake — source record form --></div><div class="hc-shot-todo"><!-- SCREENSHOT TODO: blueSource — Signature verification — the receipt proving cryptographic integrity --></div><div class="hc-shot-todo"><!-- SCREENSHOT TODO: blueSource — Audit trail — entry timestamps and signer identity --></div>
+
+    <div class="hc-sec">What a receipt proves</div>
+    <div class="hc-boundary">A signed receipt proves what blueSource ran and recorded; it does not prove an underlying real-world claim is true. Anyone can check the signature offline with the standalone verifier shipped alongside the product, without installing blueSource itself.</div>
+
+    <div class="hc-sec">Known gaps, stated plainly</div>
+    <div class="hc-card"><ul><li>Demo build (v1); no clinical trial deployment or real trial data processed.</li><li>Integration with trial EDC platforms is planned but not yet implemented.</li></ul></div>
+
+    <div class="hc-sec">FAQ</div>
+    <details class="hc-details"><summary>Does blueSource make the decision for me?</summary><p>No. Not a trial management system, not an electronic data capture (EDC) platform on its own, and not a replacement for existing trial infrastructure.</p></details>
+    <details class="hc-details"><summary>Does blueSource replace the system I already use?</summary><p>No — it is an overlay. Your existing record system, LIMS, or claims platform stays exactly where it is.</p></details>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

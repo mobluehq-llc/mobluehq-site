@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueOpenHealthcare — MOBLUEHQ</title>
+<meta name="description" content="The open spine of blueHealthcare: why it's opening, what exists today, and how to contribute once the licence is published." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/open" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap-wide">
+    <a class="hc-back" href="/healthcare">&larr; BLUEHEALTHCARE</a>
+    <!-- TODO: logo — no new wordmark or logo exists for "blueOpenHealthcare"; it is a
+         project name used in text only. Use the blueHealthcare mark wherever a mark
+         is needed on this page, once one is placed here. -->
+    <div class="hc-eyebrow" style="margin-top:24px">MOBLUEHQ · blueHealthcare · Open</div>
+    <h1 style="font-weight:800;font-size:36px;margin:0 0 14px;overflow-wrap:anywhere">blueOpenHealthcare</h1>
+    <p class="hc-sub">blueOpenHealthcare is the free edition of blueHealthcare for clinics and developers in countries that are not generally considered industrialized, so that health systems that cannot pay for software can still run a signed, verifiable clinical record — and so that the people who know their country's coding, privacy and language can teach us. The licence and contribution terms are being decided by counsel; code contributions open when they are published. Until then, this is a place to read the interfaces, tell us what your jurisdiction needs, and argue with the design. <b>No patient data, ever — real or "anonymised" — anywhere in this community.</b></p>
+    <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open" style="font-weight:800;color:var(--hc-ink)">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack">Spec</a><a href="/healthcare/open/contribute">Contribute</a><a href="/healthcare/open/fixtures">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap">Roadmap</a><a href="/healthcare/open/downloads">Downloads</a><a href="/healthcare/open/community">Community</a></div>
+
+    <div class="hc-sec">Who this is for</div>
+    <div class="hc-card">
+      <p>blueOpenHealthcare is for developers and clinics in countries that are not generally considered industrialized — free to use, provided you share back what you build. The exact test is the World Bank's country income classification: low- and lower-middle-income countries are eligible automatically, upper-middle-income countries may apply case by case, and high-income countries (Canada, the US, the UK, Germany, Australia, Saudi Arabia among them) need a commercial licence. Anyone, anywhere, may read the code and build with synthetic data — the location test applies to running it for real patients. Share-back means registering each live clinic and sending back the code of your changes and translations — <b>never patient data</b>. See <a href="/healthcare/open/licensing/eligibility">the full eligibility and share-back terms</a>.</p>
+      <p class="hc-meta">Canada, the US, Europe, and other high-income countries: <a href="/healthcare/contact">contact us</a> for a commercial licence.</p>
+    </div>
+
+    <div class="hc-sec">What's in the free edition</div>
+    <div class="hc-card">
+      <p>A lean list, expanded as it goes:</p>
+      <ul>
+        <li><b>Included now:</b> patient record and terminology, registration and scheduling, clinical notes, the launcher, the receipt verifier (open to everyone), and a developer kit — synthetic demo data, a sandbox, and translation and country templates.</li>
+        <li><b>Planned, added as we go:</b> orders, results, medicines, lab, imaging, integrations.</li>
+        <li><b>Not in the free edition:</b> the eight commercial products listed on <a href="/healthcare">the healthcare overview</a>. Organisations in eligible countries can ask for any of them free, case by case.</li>
+      </ul>
+    </div>
+
+    <div class="hc-sec">Read</div>
+    <div class="hc-grid">
+      <a class="hc-product-card" href="/healthcare/open/why"><h4>Why</h4><p>Why there is a free edition, and what "open" does and doesn't mean.</p></a>
+      <a class="hc-product-card" href="/healthcare/open/architecture"><h4>Architecture</h4><p>The core/app split, the pack model, receipts, and the verifier.</p></a>
+      <a class="hc-product-card" href="/healthcare/open/spec/jurisdiction-pack"><h4>Specs</h4><p>The jurisdiction pack, coding system, privacy regime and FHIR profile interfaces, quoted from the real code.</p></a>
+      <a class="hc-product-card" href="/healthcare/open/licensing/eligibility"><h4>Eligibility and share-back</h4><p>Who can use it for free, and what sharing back means.</p></a>
+      <a class="hc-product-card" href="/healthcare/open/downloads"><h4>Downloads</h4><p>The planned clinic-server installer and developer kit — not yet available.</p></a>
+      <a class="hc-product-card" href="/healthcare/open/roadmap"><h4>Roadmap</h4><p>What's built, what's measured, what isn't — in plain words.</p></a>
+    </div>
+
+    <div class="hc-sec">Participate</div>
+    <div class="hc-grid">
+      <a class="hc-product-card" href="/healthcare/open/contribute"><h4>Contribute</h4><p>What's possible now versus later, and the rule that never bends.</p></a>
+      <a class="hc-product-card" href="/healthcare/open/fixtures"><h4>Fixtures</h4><p>Synthetic fixture sets: what they are, and the no-real-data rule.</p></a>
+      <a class="hc-product-card" href="/healthcare/open/governance"><h4>Governance</h4><p>Roles, moderation, and how a contribution is credited.</p></a>
+      <a class="hc-product-card" href="/healthcare/open/security"><h4>Security</h4><p>How to report a vulnerability.</p></a>
+      <a class="hc-product-card" href="/healthcare/open/community"><h4>Community</h4><p>Where the discussion lives.</p></a>
+    </div>
+
+    <div class="hc-boundary"><b>No real patient, member, claimant or clinician data of any kind — identifiable, de-identified, “anonymised”, aggregated, or screenshot — may be posted, attached, or committed anywhere in this community. Synthetic, generated fixtures only.</b></div>
+    <p class="hc-meta">blueOpenHealthcare is the free edition of blueHealthcare, a US clinical assurance product. See <a href="/healthcare">the commercial suite</a>.</p>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

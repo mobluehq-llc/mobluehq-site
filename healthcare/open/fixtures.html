@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fixtures — blueOpenHealthcare — MOBLUEHQ</title>
+<meta name="description" content="Synthetic fixture rules for blueOpenHealthcare: generated only, marked, and never real or de-identified data." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/open/fixtures" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #007F8B; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/open">&larr; OPEN</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Fixtures</div>
+    <h1 style="font-weight:800;font-size:32px;margin:0 0 14px">Synthetic fixtures, and the rule that enforces itself</h1>
+    <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack">Spec</a><a href="/healthcare/open/contribute">Contribute</a><a href="/healthcare/open/fixtures" style="font-weight:800;color:var(--hc-ink)">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap">Roadmap</a><a href="/healthcare/open/downloads">Downloads</a><a href="/healthcare/open/community">Community</a></div>
+    
+    <div class="hc-boundary" style="border-left:4px solid #B23A3A"><b>No real patient, member, claimant or clinician data of any kind — identifiable, de-identified, “anonymised”, aggregated, or screenshot — may be posted, attached, or committed anywhere in this community. Synthetic, generated fixtures only.</b></div>
+
+    <div class="hc-sec">Why "de-identified" doesn't clear the bar</div>
+    <div class="hc-card"><p>De-identification, in blueHealthcare's own design, is a receipted, approved, in-institution act. A community has no way to verify a contributor's claim that something was de-identified — so the only enforceable line is <b>generated</b>. This also keeps the hub from ever becoming a dataset exchange by accident.</p></div>
+
+    <div class="hc-sec">The pattern this project already uses</div>
+    <div class="hc-card">
+      <p>The commercial suite's demo posture is the model: an environment flag (<code>BH_DEMO_FIXTURES_ONLY</code>) refuses arbitrary ingest and forces a synthetic-data notice onto every export and UI surface touching demo data — several products already default a project's <code>is_synthetic</code> flag to <code>True</code>. Any future community-edition build is expected to ship with an equivalent lock on by default, so a curious install can't be pointed at real records without a deliberate, documented flip.</p>
+      <p>A future fixture contribution is expected to carry a marker naming it synthetic and the generator (tool + seed) that produced it — the same shape the repository's own test fixtures already use elsewhere. A pile of files with no generator behind them is the wrong shape for a contribution here, on sight, regardless of content.</p>
+    </div>
+
+    <div class="hc-boundary">Nothing on this page describes a submission mechanism that exists yet — see <a href="/healthcare/open/contribute">contribute</a> for what's possible now.</div>
+
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

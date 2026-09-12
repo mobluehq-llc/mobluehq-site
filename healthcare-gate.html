@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>blueHealthcare Access — MOBLUEHQ</title>
+<meta name="description" content="Enter the password to access the blueHealthcare section." />
+<meta name="robots" content="noindex, nofollow" />
+
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1">
+<style>
+  :root { --hc-primary: #14337A; }
+  .hc-gate-wrap { max-width: 440px; }
+</style>
+</head>
+<body class="hc-body">
+
+<a class="hc-skip" href="#main-content">Skip to content</a>
+
+<nav class="hc-nav" aria-label="Primary">
+  <a href="/" class="hc-brand">MOBLUE<b>HQ</b></a>
+  <div class="hc-navlinks">
+    <a href="/about">About</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/investors">Investors</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <section class="hc-wrap hc-gate-wrap">
+    <img src="/assets/logos/healthcare/bluehealthcare/icon.svg" alt="" style="width:56px;height:56px;border-radius:22%;margin-bottom:18px" />
+    <div class="hc-eyebrow">blueHealthcare Access</div>
+    <p class="hc-sub">The blueHealthcare section is gated during early access. Enter the password to continue. The demo inside uses synthetic data only.</p>
+
+    <form class="hc-gate-form" id="hcGateForm" novalidate>
+      <label class="hc-eyebrow" style="margin:0" for="hcPassword">Password</label>
+      <input class="hc-gate-input" type="password" id="hcPassword" name="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" required />
+      <button class="hc-cta" type="submit" id="hcGateSubmit">Enter</button>
+      <div class="hc-gate-error" id="hcGateError" role="alert" aria-live="polite"></div>
+    </form>
+  </section>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b></div>
+    <div class="hc-footer-links">
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('hcGateForm');
+  var errorEl = document.getElementById('hcGateError');
+  var submitBtn = document.getElementById('hcGateSubmit');
+  var passwordEl = document.getElementById('hcPassword');
+  var params = new URLSearchParams(window.location.search);
+  var next = params.get('next') || '/healthcare';
+  // Only ever follow a same-site path under /healthcare — never
+  // let a query param send the user anywhere else after a successful check.
+  if (!/^\/portfolio\/bluehealthcare(\/|$)/.test(next)) {
+    next = '/healthcare';
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var password = passwordEl.value;
+    errorEl.textContent = '';
+    if (!password) { errorEl.textContent = 'Enter the password.'; return; }
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Checking…';
+    try {
+      var r = await fetch('/api/healthcare-gate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: password })
+      });
+      var data = await r.json().catch(function () { return {}; });
+      if (r.ok && data.ok) {
+        window.location.href = data.redirect || next;
+        return;
+      }
+      errorEl.textContent = (data && data.error) || 'Incorrect password.';
+      passwordEl.value = '';
+      passwordEl.focus();
+    } catch (err) {
+      errorEl.textContent = 'Could not verify — please try again.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enter';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Licensing options memo — MOBLUEHQ</title>
+<meta name="description" content="Proposed blueHealthcare licensing options memo — pending legal review." />
+<link rel="the designical" href="https://www.mobluehq.com/healthcare/open/licensing/options" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/open/licensing">&larr; LICENSING</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Proposed terms — pending legal review</div>
+    <h1 style="font-weight:800;font-size:34px;margin:0 0 14px">Licensing options memo</h1>
+    <div class="hc-boundary" style="margin-bottom:24px"><strong>These are drafts prepared for counsel. They are not in effect, and no licence has been granted.</strong></div>
+    <div class="hc-boundary" style="border-left:4px solid #8A5A00;margin-bottom:24px">This memo's recommendation — MPL-2.0, open to everyone, no country limit — is <b>superseded</b> by <a href="/healthcare/open/licensing/eligibility">the country eligibility and share-back proposal</a>. The licence-comparison analysis below still stands; the country position does not.</div>
+
+    <h2> 0. The goal, stated precisely
+<p>Adam's goal, as recorded in the design: give the open part of the blueHealthcare clinical platform to
+health systems worldwide that cannot pay, while the company sells the commercial blueHealthcare
+product line (US first, then Germany, Australia, Saudi Arabia, UK)
+(<code>the design/00<em>the design/the strategic plan</code>, "commitment #4" and the strategic-paths table, path 4).
+The mechanism the design already names is <strong>open-core</strong>: "the receipt spine and verifier are open. The
+healthcare applications ship a community edition under a public-sector / low-income-country license
+with a scoped patent grant (open-core, the DHIS2/OpenMRS model)" (<code>the strategic plan</code>,
+commitment 4).</p>
+<p><strong>This memo's first job is to correct a framing problem in that sentence before comparing options,
+because it shapes every option below.</strong></p>
+<h3> 0.1 An OSI open-source licence cannot do what "public-sector / low-income-country license" implies
+<p>The Open Source Definition (OSD), maintained by the Open Source Initiative, is the standard the
+industry and OpenMRS/DHIS2 use to decide what counts as "open source." Two of its ten criteria are
+directly relevant here:</p>
+<li><strong>"No Discrimination Against Persons or Groups"</strong> — "The license must not discriminate against any</li>
+<p>  person or group of persons."</p>
+<li><strong>"No Discrimination Against Fields of Endeavor"</strong> — "The license must not restrict anyone from</li>
+<p>  making use of the program in a specific field of endeavor," including business use.
+(Open Source Initiative, The Open Source Definition: <a href="https://opensource.org/osd">https://opensource.org/osd</a>, verified live.)</p>
+<p>Put plainly: <strong>an OSI-approved open-source licence cannot be scoped to "low-income countries" or "health
+systems that can't pay."</strong> It cannot charge based on ability to pay, cannot exclude a specific class of
+user (including a large, well-funded hospital chain or a commercial vendor), and cannot be
+field-of-use-restricted to the public sector. A licence that tried to do any of those things would not
+be an open-source licence by the OSD's own test, and could not credibly borrow the "open source"
+label that makes the OpenMRS/DHIS2 comparison valuable in the first place.</p>
+<p><em><em>How "free for those who can't pay" is actually achieved, then, is not a clause in the outbound
+licence — it is the combination of (a) a genuinely open licence on the spine, which is free for
+everyone including a well-resourced buyer, plus (b) a </em>separate<em> commercial offering (support,
+hosting, the proprietary application layer, integrations, SLAs) that the company sells to those who
+can pay.</em><em> That is exactly what "open core" means in practice, and it is what OpenMRS and DHIS2 do:
+their core software is unconditionally open to everyone, and revenue comes from implementation
+partners, hosting, and paid modules/services layered on top — not from a licence clause that reads
+income.</p>
+<h3> 0.2 Why source-available licences (BSL, Elastic License, PolyForm) are a different category, not a variant
+<p>A "source-available" licence publishes the source but limits </em>who<em> may run it in production, or
+requires a fee once usage crosses some line — that is precisely a field-of-use or identity
+restriction, which is what the OSD forbids. Concretely:</p>
+<li><strong>Business Source License (BSL/BUSL)</strong>: source is published, but a licensee is barred from certain</li>
+<p>  production uses (defined per release) until a stated "Change Date," after which it automatically
+  converts to a real open-source licence (commonly Apache-2.0 or GPL). It is not OSI-approved and
+  does not meet the OSD. (Wikipedia, "Business Source License": <a href="https://en.wikipedia.org/wiki/Business</em">https://en.wikipedia.org/wiki/Business</em</a>Source_License>;
+  MariaDB's own BSL FAQ describes the same mechanic: <a href="https://mariadb.com/bsl-faq-adopting/">https://mariadb.com/bsl-faq-adopting/</a>.)</p>
+<li><strong>Elastic License</strong>: source-available, free to use, but with use restrictions (notably barring</li>
+<p>  competing "as a service" offerings); after a period it can convert to Apache-2.0. Elastic's own blog
+  describes the change from Apache-2.0 to this model and back again over time.
+  (Elastic, "License Change Clarification": <a href="https://www.elastic.co/blog/license-change-clarification">https://www.elastic.co/blog/license-change-clarification</a>.)</p>
+<li><strong>PolyForm licences</strong>: a family of template source-available licences (noncommercial, small-business,</li>
+<p>  internal-use, shield, etc.), each with an explicit field-of-use or competitor restriction by design.
+  (Overview via FOSSA's guide: <a href="https://fossa.com/blog/comprehensive-guide-source-available-software-licenses/">https://fossa.com/blog/comprehensive-guide-source-available-software-licenses/</a>.)</p>
+<p>OSI describes this category of licence as failing the Open Source Definition and has publicly used
+the term "fauxpen" for source-available licences marketed as if they were open source (summarized in
+the FOSSA guide above; <strong>the exact OSI usage of "fauxpen" and its original source were not
+independently fetched and should be treated as unverified</strong> — confirm before quoting it to counsel).</p>
+<p><strong>Why this matters for blueOpenHealthcare specifically:</strong> a source-available licence would look, on
+its face, like it satisfies "give it to those who can't pay, keep it from those who can" — but it
+does that by exactly the mechanism the OSD forbids, so the project could not call the result "open
+source," could not credibly claim the OpenMRS/DHIS2 comparison, and — separately — a "cannot compete
+with us" clause is the one thing large vendors have the least trouble ignoring in low-oversight
+jurisdictions, because it is a contract term to be litigated, not a permission that was never
+granted. It buys reputational cost, not real protection, and it costs the open-source narrative that
+is the whole point of the international-access strategy. It is included in the comparison table
+below for completeness, and is not recommended.</p>
+<li>--</li>
+<h2> 1. The five options compared
+<table class="hc-status-table">
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Apache-2.0</th>
+<th>MPL-2.0</th>
+<th>AGPL-3.0</th>
+<th>Dual licence (AGPL + commercial)</th>
+<th>Open core (proprietary <code>app/</code>, open <code>the core/</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><strong>Goal holds</strong> (free for those who can't pay; commercial survives)</td><td>Yes, but only via a </em>separate<em> commercial layer/service — the licence itself cannot discriminate</td><td>Same as Apache-2.0</td><td>Yes, and the copyleft gives a second lever: a SaaS competitor must publish their modifications, which reduces their incentive to fork-and-compete</td><td>Yes — AGPL default + a paid non-AGPL licence for anyone who wants proprietary terms</td><td>Yes — this is the mechanism the design already names, and does not depend on a licence clause at all</td></tr>
+<tr><td><strong>Protects against a large vendor taking the code into a closed SaaS</strong></td><td>Weak. Apache-2.0 permits closed derivative works and closed-source SaaS with no reciprocal obligation</td><td>Weak-to-moderate. File-level copyleft: modified </em>MPL files<em> must stay MPL and be shared, but the vendor can wrap them in a proprietary "Larger Work" and never publish that wrapper (Mozilla, MPL-2.0 "Distribution of Source Form," "Distribution of a Larger Work": <a href="https://www.mozilla.org/en-US/MPL/2.0/">https://www.mozilla.org/en-US/MPL/2.0/</a>)</td><td>Strongest of the five for the SaaS case. AGPL's Section 13 extends copyleft to network use: a party that runs a modified version as a network service must offer users the corresponding source (GNU, AGPL-3.0 full text: <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">https://www.gnu.org/licenses/agpl-3.0.en.html</a>)</td><td>Same protection as AGPL for anyone using the free licence; a vendor who wants to avoid disclosure must buy the commercial licence, which is the point</td><td>Strongest in practice, because the parts a SaaS competitor would want most (billing, tenancy, enterprise export, UI) are never released at all — the licence question only applies to the spine</td></tr>
+<tr><td><strong>Explicit patent grant</strong></td><td>Yes — Apache-2.0, broad, terminates on patent litigation against the licensor (Apache Software Foundation, LICENSE-2.0: <a href="https://www.apache.org/licenses/LICENSE-2.0">https://www.apache.org/licenses/LICENSE-2.0</a>)</td><td>Yes — MPL-2.0, similarly scoped to each contributor's own contribution, with a defensive termination clause at (<a href="https://www.mozilla.org/en-US/MPL/2.0/">https://www.mozilla.org/en-US/MPL/2.0/</a>)</td><td>Yes — AGPL-3.0 incorporates GPLv3's explicit patent grant unchanged (<a href="https://www.gnu.org/licenses/agpl-3.0.en.html">https://www.gnu.org/licenses/agpl-3.0.en.html</a>)</td><td>Yes, inherited from AGPL for the free tier; the commercial licence's patent terms are whatever the company negotiates</td><td>Whatever the chosen licence for <code>the core/</code> provides; <code>app/</code> carries no open patent grant because it is not distributed under an open licence</td></tr>
+<tr><td><strong>Fits <code>core</code>/<code>app</code> split and <code>make community</code></strong></td><td>Fits cleanly — permissive licence on <code>the core/</code>, proprietary <code>app/</code>; no interaction risk</td><td>Fits cleanly for the same reason, with the added benefit that MPL's file-level scope maps naturally onto "these specific files are the spine"</td><td>Fits, but needs care: if any AGPL-licensed <code>the core/</code> code is statically linked into or otherwise combined with proprietary <code>app/</code> code in a way that makes them one "work" under AGPL, that could pull <code>app/</code> under AGPL too. This is a real legal question, not a policy one — see Q7 in <code>legal guidance</code>. A clean process-boundary or service-boundary between <code>the core/</code> and <code>app/</code> (which the addendum's <code>core</code> has "zero dependencies on <code>app/</code>" rule already pushes toward) reduces this risk considerably</td><td>Same combination risk as plain AGPL for the free tier, resolved for paying customers by the commercial licence, which can explicitly permit combination with proprietary code</td><td>This </em>is<em> the <code>core</code>/<code>app</code> split; the licence question is then "what open licence goes on <code>the core/</code>," i.e., the first four columns, applied only to <code>the core/</code></td></tr>
+<tr><td><strong>Fits OpenMRS/Bahmni's own licensing</strong></td><td>Compatible; Apache-2.0 and MPL-2.0 are both listed by Mozilla as mutually and GPL-compatible in relevant ways</td><td><strong>Exact match with OpenMRS.</strong> OpenMRS is licensed under MPL-2.0 with a healthcare-specific disclaimer (openmrs-core <code>LICENSE</code>: <a href="https://github.com/openmrs/openmrs-core/blob/master/LICENSE">https://github.com/openmrs/openmrs-core/blob/master/LICENSE</a>; background at the OpenMRS wiki, "Proposed Adoption of MPL 2.0 with Disclaimer": <a href="https://openmrs.atlassian.net/wiki/spaces/RES/pages/26312431/Proposed+Adoption+of+MPL+2.0+with+Disclaimer">https://openmrs.atlassian.net/wiki/spaces/RES/pages/26312431/Proposed+Adoption+of+MPL+2.0+with+Disclaimer</a>)</td><td><strong>Exact match with Bahmni's current licence.</strong> Bahmni's GitHub repositories are licensed AGPL-3.0 today (Bahmni, "License": <a href="https://www.bahmni.org/license">https://www.bahmni.org/license</a>; also <a href="https://www.bahmni.org/license-faq">https://www.bahmni.org/license-faq</a>). <strong>However</strong>, as of a November 2025 community thread, the Bahmni Coalition has an active proposal to move away from AGPL-3.0 toward MPL-2.0 (with a healthcare disclaimer, following OpenMRS) or MIT for some repositories (OpenMRS Talk, "Proposal for License change for Bahmni": <a href="https://talk.openmrs.org/t/proposal-for-license-change-for-bahmni-requesting-community-inputs-by-nov-15-2025/47267">https://talk.openmrs.org/t/proposal-for-license-change-for-bahmni-requesting-community-inputs-by-nov-15-2025/47267</a>). <strong>Treat Bahmni's AGPL status as current-but-possibly-transitional; counsel should re-check before this memo is acted on.</strong></td><td>The free tier can be made to match either OpenMRS (MPL) or Bahmni's current AGPL</td><td>The open <code>the core/</code> can be licensed to match either community; the proprietary <code>app/</code> has no OpenMRS/Bahmni analogue because neither of those projects has a comparable held-back proprietary layer at the core level</td></tr>
+<tr><td><strong>Government procurement acceptability in low-income health systems</strong></td><td>Very high — permissive licences are the least friction for any government legal/procurement review; no reciprocal disclosure obligation to worry about</td><td>High — same as Apache in most procurement reviews; the file-level copyleft is rarely a procurement blocker because it only affects code the government would be redistributing, not running</td><td>Moderate. Some government and enterprise procurement teams flag AGPL specifically because the network-copyleft clause is unusual and legal teams unfamiliar with it sometimes over-read its reach; OpenMRS's own history is informative here — it deliberately moved </em>away<em> from a from-scratch licence toward a standard OSI one specifically to reduce this kind of friction (OpenMRS wiki, cited above)</td><td>Moderate for the free tier (same AGPL friction), resolved for institutions that need cleaner terms by offering the commercial licence</td><td>High for procurement of the open <code>the core/</code> (whatever permissive/weak-copyleft licence is chosen); the proprietary <code>app/</code> goes through ordinary commercial procurement like any vendor product</td></tr>
+<tr><td><strong>Export control / sanctions considerations for a global release</strong></td><td>Flagged, not resolved, for all five options — see below</td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+<h2> 2. Why OpenMRS and Bahmni matter as comparators
+<p>the design explicitly names "the DHIS2/OpenMRS model" as the target (<code>the strategic plan</code>
+commitment 4), and the strategy row for the community edition names an OpenMRS/Bahmni module as the
+first integration target. Verified current facts:</p>
+<li><strong>OpenMRS</strong>: MPL-2.0 with an added Health-Related Additional Disclaimer of Warranty and Limitation</li>
+<p>  of Liability. History: OpenMRS Public License 1.0 (from-scratch) → a modified MPL 1.1 → MPL 2.0,
+  the last move made specifically </em>with<em> the OSI's help to land on a real, OSI-approved licence
+  rather than a bespoke one (OpenMRS wiki, "Proposed Adoption of MPL 2.0 with Disclaimer":
+  <a href="https://openmrs.atlassian.net/wiki/spaces/RES/pages/26312431/Proposed+Adoption+of+MPL+2.0+with+Disclaimer">https://openmrs.atlassian.net/wiki/spaces/RES/pages/26312431/Proposed+Adoption+of+MPL+2.0+with+Disclaimer</a>;
+  license file: <a href="https://github.com/openmrs/openmrs-core/blob/master/LICENSE">https://github.com/openmrs/openmrs-core/blob/master/LICENSE</a>). OpenMRS does not
+  require the same licence for community-contributed modules (OpenMRS wiki, "Licensing of OpenMRS
+  Modules FAQ": <a href="https://openmrs.atlassian.net/wiki/spaces/docs/pages/26312765/Licensing+of+OpenMRS+Modules+FAQ">https://openmrs.atlassian.net/wiki/spaces/docs/pages/26312765/Licensing+of+OpenMRS+Modules+FAQ</a>).</p>
+<li><strong>Bahmni</strong>: AGPL-3.0 today (<a href="https://www.bahmni.org/license">https://www.bahmni.org/license</a>, <a href="https://www.bahmni.org/license-faq">https://www.bahmni.org/license-faq</a>),</li>
+<p>  with an active 2025 community proposal to move to MPL-2.0 (matching OpenMRS) or MIT for some
+  repositories (<a href="https://talk.openmrs.org/t/proposal-for-license-change-for-bahmni-requesting-community-inputs-by-nov-15-2025/47267">https://talk.openmrs.org/t/proposal-for-license-change-for-bahmni-requesting-community-inputs-by-nov-15-2025/47267</a>).</p>
+<li><strong>DHIS2</strong> (mentioned in the design as a second reference open-core project): the <code>dhis2-core</code></li>
+<p>  repository's <code>LICENSE</code> file is <strong>BSD-3-Clause</strong>, not AGPL (verified by fetching
+  <code>https://raw.githubusercontent.com/dhis2/dhis2-core/master/LICENSE</code> directly). This is worth
+  flagging to counsel because the design phrase "DHIS2/OpenMRS model" implies a shared approach, but the
+  two projects use materially different licences (BSD-3-Clause, a permissive licence with no
+  copyleft, versus OpenMRS's file-level-copyleft MPL-2.0). <strong>DHIS2's own web terms
+  (<a href="https://dhis2.org/terms-privacy/">https://dhis2.org/terms-privacy/</a>) were checked and cover only the dhis2.org website, not the
+  software licence — the BSD-3-Clause finding above is the software licence.</strong> DHIS2 also runs a
+  separate, more actively governed brand-control document for its name and marks; a specific DHIS2
+  trademark-policy URL was searched for and not found in a form that could be verified — <strong>mark
+  DHIS2's trademark practice as unverified</strong> (see <code>the trademark policy</code>).</p>
+<p><strong>Implication for counsel:</strong> "the DHIS2/OpenMRS model" is really two different licensing choices
+(BSD-3-Clause vs. MPL-2.0) united only by the open-core </em>business<em> model (open engine, revenue from
+services/paid layers on top). Picking a single outbound licence to "match" both is not possible;
+counsel should decide whether OpenMRS's MPL-2.0 (closer fit: healthcare-specific disclaimer
+precedent, and the module most likely to be extended — Bahmni — may itself be moving to MPL-2.0) or
+a permissive licence (closer fit to DHIS2's actual choice) better serves the stated goal.</p>
+<h2> 3. Export control and sanctions — flagged, not resolved
+<p>This program is a <strong>global</strong> release, and the strategy explicitly includes low-income and
+Gulf-region markets. Two distinct questions exist and neither is resolved here:</p>
+<p>1. <strong>Is the software itself subject to U.S. export control (EAR) at all, and does an open-source
+   release change that?</strong> Publicly available, freely downloadable open-source </em>encryption<em> source
+   code is generally excluded from EAR licensing requirements once a required notification is filed,
+   under License Exception TSU (15 C.F.R. § 740.13(e)); the Linux Foundation has published general
+   guidance on how U.S. export control interacts with open-source projects
+   (<a href="https://www.linuxfoundation.org/resources/publications/understanding-us-export-controls-with-open-source-projects">https://www.linuxfoundation.org/resources/publications/understanding-us-export-controls-with-open-source-projects</a>;
+   BIS's own encryption-controls page: <a href="https://www.bis.gov/learn-support/encryption-controls/encryption-items-not-subject-to-ear">https://www.bis.gov/learn-support/encryption-controls/encryption-items-not-subject-to-ear</a>).
+   blueHealthcare's receipt/verifier spine signs records with public-key cryptography (Ed25519, per
+   the project's design's description of the security page), which is exactly the kind of thing this
+   exception was written for — but whether the specific notification has been filed, and whether any
+   </em>non-encryption<em> part of the platform is separately controlled, is a question only counsel (with
+   export-control expertise) can answer. <strong>Not resolved here.</strong>
+2. <strong>Sanctions / restricted-party screening for who may download or contribute.</strong> An OSI licence
+   cannot restrict who uses the software — but U.S. sanctions law is a separate, mandatory
+   overlay that applies regardless of licence choice: the company likely cannot knowingly make the
+   software available to, or accept contributions that route through, sanctioned countries, entities,
+   or listed individuals, irrespective of what the licence says. GitHub itself, as a US company,
+   already restricts access from certain sanctioned jurisdictions at the platform level, which may do
+   some of this work by default — but that is a fact about GitHub's own policy, not a substitute for
+   the company's own OFAC/BIS compliance analysis. <strong>Not resolved here; flagged as Q9 in
+   <code>legal guidance</code>.</strong></p>
+<h2> 4. Recommendation for counsel to test
+<p><strong>Recommendation (not a decision):</strong> license <code>the core/</code> (the receipt spine, verifier, record core, and
+jurisdiction interfaces) under <strong>MPL-2.0</strong>, following OpenMRS's own precedent of adding a
+healthcare-specific warranty/liability disclaimer on top, and keep <code>app/</code> (billing, tenancy,
+enterprise exports, and the commercial healthcare applications) proprietary and unlicensed for
+public distribution — i.e., go with the <strong>open-core</strong> row of the table above, using MPL-2.0 as the
+specific licence for the open half. MPL-2.0's file-level copyleft gives real protection against a
+vendor quietly forking the spine into a closed SaaS without giving anything back, it explicitly
+permits combination with proprietary code in a "Larger Work" so <code>app/</code> is never at legal risk of
+being pulled under the open licence, it carries an explicit patent grant, and it is the licence the
+project's own most likely integration partner (OpenMRS) already uses — which lowers friction if a
+module is ever contributed back and forth between the two projects. AGPL-3.0 is the strongest
+alternative to test if counsel weighs SaaS-forking risk more heavily than combination flexibility;
+it is also Bahmni's </em>current</em> (though possibly transitional) licence, which matters if Bahmni
+integration specifically is the priority over OpenMRS integration.</p>
+<h2> 5. Questions counsel must answer before this can move
+<p>See <code>legal guidance</code> for the full numbered list. The ones raised directly by this memo:
+whether AGPL's network-copyleft could reach into <code>app/</code> given the actual code boundary (not just the
+stated policy) between <code>the core/</code> and <code>app/</code>; whether the healthcare disclaimer OpenMRS uses is
+sufficient or needs blueHealthcare-specific language; the export-control and sanctions questions in; and whether "MPL-2.0 to match OpenMRS" or "permissive to match DHIS2" better serves the actual
+goal, given they are not the same choice.</p>
+
+
+    <div class="hc-row" style="margin-top:28px">
+      <a class="hc-cta-outline" href="/healthcare/open/licensing">Back to licensing</a>
+    </div>
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contribute — blueOpenHealthcare — MOBLUEHQ</title>
+<meta name="description" content="What you can contribute to blueOpenHealthcare now versus later, and the rule that never bends: no real patient data, ever." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/open/contribute" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/open">&larr; OPEN</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Contribute</div>
+    <h1 style="font-weight:800;font-size:32px;margin:0 0 14px">What's possible now, and what waits on counsel</h1>
+    <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack">Spec</a><a href="/healthcare/open/contribute" style="font-weight:800;color:var(--hc-ink)">Contribute</a><a href="/healthcare/open/fixtures">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap">Roadmap</a><a href="/healthcare/open/downloads">Downloads</a><a href="/healthcare/open/community">Community</a></div>
+    
+    <div class="hc-boundary" style="border-left:4px solid #B23A3A"><b>No real patient, member, claimant or clinician data of any kind — identifiable, de-identified, “anonymised”, aggregated, or screenshot — may be posted, attached, or committed anywhere in this community. Synthetic, generated fixtures only.</b> This covers <b>generated synthetic data only</b> — "de-identified" real data is banned too, because a community has no way to verify a de-identification claim.</div>
+
+    <div class="hc-sec">The repository is private</div>
+    <div class="hc-card"><p>There is nothing public to clone or download today. The licence and contribution terms are being decided by counsel; code contributions open when they are published. Until then, contribution means <b>reading, writing, and discussing</b> — not code.</p></div>
+
+    <div class="hc-sec">Now</div>
+    <div class="hc-card">
+      <ul>
+        <li><b>File a field report.</b> Tell us what your country's coding system, privacy law, FHIR profile, currency, locale, or payer vocabulary would need to be, using <a href="/healthcare/open/contribute/field-report">the field-report template</a>. Text only.</li>
+        <li><b>Read and argue with the design.</b> The <a href="/healthcare/open/spec/jurisdiction-pack">specs</a> are written to be read; disagree with a field's shape, and say why.</li>
+        <li><b>Write a glossary entry.</b> Clinical-term translations for your language are useful now, as text — the string files they'd eventually feed don't exist yet (no i18n scaffold exists in either web app today), so this is groundwork, not a live localisation pipeline.</li>
+      </ul>
+    </div>
+
+    <div class="hc-sec">Later — once the licence and inbound terms are published</div>
+    <div class="hc-card">
+      <ul>
+        <li>A jurisdiction pack (a new <code>core/jurisdiction/&lt;xx&gt;/</code> directory implementing the three Protocols), shipped with a synthetic fixture and passing the interface's own test.</li>
+        <li>A terminology or coding-system adapter — pointing at a national terminology server by URI, never committing a licensed vocabulary's own code tables (CPT, SNOMED) into the repository.</li>
+        <li>A privacy-regime module, reviewed by an in-country reviewer before it is trusted.</li>
+        <li>A ported verifier in another language, checked against the same published test vectors, including the one-byte-tamper case.</li>
+      </ul>
+    </div>
+
+    <div class="hc-row">
+      <a class="hc-cta" href="/healthcare/open/contribute/field-report">Read the field-report template</a>
+      <a class="hc-cta-outline" href="/healthcare/open/fixtures">Read the fixtures rules</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>

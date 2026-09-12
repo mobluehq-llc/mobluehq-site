@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Architecture — blueOpenHealthcare — MOBLUEHQ</title>
+<meta name="description" content="The core/application split, the jurisdiction pack model, and receipts/verifier — described as they measure today, not as a finished claim." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/open/architecture" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #14337A; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/open">&larr; OPEN</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Architecture</div>
+    <h1 style="font-weight:800;font-size:32px;margin:0 0 14px">The spine, measured as it stands today</h1>
+    <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture" style="font-weight:800;color:var(--hc-ink)">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack">Spec</a><a href="/healthcare/open/contribute">Contribute</a><a href="/healthcare/open/fixtures">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap">Roadmap</a><a href="/healthcare/open/downloads">Downloads</a><a href="/healthcare/open/community">Community</a></div>
+    
+    <div class="hc-sec">Core / application split</div>
+    <div class="hc-card">
+      <p>The platform is laid out so that <code>core/</code> (the record engine, receipts, verifier, schemas, and the jurisdiction interfaces) is meant to have zero dependencies on <code>app/</code> (UI, billing, tenancy, enterprise exports) — clean enough, eventually, to extract a community edition without surgery.</p>
+      <p><b>Measured, not assumed:</b> a standing test counts the dependencies running the wrong way, from core into the application layer. That count is <b>115</b> today, unchanged across at least two build lanes — a known, open, deliberately-red gap, not a finished boundary. <code>make community</code> does not exist yet in the platform's own Makefile.</p>
+    </div>
+
+    <div class="hc-sec">The jurisdiction pack model</div>
+    <div class="hc-card">
+      <p>See <a href="/healthcare/open/spec/jurisdiction-pack">the pack spec</a> for the real interface. In short: a jurisdiction is data plus three small adapters (a coding system, a privacy regime, a FHIR profile), never a fork of the core logic. Built so a country is a pack — the US pack is the first. See <a href="/healthcare/international/anywhere">the mechanism page</a> for exactly what is and isn't wired to it yet — including the single real caller today and the 61 US-only tokens still outside the pack.</p>
+    </div>
+
+    <div class="hc-sec">Receipts and the verifier</div>
+    <div class="hc-card">
+      <p>Every product in the commercial suite signs its output with Ed25519 and ships a standalone, dependency-light verifier that checks a signature with no server, no database, and no network connection. Tamper one byte of a signed packet and verification fails. A signed receipt proves what the software ran and recorded — never that an underlying real-world claim is true. This mechanism is the thing the open spine is built around; a ported verifier in another language is expected to be one of the first code contributions once the licence is published.</p>
+    </div>
+
+    <div class="hc-boundary">Nothing on this page is a claim that the split is finished. The 115-dependency count and the single jurisdiction-pack caller are cited so this page can be checked, not taken on faith.</div>
+
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+      
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>
