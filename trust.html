@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=8">
+<link rel="stylesheet" href="/assets/style.css?v=9">
 </head>
 <body>
 
@@ -52,13 +52,13 @@
       <h2>What actually leaves your machine, product by product</h2>
       <p>Most of this page describes what leaves your machine when it does. Five of our products send <strong>nothing at all</strong>: blueAlibi, blueFloor, blueIntent, blueParity and bluePipeline &mdash; our five evaluation tools &mdash; contain no outbound network code whatsoever. We verified that by reading the source for network calls, not by describing the architecture.</p>
 
-      <p><strong>The local tiers of blueMonster and blueGlu are different, and we want to be exact about how.</strong> <em>Your content stays on your machine.</em> In blueMonster, the setting that would allow your ideas or search content to leave is off by default and the app does not send them unless you turn it on. But the app is not silent: by default it sends a meta-only heartbeat &mdash; health, version and counts, no content &mdash; roughly every fifteen minutes, it checks for updates, and signing in is a network call. You can switch the heartbeat off and the app still works.</p>
+      <p><strong>The local tiers of blueMonster and blueGlu are different, and we want to be exact about how.</strong> <em>Your content stays on your machine.</em> In blueMonster, the setting that would allow your ideas or search content to leave is off by default and the app does not send them unless you turn it on. But the app is not silent: by default it sends a meta-only heartbeat &mdash; health, version and counts, no content &mdash; roughly every fifteen minutes, it checks for updates, and signing in is a network call. That heartbeat is governed by a setting you can control from the app's settings — toggle the Telemetry switch to turn it off. See the <a href="/privacy#install-ping">Privacy Policy</a> for exactly what the heartbeat sends and for additional options including "Unlink my data" if you have signed into your blueMonster account.</p>
 
       <p>We had this wrong on this page until we re-read the code. It previously said these tiers never send anything anywhere, and said we had verified it. Content does not leave; metadata does. We are recording the correction here rather than quietly editing it away, because a page about what we send is the last place a silent edit belongs.</p>
 
       <h2>Data handling</h2>
       <ul>
-        <li><strong>Website &amp; forms:</strong> Contact and investor messages are transmitted to our inbox provider and stored only as long as needed to respond.</li>
+        <li><strong>Website &amp; forms:</strong> Contact and investor messages are transmitted to our inbox provider and stored only as long as needed to respond. Launch-waitlist emails are transmitted the same way and used only to notify you when the product you asked about ships.</li>
         <li><strong>Local-only tools and tiers:</strong> the five evaluation tools and the local/free tiers named above process everything on-device. We never receive your inputs, outputs, or files from that usage.</li>
         <li><strong>Hosted and cloud-tier product data:</strong> when you use a hosted or cloud-enabled tier (blueMonster Premium, blueMonster Pro's cloud tier, blueGlu's bring-your-own-key or web-search features), verification inputs and outputs are processed to deliver signed receipts and, where applicable, are sent to the specific subprocessor named in the table below. Retention periods vary by plan and are documented in product agreements.</li>
         <li><strong>Logs:</strong> Operational logs (errors, latency, abuse signals) are kept for a limited period and access is restricted to personnel who need them.</li>
@@ -182,6 +182,11 @@
     <a href="/disclaimers">Disclaimers</a>
   </div>
   <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+  <div class="footer-disclaimer">
+    <p><strong>AI-generated. Verify before you rely on it.</strong> blueMonster produces machine-generated hypotheses using large language models. <strong>LLMs make mistakes, including confident ones</strong> &mdash; they can state figures, sources, mechanisms and institutions that do not exist. MOBLUEHQ, Inc. designs this system to disclose how each result was produced and to refuse rather than guess where it can, but <strong>no such system is free of error</strong>.</p>
+    <p><strong>This output is not a prior-art search, a patentability opinion, or professional advice of any kind.</strong></p>
+    <p><strong>You are responsible for independently verifying the accuracy, novelty, and legal status of any mechanism, claim, or product before relying on it, publishing it, filing on it, or commercialising it.</strong> <a href="/disclaimers">Read the full disclaimers</a>.</p>
+  </div>
 </footer>
 
 </body>

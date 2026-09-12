@@ -4,10 +4,17 @@
   "type": "module",
   "scripts": {
     "a11y": "node scripts/a11y-scan.mjs",
-    "lint:healthcare-content": "node scripts/healthcare-content-lint.mjs"
+    "build:portfolio": "node scripts/build_portfolio.mjs",
+    "check:portfolio-sync": "node scripts/check_portfolio_sync.mjs",
+    "build:pricing": "node scripts/build_pricing.mjs",
+    "check:pricing-sync": "node scripts/check_pricing_sync.mjs",
+    "claims": "node scripts/check_claims.mjs",
+    "lint:healthcare-content": "node scripts/healthcare-content-lint.mjs",
+    "test": "node --test"
   },
   "dependencies": {
-    "@vercel/functions": "^1.5.0"
+    "@vercel/functions": "^1.5.0",
+    "chromedriver": "^152.0.3"
   },
   "devDependencies": {
     "@axe-core/cli": "^4.10.1",

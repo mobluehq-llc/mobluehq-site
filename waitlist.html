@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Launch Waitlist — MOBLUEHQ</title>
+<meta name="description" content="Get a one-time email when a MOBLUEHQ product ships. Separate from our general contact form." />
+<link rel="canonical" href="https://www.mobluehq.com/waitlist" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.mobluehq.com/waitlist" />
+<meta property="og:title" content="Launch Waitlist — MOBLUEHQ" />
+<meta property="og:description" content="Get a one-time email when a MOBLUEHQ product ships." />
+<meta property="og:image" content="https://www.mobluehq.com/assets/og-card.png?v=3" />
+
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=9">
+<style>
+  .waitlist-form { display: flex; flex-direction: column; gap: 18px; max-width: 480px; margin-top: 28px; }
+  .waitlist-input {
+    width: 100%;
+    background: #11203A;
+    border: 1px solid #2A3B58;
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .waitlist-input::placeholder { color: var(--text-muted); }
+  .waitlist-input:hover { background: #16294A; border-color: #3A4D70; }
+  .waitlist-input:focus {
+    outline: none;
+    border-color: rgba(77, 159, 255, 0.45);
+    box-shadow: 0 0 0 3px rgba(77, 159, 255, 0.08);
+  }
+  .waitlist-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .waitlist-product-note { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-secondary); letter-spacing: 0.03em; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav aria-label="Primary">
+  <a href="/" class="nav-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></a>
+  <ul class="nav-links">
+    <li><a href="/about">About</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/investors">Investors</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <section class="content content--docs">
+    <p class="section-label">Launch waitlist</p>
+    <div class="section-label-line"></div>
+
+    <h1 class="page-title">Get a one-time email when it ships.</h1>
+    <p class="page-lead" id="waitlistLead">Leave your email and we will send you a single note when this product ships (and, occasionally, real progress updates before then — never a drip campaign). This is separate from our <a href="/contact">contact form</a>: no message required, and it does not reach our support inbox.</p>
+
+    <article class="docs-prose">
+      <form class="waitlist-form" id="waitlistForm" novalidate>
+        <label class="form-question" for="waitlistEmail">Email address</label>
+        <input class="waitlist-input" type="email" id="waitlistEmail" name="email" placeholder="you@example.com" required autocomplete="email" />
+        <label class="waitlist-hp" for="waitlistCompany">Leave this field empty</label>
+        <input class="waitlist-hp" type="text" id="waitlistCompany" name="company" tabindex="-1" autocomplete="off" />
+        <p class="waitlist-product-note" id="waitlistProductNote"></p>
+        <button class="submit-btn" type="submit">Notify me</button>
+        <div class="form-note" id="waitlistNote" aria-live="polite"></div>
+        <p style="font-size:12px; color: var(--text-muted); margin:0;">We'll use this address only to send the launch notice (and occasional pre-launch updates) for the product above. No account is created. See our <a href="/privacy#install-ping">Privacy Policy</a> for how long we keep it and how to opt out.</p>
+      </form>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-mark"><span class="moblue">MOBLUE</span><span class="hq">HQ</span></div>
+  <div class="footer-links">
+    <a href="/contact">Contact</a>
+    <a href="/trust">Trust</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/terms">Terms</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/disclaimers">Disclaimers</a>
+  </div>
+  <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+  <div class="footer-disclaimer">
+    <p><strong>AI-generated. Verify before you rely on it.</strong> blueMonster produces machine-generated hypotheses using large language models. <strong>LLMs make mistakes, including confident ones</strong> &mdash; they can state figures, sources, mechanisms and institutions that do not exist. MOBLUEHQ, Inc. designs this system to disclose how each result was produced and to refuse rather than guess where it can, but <strong>no such system is free of error</strong>.</p>
+    <p><strong>This output is not a prior-art search, a patentability opinion, or professional advice of any kind.</strong></p>
+    <p><strong>You are responsible for independently verifying the accuracy, novelty, and legal status of any mechanism, claim, or product before relying on it, publishing it, filing on it, or commercialising it.</strong> <a href="/disclaimers">Read the full disclaimers</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var product = (params.get('product') || params.get('plan') || '').trim();
+  var productLabel = product ? product.replace(/[<>]/g, '') : 'MOBLUEHQ';
+  var note = document.getElementById('waitlistProductNote');
+  var lead = document.getElementById('waitlistLead');
+  if (note) {
+    note.textContent = product ? 'Signing up for: ' + productLabel : '';
+  }
+  if (product && lead) {
+    lead.innerHTML = 'Leave your email and we will send you a single note when <strong>' + productLabel.replace(/&/g, '&amp;') + '</strong> ships (and, occasionally, real progress updates before then — never a drip campaign). This is separate from our <a href="/contact">contact form</a>: no message required, and it does not reach our support inbox.';
+  }
+
+  var form = document.getElementById('waitlistForm');
+  var emailField = document.getElementById('waitlistEmail');
+  var honey = document.getElementById('waitlistCompany');
+  var formNote = document.getElementById('waitlistNote');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = (emailField.value || '').trim();
+    if (!email || email.indexOf('@') === -1) {
+      formNote.textContent = 'Please enter a valid email address.';
+      formNote.className = 'form-note form-note--warn';
+      return;
+    }
+    formNote.textContent = 'Sending…';
+    formNote.className = 'form-note';
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        source: 'waitlist',
+        email: email,
+        product: productLabel,
+        _honey: honey ? honey.value : ''
+      })
+    }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function () {
+        emailField.value = '';
+        formNote.textContent = "You're on the list. We'll email you when it ships.";
+        formNote.className = 'form-note form-note--ok';
+      }).catch(function () {
+        formNote.textContent = 'Could not send — please try again, or use the contact form.';
+        formNote.className = 'form-note form-note--warn';
+      });
+  });
+})();
+</script>
+
+</body>
+</html>

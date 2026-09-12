@@ -20,7 +20,18 @@ const pages = [
   '/trust',
   '/pricing',
   '/terms',
-  '/privacy'
+  '/privacy',
+  '/disclaimers',
+  '/waitlist',
+  '/demo',
+  '/portfolio/bluemonster',
+  '/portfolio/blueglu',
+  '/portfolio/bluemoat',
+  '/portfolio/bluealibi',
+  '/portfolio/bluefloor',
+  '/portfolio/blueintent',
+  '/portfolio/blueparity',
+  '/portfolio/bluepipeline'
 ];
 
 const mime = {

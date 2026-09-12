@@ -5,6 +5,11 @@
 //
 // Required env var: ANTHROPIC_API_KEY (set in Vercel dashboard)
 // Optional env var: TRIAGE_FORWARD_EMAIL (where to send "forward" results)
+//
+// SEE ALSO lib/triage.mjs — a DELIBERATE DUPLICATE of this file's prompt
+// and routing rules, used in-process by api/contact.js as an advisory
+// label generator. This file is left untouched on purpose; edit both if
+// you change the prompt or routing rules here, or they will drift.
 
 export default async function handler(req, res) {
   // CORS for the website itself
@@ -84,7 +89,14 @@ Return only the JSON object.`;
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        // claude-sonnet-4-20250514 is a dated snapshot that predates the
+        // current model line (claude-opus-5 / claude-sonnet-5 /
+        // claude-haiku-4-5-20251001) and is the likely reason every
+        // production triage call has been erroring out (see lib/triage.mjs's
+        // header for the full root-cause note). Triage is a cheap
+        // classification task, so the smallest current model is correct
+        // here, not just the least stale one.
+        model: 'claude-haiku-4-5-20251001',
         max_tokens: 1000,
         messages: [{ role: 'user', content: prompt }]
       })

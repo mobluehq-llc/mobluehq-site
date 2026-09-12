@@ -47,10 +47,22 @@
       ]
     },
     {
-      "source": "/api/(demo-gate|download)",
+      "source": "/api/(demo-gate|download|contact)",
       "headers": [
         { "key": "Cache-Control", "value": "private, no-store" }
       ]
+    },
+    {
+      "source": "/api/download/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store" }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/download/:product",
+      "destination": "/api/download?product=:product"
     }
   ],
   "crons": [
@@ -62,6 +74,9 @@
   "functions": {
     "api/triage.js": {
       "maxDuration": 30
+    },
+    "api/contact.js": {
+      "maxDuration": 20
     },
     "api/refresh.js": {
       "maxDuration": 60

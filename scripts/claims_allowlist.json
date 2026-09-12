@@ -1,0 +1,200 @@
+[
+  {
+    "file": "waitlist.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "about.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "contact.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "demo.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "disclaimers.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "index.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "investors.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "portfolio.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "portfolio/bluemonster.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "pricing.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "privacy.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "terms.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "trust.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "portfolio/bluealibi.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "portfolio/bluefloor.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "portfolio/blueglu.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "portfolio/blueintent.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "portfolio/blueparity.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "portfolio/bluepipeline.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "portfolio/bluemoat.html",
+    "line_contains": "You are responsible for independently verifying the accuracy, novelty, and legal status",
+    "reason": "Approved AI/user-responsibility disclaimer (SHORT FORM, Adam 2026-09-09, canon BUILD_CONTROL/GTM_MASTER/LEGAL/DRAFT_AI_USER_DISCLAIMER_090926.md). The banned stem 'novel' appears here as a DISCLAIMER OF novelty, not a claim of it -- the sentence tells the reader they are responsible for verifying novelty themselves. CLAIMS_REGISTER row BM-1's own approved public phrasing uses the same word the same way: 'not a claim of novelty, patentability, or freedom-to-operate.' This text is owner-approved legal copy and must NOT be reworded to satisfy this gate.",
+    "register_row": "BM-1"
+  },
+  {
+    "file": "portfolio/bluemoat.html",
+    "line_contains": "every finding is anchored: the quote is checked as an exact substring of the stored source document",
+    "reason": "CLAIMS_REGISTER row ML-1 (updated 2026-09-06, re-verified against ~/dev/bluemoat-solo commits d9d07c6/d40169c): the five standard dispatch drivers (Stub/Ollama/Composite/Cloud/Hybrid) perform real deterministic exact-substring anchoring via resolve_quote_anchor in src/bluemoat/grounding.py, called from dispatcher.py at lines 348/744/924/1054/1192, with a round-trip re-check before ANCHORED is ever returned, and a typed AnchorStatus refusal otherwise. This page's wording narrows the claim to exactly that scope and adds the ML-1-TRENCH carve-out for the one unmerged dispatch path, per the register's own approved phrasing: do not generalize the anchoring claim beyond the standard path.",
+    "register_row": "ML-1"
+  },
+  {
+    "file": "portfolio/bluemoat.html",
+    "line_contains": "a separate anchoring step checks that every quote shown for those findings is an exact, re-findable substring",
+    "reason": "CLAIMS_REGISTER row ML-1 (updated 2026-09-06, re-verified against ~/dev/bluemoat-solo commits d9d07c6/d40169c): the five standard dispatch drivers (Stub/Ollama/Composite/Cloud/Hybrid) perform real deterministic exact-substring anchoring via resolve_quote_anchor in src/bluemoat/grounding.py, called from dispatcher.py at lines 348/744/924/1054/1192, with a round-trip re-check before ANCHORED is ever returned, and a typed AnchorStatus refusal otherwise. This page's wording narrows the claim to exactly that scope and adds the ML-1-TRENCH carve-out for the one unmerged dispatch path, per the register's own approved phrasing: do not generalize the anchoring claim beyond the standard path.",
+    "register_row": "ML-1"
+  },
+  {
+    "file": "portfolio/bluemoat.html",
+    "line_contains": "Anchoring is proven for the standard dispatch path, not for every path yet.",
+    "reason": "CLAIMS_REGISTER row ML-1 (updated 2026-09-06, re-verified against ~/dev/bluemoat-solo commits d9d07c6/d40169c): the five standard dispatch drivers (Stub/Ollama/Composite/Cloud/Hybrid) perform real deterministic exact-substring anchoring via resolve_quote_anchor in src/bluemoat/grounding.py, called from dispatcher.py at lines 348/744/924/1054/1192, with a round-trip re-check before ANCHORED is ever returned, and a typed AnchorStatus refusal otherwise. This page's wording narrows the claim to exactly that scope and adds the ML-1-TRENCH carve-out for the one unmerged dispatch path, per the register's own approved phrasing: do not generalize the anchoring claim beyond the standard path. ML-1-TRENCH (same register): as of origin/main 2026-09-07, the TrenchPairDriver path (dispatcher.py _call_trench, line 156) does not call ground_verdict; a fix exists on unmerged branch gtm/moat-trenchpair-grounding-090726. This page discloses that gap explicitly rather than letting the ML-1 anchoring claim be read as covering every path.",
+    "register_row": "ML-1"
+  },
+  {
+    "file": "portfolio/bluemoat.html",
+    "line_contains": "A ranked set of anchored findings, each traceable to its exact place in the source it cites.",
+    "reason": "CLAIMS_REGISTER row ML-1 (updated 2026-09-06, re-verified against ~/dev/bluemoat-solo commits d9d07c6/d40169c): the five standard dispatch drivers (Stub/Ollama/Composite/Cloud/Hybrid) perform real deterministic exact-substring anchoring via resolve_quote_anchor in src/bluemoat/grounding.py, called from dispatcher.py at lines 348/744/924/1054/1192, with a round-trip re-check before ANCHORED is ever returned, and a typed AnchorStatus refusal otherwise. This page's wording narrows the claim to exactly that scope and adds the ML-1-TRENCH carve-out for the one unmerged dispatch path, per the register's own approved phrasing: do not generalize the anchoring claim beyond the standard path.",
+    "register_row": "ML-1"
+  },
+  {
+    "file": "portfolio/bluemoat.html",
+    "line_contains": "What \"anchored\" means",
+    "reason": "CLAIMS_REGISTER row ML-1 (updated 2026-09-06, re-verified against ~/dev/bluemoat-solo commits d9d07c6/d40169c): the five standard dispatch drivers (Stub/Ollama/Composite/Cloud/Hybrid) perform real deterministic exact-substring anchoring via resolve_quote_anchor in src/bluemoat/grounding.py, called from dispatcher.py at lines 348/744/924/1054/1192, with a round-trip re-check before ANCHORED is ever returned, and a typed AnchorStatus refusal otherwise. This page's wording narrows the claim to exactly that scope and adds the ML-1-TRENCH carve-out for the one unmerged dispatch path, per the register's own approved phrasing: do not generalize the anchoring claim beyond the standard path.",
+    "register_row": "ML-1"
+  },
+  {
+    "file": "portfolio/bluemoat.html",
+    "line_contains": "An anchored quote is checked as an exact substring of the stored source document",
+    "reason": "CLAIMS_REGISTER row ML-1 (updated 2026-09-06, re-verified against ~/dev/bluemoat-solo commits d9d07c6/d40169c): the five standard dispatch drivers (Stub/Ollama/Composite/Cloud/Hybrid) perform real deterministic exact-substring anchoring via resolve_quote_anchor in src/bluemoat/grounding.py, called from dispatcher.py at lines 348/744/924/1054/1192, with a round-trip re-check before ANCHORED is ever returned, and a typed AnchorStatus refusal otherwise. This page's wording narrows the claim to exactly that scope and adds the ML-1-TRENCH carve-out for the one unmerged dispatch path, per the register's own approved phrasing: do not generalize the anchoring claim beyond the standard path.",
+    "register_row": "ML-1"
+  },
+  {
+    "file": "portfolio/bluemoat.html",
+    "line_contains": "screened, not independently judged",
+    "reason": "CLAIMS_REGISTER row ML-6: relevance screening is a single 7B-class model's pass, a distinct mechanism from the anchoring step, and is explicitly 'screened, not independently judged' per approved A-50 doctrine reused here -- no plurality/consensus framing applies to it. This page's wording states the word only to DENY it applies ('not a consensus', 'not independently verified'), matching the register's own approved phrasing verbatim: 'relevance scoring is not independently verified and must be reviewed by the attorney for importance.' Must not be reworded to satisfy this gate -- the denial is the point.",
+    "register_row": "ML-6"
+  },
+  {
+    "file": "portfolio/bluemoat.html",
+    "line_contains": "not a panel and not a consensus",
+    "reason": "CLAIMS_REGISTER row ML-6: relevance screening is a single 7B-class model's pass, a distinct mechanism from the anchoring step, and is explicitly 'screened, not independently judged' per approved A-50 doctrine reused here -- no plurality/consensus framing applies to it. This page's wording states the word only to DENY it applies ('not a consensus', 'not independently verified'), matching the register's own approved phrasing verbatim: 'relevance scoring is not independently verified and must be reviewed by the attorney for importance.' Must not be reworded to satisfy this gate -- the denial is the point.",
+    "register_row": "ML-6"
+  },
+  {
+    "file": "healthcare/open/licensing/application.html",
+    "line_contains": "counsel or the eventual maintainer would copy it verbatim",
+    "reason": "FIRST-EXPOSURE, NOT A NEW CLAIM: this page arrived from origin/main, which does not contain scripts/check_claims.mjs at all -- the gate has never run against the healthcare pages before this merge. Reviewed by hand 2026-09-12. The banned stem 'verbatim' is an INSTRUCTION about copying Mozilla's MPL-2.0 text from Mozilla's own site, not a claim about the product. The sentence's actual assertion is a refusal: 'This scaffold does not reproduce that text here.'",
+    "register_row": "n/a - healthcare lane copy, no product claim asserted"
+  },
+  {
+    "file": "healthcare/open/licensing/contributor-terms.html",
+    "line_contains": "verbatim for every contribution surface",
+    "reason": "FIRST-EXPOSURE, NOT A NEW CLAIM: this page arrived from origin/main, which does not contain scripts/check_claims.mjs at all -- the gate has never run against the healthcare pages before this merge. Reviewed by hand 2026-09-12. 'verbatim' describes how the no-real-patient-data RULE is to be restated on each contribution surface. It is a policy-restatement instruction, not a claim about product behaviour.",
+    "register_row": "n/a - healthcare lane copy, no product claim asserted"
+  },
+  {
+    "file": "healthcare/open/licensing/contributor-terms.html",
+    "line_contains": "not a guarantee of PHI-free",
+    "reason": "FIRST-EXPOSURE, NOT A NEW CLAIM: this page arrived from origin/main, which does not contain scripts/check_claims.mjs at all -- the gate has never run against the healthcare pages before this merge. Reviewed by hand 2026-09-12. The banned stem 'guarante' appears inside an explicit NEGATION. The sentence describes the scanner 'honestly as a lie-detector ... not a guarantee of PHI-free content' -- it withdraws the guarantee rather than making one. Rewording to satisfy the gate would DELETE a disclosure.",
+    "register_row": "n/a - negation of a guarantee"
+  },
+  {
+    "file": "healthcare/open/licensing/trademark.html",
+    "line_contains": "guarantees as the company's own builds, unless that is actually true",
+    "reason": "FIRST-EXPOSURE, NOT A NEW CLAIM: this page arrived from origin/main, which does not contain scripts/check_claims.mjs at all -- the gate has never run against the healthcare pages before this merge. Reviewed by hand 2026-09-12. The banned stem 'guarante' appears inside a PROHIBITION on third-party forks: a fork must not imply its output carries the same trust guarantees as MOBLUEHQ, Inc. builds. This restricts a claim rather than making one.",
+    "register_row": "n/a - prohibition on a third-party claim"
+  },
+  {
+    "file": "healthcare/security.html",
+    "line_contains": "We report this as a work item, not a finished guarantee",
+    "reason": "FIRST-EXPOSURE, NOT A NEW CLAIM: this page arrived from origin/main, which does not contain scripts/check_claims.mjs at all -- the gate has never run against the healthcare pages before this merge. Reviewed by hand 2026-09-12. The banned stem 'guarante' appears inside an explicit NEGATION, and the surrounding paragraph is accurate against the code: care-team scoping is enforced for a SUBSET of clinical record types, not all of them, and the page says so ('not yet enforced across every record type'). This matches the enforced-set frozenset in platform/core/record/authz_wire.py. Rewording to satisfy the gate would delete an accurate limitation disclosure.",
+    "register_row": "n/a - negation; limitation disclosure verified against authz_wire.py"
+  }
+]

@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=8">
+<link rel="stylesheet" href="/assets/style.css?v=9">
 </head>
 <body>
 
@@ -52,6 +52,7 @@
         <div class="investors-headline-line"></div>
       </div>
       <form class="investor-form-elegant" id="investorForm" novalidate>
+        <input type="text" name="_honey" id="investorHoney" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <label class="form-question" for="senderMsg">What should MOBLUEHQ know about what you are offering?</label>
         <textarea class="form-textarea" id="senderMsg" name="message" placeholder="" required autocomplete="off" spellcheck="true"></textarea>
         <button class="submit-btn" type="submit">Submit</button>
@@ -73,10 +74,11 @@
           }
           note.textContent = 'Sending…';
           note.className = 'form-note';
-          fetch('https://formsubmit.co/ajax/' + ['bl','ue','@','moblue','hq','.com'].join(''), {
+          var honey = document.getElementById('investorHoney');
+          fetch('/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({ message: msg, _subject: 'Investor inquiry — MOBLUEHQ' })
+            body: JSON.stringify({ source: 'investors', message: msg, _honey: honey ? honey.value : '' })
           }).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
           .then(function(){
             ta.value = '';
@@ -93,7 +95,12 @@
   </section>
 </main>
 
-<footer>  <div>© 2026 MOBLUEHQ LLC · Delaware</div>
+<footer>  <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+  <div class="footer-disclaimer">
+    <p><strong>AI-generated. Verify before you rely on it.</strong> blueMonster produces machine-generated hypotheses using large language models. <strong>LLMs make mistakes, including confident ones</strong> &mdash; they can state figures, sources, mechanisms and institutions that do not exist. MOBLUEHQ, Inc. designs this system to disclose how each result was produced and to refuse rather than guess where it can, but <strong>no such system is free of error</strong>.</p>
+    <p><strong>This output is not a prior-art search, a patentability opinion, or professional advice of any kind.</strong></p>
+    <p><strong>You are responsible for independently verifying the accuracy, novelty, and legal status of any mechanism, claim, or product before relying on it, publishing it, filing on it, or commercialising it.</strong> <a href="/disclaimers">Read the full disclaimers</a>.</p>
+  </div>
 </footer>
 
 </body>
