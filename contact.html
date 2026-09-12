@@ -95,6 +95,7 @@
     try {
       var payload = {
         id: (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()),
+        source: 'contact',
         name: name,
         email: email,
         message: msg,
