@@ -4,7 +4,7 @@
     {
       "id": "bluemonster",
       "name": "blueMonster",
-      "logo": "/assets/logos/bluemonster-monster.png",
+      "logo": "/assets/logos/catalog-20260912/bluemonster/icon-128.png",
       "status": "releasing_soon",
       "one_liner": "blueMonster lite: the idea-discovery engine for Mac with MBR export, pool sharing, and signed receipt-backed runs.",
       "audience": "Anyone with a hard question who wants a wide, evidenced search of the space",
@@ -16,7 +16,7 @@
     {
       "id": "blueglu",
       "name": "blueGlu",
-      "logo": "/assets/logos/blueglued.svg",
+      "logo": "/assets/logos/catalog-20260912/blueglu/icon-128.png",
       "status": "releasing_soon",
       "one_liner": "A calm, private AI assistant for your Mac. Runs on-device by default; escalate on your own terms, never automatically.",
       "audience": "Anyone who wants a local-first assistant with a frontier model one click away",
@@ -28,7 +28,7 @@
     {
       "id": "blue",
       "name": "Blue",
-      "logo": "/assets/logos/blue.svg",
+      "logo": "/assets/logos/catalog-20260912/blue/icon-128.png",
       "status": "infrastructure",
       "one_liner": "The verification substrate every MOBLUEHQ product runs on. A private inference mesh that returns sealed, signed results — the scheduler never sees your data, and every answer carries a receipt anyone can verify.",
       "audience": "Anyone building AI into decisions that carry consequences",
@@ -40,7 +40,7 @@
     {
       "id": "slumbernet",
       "name": "slumberNet",
-      "logo": "/assets/logos/slumbernet.svg",
+      "logo": "/assets/logos/catalog-20260912/slumbernet/icon-128.png",
       "status": "in_development",
       "one_liner": "The compute mesh we're building toward — pool a machine's spare capacity to help run verified AI work. Not a public download yet: today's build is internal and unsigned, run only on our own machines. This is the direction we're building toward, not what happens today.",
       "audience": "Anyone with a capable machine and spare capacity to share",
@@ -52,7 +52,7 @@
     {
       "id": "bluealibi",
       "name": "blueAlibi",
-      "logo": "/assets/logos/bluealibi.svg",
+      "logo": "/assets/logos/catalog-20260912/bluealibi/icon-128.png",
       "status": "in_development",
       "one_liner": "Find claims the recorded evidence and tools could not support.",
       "page": "/portfolio/bluealibi"
@@ -60,7 +60,7 @@
     {
       "id": "bluefloor",
       "name": "blueFloor",
-      "logo": "/assets/logos/bluefloor.svg",
+      "logo": "/assets/logos/catalog-20260912/bluefloor/icon-128.png",
       "status": "in_development",
       "one_liner": "Measure the ingest your deployed detections can actually use.",
       "page": "/portfolio/bluefloor"
@@ -68,7 +68,7 @@
     {
       "id": "blueintent",
       "name": "blueIntent",
-      "logo": "/assets/logos/blueintent.svg",
+      "logo": "/assets/logos/catalog-20260912/blueintent/icon-128.png",
       "status": "in_development",
       "one_liner": "Check whether declared code invariants survived a change.",
       "page": "/portfolio/blueintent"
@@ -76,7 +76,7 @@
     {
       "id": "blueparity",
       "name": "blueParity",
-      "logo": "/assets/logos/blueparity.svg",
+      "logo": "/assets/logos/catalog-20260912/blueparity/icon-128.png",
       "status": "in_development",
       "one_liner": "Prove a replacement system stays equivalent within a declared contract.",
       "page": "/portfolio/blueparity"
@@ -84,7 +84,7 @@
     {
       "id": "bluepipeline",
       "name": "bluePipeline",
-      "logo": "/assets/logos/bluepipeline.svg",
+      "logo": "/assets/logos/catalog-20260912/bluepipeline/icon-128.png",
       "status": "in_development",
       "one_liner": "See what actually reached the model.",
       "page": "/portfolio/bluepipeline"
@@ -92,7 +92,7 @@
     {
       "id": "bluemoat",
       "name": "blueMoat",
-      "logo": "/assets/logos/bluemoat.svg",
+      "logo": "/assets/logos/catalog-20260912/bluemoat/icon-128.png",
       "status": "in_development",
       "one_liner": "Screens filings for relevant prior art and anchors each quote to its exact place in the source, or refuses to show it.",
       "page": "/portfolio/bluemoat"
