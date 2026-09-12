@@ -451,7 +451,7 @@
     <div class="bm-sec">HOW IT WORKS</div>
     <div class="steps">
       <div class="step"><div>1</div><div><b>Gather the inputs.</b> A document, a JSONL run trace of what the pipeline actually did, and a YAML capability manifest declaring what it could have done.</div></div>
-      <div class="step"><div>2</div><div><b>Run the audit.</b> <code>blue-alibi audit</code> locally with no server, or the same flow through the web UI with <code>blue-alibi serve</code>.</div>
+      <div class="step"><div>2</div><div><b>Run the audit.</b> <code>blue-alibi audit</code> locally with no server, or the same flow through the web UI with <code>blue-alibi serve</code>.</div></div>
       <div class="step"><div>3</div><div><b>Read the claim census.</b> Every claim gets one of four typed verdicts, linked to the evidence at its exact place in the document.</div></div>
       <div class="step"><div>4</div><div><b>Open the trace.</b> Inspect the exact retrieval or tool-call event behind a supported claim, or confirm the manifest gap behind an unsupportable one.</div></div>
       <div class="step"><div>5</div><div><b>Verify offline.</b> <code>blue-alibi verify</code>, or the standalone <code>verify_receipt.py</code>, checks the signed report with no database and no network connection.</div></div>
@@ -494,6 +494,43 @@
         <p>A signed report can be checked by anyone with nothing but the receipt file: <code>blue-alibi verify report.json</code>, or hand a counterparty the standalone <code>verify_receipt.py</code> — stdlib plus one crypto library, no server, no account.</p>
       </details>
     </div>
+
+    <div class="bm-sec">SET IT UP</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p><b>Access first.</b> blueAlibi is in development and its repository is private today, so there is no public download link yet. Email <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a> and we will grant your GitHub account access to <code>mobluehq-llc/bluealibi</code> and tell you the current build. Everything below runs entirely on your own machine afterwards &mdash; no account, no cloud service, no API key.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div>1</div><div>Clone it. <code>git clone git@github.com:mobluehq-llc/bluealibi.git &amp;&amp; cd bluealibi</code></div></div>
+      <div class="step"><div>2</div><div>Build the environment. <code>make dev</code> creates a local virtual environment and installs bluealibi into it. Requires Python 3.12 or newer and Node&nbsp;20 or newer for the interface.</div></div>
+      <div class="step"><div>3</div><div>Start the web interface. <code>make serve</code> serves it at <code>http://127.0.0.1:7400</code>, bound to localhost only.</div></div>
+      <div class="step"><div>4</div><div>Or use the command line. <code>.venv/bin/blue-alibi --help</code> lists every command.</div></div>
+      <div class="step"><div>5</div><div>Working on the interface itself? <code>make dev-api</code> (port 7400) and <code>make dev-web</code> (port 7401) run the two halves separately with hot reload.</div></div>
+    </div>
+    
+    <div class="bm-sec">IF IT DIDN&rsquo;T WORK</div>
+    <div class="docs">
+      <details open class="always">
+        <summary><code>make dev</code> fails on the Python version</summary>
+        <p>The project requires Python 3.12 or newer, declared in its own <code>pyproject.toml</code>. Check with <code>python3 --version</code>. An older interpreter is the most common cause of a failed first build.</p>
+      </details>
+      <details open class="always">
+        <summary>The port is already in use</summary>
+        <p>Every service here binds <code>127.0.0.1</code> on a fixed port, and several MOBLUEHQ tools can run at once. Check what holds it with <code>lsof -nP -iTCP:&lt;port&gt; -sTCP:LISTEN</code> and stop that process by its PID. Do not kill processes by name &mdash; you may stop something unrelated.</p>
+      </details>
+      <details open class="always">
+        <summary><code>git clone</code> fails with a permission or not-found error</summary>
+        <p>That means your GitHub account has not been granted access yet, or your local git is using a different account. The repositories are private. Email <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a> with the GitHub username you want added.</p>
+      </details>
+    </div>
+    
+    <!-- SCREENSHOT NEEDED: bluealibi-web-claims.png -- the blueAlibi web UI at 127.0.0.1:7400 after a demo audit, showing the claim census with per-claim provenance verdicts -->
+    <!-- SCREENSHOT NEEDED: bluealibi-receipt-verified.png -- the receipt view showing a verified signature and the signer-trust notice -->
+    <div class="bm-sec">GET HELP</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p>One address covers everything &mdash; setup, bugs, access, licensing: <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a>. Tell us what you ran and paste what you saw; that is usually enough for us to answer in one reply.</p>
+    </div>
+    
+
   </div>
 </main>
 

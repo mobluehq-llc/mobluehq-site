@@ -489,6 +489,43 @@
         <p>The same gate that evaluates locally runs in CI against a repo's own intent.yaml. Exit codes are scriptable: <code>0</code> for PASS, <code>1</code> for HOLD or a failed run, <code>2</code> for a usage error.</p>
       </details>
     </div>
+
+    <div class="bm-sec">SET IT UP</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p><b>Access first.</b> blueIntent is in development and its repository is private today, so there is no public download link yet. Email <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a> and we will grant your GitHub account access to <code>mobluehq-llc/blueintent</code> and tell you the current build. Everything below runs entirely on your own machine afterwards &mdash; no account, no cloud service, no API key.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div>1</div><div>Clone it. <code>git clone git@github.com:mobluehq-llc/blueintent.git &amp;&amp; cd blueintent</code></div></div>
+      <div class="step"><div>2</div><div>Build the environment. <code>make dev</code> creates a local virtual environment and installs blueintent into it. Requires Python 3.12 or newer, Node&nbsp;20 or newer for the interface, and <code>git</code> on your PATH (it reads your repository history).</div></div>
+      <div class="step"><div>3</div><div>Start the web interface. <code>make serve</code> serves it at <code>http://127.0.0.1:8100</code>, bound to localhost only.</div></div>
+      <div class="step"><div>4</div><div>Or use the command line. <code>.venv/bin/blue-intent --help</code> lists every command.</div></div>
+      <div class="step"><div>5</div><div>Working on the interface itself? <code>make dev-api</code> (port 8100) and <code>make dev-web</code> (port 8101) run the two halves separately with hot reload.</div></div>
+    </div>
+    
+    <div class="bm-sec">IF IT DIDN&rsquo;T WORK</div>
+    <div class="docs">
+      <details open class="always">
+        <summary><code>make dev</code> fails on the Python version</summary>
+        <p>The project requires Python 3.12 or newer, declared in its own <code>pyproject.toml</code>. Check with <code>python3 --version</code>. An older interpreter is the most common cause of a failed first build.</p>
+      </details>
+      <details open class="always">
+        <summary>The port is already in use</summary>
+        <p>Every service here binds <code>127.0.0.1</code> on a fixed port, and several MOBLUEHQ tools can run at once. Check what holds it with <code>lsof -nP -iTCP:&lt;port&gt; -sTCP:LISTEN</code> and stop that process by its PID. Do not kill processes by name &mdash; you may stop something unrelated.</p>
+      </details>
+      <details open class="always">
+        <summary><code>git clone</code> fails with a permission or not-found error</summary>
+        <p>That means your GitHub account has not been granted access yet, or your local git is using a different account. The repositories are private. Email <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a> with the GitHub username you want added.</p>
+      </details>
+    </div>
+    
+    <!-- SCREENSHOT NEEDED: blueintent-check-result.png -- the blueIntent UI at 127.0.0.1:8100 showing verdicts across PRESERVED / VIOLATED / UNPROVEN for a checked change -->
+    <!-- SCREENSHOT NEEDED: blueintent-gate-decision.png -- the gate decision view a CI run produces -->
+    <div class="bm-sec">GET HELP</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p>One address covers everything &mdash; setup, bugs, access, licensing: <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a>. Tell us what you ran and paste what you saw; that is usually enough for us to answer in one reply.</p>
+    </div>
+    
+
   </div>
 </main>
 

@@ -480,6 +480,53 @@
         <p>blueGlu is AI and can make mistakes. Treat every answer, including cited ones, as something to double-check rather than something to trust outright — see the <a href="/disclaimers" style="color:var(--blue-deep)">full disclaimer</a>.</p>
       </details>
     </div>
+
+    <div class="bm-sec">SET IT UP</div>
+    <div class="steps">
+      <div class="step"><div>1</div><div>Download it. No account, no password, no payment &mdash; the download button above gives you the disk image directly.</div></div>
+      <div class="step"><div>2</div><div>Drag blueGlu to your Applications folder and open it.</div></div>
+      <div class="step"><div>3</div><div>Let it fetch a local model. The first-run screen offers to download the on-device model; the app ships the runtime it needs, so this is the only download.</div></div>
+      <div class="step"><div>4</div><div>Start typing. Answers come from the model on your own Mac by default.</div></div>
+      <div class="step"><div>5</div><div>Optional: add your own frontier API key if you want the option of sending a question to a larger model. blueGlu never does this on its own &mdash; you choose, per question.</div></div>
+    </div>
+    
+    <div class="bm-sec">WHAT YOU NEED</div>
+    <div class="docs">
+      <details open class="always">
+        <summary>A Mac with Apple silicon</summary>
+        <p>blueGlu requires macOS 14.0 or newer on an Apple silicon Mac. The download is around 169&nbsp;MB; the local model it fetches on first run is additional.</p>
+      </details>
+      <details open class="always">
+        <summary>An API key only if you want one</summary>
+        <p>Running on-device costs nothing and needs no key. Escalating a question to a frontier model uses your own key and your own account with that vendor.</p>
+      </details>
+    </div>
+    
+    <div class="bm-sec">IF IT DIDN&rsquo;T WORK</div>
+    <div class="docs">
+      <details open class="always">
+        <summary>The first answer is slow</summary>
+        <p>The first question after launch loads the model into memory. Later questions in the same session do not pay that cost again.</p>
+      </details>
+      <details open class="always">
+        <summary>It never escalates my hard question by itself</summary>
+        <p>That is the design, not a fault. blueGlu may <i>suggest</i> that a question would be better served by a larger model, but it does not send anything anywhere without you approving that specific question.</p>
+      </details>
+      <details open class="always">
+        <summary>I cannot find the paid plan</summary>
+        <p>There is not one. blueGlu has no paid tier and no billing surface today. Frontier escalation uses your own API key, billed by that vendor to you.</p>
+      </details>
+    </div>
+    
+    <!-- SCREENSHOT NEEDED: blueglu-chat-local-answer.png -- the chat window with a completed answer produced by the on-device model, provenance label visible -->
+    <!-- SCREENSHOT NEEDED: blueglu-onboarding-model-download.png -- the first-run onboarding screen offering Download Local Model -->
+    <!-- SCREENSHOT NEEDED: blueglu-escalation-consent.png -- the escalation consent prompt, showing that sending a question out requires explicit approval -->
+    <div class="bm-sec">GET HELP</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p>One address covers everything &mdash; setup, bugs, access, licensing: <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a>. Tell us what you ran and paste what you saw; that is usually enough for us to answer in one reply.</p>
+    </div>
+    
+
   </div>
 </main>
 

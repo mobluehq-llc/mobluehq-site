@@ -488,6 +488,43 @@
         <p>A bare result receipt (like <code>make demo</code>'s output) verifies with the standalone <code>verify_receipt.py</code>. The full certificate bundle downloaded from the web UI — the shape that also proves pre-registration — verifies with <code>blue-parity verify</code> instead. Running <code>verify_receipt.py</code> directly against a bundle correctly reports it invalid; that's the wrong tool for that artifact, not a tamper finding.</p>
       </details>
     </div>
+
+    <div class="bm-sec">SET IT UP</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p><b>Access first.</b> blueParity is in development and its repository is private today, so there is no public download link yet. Email <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a> and we will grant your GitHub account access to <code>mobluehq-llc/blueparity</code> and tell you the current build. Everything below runs entirely on your own machine afterwards &mdash; no account, no cloud service, no API key.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div>1</div><div>Clone it. <code>git clone git@github.com:mobluehq-llc/blueparity.git &amp;&amp; cd blueparity</code></div></div>
+      <div class="step"><div>2</div><div>Build the environment. <code>make dev</code> creates a local virtual environment and installs blueparity into it. Requires Python 3.12 or newer and Node&nbsp;20 or newer if you want the web interface.</div></div>
+      <div class="step"><div>3</div><div>Start the web interface. <code>make serve</code> serves it at <code>http://127.0.0.1:7500</code>, bound to localhost only.</div></div>
+      <div class="step"><div>4</div><div>Or use the command line. <code>.venv/bin/blue-parity --help</code> lists every command.</div></div>
+      <div class="step"><div>5</div><div>Working on the interface itself? <code>make dev-api</code> (port 7500) and <code>make dev-web</code> (port 7501) run the two halves separately with hot reload.</div></div>
+    </div>
+    
+    <div class="bm-sec">IF IT DIDN&rsquo;T WORK</div>
+    <div class="docs">
+      <details open class="always">
+        <summary><code>make dev</code> fails on the Python version</summary>
+        <p>The project requires Python 3.12 or newer, declared in its own <code>pyproject.toml</code>. Check with <code>python3 --version</code>. An older interpreter is the most common cause of a failed first build.</p>
+      </details>
+      <details open class="always">
+        <summary>The port is already in use</summary>
+        <p>Every service here binds <code>127.0.0.1</code> on a fixed port, and several MOBLUEHQ tools can run at once. Check what holds it with <code>lsof -nP -iTCP:&lt;port&gt; -sTCP:LISTEN</code> and stop that process by its PID. Do not kill processes by name &mdash; you may stop something unrelated.</p>
+      </details>
+      <details open class="always">
+        <summary><code>git clone</code> fails with a permission or not-found error</summary>
+        <p>That means your GitHub account has not been granted access yet, or your local git is using a different account. The repositories are private. Email <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a> with the GitHub username you want added.</p>
+      </details>
+    </div>
+    
+    <!-- SCREENSHOT NEEDED: blueparity-verdicts.png -- the blueParity web UI at 127.0.0.1:7500 showing matched / within-tolerance / diverged / not-exercised verdicts -->
+    <!-- SCREENSHOT NEEDED: blueparity-counterexample.png -- a diverged behaviour expanded to its minimal counterexample -->
+    <div class="bm-sec">GET HELP</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p>One address covers everything &mdash; setup, bugs, access, licensing: <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a>. Tell us what you ran and paste what you saw; that is usually enough for us to answer in one reply.</p>
+    </div>
+    
+
   </div>
 </main>
 

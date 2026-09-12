@@ -500,6 +500,57 @@
         <p><b>Local</b>: private — your search runs on-device on a bundled model, no data center involved. <b>Pro</b>: bigger models than your Mac can hold — run in the cloud by default, with our own GPUs taking jobs behind the scenes where they can. Receipts on every step, independent judging. <b>Premium</b> (coming): the plan is for frontier models to step in only where they justify their cost over the free-model roster — a routing design for this unshipped tier, not yet a verifiable behavior. Switch per-search; the board and MBR work the same everywhere.</p>
       </details>
     </div>
+
+    <div class="bm-sec">WHAT YOU NEED</div>
+    <div class="docs">
+      <details open class="always">
+        <summary>A Mac with Apple silicon</summary>
+        <p>blueMonster requires macOS 12.0 or newer on an Apple silicon Mac. There is no Intel build published today, and no Windows or Linux build.</p>
+      </details>
+      <details open class="always">
+        <summary>Room for the models</summary>
+        <p>On first launch blueMonster downloads the local models it runs on. The app states the size in the download dialog itself; budget roughly 15&ndash;25&nbsp;GB of free disk, once. After that it does not re-download them.</p>
+      </details>
+      <details open class="always">
+        <summary>No account needed to install</summary>
+        <p>You install and open it without signing in. Signing in matters only when you want a Pro search.</p>
+      </details>
+    </div>
+    
+    <div class="bm-sec">IF IT DIDN&rsquo;T WORK</div>
+    <div class="docs">
+      <details open class="always">
+        <summary>The download asked me for a password</summary>
+        <p>That is expected during the private release. The download sits behind a password gate; use the password we sent you. If you do not have one, email <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a>.</p>
+      </details>
+      <details open class="always">
+        <summary>It says the models are still downloading and won&rsquo;t start a search</summary>
+        <p>A local search is held until the models that fit your Mac have finished downloading. This is a deliberate block, not a hang &mdash; a half-downloaded model would produce garbage. If you have Pro, your search is not blocked: it runs on slumberNet while the download continues.</p>
+      </details>
+      <details open class="always">
+        <summary>macOS refuses to open it</summary>
+        <p>The app is signed with our Developer ID and notarized by Apple, and the notarization ticket is stapled into the download, so Gatekeeper should accept it offline. If macOS still objects, the download was probably damaged in transit &mdash; download it again rather than overriding the warning.</p>
+      </details>
+      <details open class="always">
+        <summary>The first launch asked for keychain approval twice</summary>
+        <p>That is macOS protecting your sign-in, and it happens once. Choosing &ldquo;Always Allow&rdquo; both times is correct and expected.</p>
+      </details>
+      <details open class="always">
+        <summary>The board is running but a column is empty</summary>
+        <p>That is normal for much of a run. Each column on the board explains what it is waiting for, including when it is empty. A long search can leave later columns empty for hours before anything is promoted into them.</p>
+      </details>
+    </div>
+    
+    <!-- SCREENSHOT NEEDED: bluemonster-cockpit-board-running.png -- the cockpit at 127.0.0.1:8901, a campaign actively running, all board columns visible from Pool through Top candidates -->
+    <!-- SCREENSHOT NEEDED: bluemonster-new-search-dialog.png -- the New search dialog open, with the pool selector and the Local/Pro mode choice visible -->
+    <!-- SCREENSHOT NEEDED: bluemonster-model-download.png -- the first-run model download dialog showing the download size and progress -->
+    <!-- SCREENSHOT NEEDED: bluemonster-mbr-report.png -- a finished MBR report open, showing the report a completed run produces -->
+    <div class="bm-sec">GET HELP</div>
+    <div class="mode" style="border-left:4px solid var(--blue-deep)">
+      <p>One address covers everything &mdash; setup, bugs, access, licensing: <a href="mailto:blue@mobluehq.com">blue@mobluehq.com</a>. Tell us what you ran and paste what you saw; that is usually enough for us to answer in one reply.</p>
+    </div>
+    
+
   </div>
 </main>
 
