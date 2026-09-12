@@ -38,10 +38,29 @@
 //
 // Optional env var: ANTHROPIC_API_KEY — reused from api/triage.js's own
 // config; if unset, triage is simply skipped (no label), sending proceeds.
+//
+// RATE LIMITED: 5 requests / 10 minutes per client IP (see DEFAULT_RATE_LIMIT
+// below and lib/rateLimiter.mjs). Over the limit gets a real 429 and NOTHING
+// is sent — never a fake 200. This is in-memory and per-serverless-instance,
+// which is an honest, partial defense, not a durable one — see
+// lib/rateLimiter.mjs's header for exactly what that does and does not
+// cover.
 
 import { classifySubmission } from '../lib/triage.mjs';
 import { sendMail, NotifyConfigError, NotifySendError } from '../lib/sendgridClient.mjs';
 import { ValidationError, buildMailPayload, buildSubmission, isHoneypotTriggered } from '../lib/contact.mjs';
+import { createRateLimiter, getClientIp } from '../lib/rateLimiter.mjs';
+
+// RATE LIMIT (2026-09-12): 5 requests per 10-minute window, per client IP.
+// Chosen to be hard to hit by accident and easy to hit on purpose:
+//   - A real person fixing a typo and resubmitting sends 2, maybe 3 — never
+//     close to 5.
+//   - A script looping this endpoint hits the limit inside its first few
+//     iterations, well before it could flood an inbox.
+// See lib/rateLimiter.mjs for exactly what this does and does NOT protect
+// against (it is in-memory and per-serverless-instance — not distributed,
+// not durable across cold starts).
+const DEFAULT_RATE_LIMIT = { windowMs: 10 * 60 * 1000, max: 5 };
 
 function parseBody(req) {
   if (req.body && typeof req.body === 'object') return req.body;
@@ -59,6 +78,8 @@ export function createContactHandler({
   sendGridApiKey = () => process.env.SENDGRID_MAILSEND_API_KEY,
   anthropicApiKey = () => process.env.ANTHROPIC_API_KEY,
   httpClient,
+  rateLimiter = createRateLimiter(DEFAULT_RATE_LIMIT),
+  getClientIp: getClientIpFn = getClientIp,
 } = {}) {
   return async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', 'https://mobluehq.com');
@@ -71,6 +92,18 @@ export function createContactHandler({
     if (req.method !== 'POST') {
       res.setHeader('Allow', 'POST, OPTIONS');
       return res.status(405).json({ ok: false, error: 'Method not allowed' });
+    }
+
+    // Rate limit BEFORE parsing/honeypot/triage/send — a request over the
+    // limit must trigger zero downstream work and send nothing. A clear 429
+    // (never a fake 200) so a legitimate client's retry logic knows to back
+    // off instead of assuming its message went out.
+    const clientIp = getClientIpFn(req);
+    const rl = rateLimiter.check(clientIp);
+    if (!rl.allowed) {
+      res.setHeader('Retry-After', String(Math.ceil(rl.retryAfterMs / 1000)));
+      console.warn('contact: rate limit exceeded, request rejected, nothing sent', { ip: clientIp });
+      return res.status(429).json({ ok: false, error: 'Too many requests — please try again in a few minutes.' });
     }
 
     let body;

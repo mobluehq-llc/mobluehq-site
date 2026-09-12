@@ -17,6 +17,7 @@ import {
   sanitizeReplyTo,
 } from '../lib/contact.mjs';
 import { NotifyConfigError, NotifySendError, sendMail } from '../lib/sendgridClient.mjs';
+import { createRateLimiter, getClientIp } from '../lib/rateLimiter.mjs';
 
 const SENDGRID_URL = 'https://api.sendgrid.com/v3/mail/send';
 
@@ -80,6 +81,10 @@ function makeFakeHttpClient({ sendgridStatus = 202, anthropicEvaluation } = {}) 
 
 function baseReq(body) {
   return { method: 'POST', body };
+}
+
+function reqFromIp(ip, body) {
+  return { method: 'POST', body, headers: { 'x-forwarded-for': ip } };
 }
 
 test('a real submission sends exactly one correctly-shaped SendGrid request', async () => {
@@ -152,6 +157,39 @@ test('a message triage classifies as low-value is STILL sent', async () => {
   // The verdict is allowed to appear IN the email; it must never have kept
   // the email from being sent (asserted above by the call count).
   assert.match(payload.content[0].value, /route=log/);
+});
+
+test('triage failing outright (classifier throws) still sends the message', async () => {
+  const { httpClient, calls } = makeFakeHttpClient();
+  const throwingClassify = async () => {
+    throw new Error('simulated classifier failure (e.g. a dead model pin returning a non-2xx)');
+  };
+  const handler = createContactHandler({
+    httpClient,
+    classify: throwingClassify,
+    sendGridApiKey: () => 'sg-test-key',
+    anthropicApiKey: () => 'anthropic-test-key',
+  });
+  const res = mockRes();
+  await handler(
+    baseReq({
+      source: 'contact',
+      name: 'A',
+      email: 'a@example.com',
+      message: 'A perfectly fine message body for this test.',
+    }),
+    res
+  );
+
+  assert.equal(res.statusCode, 200, 'a triage failure must never prevent the send');
+  assert.deepEqual(res.body, { ok: true });
+  const sendgridCalls = calls.filter((c) => c.url === SENDGRID_URL);
+  assert.equal(sendgridCalls.length, 1, 'exactly one send must happen despite the classifier throwing');
+  const payload = JSON.parse(sendgridCalls[0].options.body);
+  assert.match(
+    payload.content[0].value,
+    /Triage: not available for this message \(classifier error or unconfigured\) — sent anyway\./
+  );
 });
 
 test('a missing SendGrid key produces a visible error and never a success response', async () => {
@@ -282,4 +320,137 @@ test('a non-POST method is rejected', async () => {
   const res = mockRes();
   await handler({ method: 'GET', body: {} }, res);
   assert.equal(res.statusCode, 405);
+});
+
+test('a working triage response puts its verdict in the subject line', async () => {
+  const { httpClient, calls } = makeFakeHttpClient({
+    anthropicEvaluation: {
+      substantiveness: 9,
+      sender_type: 'investor',
+      confidence: 9,
+      route: 'forward',
+      reasoning: 'Looks like a real fund reaching out.',
+    },
+  });
+  const handler = createContactHandler({
+    httpClient,
+    sendGridApiKey: () => 'sg-test-key',
+    anthropicApiKey: () => 'anthropic-test-key',
+  });
+  const res = mockRes();
+  await handler(
+    baseReq({
+      source: 'investors',
+      name: 'Jamie Fund',
+      email: 'jamie@examplefund.com',
+      message: 'We are evaluating a term sheet and would like to talk this week.',
+    }),
+    res
+  );
+
+  assert.equal(res.statusCode, 200);
+  const sendgridCalls = calls.filter((c) => c.url === SENDGRID_URL);
+  assert.equal(sendgridCalls.length, 1);
+  const payload = JSON.parse(sendgridCalls[0].options.body);
+  assert.match(payload.subject, /\[forward\/investor\]/, 'a working triage verdict must appear in the subject line');
+});
+
+test('rate limiting: the 6th request from one IP inside the window gets 429 and sends nothing', async () => {
+  const { httpClient, calls } = makeFakeHttpClient();
+  const rateLimiter = createRateLimiter({ windowMs: 10 * 60 * 1000, max: 5 });
+  const handler = createContactHandler({
+    httpClient,
+    sendGridApiKey: () => 'sg-test-key',
+    anthropicApiKey: () => undefined,
+    rateLimiter,
+  });
+
+  const ip = '203.0.113.7';
+  const submission = () =>
+    reqFromIp(ip, { source: 'contact', name: 'A', email: 'a@example.com', message: 'A perfectly fine message body.' });
+
+  const results = [];
+  for (let i = 0; i < 6; i++) {
+    const res = mockRes();
+    await handler(submission(), res);
+    results.push(res);
+  }
+
+  const allowed = results.slice(0, 5);
+  const blocked = results[5];
+
+  for (const res of allowed) {
+    assert.equal(res.statusCode, 200, 'the first 5 requests in the window must all succeed');
+  }
+  assert.equal(blocked.statusCode, 429, 'the 6th request in the window must be rejected');
+  assert.equal(blocked.body.ok, false);
+  assert.ok(blocked.headers['Retry-After'], 'a 429 should tell the client when to retry');
+
+  const sendgridCalls = calls.filter((c) => c.url === SENDGRID_URL);
+  assert.equal(sendgridCalls.length, 5, 'exactly 5 sends happened; the 6th (blocked) request sent nothing');
+});
+
+test('rate limiting: a normal person resubmitting once (2 requests) is not blocked', async () => {
+  const { httpClient, calls } = makeFakeHttpClient();
+  const rateLimiter = createRateLimiter({ windowMs: 10 * 60 * 1000, max: 5 });
+  const handler = createContactHandler({
+    httpClient,
+    sendGridApiKey: () => 'sg-test-key',
+    anthropicApiKey: () => undefined,
+    rateLimiter,
+  });
+
+  const ip = '198.51.100.42';
+  const body = { source: 'contact', name: 'Typo Fixer', email: 'typo@example.com', message: 'Wooops, meant to say hi.' };
+
+  const res1 = mockRes();
+  await handler(reqFromIp(ip, body), res1);
+  const res2 = mockRes();
+  await handler(reqFromIp(ip, { ...body, message: 'Oops, meant to say hi properly this time.' }), res2);
+
+  assert.equal(res1.statusCode, 200, 'first submission must succeed');
+  assert.equal(res2.statusCode, 200, 'a single resubmission (typo fix) must not be blocked');
+  const sendgridCalls = calls.filter((c) => c.url === SENDGRID_URL);
+  assert.equal(sendgridCalls.length, 2);
+});
+
+test('rate limiting: a request from a different IP is unaffected by another IP exhausting its limit', async () => {
+  const { httpClient, calls } = makeFakeHttpClient();
+  const rateLimiter = createRateLimiter({ windowMs: 10 * 60 * 1000, max: 5 });
+  const handler = createContactHandler({
+    httpClient,
+    sendGridApiKey: () => 'sg-test-key',
+    anthropicApiKey: () => undefined,
+    rateLimiter,
+  });
+
+  const floodedIp = '203.0.113.99';
+  const otherIp = '203.0.113.100';
+  const body = { source: 'contact', name: 'A', email: 'a@example.com', message: 'A perfectly fine message body.' };
+
+  for (let i = 0; i < 5; i++) {
+    const res = mockRes();
+    await handler(reqFromIp(floodedIp, body), res);
+    assert.equal(res.statusCode, 200);
+  }
+  // floodedIp is now exhausted for this window.
+  const blockedRes = mockRes();
+  await handler(reqFromIp(floodedIp, body), blockedRes);
+  assert.equal(blockedRes.statusCode, 429);
+
+  // A different IP must be completely unaffected.
+  const otherRes = mockRes();
+  await handler(reqFromIp(otherIp, body), otherRes);
+  assert.equal(otherRes.statusCode, 200, 'a different IP must not be rate limited by another IP\'s activity');
+
+  const sendgridCalls = calls.filter((c) => c.url === SENDGRID_URL);
+  assert.equal(sendgridCalls.length, 6, '5 from the flooded IP + 1 from the other IP');
+});
+
+test('getClientIp() reads the first entry of x-forwarded-for, ignoring later (spoofable) hops', () => {
+  assert.equal(getClientIp({ headers: { 'x-forwarded-for': '1.2.3.4, 5.6.7.8' } }), '1.2.3.4');
+  assert.equal(getClientIp({ headers: { 'x-forwarded-for': '1.2.3.4' } }), '1.2.3.4');
+  assert.equal(getClientIp({ headers: { 'x-real-ip': '9.9.9.9' } }), '9.9.9.9');
+  assert.equal(getClientIp({ headers: {} }), 'unknown');
+  assert.equal(getClientIp({}), 'unknown');
 });

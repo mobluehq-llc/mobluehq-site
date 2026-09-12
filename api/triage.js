@@ -89,7 +89,14 @@ Return only the JSON object.`;
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        // claude-sonnet-4-20250514 is a dated snapshot that predates the
+        // current model line (claude-opus-5 / claude-sonnet-5 /
+        // claude-haiku-4-5-20251001) and is the likely reason every
+        // production triage call has been erroring out (see lib/triage.mjs's
+        // header for the full root-cause note). Triage is a cheap
+        // classification task, so the smallest current model is correct
+        // here, not just the least stale one.
+        model: 'claude-haiku-4-5-20251001',
         max_tokens: 1000,
         messages: [{ role: 'user', content: prompt }]
       })
