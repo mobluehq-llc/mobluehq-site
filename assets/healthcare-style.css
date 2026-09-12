@@ -184,7 +184,19 @@ body.hc-body {
    the point of showing it, especially in a manual where it IS the
    documentation. .hc-wrap already caps content at 980px, so full width here
    does not become oversized on a wide monitor. */
-.hc-shot-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 10px 0 28px; }
+/* SHOT-WIDTH (2026-09-12): screenshots break OUT of the 980px text column.
+   Prose wants ~980px for a comfortable line length; a 1600x1000 screenshot rendered into that
+   column lands at ~800px -- a 50% downscale of a dense clinical UI, which is unreadable, and in a
+   manual a screenshot is documentation rather than decoration. The negative margins widen the
+   figure to the viewport (capped at 1440) WITHOUT widening the text around it. `clamp` keeps it at
+   exactly the column width on narrow screens, so nothing changes below ~1100px. */
+.hc-shot-grid {
+  display: grid; grid-template-columns: 1fr; gap: 24px; margin: 10px 0 28px;
+  width: clamp(100%, calc(100vw - 96px), 1440px);
+  margin-left: calc((min(100%, 1440px) - min(calc(100vw - 96px), 1440px)) / 2);
+  max-width: 1440px;
+}
+@media (max-width: 1100px) { .hc-shot-grid { width: 100%; margin-left: 0; } }
 .hc-shot {
   border: 1px solid var(--hc-edge); border-radius: 14px; overflow: hidden; background: var(--hc-card);
   display: flex; flex-direction: column; min-width: 0;

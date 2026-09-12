@@ -33,7 +33,7 @@
     <h1 style="font-weight:800;font-size:32px;margin:0 0 14px">What's built, what's measured, what isn't</h1>
     <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack">Spec</a><a href="/healthcare/open/contribute">Contribute</a><a href="/healthcare/open/fixtures">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap" style="font-weight:800;color:var(--hc-ink)">Roadmap</a><a href="/healthcare/open/downloads">Downloads</a><a href="/healthcare/open/community">Community</a></div>
     
-    <p class="hc-sub">This page mirrors the platform's own named-gaps tracking, in plain words. See <a href="/healthcare/status">the commercial suite's status page</a> for the seven-product met/not-met/not-measured counts — this page is about the shared spine underneath them.</p>
+    <p class="hc-sub">This page mirrors the platform's own named-gaps tracking, in plain words. See <a href="/healthcare/status">the commercial suite's status page</a> for the per-product met/not-met/not-measured counts — this page is about the shared spine underneath them.</p>
 
     <div class="hc-sec">Built and falsified</div>
     <div class="hc-card">
@@ -42,16 +42,17 @@
         <li>A consent gate that reads a record's own pack to decide whether secondary use is allowed — the one real caller of the pack loader today.</li>
         <li>A capture-gating mechanism that refuses to enable without a valid, unexpired, jurisdiction-matched approval, and an exporter that never returns a raw record.</li>
         <li>A standing scanner that fails the build if a surface for exchanging patient records for money — in any shape — is added anywhere in the codebase.</li>
+        <li>A community build (<code>make community</code>): an image containing only the free edition's modules, with a test proving the commercial ones are <b>absent from the artifact</b>, not merely switched off.</li>
       </ul>
     </div>
 
     <div class="hc-sec">Measured, still open</div>
     <div class="hc-card" style="border-left:4px solid #8A5A00">
       <ul>
-        <li><b>61</b> US-only tokens remain outside the one directory allowed to hold them — a standing test is deliberately red until they're migrated.</li>
-        <li><b>115</b> dependencies run from the platform's core into its application layer — a standing test is deliberately red until that boundary closes.</li>
-        <li>No i18n scaffold exists in either web application yet — glossary work can start as text; string files wait for it.</li>
-        <li><code>make community</code> does not exist in the platform's Makefile yet.</li>
+        <li>A batch of US-only tokens remain outside the one directory allowed to hold them — a standing test is deliberately red until they're migrated. (This page used to quote a specific count; it had drifted by one when it was checked again days later, because the count never said what token shape it matched or when it ran, so the number is removed until the test states its own methodology.)</li>
+        <li><b>28</b> production-code dependencies run from the platform's core into its application layer — the one figure that's held stable across every recent recount. The broader total (which also counts test-only imports and <code>sys.path</code> entries) has been reported as 115, as 118, and separately as 110 imports plus 9 <code>sys.path</code> entries, all within the same week — so this page states only the stable figure. A standing test is deliberately red until the production boundary closes.</li>
+        <li>No i18n scaffold exists in either web application yet, and the product stays English-only until it does and a language has a named clinical reviewer signed off — glossary work can start as text now; string files wait for the scaffold.</li>
+        <li>The published community-build images are single-architecture (arm64 only) even though the publish script declares both platforms — its build fallback silently produced single-arch. Most clinic servers are x86-64 and could not run them today.</li>
         <li>The <code>openmrs/</code> integration slot named in the addendum has not been created.</li>
       </ul>
     </div>
