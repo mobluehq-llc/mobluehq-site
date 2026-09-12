@@ -166,5 +166,35 @@
     "line_contains": "not a panel and not a consensus",
     "reason": "CLAIMS_REGISTER row ML-6: relevance screening is a single 7B-class model's pass, a distinct mechanism from the anchoring step, and is explicitly 'screened, not independently judged' per approved A-50 doctrine reused here -- no plurality/consensus framing applies to it. This page's wording states the word only to DENY it applies ('not a consensus', 'not independently verified'), matching the register's own approved phrasing verbatim: 'relevance scoring is not independently verified and must be reviewed by the attorney for importance.' Must not be reworded to satisfy this gate -- the denial is the point.",
     "register_row": "ML-6"
+  },
+  {
+    "file": "healthcare/open/licensing/application.html",
+    "line_contains": "counsel or the eventual maintainer would copy it verbatim",
+    "reason": "FIRST-EXPOSURE, NOT A NEW CLAIM: this page arrived from origin/main, which does not contain scripts/check_claims.mjs at all -- the gate has never run against the healthcare pages before this merge. Reviewed by hand 2026-09-12. The banned stem 'verbatim' is an INSTRUCTION about copying Mozilla's MPL-2.0 text from Mozilla's own site, not a claim about the product. The sentence's actual assertion is a refusal: 'This scaffold does not reproduce that text here.'",
+    "register_row": "n/a - healthcare lane copy, no product claim asserted"
+  },
+  {
+    "file": "healthcare/open/licensing/contributor-terms.html",
+    "line_contains": "verbatim for every contribution surface",
+    "reason": "FIRST-EXPOSURE, NOT A NEW CLAIM: this page arrived from origin/main, which does not contain scripts/check_claims.mjs at all -- the gate has never run against the healthcare pages before this merge. Reviewed by hand 2026-09-12. 'verbatim' describes how the no-real-patient-data RULE is to be restated on each contribution surface. It is a policy-restatement instruction, not a claim about product behaviour.",
+    "register_row": "n/a - healthcare lane copy, no product claim asserted"
+  },
+  {
+    "file": "healthcare/open/licensing/contributor-terms.html",
+    "line_contains": "not a guarantee of PHI-free",
+    "reason": "FIRST-EXPOSURE, NOT A NEW CLAIM: this page arrived from origin/main, which does not contain scripts/check_claims.mjs at all -- the gate has never run against the healthcare pages before this merge. Reviewed by hand 2026-09-12. The banned stem 'guarante' appears inside an explicit NEGATION. The sentence describes the scanner 'honestly as a lie-detector ... not a guarantee of PHI-free content' -- it withdraws the guarantee rather than making one. Rewording to satisfy the gate would DELETE a disclosure.",
+    "register_row": "n/a - negation of a guarantee"
+  },
+  {
+    "file": "healthcare/open/licensing/trademark.html",
+    "line_contains": "guarantees as the company's own builds, unless that is actually true",
+    "reason": "FIRST-EXPOSURE, NOT A NEW CLAIM: this page arrived from origin/main, which does not contain scripts/check_claims.mjs at all -- the gate has never run against the healthcare pages before this merge. Reviewed by hand 2026-09-12. The banned stem 'guarante' appears inside a PROHIBITION on third-party forks: a fork must not imply its output carries the same trust guarantees as MOBLUEHQ, Inc. builds. This restricts a claim rather than making one.",
+    "register_row": "n/a - prohibition on a third-party claim"
+  },
+  {
+    "file": "healthcare/security.html",
+    "line_contains": "We report this as a work item, not a finished guarantee",
+    "reason": "FIRST-EXPOSURE, NOT A NEW CLAIM: this page arrived from origin/main, which does not contain scripts/check_claims.mjs at all -- the gate has never run against the healthcare pages before this merge. Reviewed by hand 2026-09-12. The banned stem 'guarante' appears inside an explicit NEGATION, and the surrounding paragraph is accurate against the code: care-team scoping is enforced for a SUBSET of clinical record types, not all of them, and the page says so ('not yet enforced across every record type'). This matches the enforced-set frozenset in platform/core/record/authz_wire.py. Rewording to satisfy the gate would delete an accurate limitation disclosure.",
+    "register_row": "n/a - negation; limitation disclosure verified against authz_wire.py"
   }
 ]
