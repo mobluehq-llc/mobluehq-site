@@ -14,7 +14,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
-<style>:root { --hc-primary: #14337A; }</style>
+<style>
+  :root { --hc-primary: #14337A; }
+  .hc-hero-badge-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+</style>
 </head>
 <body class="hc-body">
 <a class="hc-skip" href="#main-content">Skip to content</a>
@@ -29,13 +32,45 @@
 <main id="main-content">
   <div class="hc-wrap-wide">
     <a class="hc-back" href="/healthcare">&larr; BLUEHEALTHCARE</a>
-    <!-- TODO: logo — no new wordmark or logo exists for "blueOpenHealthcare"; it is a
-         project name used in text only. Use the blueHealthcare mark wherever a mark
-         is needed on this page, once one is placed here. -->
-    <div class="hc-eyebrow" style="margin-top:24px">MOBLUEHQ · blueHealthcare · Open</div>
-    <h1 style="font-weight:800;font-size:36px;margin:0 0 14px;overflow-wrap:anywhere">blueOpenHealthcare</h1>
-    <p class="hc-sub">blueOpenHealthcare is the free edition of blueHealthcare, priced by country using the World Bank's own published income classification rather than a bespoke list: free automatically for low- and lower-middle-income countries, free case by case for upper-middle-income countries, and licensed commercially everywhere else. It exists for two reasons, not one — so that health systems that cannot pay for software can still run a signed, verifiable clinical record, and because it is a channel to developers and clinicians who already move between two health systems and can teach us what their country's coding, privacy law and language actually require. The licence and contribution terms are being decided by counsel; code contributions open when they are published. Until then, this is a place to read the interfaces, tell us what your jurisdiction needs, and argue with the design. <b>No patient data, ever — real or "anonymised" — anywhere in this community.</b></p>
-    <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open" style="font-weight:800;color:var(--hc-ink)">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack">Spec</a><a href="/healthcare/open/contribute">Contribute</a><a href="/healthcare/open/fixtures">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap">Roadmap</a><a href="/healthcare/open/downloads">Downloads</a><a href="/healthcare/open/community">Community</a></div>
+    <div class="hc-hero">
+      <img class="hc-hero-icon" alt="blueOpenHealthcare" src="/assets/logos/healthcare/blueopenhealthcare/icon.svg" />
+      <div>
+        <div class="hc-eyebrow">MOBLUEHQ · blueHealthcare · Open edition</div>
+        <h1 style="overflow-wrap:anywhere">blue<b>Open</b>Healthcare</h1>
+        <p class="hc-sub">blueOpenHealthcare is the free, <b>source-available</b> edition of blueHealthcare, priced by country using the World Bank's own published income classification rather than a bespoke list: free automatically for low- and lower-middle-income countries, free case by case for upper-middle-income countries, and licensed commercially everywhere else. It exists for two reasons, not one — so that health systems that cannot pay for software can still run a signed, verifiable clinical record, and because it is a channel to developers and clinicians who already move between two health systems and can teach us what their country's coding, privacy law and language actually require. <b>No patient data, ever — real or "anonymised" — anywhere in this community.</b></p>
+        <div class="hc-hero-badge-row">
+          <span class="hc-badge hc-badge-module">Source-available, not open source</span>
+          <span class="hc-badge hc-badge-planned">Licence proposed — pending legal review</span>
+        </div>
+        <div class="hc-meta" style="margin-top:14px">Same product as <a href="/healthcare">the commercial blueHealthcare platform</a>, same mark with one tile opened — not a separate product, a different edition of it.</div>
+      </div>
+    </div>
+
+    <div class="hc-sec">At a glance: this edition vs. the commercial platform</div>
+    <div class="hc-grid">
+      <div class="hc-card">
+        <h4>blueOpenHealthcare — this section</h4>
+        <ul>
+          <li>Source-available; the licence restricts who may run it for free, so it is not "open source"</li>
+          <li>Free for low- and lower-middle-income countries; case-by-case for upper-middle-income; a commercial licence is required everywhere else</li>
+          <li>Running it for real patients requires sharing back changes and translations — never patient data</li>
+          <li>Code contributions are not yet accepted — the licence is proposed and pending legal review</li>
+          <li>A lean, growing subset of the platform's modules (see "What's in the free edition" below)</li>
+        </ul>
+      </div>
+      <div class="hc-card">
+        <h4>The commercial blueHealthcare platform</h4>
+        <ul>
+          <li>Licensed commercially, sold by contract — see <a href="/healthcare">the healthcare overview</a></li>
+          <li>Available to any organisation regardless of country, including high-income countries such as the US, Canada, the UK, Germany, Australia, and Saudi Arabia</li>
+          <li>No share-back obligation</li>
+          <li>The full product suite listed on the overview page</li>
+        </ul>
+      </div>
+    </div>
+    <p class="hc-meta">Both editions run the same signed-receipt architecture; a named human remains the only decision authority in either one.</p>
+
+    <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open" style="font-weight:800;color:var(--hc-ink)">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack">Spec</a><a href="/healthcare/open/licensing">Licensing</a><a href="/healthcare/open/contribute">Contribute</a><a href="/healthcare/open/fixtures">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap">Roadmap</a><a href="/healthcare/open/downloads">Downloads</a><a href="/healthcare/open/community">Community</a></div>
 
     <div class="hc-sec">Who this is for</div>
     <div class="hc-card">
@@ -49,16 +84,17 @@
       <p>A lean list, expanded as it goes:</p>
       <ul>
         <li><b>Included now:</b> patient record and terminology, registration and scheduling, clinical notes, the launcher, the receipt verifier (open to everyone), and a developer kit — synthetic demo data, a sandbox, and translation and country templates.</li>
-        <li><b>Planned, added as we go:</b> orders, results, medicines, lab, imaging, integrations.</li>
-        <li><b>Not in the free edition:</b> the commercial products listed on <a href="/healthcare">the healthcare overview</a>. Organisations in eligible countries can ask for any of them free, case by case.</li>
+        <li><b>Being prepared for release:</b> the rest of the clinical platform — orders, results, medicines, lab, imaging, and integrations — together with <a href="/healthcare/bluechart">blueChart</a>, <a href="/healthcare/blueclaims">blueClaims</a>, <a href="/healthcare/bluebench">blueBench</a>, <a href="/healthcare/bluedelta">blueDelta</a>, <a href="/healthcare/bluerecall">blueRecall</a>, <a href="/healthcare/bluenull">blueNull</a>, and <a href="/healthcare/bluecatch">blueCatch</a>, plus the platform's cryptographic eSource module for clinical trials (see <a href="/healthcare">the healthcare overview</a> for the current full list). All of it is going through a safety and security review — the same prerequisites as the rest of the platform, plus a per-product check for anything that could mislead a clinician or harm a patient in a country new to it — before any of this code is published. Nothing here is downloadable today: no package, no repository access, no installer.</li>
       </ul>
+      <p class="hc-meta">Order-entry decision support is not a regulated or validated medical device in any country. Drug-interaction checking will show as unavailable until a clinic connects its own licensed drug-interaction knowledge base — nothing here ships invented pharmacology.</p>
+      <p class="hc-meta">Eligibility and the licence itself are proposed and pending legal review — see <a href="/healthcare/open/licensing/eligibility">eligibility and share-back</a>.</p>
     </div>
 
     <div class="hc-sec">Read</div>
     <div class="hc-grid">
       <a class="hc-product-card" href="/healthcare/open/why"><h4>Why</h4><p>Why there is a free edition, and what "open" does and doesn't mean.</p></a>
       <a class="hc-product-card" href="/healthcare/open/architecture"><h4>Architecture</h4><p>The core/app split, the pack model, receipts, and the verifier.</p></a>
-      <a class="hc-product-card" href="/healthcare/open/spec/jurisdiction-pack"><h4>Specs</h4><p>The jurisdiction pack, coding system, privacy regime and FHIR profile interfaces, quoted from the real code.</p></a>
+      <a class="hc-product-card" href="/healthcare/open/spec/jurisdiction-pack"><h4>Specs</h4><p>The jurisdiction pack, coding system, privacy regime and FHIR profile interfaces, quoted from the real code — plus <a href="/healthcare/open/spec/receipts">the receipt specification</a>, a draft aimed at adoption independent of this platform.</p></a>
       <a class="hc-product-card" href="/healthcare/open/licensing/eligibility"><h4>Eligibility and share-back</h4><p>Who can use it for free, and what sharing back means.</p></a>
       <a class="hc-product-card" href="/healthcare/open/downloads"><h4>Downloads</h4><p>The planned clinic-server installer and developer kit — not yet available.</p></a>
       <a class="hc-product-card" href="/healthcare/open/roadmap"><h4>Roadmap</h4><p>What's built, what's measured, what isn't — in plain words.</p></a>

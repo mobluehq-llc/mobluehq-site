@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Receipt specification — blueOpenHealthcare — MOBLUEHQ</title>
+<meta name="description" content="What the blueHealthcare receipt specification is, why a country could adopt it independent of the platform, and its current draft and conformance status." />
+<link rel="canonical" href="https://www.mobluehq.com/healthcare/open/spec/receipts" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="/assets/favicon-v2.png" sizes="48x48" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/healthcare-style.css?v=1" />
+<style>:root { --hc-primary: #0066E6; }</style>
+</head>
+<body class="hc-body">
+<a class="hc-skip" href="#main-content">Skip to content</a>
+<nav class="hc-nav" aria-label="Primary">
+  <div class="hc-brandrow"><a class="hc-brand" href="/portfolio" title="MOBLUEHQ portfolio">MOBLUE<b>HQ</b></a><span class="hc-brand-sep" aria-hidden="true">/</span><a class="hc-brand-logo" href="/healthcare"><img src="/assets/logos/healthcare/bluehealthcare/logo-light.svg" alt="blueHealthcare" height="28"></a></div>
+  <div class="hc-navlinks">
+    <a href="/healthcare">Overview</a><a href="/healthcare/security">Security</a><a href="/healthcare/status">Status</a><a href="/healthcare/manuals">Manuals</a><a href="/healthcare/demo">Demo</a><a href="/healthcare/international">International</a><a href="/healthcare/open">Open</a><a href="/healthcare/leadership">Leadership</a><a href="/healthcare/contact">Contact</a>
+    <a href="/portfolio">All products</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="hc-wrap">
+    <a class="hc-back" href="/healthcare/open">&larr; OPEN</a>
+    <div class="hc-eyebrow" style="margin-top:24px">Spec</div>
+    <h1 style="font-weight:800;font-size:32px;margin:0 0 14px">The receipt specification</h1>
+    <div class="hc-row" style="margin:0 0 10px"><span class="hc-badge hc-badge-planned">Draft — v0.1</span></div>
+    <div class="hc-toc" style="flex-direction:row;flex-wrap:wrap;gap:18px;margin:28px 0 8px;font-size:13px"><a href="/healthcare/open">Open — home</a><a href="/healthcare/open/why">Why</a><a href="/healthcare/open/architecture">Architecture</a><a href="/healthcare/open/spec/jurisdiction-pack">Spec</a><a href="/healthcare/open/licensing">Licensing</a><a href="/healthcare/open/contribute">Contribute</a><a href="/healthcare/open/fixtures">Fixtures</a><a href="/healthcare/open/governance">Governance</a><a href="/healthcare/open/security">Security</a><a href="/healthcare/open/roadmap">Roadmap</a><a href="/healthcare/open/downloads">Downloads</a><a href="/healthcare/open/community">Community</a></div>
+
+    <p class="hc-sub">This page is written for a ministry IT lead, an engineer at another health-software vendor, a security reviewer, or a funder's technical staff deciding whether this is worth attention — not for someone building the blueHealthcare platform itself.</p>
+
+    <div class="hc-sec">What it is, in one sentence</div>
+    <div class="hc-card">
+      <p>A way for a clinical or administrative system to hand over a small, signed piece of evidence — <i>"this system did (or refused to do) this specific thing, at this time"</i> — that anyone can check is genuine using nothing but a public key they already trust, with no access to the system that produced it and no need to install any of MOBLUEHQ's software.</p>
+    </div>
+
+    <div class="hc-sec">Why a country could adopt it independent of this platform</div>
+    <div class="hc-card">
+      <p>Health systems already have standards for audit logs — a record kept by the system itself of what it did (HL7 FHIR's <code>AuditEvent</code>, IHE's ATNA profile are the well-known ones). What is comparatively rare is a record a system's own operator cannot quietly edit after the fact, checkable by a party that does not trust the operator at all. That property is useful anywhere a health system needs to prove something to someone it does not fully trust and that does not fully trust it back — for example:</p>
+      <ul>
+        <li>A national insurer or social-security fund checking that a claims submission matches what a clinic's system actually recorded, without relying on the clinic's own say-so.</li>
+        <li>A donor-funded programme checking that a monthly facility report reflects what a clinic's system held, not what someone typed into a spreadsheet afterward.</li>
+        <li>Any dispute, audit, or legal proceeding where "what did the system actually record, and when" needs an answer that does not rest entirely on the operator's credibility.</li>
+      </ul>
+      <p>You can implement a <b>verifier</b> for this format (checking someone else's receipts) or a <b>signer</b> (producing your own) without adopting any other part of blueHealthcare's software, and — once the licence below is confirmed — without paying MOBLUEHQ anything.</p>
+    </div>
+
+    <div class="hc-sec">What a receipt does not prove</div>
+    <div class="hc-boundary"><b>A verified receipt proves a specific cryptographic key produced specific bytes at a self-declared time. It does not prove the underlying real-world event was true, that the software that produced it was bug-free, or that the key itself was never stolen.</b> The specification document states this about its own format in several places, deliberately — treat any claim that a receipt proves more than that as an overstatement.</div>
+
+    <div class="hc-sec">Current status</div>
+    <div class="hc-card">
+      <p><b>v0.1, draft.</b> One reference implementation exists, used internally across seven of MOBLUEHQ's own products. <b>No implementation by anyone outside MOBLUEHQ exists yet</b> — that is the single biggest gap between this document and something that could honestly be called a standard, and it is stated as a precondition, not hidden: a future version cannot be called <code>v1.0</code> until at least one outside party has implemented it independently, from the specification and conformance suite alone, with no access to MOBLUEHQ's own source code.</p>
+    </div>
+
+    <div class="hc-sec">The conformance suite</div>
+    <div class="hc-card">
+      <p>A specification nobody can check themselves against is just a claim. Alongside the specification document, this project publishes a language-neutral conformance suite: a fixed set of receipts that must verify, and a fixed set of tampered receipts that must not, plus a small runner that can drive any verifier — in any language — through the same test as long as it accepts a file path and trusted public keys and prints a one-line JSON verdict. That means a second, independent implementation, in a different language, having never seen MOBLUEHQ's own code, can prove for itself that it verifies receipts the way the specification requires, rather than taking MOBLUEHQ's word for it.</p>
+      <p class="hc-meta">The vectors are regenerated from the real reference implementation using freshly generated, public-only key material — no private key of any kind is ever committed to the suite, and none of the suite's keys are used by any running instance of the product.</p>
+    </div>
+
+    <div class="hc-sec">Licensing — read this before building on it</div>
+    <div class="hc-card">
+      <p>This document does not yet grant anyone a licence to build on it. The licence for this specification layer is a <b>draft sitting with outside counsel and is not yet in effect</b> — the phrase used everywhere in this project's own documentation is <b>"licence: pending legal review."</b> The proposed licence is a real, OSI-approved licence with no country restriction (see <a href="/healthcare/open/licensing">the licensing pages</a> for the specific one under consideration), kept separate from the clinical platform, which carries different, country-eligibility-based terms. <b>Until counsel confirms this, nothing here may be described as "open source,"</b> and no representation is made that a specific implementation or contribution will be accepted yet. If you are evaluating this for procurement or for a public-goods submission, the honest answer today is: ask MOBLUEHQ directly for current licensing status before relying on anything being freely usable.</p>
+    </div>
+
+    <div class="hc-sec">Where the specification itself will be published</div>
+    <div class="hc-card">
+      <p>The full document is not reproduced on this site — it lives in blueHealthcare's own source tree today, alongside its conformance suite, and is not yet published anywhere a party outside MOBLUEHQ can read it independent of the platform's own licence status. A public, versioned home for the document and the conformance suite, separate from the platform's own repository, is expected once the licence question above is resolved. <a href="/healthcare/contact">Contact us</a> to ask about early access or to propose a change.</p>
+    </div>
+
+    <div class="hc-sec">Related</div>
+    <div class="hc-card">
+      <p>See <a href="/healthcare/open/spec/jurisdiction-pack">the JurisdictionPack interface</a> for the other draft specification — how a country's coding systems, privacy posture, and FHIR profile plug in. It is named here for completeness; it is the less mature of the two, with one working reference implementation, one deliberate non-real stub, and no conformance suite of its own yet.</p>
+    </div>
+
+    <div class="hc-boundary">This page describes a document's status and intent, not its normative text. It is not legal advice, not a compliance claim, and not a representation that any implementation — MOBLUEHQ's own included — has been independently verified against it yet.</div>
+
+  </div>
+</main>
+
+<footer class="hc-footer">
+  <div class="hc-footer-in">
+    <div class="hc-brand" style="font-size:16px;color:var(--hc-ink)">MOBLUE<b style="color:var(--hc-primary)">HQ</b> blueHealthcare</div>
+    <div class="hc-footer-links">
+      <a href="/healthcare/contact">Contact</a>
+      <a href="/healthcare/security">Security</a>
+      <a href="/healthcare/status">Status</a>
+      <a href="/healthcare/manuals">Manuals</a>
+      <a href="/healthcare/international">International</a>
+      <a href="/healthcare/open">Open</a>
+      <a href="/healthcare/leadership">Leadership</a>
+      <a href="/trust">Trust</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/disclaimers">Disclaimers</a>
+    </div>
+    <div>© 2026 MOBLUEHQ, Inc. · Delaware</div>
+    <div class="hc-footer-disclaimer">
+
+    <p><strong>A signed receipt proves what this software ran and recorded; it does not prove an underlying real-world claim is true.</strong> No blueHealthcare product approves, denies, recommends, pays, retracts, or alters anything. A named human remains the only decision authority.</p>
+    <p><strong>Nothing on this page has touched real patient data.</strong> Every demo, screenshot placeholder, and status count on this site describes synthetic fixtures only, run on MOBLUEHQ's own demo systems — no PHI, no signed pilot, no customer deployment.</p>
+
+    </div>
+  </div>
+</footer>
+</body>
+</html>
