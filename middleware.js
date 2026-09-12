@@ -32,6 +32,21 @@ import {
   verifySignedCookieValue as verifyHealthcareSignedCookieValue,
 } from './lib/healthcare-gate.mjs';
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+// ADDITIVE — non-healthcare PRODUCT PAGE gate import (A-127, 2026-09-12).
+// Independent module, independent cookie name (pg_demo_gate) and its own
+// enable/disable toggle (see lib/product-gate.mjs). Reads
+// HEALTHCARE_GATE_PASSWORD for the password value ONLY (deliberate, owner
+// instruction — see that file's header); never writes or reads
+// bh_demo_gate, bm_demo_gate, DEMO_PASSWORD, or DEMO_GATE_SECRET.
+import {
+  COOKIE_NAME as PRODUCT_COOKIE_NAME,
+  isGateEnabled as isProductGateEnabled,
+  isGatedProductPath,
+  resolveSecret as resolveProductGateSecret,
+  verifySignedCookieValue as verifyProductSignedCookieValue,
+} from './lib/product-gate.mjs';
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 export const config = {
   matcher: [
@@ -39,10 +54,24 @@ export const config = {
     '/portfolio/bluemonster/:path*',
     // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
     // ADDITIVE — the only change to the blueMonster matcher entries above is
-    // that they now share this array with two more entries. Neither existing
+    // that they now share this array with more entries. Neither existing
     // string changed.
     '/healthcare',
     '/healthcare/:path*',
+    // ADDITIVE (A-127) — the other seven non-healthcare product pages.
+    // '/portfolio/bluemonster' above already covers blueMonster's page; it
+    // is now ALSO matched by the product-gate branch below (see the
+    // isGatedProductPath check, which runs before the original blueMonster
+    // gate code and returns early for exactly these eight paths — the DMG
+    // wildcard '/portfolio/bluemonster/:path*' above is untouched by that
+    // branch and keeps falling through to the original code, unchanged).
+    '/portfolio/blueglu',
+    '/portfolio/bluemoat',
+    '/portfolio/bluealibi',
+    '/portfolio/bluefloor',
+    '/portfolio/blueintent',
+    '/portfolio/blueparity',
+    '/portfolio/bluepipeline',
     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   ],
 };
@@ -74,6 +103,46 @@ export default async function middleware(request) {
 
     if (!hcOk) {
       const url = new URL('/healthcare-gate', request.url);
+      url.searchParams.set('next', pathname);
+      return Response.redirect(url, 302);
+    }
+
+    return next();
+  }
+  // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  // ADDITIVE — non-healthcare PRODUCT PAGE gate branch (A-127, 2026-09-12).
+  // Runs ONLY for the exact clean-URL pathname of one of the eight
+  // non-healthcare product pages (isGatedProductPath — an exact Set lookup,
+  // never a prefix match). This deliberately includes
+  // '/portfolio/bluemonster' itself: the owner authorized publishing that
+  // page too, gated exactly like the other seven (A-127 amends the earlier
+  // "never publish to the blueMonster product page" hard stop for the
+  // gated page only — see CLAUDE.md). It deliberately does NOT match
+  // '/portfolio/bluemonster/:path*' (the DMG subpath) — a request for the
+  // actual installer still falls through, unmatched here, to the original
+  // blueMonster demo-gate code below, unchanged. This branch reads/writes
+  // only the pg_demo_gate cookie — it never touches DEMO_GATE_SECRET,
+  // DEMO_PASSWORD, bm_demo_gate, HEALTHCARE_GATE_SECRET's cookie
+  // (bh_demo_gate), or the healthcare gate's own redirect target.
+  if (isGatedProductPath(pathname)) {
+    if (!isProductGateEnabled()) {
+      return next();
+    }
+
+    const pgSecret = resolveProductGateSecret();
+    if (!pgSecret) {
+      // Fail CLOSED: a missing secret must never mean "let everyone through".
+      console.error('PRODUCT_GATE_SECRET/HEALTHCARE_GATE_SECRET is not set; blocking product-page access.');
+      return new Response('Product gate misconfigured.', { status: 503 });
+    }
+
+    const pgCookies = parseCookieHeader(request.headers.get('cookie'));
+    const pgOk = await verifyProductSignedCookieValue(pgSecret, pgCookies[PRODUCT_COOKIE_NAME]);
+
+    if (!pgOk) {
+      const url = new URL('/product-gate', request.url);
       url.searchParams.set('next', pathname);
       return Response.redirect(url, 302);
     }
