@@ -122,7 +122,6 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var email = (emailField.value || '').trim();
-    if (honey.value) { return; } // bot caught by the honeypot; fail silently
     if (!email || email.indexOf('@') === -1) {
       formNote.textContent = 'Please enter a valid email address.';
       formNote.className = 'form-note form-note--warn';
@@ -130,13 +129,14 @@
     }
     formNote.textContent = 'Sending…';
     formNote.className = 'form-note';
-    fetch('https://formsubmit.co/ajax/' + ['bl', 'ue', '@', 'moblue', 'hq', '.com'].join(''), {
+    fetch('/api/notify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
+        source: 'waitlist',
         email: email,
         product: productLabel,
-        _subject: 'Launch waitlist signup — ' + productLabel
+        _honey: honey ? honey.value : ''
       })
     }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function () {
