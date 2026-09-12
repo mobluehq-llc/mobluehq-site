@@ -129,7 +129,7 @@
     }
     formNote.textContent = 'Sending…';
     formNote.className = 'form-note';
-    fetch('/api/notify', {
+    fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({

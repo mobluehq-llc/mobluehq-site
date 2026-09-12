@@ -75,7 +75,7 @@
           note.textContent = 'Sending…';
           note.className = 'form-note';
           var honey = document.getElementById('investorHoney');
-          fetch('/api/notify', {
+          fetch('/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify({ source: 'investors', message: msg, _honey: honey ? honey.value : '' })

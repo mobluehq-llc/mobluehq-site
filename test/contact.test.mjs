@@ -1,7 +1,7 @@
-// Falsifiers for the consolidated contact route (api/notify.js) and its
-// pure helpers (lib/notify.mjs). No real network call is ever made here —
+// Falsifiers for the consolidated contact route (api/contact.js) and its
+// pure helpers (lib/contact.mjs). No real network call is ever made here —
 // every external boundary (SendGrid, Anthropic) is a fake injected via
-// createNotifyHandler(). Run with: node --test test/notify.test.mjs
+// createContactHandler(). Run with: node --test test/contact.test.mjs
 //
 // Node 24's `node --test` summary lines start with `ℹ`, not `#` — that is
 // expected, not a failure.
@@ -9,13 +9,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { createNotifyHandler } from '../api/notify.js';
+import { createContactHandler } from '../api/contact.js';
 import {
   buildMailPayload,
   buildSubmission,
   isHoneypotTriggered,
   sanitizeReplyTo,
-} from '../lib/notify.mjs';
+} from '../lib/contact.mjs';
 import { NotifyConfigError, NotifySendError, sendMail } from '../lib/sendgridClient.mjs';
 
 const SENDGRID_URL = 'https://api.sendgrid.com/v3/mail/send';
@@ -84,7 +84,7 @@ function baseReq(body) {
 
 test('a real submission sends exactly one correctly-shaped SendGrid request', async () => {
   const { httpClient, calls } = makeFakeHttpClient();
-  const handler = createNotifyHandler({
+  const handler = createContactHandler({
     httpClient,
     sendGridApiKey: () => 'sg-test-key',
     anthropicApiKey: () => 'anthropic-test-key',
@@ -129,7 +129,7 @@ test('a message triage classifies as low-value is STILL sent', async () => {
       reasoning: 'Looks like spam.',
     },
   });
-  const handler = createNotifyHandler({
+  const handler = createContactHandler({
     httpClient,
     sendGridApiKey: () => 'sg-test-key',
     anthropicApiKey: () => 'anthropic-test-key',
@@ -156,7 +156,7 @@ test('a message triage classifies as low-value is STILL sent', async () => {
 
 test('a missing SendGrid key produces a visible error and never a success response', async () => {
   const { httpClient, calls } = makeFakeHttpClient();
-  const handler = createNotifyHandler({
+  const handler = createContactHandler({
     httpClient,
     sendGridApiKey: () => undefined, // key not configured
     anthropicApiKey: () => undefined,
@@ -178,7 +178,7 @@ test('sendMail() itself throws NotifyConfigError with no key, without calling ht
 
 test('a SendGrid non-202 surfaces as failure, never success', async () => {
   const { httpClient } = makeFakeHttpClient({ sendgridStatus: 400 });
-  const handler = createNotifyHandler({
+  const handler = createContactHandler({
     httpClient,
     sendGridApiKey: () => 'sg-test-key',
     anthropicApiKey: () => undefined,
@@ -200,7 +200,7 @@ test('sendMail() throws NotifySendError on a non-202 response', async () => {
 
 test('a honeypot fill sends nothing and returns neutral success', async () => {
   const { httpClient, calls } = makeFakeHttpClient();
-  const handler = createNotifyHandler({
+  const handler = createContactHandler({
     httpClient,
     sendGridApiKey: () => 'sg-test-key',
     anthropicApiKey: () => 'anthropic-test-key',
@@ -278,7 +278,7 @@ test('buildSubmission requires only a message for investors', () => {
 
 test('a non-POST method is rejected', async () => {
   const { httpClient } = makeFakeHttpClient();
-  const handler = createNotifyHandler({ httpClient, sendGridApiKey: () => 'k' });
+  const handler = createContactHandler({ httpClient, sendGridApiKey: () => 'k' });
   const res = mockRes();
   await handler({ method: 'GET', body: {} }, res);
   assert.equal(res.statusCode, 405);

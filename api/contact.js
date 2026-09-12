@@ -1,6 +1,6 @@
 // Vercel serverless function: the ONE consolidated inbound-contact route.
 //
-// POST /api/notify
+// POST /api/contact
 // Body: { source: 'contact'|'investors'|'waitlist', name?, email?,
 //         organization?, message?, product?, segment?, plan_interest?,
 //         _honey? }
@@ -18,11 +18,11 @@
 //                                 that logs and sends nothing (never reached
 //                                 blue@mobluehq.com in production)
 //
-// DESIGN: pure decision logic lives in lib/notify.mjs (validation,
+// DESIGN: pure decision logic lives in lib/contact.mjs (validation,
 // honeypot, the exact SendGrid payload shape); the only network calls live
 // in lib/sendgridClient.mjs (SendGrid) and lib/triage.mjs (Anthropic,
 // reused as a label generator — see below). This file just wires them
-// together, which is what createNotifyHandler()'s injected `classify` /
+// together, which is what createContactHandler()'s injected `classify` /
 // `sendMail` let tests replace with fakes.
 //
 // TRIAGE IS ADVISORY ONLY. It runs best-effort, in a try/catch, purely to
@@ -41,7 +41,7 @@
 
 import { classifySubmission } from '../lib/triage.mjs';
 import { sendMail, NotifyConfigError, NotifySendError } from '../lib/sendgridClient.mjs';
-import { ValidationError, buildMailPayload, buildSubmission, isHoneypotTriggered } from '../lib/notify.mjs';
+import { ValidationError, buildMailPayload, buildSubmission, isHoneypotTriggered } from '../lib/contact.mjs';
 
 function parseBody(req) {
   if (req.body && typeof req.body === 'object') return req.body;
@@ -53,7 +53,7 @@ function parseBody(req) {
  * Factory so tests can inject fakes for both external calls without
  * touching global fetch. The default export below wires the real ones.
  */
-export function createNotifyHandler({
+export function createContactHandler({
   classify = classifySubmission,
   sendMail: sendMailFn = sendMail,
   sendGridApiKey = () => process.env.SENDGRID_MAILSEND_API_KEY,
@@ -115,7 +115,7 @@ export function createNotifyHandler({
         );
       }
     } catch (err) {
-      console.error('notify: triage classification failed (advisory only, sending regardless)', err);
+      console.error('contact: triage classification failed (advisory only, sending regardless)', err);
       triage = null;
     }
 
@@ -126,16 +126,16 @@ export function createNotifyHandler({
       await sendMailFn(mailPayload, httpClient ? { apiKey, httpClient } : { apiKey });
     } catch (err) {
       if (err instanceof NotifyConfigError) {
-        console.error('notify: SENDGRID_MAILSEND_API_KEY not set — message NOT sent', {
+        console.error('contact: SENDGRID_MAILSEND_API_KEY not set — message NOT sent', {
           source: submission.source,
         });
         return res.status(500).json({ ok: false, error: 'Server not configured — message not sent.' });
       }
       if (err instanceof NotifySendError) {
-        console.error('notify: SendGrid rejected the send', { status: err.status, body: err.body });
+        console.error('contact: SendGrid rejected the send', { status: err.status, body: err.body });
         return res.status(502).json({ ok: false, error: 'Could not send — please try again.' });
       }
-      console.error('notify: unexpected error sending mail', err);
+      console.error('contact: unexpected error sending mail', err);
       return res.status(500).json({ ok: false, error: 'Could not send — please try again.' });
     }
 
@@ -143,4 +143,4 @@ export function createNotifyHandler({
   };
 }
 
-export default createNotifyHandler();
+export default createContactHandler();
